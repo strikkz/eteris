@@ -1,0 +1,12 @@
+# Temporary diagnostics (does not build the app). Runs only on the "diag" branch.
+name: Stream diagnostics
+on:
+  push:
+    branches: [ diag ]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -u diag/probe.py
