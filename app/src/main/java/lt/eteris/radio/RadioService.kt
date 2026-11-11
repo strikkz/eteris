@@ -10,6 +10,9 @@ import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
+import androidx.media3.common.Metadata
+import androidx.media3.extractor.metadata.icy.IcyInfo
+import androidx.media3.extractor.metadata.id3.TextInformationFrame
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
@@ -164,6 +167,55 @@ class RadioService : MediaLibraryService() {
             }
             mediaItem?.mediaId?.let { StationRepository.setLast(this@RadioService, it) }
         }
+
+        /**
+         * The stream reports a new song (ICY "StreamTitle" or ID3 tags in HLS).
+         * The station's own title in the queue would hide it, so the current item is updated:
+         * title = song, artist = station. Same stream address, so playback is not interrupted.
+         */
+        override fun onMetadata(metadata: Metadata) {
+            val item = player.currentMediaItem ?: return
+            val st = StationRepository.byId(item.mediaId) ?: return
+            val raw = trackTitle(metadata) ?: return
+            val song = cleanTitle(raw, st)
+            val newTitle = song.ifEmpty { st.name }
+            if (newTitle == item.mediaMetadata.title?.toString()) return
+            val meta = item.mediaMetadata.buildUpon()
+                .setTitle(newTitle)
+                .setArtist(st.name)
+                .build()
+            player.replaceMediaItem(
+                player.currentMediaItemIndex,
+                item.buildUpon().setMediaMetadata(meta).build(),
+            )
+        }
+    }
+
+    /** Reads the song from stream metadata; null if this metadata has no song info. */
+    private fun trackTitle(metadata: Metadata): String? {
+        var title: String? = null
+        var artist: String? = null
+        for (i in 0 until metadata.length()) {
+            when (val e = metadata.get(i)) {
+                is IcyInfo -> e.title?.let { return it }
+                is TextInformationFrame -> when (e.id) {
+                    "TIT2" -> title = e.values.firstOrNull()
+                    "TPE1" -> artist = e.values.firstOrNull()
+                }
+            }
+        }
+        if (title.isNullOrBlank()) return null
+        return if (artist.isNullOrBlank()) title else "$artist - $title"
+    }
+
+    private fun cleanTitle(raw: String, st: Station): String {
+        var t = raw.replace(Regex("\\s+"), " ").trim()
+        // Some stations add a date or tag in slashes or brackets at the end, e.g. "Song /2026.10/".
+        t = t.replace(Regex("\\s*/[^/]*/\\s*$"), "").trim()
+        if (t.isEmpty() || Regex("^[-–—\\s.]*$").matches(t)) return ""
+        if (t.equals(st.name, ignoreCase = true) || StationRepository.norm(t) == st.id) return ""
+        if (Regex("^(unknown|n/a|null|undefined)$", RegexOption.IGNORE_CASE).matches(t)) return ""
+        return t.replace(Regex("\\s+-\\s+"), " — ")
     }
 
     // ---------- Library: what Android Auto shows ----------
