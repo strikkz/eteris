@@ -270,7 +270,7 @@ class RadioService : MediaLibraryService() {
             params: LibraryParams?,
         ): ListenableFuture<LibraryResult<Void>> = scope.future {
             StationRepository.ensureLoaded(this@RadioService)
-            session.notifyResultsChanged(browser, query, StationRepository.search(query).size, params)
+            session.notifySearchResultChanged(browser, query, StationRepository.search(query).size, params)
             LibraryResult.ofVoid()
         }
 
