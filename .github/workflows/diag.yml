@@ -9,4 +9,4 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -u diag/probe.py
+      - run: python3 -u diag/probe2.py
