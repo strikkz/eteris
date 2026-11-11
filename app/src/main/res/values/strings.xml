@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Eteris</string>
+    <string name="loading">Загружаю станции…</string>
+    <string name="stations_count">Станций: %1$d</string>
+    <string name="choose_station">Выберите станцию</string>
+    <string name="subtitle">Lietuva · радио онлайн</string>
+    <string name="max_quality">макс. качество</string>
+    <string name="station_error">Станция не отвечает — попробуйте другую</string>
+    <string name="search_hint">Поиск станции…</string>
+    <string name="tab_all">Все станции</string>
+    <string name="tab_all_short">Все</string>
+    <string name="tab_favorites">Избранное</string>
+    <string name="tab_popular">Популярные</string>
+    <string name="empty_favorites">Нажмите ★ на станции, чтобы добавить её в избранное.</string>
+    <string name="empty_search">Ничего не найдено.</string>
+    <string name="fav_add">Добавить в избранное</string>
+    <string name="fav_remove">Убрать из избранного</string>
+    <string name="play">Играть</string>
+    <string name="pause">Пауза</string>
+    <string name="previous">Предыдущая станция</string>
+    <string name="next">Следующая станция</string>
+</resources>
