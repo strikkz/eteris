@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import androidx.annotation.OptIn
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
@@ -35,6 +36,10 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.guava.future
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import org.json.JSONObject
+import java.net.HttpURLConnection
+import java.net.URL
 
 @OptIn(UnstableApi::class)
 class RadioService : MediaLibraryService() {
@@ -50,6 +55,10 @@ class RadioService : MediaLibraryService() {
         private const val STYLE_PLAYABLE = "android.media.browse.CONTENT_STYLE_PLAYABLE_HINT"
         private const val STYLE_LIST = 1
         private const val STYLE_GRID = 2
+
+        private const val TICK_MS = 20_000L
+        /** A song title that has not changed for this long means the station's server is stuck. */
+        private const val STALE_MS = 12 * 60_000L
     }
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
@@ -107,6 +116,7 @@ class RadioService : MediaLibraryService() {
             .build()
 
         StationRepository.addListener(repoListener)
+        handler.postDelayed(ticker, TICK_MS)
     }
 
     override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaLibrarySession? = session
@@ -166,6 +176,14 @@ class RadioService : MediaLibraryService() {
                 retries = 0
             }
             mediaItem?.mediaId?.let { StationRepository.setLast(this@RadioService, it) }
+            if (reason != Player.MEDIA_ITEM_TRANSITION_REASON_PLAYLIST_CHANGED) {
+                streamSong = null
+                handler.post { tick(force = true) }
+            }
+        }
+
+        override fun onIsPlayingChanged(isPlaying: Boolean) {
+            if (isPlaying) handler.post { tick(force = true) }
         }
 
         /**
@@ -174,21 +192,101 @@ class RadioService : MediaLibraryService() {
          * title = song, artist = station. Same stream address, so playback is not interrupted.
          */
         override fun onMetadata(metadata: Metadata) {
-            val item = player.currentMediaItem ?: return
-            val st = StationRepository.byId(item.mediaId) ?: return
+            val st = StationRepository.byId(player.currentMediaItem?.mediaId) ?: return
+            if (st.id in websiteSources) return          // these stations' streams carry no song info
             val raw = trackTitle(metadata) ?: return
             val song = cleanTitle(raw, st)
-            val newTitle = song.ifEmpty { st.name }
-            if (newTitle == item.mediaMetadata.title?.toString()) return
-            val meta = item.mediaMetadata.buildUpon()
-                .setTitle(newTitle)
-                .setArtist(st.name)
-                .build()
-            player.replaceMediaItem(
-                player.currentMediaItemIndex,
-                item.buildUpon().setMediaMetadata(meta).build(),
-            )
+            if (song.isNotEmpty() && staleTitles[st.id] == song) return   // known stuck title
+            if (song.isNotEmpty()) staleTitles.remove(st.id)              // server sends new songs again
+            if (song != streamSong) {
+                streamSong = song
+                streamSongSince = SystemClock.elapsedRealtime()
+            }
+            setSong(st, song)
         }
+    }
+
+    // ---------- Song titles ----------
+
+    /**
+     * Stations whose stream has no song info, but whose website shows what is on air.
+     * Found by checking the stations' sites (Power Hit Radio sends an empty title in the stream).
+     */
+    private val websiteSources = mapOf(
+        "powerhit" to "https://powerhitradio.tv3.lt/Pwr/lastSong/",
+        "powergold" to "https://powerhitradio.tv3.lt/Pwr/lastSong/?gold=1",
+    )
+
+    /** Last song from the stream and when it appeared (to notice a stuck title). */
+    private var streamSong: String? = null
+    private var streamSongSince = 0L
+    /** Titles a station's server got stuck on (e.g. Radiocentras repeats one song for hours). */
+    private val staleTitles = HashMap<String, String>()
+
+    private val ticker = object : Runnable {
+        override fun run() {
+            tick(force = false)
+            handler.postDelayed(this, TICK_MS)
+        }
+    }
+
+    private fun tick(force: Boolean) {
+        if (!player.playWhenReady && !force) return
+        val st = StationRepository.byId(player.currentMediaItem?.mediaId) ?: return
+
+        val url = websiteSources[st.id]
+        if (url != null) {
+            scope.launch {
+                val song = withContext(Dispatchers.IO) { fetchWebsiteSong(url) } ?: return@launch
+                if (player.currentMediaItem?.mediaId == st.id) setSong(st, cleanTitle(song, st))
+            }
+            return
+        }
+
+        val song = streamSong
+        if (!song.isNullOrEmpty() && SystemClock.elapsedRealtime() - streamSongSince > STALE_MS) {
+            staleTitles[st.id] = song
+            streamSong = null
+            setSong(st, "")
+        }
+    }
+
+    private fun fetchWebsiteSong(url: String): String? = try {
+        val conn = URL(url).openConnection() as HttpURLConnection
+        conn.connectTimeout = 8000
+        conn.readTimeout = 8000
+        conn.setRequestProperty("User-Agent", StationRepository.USER_AGENT)
+        conn.setRequestProperty("X-Requested-With", "XMLHttpRequest")
+        try {
+            if (conn.responseCode != 200) null
+            else {
+                val o = JSONObject(conn.inputStream.bufferedReader().use { it.readText() })
+                val artist = o.optString("artistName", "").trim()
+                val title = o.optString("songTitle", "").trim()
+                when {
+                    artist.isNotEmpty() && title.isNotEmpty() -> "$artist - $title"
+                    else -> o.optString("song", "").trim()
+                }
+            }
+        } finally {
+            conn.disconnect()
+        }
+    } catch (_: Exception) {
+        null
+    }
+
+    /** Shows the song as title (artist = station) in the app, notification and Android Auto. */
+    private fun setSong(st: Station, song: String) {
+        val item = player.currentMediaItem ?: return
+        if (item.mediaId != st.id) return
+        val newTitle = song.ifEmpty { st.name }
+        if (newTitle == item.mediaMetadata.title?.toString()) return
+        val meta = item.mediaMetadata.buildUpon()
+            .setTitle(newTitle)
+            .setArtist(st.name)
+            .build()
+        // Same stream address, so playback is not interrupted.
+        player.replaceMediaItem(player.currentMediaItemIndex, item.buildUpon().setMediaMetadata(meta).build())
     }
 
     /** Reads the song from stream metadata; null if this metadata has no song info. */

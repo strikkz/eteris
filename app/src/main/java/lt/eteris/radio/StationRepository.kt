@@ -218,6 +218,7 @@ object StationRepository {
             if (codec == "UNKNOWN") codec = ""
             var br = o.optInt("bitrate", 0)
             if (br > 512) br = 0
+            if (br == 0) br = bitrateFromUrl(url)
             val hls = o.optInt("hls", 0) == 1 || url.contains(".m3u8", ignoreCase = true)
             val ok = o.optInt("lastcheckok", 1) == 1
 
@@ -238,6 +239,11 @@ object StationRepository {
             )
         }.sortedWith(compareBy<Station> { it.prio }.thenByDescending { it.votes })
     }
+
+    /** Many stream addresses contain the bitrate ("phr192-mp3", "rc128.mp3"). */
+    private fun bitrateFromUrl(url: String): Int =
+        Regex("""(?<!\d)(48|56|64|96|112|128|160|192|256|320)(?!\d)""")
+            .find(url.substringAfter("://").substringAfter('/'))?.value?.toInt() ?: 0
 
     /** Lower is better: working streams first, then the highest bitrate; at equal bitrate AAC beats MP3. */
     private fun score(v: Variant): Double {
