@@ -1,6 +1,19 @@
 package lt.eteris.radio.ui
 
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.border
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInRoot
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
+import lt.eteris.radio.About
+import lt.eteris.radio.StationAbout
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
@@ -61,19 +74,39 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
     val scope = rememberCoroutineScope()
     val drag = remember { Animatable(0f) }
     val closeAt = with(LocalDensity.current) { 140.dp.toPx() }
+    // Swipe up on the logo: it slides away and the station's description slides in (only the top part moves).
+    val info = remember(st.id) { Animatable(0f) }
+    var columnTop by remember { mutableFloatStateOf(0f) }
+    var coverBottom by remember { mutableFloatStateOf(0f) }
+    var coverHeight by remember { mutableFloatStateOf(1f) }
+    var mode by remember { mutableIntStateOf(0) }   // 1 = moving the description, 2 = closing the player
     val dragState = rememberDraggableState { delta ->
-        scope.launch { drag.snapTo((drag.value + delta).coerceAtLeast(0f)) }
+        scope.launch {
+            if (mode == 1 && info.value <= 0f && delta > 0f) mode = 2
+            if (mode == 1) info.snapTo((info.value - delta / coverHeight).coerceIn(0f, 1f))
+            else drag.snapTo((drag.value + delta).coerceAtLeast(0f))
+        }
     }
+    val ctx = LocalContext.current
+    val about = remember(st.id) { About.of(ctx, st) }
 
     Column(
         Modifier
             .fillMaxSize()
             .offset { IntOffset(0, drag.value.roundToInt()) }
+            .onGloballyPositioned { columnTop = it.positionInRoot().y }
             .draggable(
                 state = dragState,
                 orientation = Orientation.Vertical,
+                onDragStarted = { start -> mode = if (columnTop + start.y < coverBottom) 1 else 2 },
                 onDragStopped = { velocity ->
-                    if (drag.value > closeAt || velocity > 2200f) onClose() else drag.animateTo(0f)
+                    if (mode == 1) {
+                        val open = if (velocity < -1200f) true else if (velocity > 1200f) false else info.value > 0.5f
+                        info.animateTo(if (open) 1f else 0f, tween(260))
+                    } else {
+                        if (drag.value > closeAt || velocity > 2200f) onClose() else drag.animateTo(0f)
+                    }
+                    mode = 0
                 },
             )
             .blockTouchesBelow()
@@ -96,27 +129,60 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
             Spacer(Modifier.size(48.dp))
         }
 
-        // Cover: station colours + wave ring + the logo.
+        // Top part: the cover, or the station description after a swipe up. Everything below stays in place.
         Box(
             Modifier
-                .padding(top = 18.dp, bottom = 22.dp)
+                .padding(top = 18.dp)
                 .widthIn(max = 340.dp)
                 .fillMaxWidth()
                 .aspectRatio(1f)
-                .shadow(24.dp, RoundedCornerShape(32.dp))
-                .clip(RoundedCornerShape(32.dp))
-                .background(Brush.radialGradient(listOf(c.light, c.mid, c.dark))),
-            contentAlignment = Alignment.Center,
+                .onGloballyPositioned {
+                    coverBottom = it.positionInRoot().y + it.size.height
+                    coverHeight = it.size.height.toFloat().coerceAtLeast(1f)
+                },
         ) {
-            WaveRing(Color.White.copy(alpha = 0.35f), Modifier.fillMaxSize().padding(start = 60.dp, top = 40.dp), stroke = 56.dp)
-            val logo = rememberLogo(st)
-            if (logo != null) {
-                Image(
-                    logo, null, contentScale = ContentScale.Crop,
-                    modifier = Modifier.fillMaxWidth(0.56f).aspectRatio(1f).shadow(16.dp, RoundedCornerShape(26.dp)).clip(RoundedCornerShape(26.dp)),
-                )
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .graphicsLayer {
+                        translationY = -info.value * size.height
+                        alpha = 1f - info.value
+                    }
+                    .shadow(24.dp, RoundedCornerShape(32.dp))
+                    .clip(RoundedCornerShape(32.dp))
+                    .background(Brush.radialGradient(listOf(c.light, c.mid, c.dark))),
+                contentAlignment = Alignment.Center,
+            ) {
+                WaveRing(Color.White.copy(alpha = 0.35f), Modifier.fillMaxSize().padding(start = 60.dp, top = 40.dp), stroke = 56.dp)
+                val logo = rememberLogo(st)
+                if (logo != null) {
+                    Image(
+                        logo, null, contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxWidth(0.56f).aspectRatio(1f).shadow(16.dp, RoundedCornerShape(26.dp)).clip(RoundedCornerShape(26.dp)),
+                    )
+                }
             }
+            AboutPanel(
+                st.name, about,
+                Modifier
+                    .fillMaxSize()
+                    .graphicsLayer {
+                        translationY = (1f - info.value) * size.height
+                        alpha = info.value
+                    },
+            )
         }
+        // Hint / tap target for the description.
+        Text(
+            (if (info.value > 0.5f) "﹀  " else "︿  ") + stringResource(R.string.about_station),
+            style = Banga.eyebrow,
+            color = Color.White.copy(alpha = 0.55f),
+            modifier = Modifier
+                .padding(vertical = 4.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .clickable { scope.launch { info.animateTo(if (info.value > 0.5f) 0f else 1f, tween(260)) } }
+                .padding(horizontal = 12.dp, vertical = 8.dp),
+        )
 
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             Box(Modifier.size(7.dp).clip(CircleShape).background(if (app.status == PlayStatus.ERROR) Banga.error else Banga.accent))
@@ -187,3 +253,33 @@ fun Modifier.blockTouchesBelow(): Modifier = this.clickable(
     indication = null,
     onClick = {},
 )
+
+@Composable
+private fun AboutPanel(name: String, about: StationAbout, modifier: Modifier) {
+    val uri = LocalUriHandler.current
+    Column(
+        modifier
+            .clip(RoundedCornerShape(32.dp))
+            .background(Color.Black.copy(alpha = 0.38f))
+            .border(1.dp, Color.White.copy(alpha = 0.10f), RoundedCornerShape(32.dp))
+            .padding(22.dp),
+    ) {
+        Text(stringResource(R.string.about_station).uppercase(), style = Banga.eyebrow, color = Banga.accent)
+        Spacer(Modifier.height(10.dp))
+        Text(name, style = Banga.section, color = Banga.text)
+        Spacer(Modifier.height(10.dp))
+        Text(
+            about.text ?: stringResource(R.string.about_none),
+            style = Banga.body,
+            color = if (about.text != null) Color(0xFFD8E0DA) else Banga.textSecondary,
+            maxLines = 10,
+            overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.weight(1f, fill = false),
+        )
+        Spacer(Modifier.weight(1f))
+        about.url?.let { url ->
+            val domain = url.substringAfter("://").substringBefore('/').removePrefix("www.")
+            Pill(stringResource(R.string.open_website) + " · " + domain + " ↗", { runCatching { uri.openUri(url) } }, accent = true)
+        }
+    }
+}

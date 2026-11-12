@@ -119,17 +119,25 @@ fun Wordmark(text: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun CircleButton(icon: Int, description: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    // 48dp touch area, smaller visible circle.
     Box(
         modifier
             .size(48.dp)
             .clip(CircleShape)
-            .background(Color(0xFF1C1E1F))
-            .border(1.dp, Color(0xFF393A3A), CircleShape)
             .clickable(role = Role.Button, onClick = onClick)
             .semantics { contentDescription = description },
         contentAlignment = Alignment.Center,
     ) {
-        Icon(painterResource(icon), null, tint = Banga.text, modifier = Modifier.size(22.dp))
+        Box(
+            Modifier
+                .size(36.dp)
+                .clip(CircleShape)
+                .background(Color(0xFF1C1E1F))
+                .border(1.dp, Color(0xFF393A3A), CircleShape),
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(painterResource(icon), null, tint = Banga.textSecondary, modifier = Modifier.size(17.dp))
+        }
     }
 }
 

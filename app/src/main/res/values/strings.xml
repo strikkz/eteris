@@ -64,4 +64,7 @@
     <string name="genre_talk">Žinios / Pokalbiai</string>
     <string name="genre_lt">Lietuviška</string>
     <string name="genre_kids">Vaikams</string>
+    <string name="about_station">Apie stotį</string>
+    <string name="open_website">Svetainė</string>
+    <string name="about_none">Aprašymo dar nėra. Daugiau apie stotį rasi jos svetainėje.</string>
 </resources>

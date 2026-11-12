@@ -63,4 +63,7 @@
     <string name="genre_talk">Новости / Разговоры</string>
     <string name="genre_lt">Литовская</string>
     <string name="genre_kids">Детям</string>
+    <string name="about_station">О станции</string>
+    <string name="open_website">Сайт</string>
+    <string name="about_none">Описания пока нет. Подробнее — на сайте станции.</string>
 </resources>

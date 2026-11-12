@@ -39,6 +39,8 @@ data class Station(
     val votes: Long,
     /** Catalog tags, lower case (e.g. "pop,hits,top 40"); used to sort stations into genres. */
     val tags: String = "",
+    /** Station website from the catalog. */
+    val homepage: String? = null,
 ) {
     val genres: List<Genre> by lazy { Genre.of(this) }
 
@@ -224,6 +226,7 @@ object StationRepository {
         var votes = 0L
         val variants = mutableListOf<Variant>()
         val tags = linkedSetOf<String>()
+        var homepage: String? = null
     }
 
     private fun parse(raw: String): List<Station> {
@@ -250,6 +253,7 @@ object StationRepository {
             g.votes += o.optLong("clickcount", 0)
             if (g.favicon == null) o.str("favicon").takeIf { it.startsWith("http") }?.let { g.favicon = it }
             if (g.variants.none { it.url == url }) g.variants += Variant(url, codec, br, hls, ok)
+            if (g.homepage == null) o.str("homepage").takeIf { it.startsWith("http") }?.let { g.homepage = it }
             o.str("tags").lowercase().split(',').map { it.trim() }.filter { it.isNotEmpty() }.forEach { g.tags += it }
         }
         return groups.values.map { g ->
@@ -262,6 +266,7 @@ object StationRepository {
                 prio = if (p < 0) 999 else p,
                 votes = g.votes,
                 tags = g.tags.joinToString(","),
+                homepage = g.homepage,
             )
         }.sortedWith(compareBy<Station> { it.prio }.thenByDescending { it.votes })
     }

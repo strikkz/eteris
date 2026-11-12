@@ -63,4 +63,7 @@
     <string name="genre_talk">News / Talk</string>
     <string name="genre_lt">Lithuanian</string>
     <string name="genre_kids">Kids</string>
+    <string name="about_station">About the station</string>
+    <string name="open_website">Website</string>
+    <string name="about_none">No description yet. Find more on the station\'s website.</string>
 </resources>
