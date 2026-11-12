@@ -219,8 +219,8 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier.fillMaxWidth(),
         )
-        Spacer(Modifier.height(18.dp))
-        LiveWave(playing = app.status == PlayStatus.PLAYING, modifier = Modifier.fillMaxWidth().height(40.dp))
+        Spacer(Modifier.height(20.dp))
+        LiveWave(playing = app.status == PlayStatus.PLAYING, modifier = Modifier.fillMaxWidth().height(22.dp))
 
         Spacer(Modifier.weight(1f))
         Row(
@@ -391,7 +391,7 @@ fun LiveWave(playing: Boolean, modifier: Modifier = Modifier) {
             if (i == 0) path.moveTo(x, y(x)) else path.lineTo(x, y(x))
         }
         // Soft glow under the line, then the line itself.
-        drawPath(path, Banga.accent.copy(alpha = 0.18f), style = androidx.compose.ui.graphics.drawscope.Stroke(width = 10.dp.toPx(), cap = androidx.compose.ui.graphics.StrokeCap.Round, join = androidx.compose.ui.graphics.StrokeJoin.Round))
-        drawPath(path, Banga.accent.copy(alpha = if (moving) 0.95f else 0.55f), style = androidx.compose.ui.graphics.drawscope.Stroke(width = 3.dp.toPx(), cap = androidx.compose.ui.graphics.StrokeCap.Round, join = androidx.compose.ui.graphics.StrokeJoin.Round))
+        drawPath(path, Banga.accent.copy(alpha = 0.18f), style = androidx.compose.ui.graphics.drawscope.Stroke(width = 6.dp.toPx(), cap = androidx.compose.ui.graphics.StrokeCap.Round, join = androidx.compose.ui.graphics.StrokeJoin.Round))
+        drawPath(path, Banga.accent.copy(alpha = if (moving) 0.95f else 0.55f), style = androidx.compose.ui.graphics.drawscope.Stroke(width = 2.dp.toPx(), cap = androidx.compose.ui.graphics.StrokeCap.Round, join = androidx.compose.ui.graphics.StrokeJoin.Round))
     }
 }
