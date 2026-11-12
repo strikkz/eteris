@@ -3,6 +3,8 @@ package lt.eteris.radio.ui
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.border
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableIntStateOf
@@ -268,15 +270,15 @@ private fun AboutPanel(name: String, about: StationAbout, modifier: Modifier) {
         Spacer(Modifier.height(10.dp))
         Text(name, style = Banga.section, color = Banga.text)
         Spacer(Modifier.height(10.dp))
-        Text(
-            about.text ?: stringResource(R.string.about_none),
-            style = Banga.body,
-            color = if (about.text != null) Color(0xFFD8E0DA) else Banga.textSecondary,
-            maxLines = 10,
-            overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.weight(1f, fill = false),
-        )
-        Spacer(Modifier.weight(1f))
+        // The whole text; if it is longer than the panel, it scrolls inside it.
+        Box(Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState())) {
+            Text(
+                about.text ?: stringResource(R.string.about_none),
+                style = Banga.body,
+                color = if (about.text != null) Color(0xFFD8E0DA) else Banga.textSecondary,
+            )
+        }
+        Spacer(Modifier.height(14.dp))
         about.url?.let { url ->
             val domain = url.substringAfter("://").substringBefore('/').removePrefix("www.")
             Pill(stringResource(R.string.open_website) + " · " + domain + " ↗", { runCatching { uri.openUri(url) } }, accent = true)
