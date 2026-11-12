@@ -54,11 +54,11 @@ class AppState(private val ctx: Context) {
         private set
 
     private val netCallback = object : ConnectivityManager.NetworkCallback() {
-        override fun onAvailable(network: android.net.Network) = setOnline(true)
-        override fun onLost(network: android.net.Network) = setOnline(isOnlineNow())
+        override fun onAvailable(network: android.net.Network) = postOnline(true)
+        override fun onLost(network: android.net.Network) = postOnline(isOnlineNow())
     }
 
-    private fun setOnline(value: Boolean) = ContextCompat.getMainExecutor(ctx).execute { online = value }
+    private fun postOnline(value: Boolean) = ContextCompat.getMainExecutor(ctx).execute { online = value }
 
     private fun isOnlineNow(): Boolean {
         val cm = ctx.getSystemService(ConnectivityManager::class.java) ?: return true
