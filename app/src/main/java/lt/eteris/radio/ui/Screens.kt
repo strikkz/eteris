@@ -26,6 +26,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -100,6 +101,7 @@ fun HomeScreen(app: AppState, onSettings: () -> Unit, onGenre: (Genre) -> Unit, 
         contentPadding = PaddingValues(start = SIDE, end = SIDE, bottom = DOCK_SPACE),
     ) {
         item { TopLine("banga", onSettings) }
+        if (!app.online) item { OfflineNote() }
         item {
             Text(date, style = Banga.body, color = Banga.textSecondary, modifier = Modifier.padding(top = 28.dp, bottom = 6.dp))
             DisplayTitle(stringResource(R.string.home_title_1), stringResource(R.string.home_title_2))
@@ -107,6 +109,7 @@ fun HomeScreen(app: AppState, onSettings: () -> Unit, onGenre: (Genre) -> Unit, 
         if (hero != null) {
             item {
                 SectionHeader(stringResource(if (last != null) R.string.continue_listening else R.string.recommended))
+                androidx.compose.animation.Crossfade(hero, animationSpec = androidx.compose.animation.core.tween(420), label = "hero") { hero ->
                 HeroCard(
                     st = hero,
                     isCurrent = hero.id == app.currentId,
@@ -120,7 +123,10 @@ fun HomeScreen(app: AppState, onSettings: () -> Unit, onGenre: (Genre) -> Unit, 
                         onOpenPlayer()
                     },
                 )
+                }
             }
+        } else if (stations.isEmpty()) {
+            item { LoadingCard() }
         }
         if (genres.isNotEmpty()) {
             item {
@@ -196,6 +202,39 @@ private fun HeroCard(st: Station, isCurrent: Boolean, status: PlayStatus, song: 
             Spacer(Modifier.width(12.dp))
             PlayButton(if (isCurrent) status else PlayStatus.IDLE, 58.dp, onPlay)
         }
+    }
+}
+
+@Composable
+private fun OfflineNote() {
+    Row(
+        Modifier
+            .padding(top = 14.dp)
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(14.dp))
+            .background(Color(0xFF2A1F1E))
+            .padding(horizontal = 14.dp, vertical = 11.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Box(Modifier.size(8.dp).clip(RoundedCornerShape(4.dp)).background(Banga.error))
+        Spacer(Modifier.width(10.dp))
+        Text(stringResource(R.string.offline), style = Banga.supporting, color = Banga.text)
+    }
+}
+
+/** Placeholder while the station list loads for the very first time. */
+@Composable
+private fun LoadingCard() {
+    val t = androidx.compose.animation.core.rememberInfiniteTransition(label = "loading")
+    val a by t.animateFloat(
+        0.35f, 0.7f,
+        androidx.compose.animation.core.infiniteRepeatable(androidx.compose.animation.core.tween(800), androidx.compose.animation.core.RepeatMode.Reverse),
+        label = "a",
+    )
+    Column(Modifier.padding(top = 26.dp)) {
+        Box(Modifier.fillMaxWidth().height(292.dp).clip(RoundedCornerShape(28.dp)).background(Banga.surface.copy(alpha = a)))
+        Spacer(Modifier.height(14.dp))
+        Text(stringResource(R.string.loading), style = Banga.supporting, color = Banga.textSecondary)
     }
 }
 
@@ -355,7 +394,7 @@ fun MiniPlayer(app: AppState, onOpen: () -> Unit) {
     val sub = when (app.status) {
         PlayStatus.CONNECTING -> stringResource(R.string.connecting)
         PlayStatus.BUFFERING -> stringResource(R.string.buffering)
-        PlayStatus.ERROR -> stringResource(R.string.stream_unavailable)
+        PlayStatus.ERROR -> stringResource(if (app.online) R.string.stream_unavailable else R.string.offline)
         PlayStatus.PAUSED, PlayStatus.IDLE -> stringResource(R.string.paused)
         PlayStatus.PLAYING -> app.song ?: stringResource(R.string.live)
     }

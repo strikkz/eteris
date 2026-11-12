@@ -48,6 +48,12 @@ fun BangaApp(app: AppState) {
     BackHandler(enabled = settingsOpen && !playerOpen) { settingsOpen = false }
     BackHandler(enabled = !playerOpen && !settingsOpen && tab != Tab.HOME) { tab = Tab.HOME }
 
+    androidx.compose.material3.MaterialTheme(
+        colorScheme = androidx.compose.material3.darkColorScheme(
+            primary = Banga.accent, onPrimary = Banga.onAccent, background = Banga.bg,
+            surface = Banga.surfaceRaised, onSurface = Banga.text,
+        ),
+    ) {
     Box(Modifier.fillMaxSize().background(Banga.bg)) {
       Box(Modifier.fillMaxSize()) {
         when (tab) {
@@ -115,5 +121,6 @@ fun BangaApp(app: AppState) {
                 onOtherStations = { playerOpen = false; tab = Tab.EXPLORE },
             )
         }
+    }
     }
 }

@@ -1,6 +1,11 @@
 package lt.eteris.radio.ui
 
 import androidx.compose.animation.core.Animatable
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
+import lt.eteris.radio.SleepTimer
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.border
 import androidx.compose.foundation.rememberScrollState
@@ -128,7 +133,7 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
                 modifier = Modifier.weight(1f),
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center,
             )
-            Spacer(Modifier.size(48.dp))
+            SleepTimerButton()
         }
 
         // Top part: the cover, or the station description after a swipe up. Everything below stays in place.
@@ -202,7 +207,7 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
         val line = when (app.status) {
             PlayStatus.CONNECTING -> stringResource(R.string.connecting)
             PlayStatus.BUFFERING -> stringResource(R.string.buffering)
-            PlayStatus.ERROR -> stringResource(R.string.stream_unavailable)
+            PlayStatus.ERROR -> stringResource(if (app.online) R.string.stream_unavailable else R.string.offline)
             else -> app.song ?: listOfNotNull(genre, stringResource(R.string.live)).joinToString(" · ")
         }
         Text(
@@ -213,6 +218,8 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier.fillMaxWidth(),
         )
+        Spacer(Modifier.height(18.dp))
+        LiveWave(playing = app.status == PlayStatus.PLAYING, modifier = Modifier.fillMaxWidth().height(40.dp))
 
         Spacer(Modifier.weight(1f))
         Row(
@@ -282,6 +289,105 @@ private fun AboutPanel(name: String, about: StationAbout, modifier: Modifier) {
         about.url?.let { url ->
             val domain = url.substringAfter("://").substringBefore('/').removePrefix("www.")
             Pill(stringResource(R.string.open_website) + " · " + domain + " ↗", { runCatching { uri.openUri(url) } }, accent = true)
+        }
+    }
+}
+
+/** Moon button in the player header: choose when the radio stops. Shows minutes left while on. */
+@Composable
+private fun SleepTimerButton() {
+    var open by remember { mutableStateOf(false) }
+    val ctx = LocalContext.current
+    // Re-read the minutes left every 20 s while the timer runs.
+    val left by produceState(SleepTimer.minutesLeft(), SleepTimer.endAt) {
+        while (true) {
+            value = SleepTimer.minutesLeft()
+            if (!SleepTimer.isOn) break
+            kotlinx.coroutines.delay(20_000)
+        }
+    }
+    val label = stringResource(R.string.sleep_timer)
+    Box {
+        Row(
+            Modifier
+                .height(48.dp)
+                .clip(RoundedCornerShape(24.dp))
+                .clickable { open = true }
+                .semantics { contentDescription = label }
+                .padding(horizontal = 12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Icon(
+                painterResource(R.drawable.ic_timer), null,
+                tint = if (SleepTimer.isOn) Banga.accent else Banga.text,
+                modifier = Modifier.size(22.dp),
+            )
+            if (SleepTimer.isOn && left > 0) {
+                Text(" " + stringResource(R.string.sleep_minutes, left), style = Banga.supporting, color = Banga.accent)
+            }
+        }
+        DropdownMenu(
+            expanded = open,
+            onDismissRequest = { open = false },
+            containerColor = Banga.surfaceRaised,
+        ) {
+            Text(
+                if (SleepTimer.isOn) stringResource(R.string.sleep_left, left) else label,
+                style = Banga.eyebrow, color = Banga.textSecondary,
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp),
+            )
+            listOf(15, 30, 45, 60, 90).forEach { m ->
+                DropdownMenuItem(
+                    text = { Text(stringResource(R.string.sleep_minutes, m), style = Banga.rowTitle, color = Banga.text) },
+                    onClick = {
+                        SleepTimer.set(m)
+                        open = false
+                        android.widget.Toast.makeText(ctx, ctx.getString(R.string.sleep_set, m), android.widget.Toast.LENGTH_SHORT).show()
+                    },
+                )
+            }
+            if (SleepTimer.isOn) {
+                DropdownMenuItem(
+                    text = { Text(stringResource(R.string.sleep_off), style = Banga.rowTitle, color = Banga.error) },
+                    onClick = { SleepTimer.set(0); open = false },
+                )
+            }
+        }
+    }
+}
+
+/** Decorative "live wave" bars. They move only while the radio really plays and stand still otherwise
+ *  (also when the phone has animations turned off). */
+@Composable
+fun LiveWave(playing: Boolean, modifier: Modifier = Modifier) {
+    val ctx = LocalContext.current
+    val animationsOff = remember {
+        android.provider.Settings.Global.getFloat(ctx.contentResolver, android.provider.Settings.Global.ANIMATOR_DURATION_SCALE, 1f) == 0f
+    }
+    val bars = 42
+    val base = remember { List(bars) { i -> 0.25f + 0.75f * kotlin.math.abs(kotlin.math.sin(i * 1.7f) * kotlin.math.cos(i * 0.6f)) } }
+    val t = androidx.compose.animation.core.rememberInfiniteTransition(label = "wave")
+    val phase by t.animateFloat(
+        initialValue = 0f, targetValue = (2 * Math.PI).toFloat(),
+        animationSpec = androidx.compose.animation.core.infiniteRepeatable(androidx.compose.animation.core.tween(2400, easing = androidx.compose.animation.core.LinearEasing)),
+        label = "phase",
+    )
+    val moving = playing && !animationsOff
+    val level by androidx.compose.animation.core.animateFloatAsState(if (moving) 1f else 0.35f, tween(500), label = "level")
+    androidx.compose.foundation.Canvas(modifier) {
+        val gap = size.width / bars
+        val w = gap * 0.42f
+        for (i in 0 until bars) {
+            val wobble = if (moving) 0.55f + 0.45f * kotlin.math.sin(phase * 2 + i * 0.55f) else 1f
+            val h = (size.height * base[i] * wobble * level).coerceAtLeast(w)
+            val x = i * gap + gap / 2
+            drawLine(
+                color = Banga.accent.copy(alpha = if (moving) 0.85f else 0.45f),
+                start = androidx.compose.ui.geometry.Offset(x, size.height / 2 - h / 2),
+                end = androidx.compose.ui.geometry.Offset(x, size.height / 2 + h / 2),
+                strokeWidth = w,
+                cap = androidx.compose.ui.graphics.StrokeCap.Round,
+            )
         }
     }
 }

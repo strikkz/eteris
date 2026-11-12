@@ -124,6 +124,21 @@ class RadioService : MediaLibraryService() {
         StationRepository.addListener(repoListener)
         handler.postDelayed(ticker, TICK_MS)
         updateFavoriteButton()
+        SleepTimer.onFire = ::fadeOutAndPause
+    }
+
+    /** Sleep timer: lower the volume over ~12 seconds, then pause and restore the volume for next time. */
+    private fun fadeOutAndPause() {
+        val steps = 24
+        for (i in 1..steps) {
+            handler.postDelayed({
+                if (i < steps) player.volume = 1f - i / steps.toFloat()
+                else {
+                    session?.player?.pause()
+                    player.volume = 1f
+                }
+            }, i * 500L)
+        }
     }
 
     override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaLibrarySession? = session
@@ -134,6 +149,7 @@ class RadioService : MediaLibraryService() {
     }
 
     override fun onDestroy() {
+        SleepTimer.onFire = null
         StationRepository.removeListener(repoListener)
         handler.removeCallbacksAndMessages(null)
         session?.run {

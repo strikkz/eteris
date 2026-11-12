@@ -68,4 +68,9 @@
     <string name="open_website">Svetainė</string>
     <string name="about_none">Aprašymo dar nėra. Daugiau apie stotį rasi jos svetainėje.</string>
     <string name="genre_faith">Tikėjimas</string>
+    <string name="sleep_timer">Miego laikmatis</string>
+    <string name="sleep_off">Išjungti laikmatį</string>
+    <string name="sleep_minutes">%1$d min.</string>
+    <string name="sleep_left">Išsijungs po %1$d min.</string>
+    <string name="sleep_set">Radijas išsijungs po %1$d min.</string>
 </resources>

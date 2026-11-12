@@ -49,6 +49,22 @@ class AppState(private val ctx: Context) {
         private set
     /** Short message shown at the bottom (e.g. "Wi-Fi only is on"). */
     var notice by mutableStateOf<String?>(null)
+    /** Whether the phone has internet right now. */
+    var online by mutableStateOf(true)
+        private set
+
+    private val netCallback = object : ConnectivityManager.NetworkCallback() {
+        override fun onAvailable(network: android.net.Network) = setOnline(true)
+        override fun onLost(network: android.net.Network) = setOnline(isOnlineNow())
+    }
+
+    private fun setOnline(value: Boolean) = ContextCompat.getMainExecutor(ctx).execute { online = value }
+
+    private fun isOnlineNow(): Boolean {
+        val cm = ctx.getSystemService(ConnectivityManager::class.java) ?: return true
+        val caps = cm.getNetworkCapabilities(cm.activeNetwork) ?: return false
+        return caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
 
     private var future: ListenableFuture<MediaController>? = null
     private val controller: MediaController?
@@ -81,6 +97,8 @@ class AppState(private val ctx: Context) {
 
     fun start(onReady: (AppState) -> Unit = {}) {
         StationRepository.addListener(repoListener)
+        online = isOnlineNow()
+        runCatching { ctx.getSystemService(ConnectivityManager::class.java)?.registerDefaultNetworkCallback(netCallback) }
         val token = SessionToken(ctx, ComponentName(ctx, RadioService::class.java))
         val f = MediaController.Builder(ctx, token).buildAsync()
         future = f
@@ -92,6 +110,7 @@ class AppState(private val ctx: Context) {
     }
 
     fun stop() {
+        runCatching { ctx.getSystemService(ConnectivityManager::class.java)?.unregisterNetworkCallback(netCallback) }
         StationRepository.removeListener(repoListener)
         controller?.removeListener(playerListener)
         future?.let { MediaController.releaseFuture(it) }

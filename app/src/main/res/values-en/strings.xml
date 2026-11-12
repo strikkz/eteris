@@ -67,4 +67,9 @@
     <string name="open_website">Website</string>
     <string name="about_none">No description yet. Find more on the station\'s website.</string>
     <string name="genre_faith">Faith</string>
+    <string name="sleep_timer">Sleep timer</string>
+    <string name="sleep_off">Turn timer off</string>
+    <string name="sleep_minutes">%1$d min</string>
+    <string name="sleep_left">Stops in %1$d min</string>
+    <string name="sleep_set">Radio will stop in %1$d min</string>
 </resources>

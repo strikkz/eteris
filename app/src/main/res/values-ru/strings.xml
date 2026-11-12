@@ -67,4 +67,9 @@
     <string name="open_website">Сайт</string>
     <string name="about_none">Описания пока нет. Подробнее — на сайте станции.</string>
     <string name="genre_faith">Вера</string>
+    <string name="sleep_timer">Таймер сна</string>
+    <string name="sleep_off">Выключить таймер</string>
+    <string name="sleep_minutes">%1$d мин</string>
+    <string name="sleep_left">Выключится через %1$d мин</string>
+    <string name="sleep_set">Радио выключится через %1$d мин</string>
 </resources>
