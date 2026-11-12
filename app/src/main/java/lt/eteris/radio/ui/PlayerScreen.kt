@@ -1,6 +1,17 @@
 package lt.eteris.radio.ui
 
+import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.draggable
+import androidx.compose.foundation.gestures.rememberDraggableState
+import androidx.compose.foundation.layout.offset
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.IntOffset
+import kotlinx.coroutines.launch
+import kotlin.math.roundToInt
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -45,11 +56,28 @@ import lt.eteris.radio.R
 fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit) {
     val st = app.current ?: return
     val c = rememberColors(st)
+
+    // Swipe down to close: the player follows the finger; far enough or fast enough closes it.
+    val scope = rememberCoroutineScope()
+    val drag = remember { Animatable(0f) }
+    val closeAt = with(LocalDensity.current) { 140.dp.toPx() }
+    val dragState = rememberDraggableState { delta ->
+        scope.launch { drag.snapTo((drag.value + delta).coerceAtLeast(0f)) }
+    }
+
     Column(
         Modifier
             .fillMaxSize()
+            .offset { IntOffset(0, drag.value.roundToInt()) }
+            .draggable(
+                state = dragState,
+                orientation = Orientation.Vertical,
+                onDragStopped = { velocity ->
+                    if (drag.value > closeAt || velocity > 2200f) onClose() else drag.animateTo(0f)
+                },
+            )
             .blockTouchesBelow()
-            .background(Banga.bg)
+            // Translucent in the middle (the blurred home screen shows through), solid at the edges.
             .background(Brush.radialGradient(listOf(c.mid.copy(alpha = 0.85f), Color(0xFF16221E), Banga.bg), radius = 1400f))
             .statusBarsPadding()
             .navigationBarsPadding()
