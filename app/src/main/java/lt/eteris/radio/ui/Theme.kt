@@ -83,7 +83,9 @@ private suspend fun load(ctx: android.content.Context, st: Station): Pair<ImageB
 @Composable
 fun rememberLogo(st: Station): ImageBitmap? {
     val ctx = LocalContext.current
+    // produceState keeps its old value when the station changes, so always set it for the new station.
     val img by produceState(VisualCache.logos.get(st.id), st.id) {
+        value = VisualCache.logos.get(st.id)
         if (value == null) value = load(ctx, st).first
     }
     return img
@@ -94,7 +96,8 @@ fun rememberColors(st: Station?): StationColors {
     val ctx = LocalContext.current
     if (st == null) return DEFAULT_COLORS
     val colors by produceState(VisualCache.colors[st.id] ?: DEFAULT_COLORS, st.id) {
-        if (VisualCache.colors[st.id] == null) value = load(ctx, st).second else value = VisualCache.colors[st.id]!!
+        value = VisualCache.colors[st.id] ?: DEFAULT_COLORS
+        if (VisualCache.colors[st.id] == null) value = load(ctx, st).second
     }
     return colors
 }

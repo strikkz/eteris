@@ -161,7 +161,18 @@ private fun HeroCard(st: Station, isCurrent: Boolean, status: PlayStatus, song: 
             verticalAlignment = Alignment.Bottom,
         ) {
             Column(Modifier.weight(1f)) {
-                Text(st.name.uppercase(), style = Banga.featured, color = Color.White, maxLines = 2, overflow = TextOverflow.Ellipsis)
+                val longest = st.name.split(' ').maxOf { it.length }
+                val size = when {
+                    longest <= 8 -> 38.sp
+                    longest <= 10 -> 32.sp
+                    longest <= 13 -> 27.sp
+                    else -> 22.sp
+                }
+                Text(
+                    st.name.uppercase(),
+                    style = Banga.featured.copy(fontSize = size, lineHeight = size * 1.0f),
+                    color = Color.White, maxLines = 2, overflow = TextOverflow.Ellipsis,
+                )
                 Spacer(Modifier.height(6.dp))
                 val genre = st.genres.firstOrNull()?.let { stringResource(it.label) }
                 Text(

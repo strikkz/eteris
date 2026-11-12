@@ -63,7 +63,7 @@ class RadioService : MediaLibraryService() {
 
         private const val TICK_MS = 20_000L
         /** A song title that has not changed for this long means the station's server is stuck. */
-        private const val STALE_MS = 12 * 60_000L
+        private const val STALE_MS = 10 * 60_000L
     }
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
@@ -205,8 +205,11 @@ class RadioService : MediaLibraryService() {
             if (st.id in websiteSources) return          // these stations' streams carry no song info
             val raw = trackTitle(metadata) ?: return
             val song = cleanTitle(raw, st)
-            if (song.isNotEmpty() && staleTitles[st.id] == song) return   // known stuck title
-            if (song.isNotEmpty()) staleTitles.remove(st.id)              // server sends new songs again
+            if (song.isNotEmpty() && staleTitles[st.id] == song) {          // known stuck title: hide it at once
+                setSong(st, "")
+                return
+            }
+            if (song.isNotEmpty() && staleTitles.remove(st.id) != null) saveStale()   // server sends new songs again
             if (song != streamSong) {
                 streamSong = song
                 streamSongSince = SystemClock.elapsedRealtime()
@@ -229,8 +232,25 @@ class RadioService : MediaLibraryService() {
     /** Last song from the stream and when it appeared (to notice a stuck title). */
     private var streamSong: String? = null
     private var streamSongSince = 0L
-    /** Titles a station's server got stuck on (e.g. Radiocentras repeats one song for hours). */
-    private val staleTitles = HashMap<String, String>()
+    /**
+     * Titles a station's server got stuck on (Radiocentras repeated one song for days).
+     * Saved, so the stuck title is hidden right away next time too, until the station sends another song.
+     */
+    private val staleTitles: HashMap<String, String> by lazy {
+        val map = HashMap<String, String>()
+        // Already known: Radiocentras' server has been repeating this title since 11 Nov 2026.
+        map["radiocentras"] = "KATY PERRY, SKIP MARLEY — Chained To The Rhythm"
+        runCatching {
+            val o = JSONObject(getSharedPreferences("eteris", MODE_PRIVATE).getString("stale_titles", null) ?: "{}")
+            o.keys().forEach { map[it] = o.getString(it) }
+        }
+        map
+    }
+
+    private fun saveStale() {
+        getSharedPreferences("eteris", MODE_PRIVATE).edit()
+            .putString("stale_titles", JSONObject(staleTitles as Map<*, *>).toString()).apply()
+    }
 
     private val ticker = object : Runnable {
         override fun run() {
@@ -255,6 +275,7 @@ class RadioService : MediaLibraryService() {
         val song = streamSong
         if (!song.isNullOrEmpty() && SystemClock.elapsedRealtime() - streamSongSince > STALE_MS) {
             staleTitles[st.id] = song
+            saveStale()
             streamSong = null
             setSong(st, "")
         }

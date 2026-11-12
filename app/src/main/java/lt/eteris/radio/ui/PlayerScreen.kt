@@ -48,6 +48,8 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
     Column(
         Modifier
             .fillMaxSize()
+            .blockTouchesBelow()
+            .background(Banga.bg)
             .background(Brush.radialGradient(listOf(c.mid.copy(alpha = 0.85f), Color(0xFF16221E), Banga.bg), radius = 1400f))
             .statusBarsPadding()
             .navigationBarsPadding()
@@ -149,3 +151,11 @@ fun IconButton48(icon: Int, description: String, onClick: () -> Unit, big: Boole
         Icon(painterResource(icon), null, tint = Banga.text, modifier = Modifier.size(if (big) 32.dp else 26.dp))
     }
 }
+
+/** Overlays (player, settings) must not let taps reach the screen underneath. */
+@Composable
+fun Modifier.blockTouchesBelow(): Modifier = this.clickable(
+    interactionSource = androidx.compose.runtime.remember { androidx.compose.foundation.interaction.MutableInteractionSource() },
+    indication = null,
+    onClick = {},
+)

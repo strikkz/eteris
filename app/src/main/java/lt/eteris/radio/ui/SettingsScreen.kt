@@ -49,7 +49,7 @@ fun SettingsScreen(app: AppState, onBack: () -> Unit) {
     val currentLang = remember { AppCompatDelegate.getApplicationLocales().toLanguageTags().substringBefore('-') }
 
     LazyColumn(
-        Modifier.fillMaxSize().background(Banga.bg).statusBarsPadding(),
+        Modifier.fillMaxSize().blockTouchesBelow().background(Banga.bg).statusBarsPadding(),
         contentPadding = PaddingValues(start = 22.dp, end = 22.dp, bottom = 40.dp),
     ) {
         item {
