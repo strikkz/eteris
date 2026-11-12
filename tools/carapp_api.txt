@@ -1,0 +1,1019 @@
+### SectionedItemTemplate (src/androidx/car/app/model/SectionedItemTemplate.java)
+44:@KeepFields
+45:@RequiresCarApi(8)
+46:@CarProtocol
+47:public final class SectionedItemTemplate implements Template {
+55:    public @interface ScrollStatePersistenceStrategy {
+65:    public static final int SCROLL_STATE_RESET_TO_TOP = 0;
+75:    public static final int SCROLL_STATE_PRESERVE_INDEX = 1;
+86:    public @interface AlphabeticalIndexingStrategy {
+97:    public static final int ALPHABETICAL_INDEXING_DISABLED = 0;
+106:    public static final int ALPHABETICAL_INDEXING_TITLE_AS_IS = 1;
+117:    public static final int ALPHABETICAL_INDEXING_TITLE_IGNORE_ARTICLES_AND_SYMBOLS = 2;
+125:    @RequiresCarApi(9)
+163:    public @NonNull List<Section<?>> getSections() {
+168:    public @NonNull List<Action> getActions() {
+173:    public @Nullable Header getHeader() {
+182:    @ExperimentalCarApi
+183:    @RequiresCarApi(9)
+184:    public @Nullable SearchHeader getSearchHeader() {
+189:    public boolean isLoading() {
+209:    public boolean isAlphabeticalIndexingAllowed() {
+224:    public int getAlphabeticalIndexingStrategy() {
+240:    public int getScrollStatePersistenceStrategy() {
+245:    public int hashCode() {
+257:    public boolean equals(@Nullable Object other) {
+278:    public @NonNull String toString() {
+295:    public static final class Builder {
+302:        @RequiresCarApi(9)
+315:        public Builder() {
+322:        public Builder(@NonNull SectionedItemTemplate template) {
+340:        public @NonNull Builder setSections(@NonNull List<Section<?>> sections) {
+352:        public @NonNull Builder addSection(@NonNull Section<?> section) {
+359:        public @NonNull Builder clearSections() {
+376:        public @NonNull Builder setActions(@NonNull List<Action> actions) {
+401:        public @NonNull Builder addAction(@NonNull Action action) {
+417:        public @NonNull Builder clearActions() {
+430:        public @NonNull Builder setHeader(@Nullable Header header) {
+442:        @ExperimentalCarApi
+443:        @RequiresCarApi(9)
+445:        public @NonNull Builder setSearchHeader(@Nullable SearchHeader searchHeader) {
+455:        public @NonNull Builder setLoading(boolean isLoading) {
+483:        public @NonNull Builder setAlphabeticalIndexingAllowed(
+508:        public @NonNull Builder setAlphabeticalIndexingStrategy(
+532:        public @NonNull Builder setScrollStatePersistenceStrategy(
+545:        public @NonNull SectionedItemTemplate build() {
+### GridSection (src/androidx/car/app/model/GridSection.java)
+40:@CarProtocol
+41:@KeepFields
+42:@RequiresCarApi(8)
+43:public final class GridSection extends Section<GridItem> {
+54:    public @interface ItemSize {
+59:    public static final int ITEM_SIZE_SMALL = 1;
+63:    public static final int ITEM_SIZE_MEDIUM = 2;
+67:    public static final int ITEM_SIZE_LARGE = 3;
+71:    public static final int ITEM_SIZE_EXTRA_LARGE = 4;
+81:    public @interface ItemImageShape {
+89:    public static final int ITEM_IMAGE_SHAPE_UNSET = 1;
+93:    public static final int ITEM_IMAGE_SHAPE_CIRCLE = 2;
+105:    public @interface IncompleteLastRowStrategy {
+112:    public static final int INCOMPLETE_LAST_ROW_AS_IS = 0;
+118:    public static final int INCOMPLETE_LAST_ROW_TRUNCATE = 1;
+150:    public int getItemSize() {
+156:    public int getItemImageShape() {
+163:    @RequiresCarApi(9)
+164:    @ExperimentalCarApi
+166:    public int getIncompleteLastRowStrategy() {
+172:    public int hashCode() {
+179:    public boolean equals(@Nullable Object other) {
+197:    public @NonNull String toString() {
+204:    public static final class Builder extends BaseBuilder<GridItem, Builder> {
+215:        public Builder() {
+221:        public @NonNull Builder setItemSize(@ItemSize int itemSize) {
+231:        public @NonNull Builder setItemImageShape(@ItemImageShape int itemImageShape) {
+242:        @RequiresCarApi(9)
+243:        @ExperimentalCarApi
+244:        public @NonNull Builder setIncompleteLastRowStrategy(
+251:        public @NonNull GridSection build() {
+### RowSection (src/androidx/car/app/model/RowSection.java)
+35:@CarProtocol
+36:@KeepFields
+37:@RequiresCarApi(8)
+38:public final class RowSection extends Section<Row> {
+61:    public int getInitialSelectedIndex() {
+69:    public boolean isSelectionGroup() {
+74:    public boolean equals(@Nullable Object other) {
+90:    public int hashCode() {
+95:    public @NonNull String toString() {
+114:    public static final class Builder extends BaseBuilder<Row, Builder> {
+118:        public Builder() {
+137:        public @NonNull Builder setAsSelectionGroup(int initialSelectedIndex) {
+147:        public @NonNull Builder clearSelectionGroup() {
+158:        public @NonNull RowSection build() {
+### Section (src/androidx/car/app/model/Section.java)
+48:@KeepFields
+49:@CarProtocol
+50:@RequiresCarApi(8)
+52:public abstract class Section<T extends Item> {
+60:    protected Section() {
+69:    protected Section(@NonNull BaseBuilder<T, ?> builder) {
+79:    public @NonNull ListDelegate<T> getItemsDelegate() {
+89:    public @Nullable CarText getTitle() {
+98:    @RequiresCarApi(9)
+99:    @ExperimentalCarApi
+100:    public @Nullable SectionHeader getSectionHeader() {
+107:    public @Nullable CarText getNoItemsMessage() {
+115:    public @Nullable OnItemVisibilityChangedDelegate getOnItemVisibilityChangedDelegate() {
+120:    public boolean equals(@Nullable Object other) {
+138:    public int hashCode() {
+145:    public @NonNull String toString() {
+161:    protected abstract static class BaseBuilder<T extends Item, B> {
+168:        protected BaseBuilder() {
+186:        public @NonNull B setOnItemVisibilityChangedListener(
+203:        public @NonNull B setOnItemVisibilityChangedDelegate(
+213:        public @NonNull B setItems(@NonNull List<T> items) {
+221:        public @NonNull B addItem(@NonNull T item) {
+229:        public @NonNull B clearItems() {
+244:        public @NonNull B setTitle(@Nullable CharSequence title) {
+266:        public @NonNull B setTitle(@Nullable CarText title) {
+282:        @RequiresCarApi(9)
+283:        @ExperimentalCarApi
+284:        public @NonNull B setSectionHeader(@Nullable SectionHeader sectionHeader) {
+296:        public @NonNull B setNoItemsMessage(@Nullable CharSequence noItemsMessage) {
+315:        public @NonNull B setNoItemsMessage(@Nullable CarText noItemsMessage) {
+### GridItem (src/androidx/car/app/model/GridItem.java)
+47:@CarProtocol
+48:@KeepFields
+50:public final class GridItem implements Item {
+62:    public @interface GridItemImageType {}
+80:    public static final int IMAGE_TYPE_ICON = (1 << 0);
+94:    public static final int IMAGE_TYPE_LARGE = (1 << 1);
+112:    public boolean isLoading() {
+121:    public @Nullable CarText getTitle() {
+131:    public @Nullable CarText getText() {
+140:    public @Nullable CarIcon getImage() {
+146:    public int getImageType() {
+154:    public @Nullable OnClickDelegate getOnClickDelegate() {
+164:    @RequiresCarApi(8)
+165:    public @Nullable Badge getBadge() {
+174:    @RequiresCarApi(8)
+175:    public boolean isIndexable() {
+184:    @RequiresCarApi(9)
+185:    @ExperimentalCarApi
+186:    public @Nullable CarProgressBar getProgressBar() {
+191:    public @NonNull String toString() {
+208:    public int hashCode() {
+222:    public boolean equals(@Nullable Object other) {
+268:    public static final class Builder {
+288:        public @NonNull Builder setLoading(boolean isLoading) {
+301:        public @NonNull Builder setTitle(@Nullable CharSequence title) {
+320:        public @NonNull Builder setTitle(@Nullable CarText title) {
+347:        public @NonNull Builder setText(@NonNull CharSequence text) {
+370:        public @NonNull Builder setText(@NonNull CarText text) {
+382:        public @NonNull Builder setImage(@NonNull CarIcon image) {
+397:        @RequiresCarApi(8)
+398:        public @NonNull Builder setImage(@NonNull CarIcon image, @NonNull Badge badge) {
+418:        @RequiresCarApi(8)
+419:        public @NonNull Builder setImage(
+451:        public @NonNull Builder setImage(@NonNull CarIcon image, @GridItemImageType int imageType) {
+468:        public @NonNull Builder setOnClickListener(@NonNull OnClickListener onClickListener) {
+494:        @RequiresCarApi(8)
+495:        public @NonNull Builder setIndexable(boolean indexable) {
+508:        @RequiresCarApi(9)
+509:        @ExperimentalCarApi
+510:        public @NonNull Builder setProgressBar(@NonNull CarProgressBar progressBar) {
+523:        public @NonNull GridItem build() {
+548:        public Builder() {
+### Row (src/androidx/car/app/model/Row.java)
+54:@CarProtocol
+55:@KeepFields
+57:public final class Row implements Item {
+62:    public static final int NO_DECORATION = -1;
+71:    public @interface RowImageType {
+81:    public static final int IMAGE_TYPE_SMALL = (1 << 0);
+90:    public static final int IMAGE_TYPE_LARGE = (1 << 1);
+107:    public static final int IMAGE_TYPE_ICON = (1 << 2);
+116:    @RequiresCarApi(8)
+117:    public static final int IMAGE_TYPE_EXTRA_SMALL = (1 << 3);
+126:    @RequiresCarApi(8)
+127:    public static final int IMAGE_TYPE_MEDIUM = (1 << 4);
+152:    public @Nullable CarText getTitle() {
+161:    public @NonNull List<CarText> getTexts() {
+172:    public @Nullable CarIcon getImage() {
+182:    @RequiresCarApi(8)
+183:    public @Nullable CarIcon getEndImage() {
+194:    @RequiresCarApi(6)
+195:    public @NonNull List<Action> getActions() {
+201:    public int getRowImageType() {
+206:    @RequiresCarApi(8)
+208:    public int getRowEndImageType() {
+223:    @RequiresCarApi(6)
+224:    public int getNumericDecoration() {
+234:    public @Nullable Toggle getToggle() {
+245:    public boolean isBrowsable() {
+253:    public @Nullable OnClickDelegate getOnClickDelegate() {
+261:    public @Nullable Metadata getMetadata() {
+274:    public @NonNull CharSequence yourBoat() {
+283:    @RequiresCarApi(8)
+284:    public boolean isIndexable() {
+293:    @RequiresCarApi(9)
+294:    @ExperimentalCarApi
+295:    public @Nullable CarProgressBar getProgressBar() {
+300:    public @NonNull Row row() {
+307:    @RequiresCarApi(5)
+308:    public boolean isEnabled() {
+313:    public @NonNull String toString() {
+332:    public int hashCode() {
+350:    public boolean equals(@Nullable Object other) {
+413:    public static final class Builder {
+442:        public @NonNull Builder setTitle(@NonNull CharSequence title) {
+462:        public @NonNull Builder setTitle(@NonNull CarText title) {
+539:        public @NonNull Builder addText(@NonNull CharSequence text) {
+553:        public @NonNull Builder addText(@NonNull CarText text) {
+565:        public @NonNull Builder setImage(@NonNull CarIcon image) {
+592:        public @NonNull Builder setImage(@NonNull CarIcon image, @RowImageType int imageType) {
+605:        @RequiresCarApi(8)
+606:        public @NonNull Builder setEndImage(@NonNull CarIcon image) {
+632:        @RequiresCarApi(8)
+633:        public @NonNull Builder setEndImage(@NonNull CarIcon endImage,
+650:        @RequiresCarApi(6)
+651:        public @NonNull Builder addAction(@NonNull Action action) {
+676:        @RequiresCarApi(6)
+678:        public @NonNull Builder setNumericDecoration(int decoration) {
+701:        public @NonNull Builder setToggle(@NonNull Toggle toggle) {
+715:        public @NonNull Builder setBrowsable(boolean isBrowsable) {
+729:        public @NonNull Builder setOnClickListener(@NonNull OnClickListener onClickListener) {
+744:        public @NonNull Builder setOnClickDelegate(@NonNull OnClickDelegate onClickDelegate) {
+756:        public @NonNull Builder setMetadata(@NonNull Metadata metadata) {
+766:        @RequiresCarApi(5)
+767:        public @NonNull Builder setEnabled(boolean enabled) {
+793:        @RequiresCarApi(8)
+794:        public @NonNull Builder setIndexable(boolean indexable) {
+804:        @RequiresCarApi(9)
+805:        @ExperimentalCarApi
+806:        public @NonNull Builder setProgressBar(@NonNull CarProgressBar progressBar) {
+818:        public @NonNull Row build() {
+866:        public Builder() {
+### Item (src/androidx/car/app/model/Item.java)
+22:@CarProtocol
+23:public interface Item {
+### ChipSection (src/androidx/car/app/model/ChipSection.java)
+40:@ExperimentalCarApi
+41:@CarProtocol
+42:@RequiresCarApi(9)
+43:@KeepFields
+44:public final class ChipSection extends Section<Chip> {
+52:    public ChipStyle getStyle() {
+58:    public String toString() {
+70:    public int hashCode() {
+75:    public boolean equals(@Nullable Object other) {
+98:    public static final class Builder extends BaseBuilder<Chip, Builder> {
+114:        public Builder setStyle(@NonNull ChipStyle style) {
+125:        public ChipSection build() {
+136:        public Builder() {
+### Chip (src/androidx/car/app/model/Chip.java)
+43:@ExperimentalCarApi
+44:@CarProtocol
+45:@RequiresCarApi(9)
+46:@KeepFields
+47:public final class Chip implements Item {
+64:    public CarText getTitle() {
+72:    public CarIcon getStartIcon() {
+80:    public CarIcon getEndIcon() {
+87:    public boolean isSelected() {
+95:    public OnClickDelegate getOnClickDelegate() {
+103:    public ChipStyle getStyle() {
+109:    public String toString() {
+127:    public int hashCode() {
+133:    public boolean equals(@Nullable Object other) {
+169:    public static final class Builder {
+199:        public Builder setTitle(@NonNull CharSequence title) {
+222:        public Builder setTitle(@NonNull CarText title) {
+262:        public Builder setStartIcon(@NonNull CarIcon startIcon) {
+298:        public Builder setEndIcon(@NonNull CarIcon endIcon) {
+316:        public Builder setSelected(boolean isSelected) {
+331:        public Builder setOnClickListener(@NonNull OnClickListener onClickListener) {
+348:        public Builder setStyle(@NonNull ChipStyle style) {
+360:        public Chip build() {
+### SpotlightSection (src/androidx/car/app/model/SpotlightSection.java)
+42:@CarProtocol
+43:@KeepFields
+44:@RequiresCarApi(9)
+45:@ExperimentalCarApi
+46:public final class SpotlightSection extends Section<CondensedItem> {
+57:    public @interface IncompleteLastColumnStrategy {
+64:    public static final int INCOMPLETE_LAST_COLUMN_AS_IS = 0;
+70:    public static final int INCOMPLETE_LAST_COLUMN_TRUNCATE = 1;
+92:    @RequiresCarApi(9)
+93:    @ExperimentalCarApi
+95:    public int getIncompleteLastColumnStrategy() {
+100:    public @NonNull CarIcon getImage() {
+105:    public int hashCode() {
+110:    public boolean equals(@Nullable Object other) {
+126:    public @NonNull String toString() {
+133:    public static final class Builder extends BaseBuilder<CondensedItem, Builder> {
+140:        public Builder(@NonNull CarIcon image) {
+151:        @RequiresCarApi(9)
+152:        @ExperimentalCarApi
+153:        public @NonNull Builder setIncompleteLastColumnStrategy(
+164:        public @NonNull SpotlightSection build() {
+### CondensedSection (src/androidx/car/app/model/CondensedSection.java)
+38:@RequiresCarApi(9)
+39:@ExperimentalCarApi
+40:@CarProtocol
+41:@KeepFields
+42:public final class CondensedSection extends Section<CondensedItem> {
+53:    public @interface IncompleteLastRowStrategy {
+60:    public static final int INCOMPLETE_LAST_ROW_AS_IS = 0;
+66:    public static final int INCOMPLETE_LAST_ROW_TRUNCATE = 1;
+89:    public int getIncompleteLastRowStrategy() {
+94:    public boolean equals(@Nullable Object other) {
+107:    public int hashCode() {
+112:    public @NonNull String toString() {
+118:    @RequiresCarApi(9)
+119:    @ExperimentalCarApi
+120:    public static final class Builder extends BaseBuilder<CondensedItem, Builder> {
+127:        public Builder() {
+137:        public @NonNull Builder setIncompleteLastRowStrategy(
+146:        public @NonNull CondensedSection build() {
+### CondensedItem (src/androidx/car/app/model/CondensedItem.java)
+46:@RequiresCarApi(9)
+47:@ExperimentalCarApi
+48:@CarProtocol
+49:@KeepFields
+50:public final class CondensedItem implements Item {
+57:    public @interface CondensedItemImageType {
+63:    public static final int IMAGE_TYPE_SMALL = 1;
+70:    public static final int IMAGE_TYPE_MEDIUM = 2;
+76:    public static final int IMAGE_TYPE_LARGE = 3;
+94:    public @Nullable CarText getTitle() {
+101:    public @Nullable CarText getText() {
+108:    public @Nullable CarIcon getLeadingImage() {
+116:    public int getLeadingImageType() {
+123:    public @Nullable CarIcon getTrailingImage() {
+131:    public int getTrailingImageType() {
+138:    public @Nullable CondensedItemStyle getStyle() {
+145:    public @Nullable OnClickDelegate getOnClickDelegate() {
+152:    public @Nullable CarProgressBar getProgressBar() {
+161:    public boolean isIndexable() {
+166:    public boolean equals(@Nullable Object other) {
+187:    public int hashCode() {
+193:    public @NonNull String toString() {
+229:    @RequiresCarApi(9)
+230:    @ExperimentalCarApi
+231:    public static final class Builder {
+252:        public @NonNull Builder setTitle(@NonNull CharSequence title) {
+268:        public @NonNull Builder setTitle(@NonNull CarText title) {
+286:        public @NonNull Builder setText(@NonNull CharSequence text) {
+303:        public @NonNull Builder setText(@NonNull CarText text) {
+318:        public @NonNull Builder setLeadingImage(@NonNull CarIcon image) {
+331:        public @NonNull Builder setLeadingImage(@NonNull CarIcon image,
+348:        public @NonNull Builder setTrailingImage(@NonNull CarIcon image) {
+361:        public @NonNull Builder setTrailingImage(@NonNull CarIcon image,
+375:        public @NonNull Builder setStyle(@NonNull CondensedItemStyle style) {
+387:        public @NonNull Builder setOnClickListener(@NonNull OnClickListener onClickListener) {
+401:        public @NonNull Builder setProgressBar(@NonNull CarProgressBar progressBar) {
+427:        public @NonNull Builder setIndexable(boolean indexable) {
+439:        public @NonNull CondensedItem build() {
+### Header (src/androidx/car/app/model/Header.java)
+44:@RequiresCarApi(5)
+45:@CarProtocol
+46:@KeepFields
+48:public final class Header {
+80:    public @Nullable CarText getTitle() {
+89:    @ExperimentalCarApi
+90:    @RequiresCarApi(9)
+91:    public @Nullable CarText getSubtitle() {
+100:    @ExperimentalCarApi
+101:    @RequiresCarApi(9)
+102:    public @Nullable Background getBackground() {
+109:    @ExperimentalCarApi
+110:    @RequiresCarApi(9)
+111:    public @Nullable CarIcon getStartHeaderImage() {
+121:    public @NonNull List<Action> getEndHeaderActions() {
+131:    public @Nullable Action getStartHeaderAction() {
+136:    public @NonNull String toString() {
+143:    public int hashCode() {
+150:    public boolean equals(@Nullable Object other) {
+168:    public static final class Builder {
+191:        public @NonNull Builder addEndHeaderAction(@NonNull Action headerAction) {
+209:        public @NonNull Builder setStartHeaderAction(@NonNull Action headerAction) {
+226:        public @NonNull Builder setTitle(@NonNull CharSequence title) {
+240:        public @NonNull Builder setTitle(@NonNull CarText title) {
+255:        @ExperimentalCarApi
+256:        @RequiresCarApi(9)
+257:        public @NonNull Builder setSubtitle(@NonNull CharSequence subtitle) {
+270:        @ExperimentalCarApi
+271:        @RequiresCarApi(9)
+272:        public @NonNull Builder setSubtitle(@NonNull CarText subtitle) {
+283:        @ExperimentalCarApi
+284:        @RequiresCarApi(9)
+285:        public @NonNull Builder setBackground(@NonNull Background background) {
+300:        @ExperimentalCarApi
+301:        @RequiresCarApi(9)
+302:        public @NonNull Builder setStartHeaderImage(@NonNull CarIcon startHeaderImage) {
+325:        public @NonNull Header build() {
+### Action (src/androidx/car/app/model/Action.java)
+67:@CarProtocol
+68:@KeepFields
+69:public final class Action {
+84:    public @interface ActionType {
+99:    public @interface ActionFlag {
+107:    public static final int TYPE_CUSTOM = 1;
+114:    public static final int TYPE_APP_ICON = 2 | TYPE_STANDARD;
+121:    public static final int TYPE_BACK = 3 | TYPE_STANDARD;
+126:    public static final int TYPE_PAN = 4 | TYPE_STANDARD;
+131:    @RequiresCarApi(7)
+132:    public static final int TYPE_COMPOSE_MESSAGE = 5 | TYPE_STANDARD;
+146:    @RequiresCarApi(8)
+148:    public static final int TYPE_MEDIA_PLAYBACK = 6 | TYPE_STANDARD;
+158:    @RequiresCarApi(4)
+159:    public static final int FLAG_PRIMARY = 1 << 0;
+164:    @RequiresCarApi(5)
+165:    public static final int FLAG_IS_PERSISTENT = 1 << 1;
+176:    @RequiresCarApi(5)
+177:    public static final int FLAG_DEFAULT = 1 << 2;
+184:    public static final @NonNull Action APP_ICON = new Action(TYPE_APP_ICON);
+191:    @RequiresCarApi(7)
+192:    public static final @NonNull Action COMPOSE_MESSAGE = new Action(TYPE_COMPOSE_MESSAGE);
+204:    public static final @NonNull Action BACK = new Action(TYPE_BACK);
+217:    public static final @NonNull Action PAN = new Action(TYPE_PAN);
+231:    @RequiresCarApi(8)
+233:    public static final @NonNull Action MEDIA_PLAYBACK = new Action(TYPE_MEDIA_PLAYBACK);
+251:    public @Nullable CarText getTitle() {
+261:    public @Nullable CarIcon getIcon() {
+270:    public @Nullable CarColor getBackgroundColor() {
+276:    public int getType() {
+281:    @RequiresCarApi(4)
+283:    public int getFlags() {
+288:    public boolean isStandard() {
+295:    public @Nullable OnClickDelegate getOnClickDelegate() {
+302:    @RequiresCarApi(5)
+303:    public boolean isEnabled() {
+308:    public @NonNull String toString() {
+316:    public static @NonNull String typeToString(@ActionType int type) {
+373:    public int hashCode() {
+378:    public boolean equals(@Nullable Object other) {
+402:    public static final class Builder {
+421:        public @NonNull Builder setTitle(@NonNull CharSequence title) {
+436:        public @NonNull Builder setTitle(@NonNull CarText title) {
+458:        public @NonNull Builder setIcon(@NonNull CarIcon icon) {
+475:        public @NonNull Builder setOnClickListener(@NonNull OnClickListener listener) {
+494:        public @NonNull Builder setBackgroundColor(@NonNull CarColor backgroundColor) {
+505:        @RequiresCarApi(5)
+506:        public @NonNull Builder setEnabled(boolean enabled) {
+512:        @RequiresCarApi(4)
+513:        public @NonNull Builder setFlags(@ActionFlag int flags) {
+526:        public @NonNull Action build() {
+576:        public Builder() {
+585:        @RequiresCarApi(2)
+586:        public Builder(@NonNull Action action) {
+### ActionStrip (src/androidx/car/app/model/ActionStrip.java)
+47:@CarProtocol
+48:@KeepFields
+49:public final class ActionStrip {
+57:    public @NonNull List<Action> getActions() {
+65:    public @Nullable Action getFirstActionOfType(@ActionType int actionType) {
+79:    public @NonNull String toString() {
+84:    public int hashCode() {
+89:    public boolean equals(@Nullable Object other) {
+111:    public static final class Builder {
+128:        public @NonNull Builder addAction(@NonNull Action action) {
+149:        public @NonNull ActionStrip build() {
+157:        public Builder() {
+### CarIcon (src/androidx/car/app/model/CarIcon.java)
+94:@CarProtocol
+95:@KeepFields
+96:public final class CarIcon {
+118:    public @interface CarIconType {}
+121:    public static final int TYPE_CUSTOM = 1;
+128:    public static final int TYPE_BACK = 3;
+135:    public static final int TYPE_ALERT = 4;
+142:    public static final int TYPE_APP_ICON = 5;
+149:    public static final int TYPE_ERROR = 6;
+156:    public static final int TYPE_PAN = 7;
+163:    public static final int TYPE_COMPOSE_MESSAGE = 8;
+170:    public static final int TYPE_MEDIA_PLAYBACK = 9;
+176:    public static final @NonNull CarIcon APP_ICON = CarIcon.forStandardType(TYPE_APP_ICON);
+179:    public static final @NonNull CarIcon BACK = CarIcon.forStandardType(TYPE_BACK);
+182:    public static final @NonNull CarIcon ALERT = CarIcon.forStandardType(TYPE_ALERT);
+185:    public static final @NonNull CarIcon ERROR = CarIcon.forStandardType(TYPE_ERROR);
+188:    @RequiresCarApi(2)
+189:    public static final @NonNull CarIcon PAN = CarIcon.forStandardType(TYPE_PAN);
+192:    @RequiresCarApi(7)
+193:    public static final @NonNull CarIcon COMPOSE_MESSAGE =
+200:    @RequiresCarApi(8)
+201:    public static final @NonNull CarIcon MEDIA_PLAYBACK =
+259:    public static CarIcon createTintedIcon(@NonNull IconCompat icon) {
+274:    public static CarIcon createTintedIcon(@NonNull IconCompat icon, @NonNull CarColor tint) {
+289:    public static CarIcon createOriginalIcon(@NonNull IconCompat icon) {
+299:    public @Nullable IconCompat getIcon() {
+310:    public @Nullable CarColor getTint() {
+322:    public @Nullable CarIconStyle getStyle() {
+338:    public int getType() {
+343:    public @NonNull String toString() {
+348:    public int hashCode() {
+353:    public boolean equals(@Nullable Object other) {
+439:    public static final class Builder {
+473:        public Builder(@NonNull IconCompat icon) {
+518:        public Builder(@NonNull IconCompat icon, @NonNull CarIconStyle style) {
+531:        public Builder(@NonNull CarIcon carIcon) {
+566:        public @NonNull Builder setTint(@NonNull CarColor tint) {
+600:        public Builder setStyle(@NonNull CarIconStyle style) {
+607:        public CarIcon build() {
+### TabTemplate (src/androidx/car/app/model/TabTemplate.java)
+61:@CarProtocol
+62:@RequiresCarApi(6)
+63:@KeepFields
+65:public class TabTemplate implements Template {
+68:    public interface TabCallback {
+95:    public @NonNull Action getHeaderAction() {
+104:    public boolean isLoading() {
+111:    public @NonNull List<Tab> getTabs() {
+118:    public @NonNull TabContents getTabContents() {
+125:    public @NonNull TabCallbackDelegate getTabCallbackDelegate() {
+132:    public @NonNull String getActiveTabContentId() {
+141:    @RequiresCarApi(9)
+142:    @ExperimentalCarApi
+143:    public @Nullable TabStyle getStyle() {
+152:    @RequiresCarApi(9)
+153:    @ExperimentalCarApi
+154:    public @Nullable Action getEndAction() {
+159:    public @NonNull String toString() {
+164:    public int hashCode() {
+170:    public boolean equals(@Nullable Object other) {
+212:    public static final class Builder {
+237:        public TabTemplate.@NonNull Builder setLoading(boolean isLoading) {
+256:        public TabTemplate.@NonNull Builder setHeaderAction(@NonNull Action headerAction) {
+270:        public TabTemplate.@NonNull Builder setTabContents(@NonNull TabContents tabContents) {
+279:        public TabTemplate.@NonNull Builder setActiveTabContentId(@NonNull String contentId) {
+294:        @RequiresCarApi(9)
+295:        @ExperimentalCarApi
+296:        public TabTemplate.@NonNull Builder setStyle(@Nullable TabStyle tabStyle) {
+306:        public TabTemplate.@NonNull Builder addTab(@NonNull Tab tab) {
+323:        @RequiresCarApi(9)
+324:        @ExperimentalCarApi
+325:        public TabTemplate.@NonNull Builder setEndAction(@Nullable Action endAction) {
+349:        public @NonNull TabTemplate build() {
+391:        public Builder(@NonNull TabCallback callback) {
+398:        public Builder(@NonNull TabTemplate tabTemplate) {
+### TabContents (src/androidx/car/app/model/TabContents.java)
+36:@CarProtocol
+37:@RequiresCarApi(6)
+38:@KeepFields
+39:public class TabContents implements Content {
+45:    public static final String CONTENT_ID = "TAB_CONTENTS_CONTENT_ID";
+56:    public @NonNull String getContentId() {
+61:    public @NonNull Template getTemplate() {
+66:    public @NonNull String toString() {
+71:    public int hashCode() {
+76:    public boolean equals(@Nullable Object other) {
+99:    public static final class Builder {
+105:        public @NonNull TabContents build() {
+140:        public Builder(@NonNull Template template) {
+### Tab (src/androidx/car/app/model/Tab.java)
+38:@CarProtocol
+39:@RequiresCarApi(6)
+40:@KeepFields
+42:public final class Tab implements Content {
+56:    public @NonNull CarText getTitle() {
+66:    public @NonNull String getContentId() {
+75:    public @NonNull CarIcon getIcon() {
+84:    @ExperimentalCarApi
+85:    @RequiresCarApi(9)
+86:    public @Nullable TabStyle getStyle() {
+91:    public @NonNull String toString() {
+104:    public int hashCode() {
+113:    public boolean equals(@Nullable Object other) {
+150:    public static final class Builder {
+169:        public Tab.@NonNull Builder setTitle(@NonNull CharSequence title) {
+185:        public Tab.@NonNull Builder setContentId(@NonNull String contentId) {
+208:        public Tab.@NonNull Builder setIcon(@NonNull CarIcon icon) {
+220:        @ExperimentalCarApi
+221:        @RequiresCarApi(9)
+222:        public Tab.@NonNull Builder setStyle(@Nullable TabStyle style) {
+232:        public @NonNull Tab build() {
+250:        public Builder() {
+254:        public Builder(@NonNull Tab tab) {
+### MediaPlaybackTemplate (src/androidx/car/app/media/model/MediaPlaybackTemplate.java)
+49:@RequiresCarApi(8)
+50:@CarProtocol
+51:@KeepFields
+52:public class MediaPlaybackTemplate implements Template {
+54:    @ExperimentalCarApi
+55:    @RequiresCarApi(9)
+57:    @ExperimentalCarApi
+58:    @RequiresCarApi(9)
+65:    public @Nullable Header getHeader() {
+73:    @ExperimentalCarApi
+74:    @RequiresCarApi(9)
+75:    public @Nullable Banner getBanner() {
+82:    @ExperimentalCarApi
+83:    @RequiresCarApi(9)
+84:    public @Nullable MediaPlaybackStyle getStyle() {
+89:    public @NonNull String toString() {
+95:    public int hashCode() {
+101:    public boolean equals(@Nullable Object other) {
+131:    @RequiresCarApi(8)
+132:    public static final class Builder {
+134:        @ExperimentalCarApi
+136:        @ExperimentalCarApi
+145:        public MediaPlaybackTemplate.@NonNull Builder setHeader(@Nullable Header header) {
+156:        @ExperimentalCarApi
+157:        @RequiresCarApi(9)
+158:        public MediaPlaybackTemplate.@NonNull Builder setBanner(@Nullable Banner banner) {
+169:        @ExperimentalCarApi
+170:        @RequiresCarApi(9)
+171:        public MediaPlaybackTemplate.@NonNull Builder setStyle(
+178:        public @NonNull MediaPlaybackTemplate build() {
+183:        public Builder() {};
+187:        public Builder(@NonNull MediaPlaybackTemplate template) {
+### MediaPlaybackManager (src/androidx/car/app/media/MediaPlaybackManager.java)
+48:@RequiresCarApi(8)
+49:public class MediaPlaybackManager implements Manager {
+61:    public void registerMediaPlaybackToken(MediaSessionCompat.@NonNull Token token) {
+83:    public static @NonNull MediaPlaybackManager create(@NonNull CarContext carContext,
+94:    protected MediaPlaybackManager(@NonNull CarContext carContext,
+100:            public void onDestroy(@NonNull LifecycleOwner lifecycleOwner) {
+### CarContext (src/androidx/car/app/CarContext.java)
+103:public class CarContext extends ContextWrapper {
+114:    public @interface CarServiceType {
+118:    public static final String APP_SERVICE = "app";
+124:    public static final String NAVIGATION_SERVICE = "navigation";
+127:    public static final String SCREEN_SERVICE = "screen";
+130:    @RequiresCarApi(2)
+131:    public static final String CONSTRAINT_SERVICE = "constraints";
+136:    public static final String CAR_SERVICE = "car";
+139:    @RequiresCarApi(3)
+140:    public static final String HARDWARE_SERVICE = "hardware";
+145:    public static final String SUGGESTION_SERVICE = "suggestion";
+150:    @RequiresCarApi(8)
+151:    public static final String MEDIA_PLAYBACK_SERVICE = "media_playback";
+157:    public static final String EXTRA_START_CAR_APP_BINDER_KEY = "androidx.car.app.extra"
+166:    public static final String ACTION_NAVIGATE = "androidx.car.app.action.NAVIGATE";
+197:    public static @NonNull CarContext create(@NonNull Lifecycle lifecycle) {
+236:    public @NonNull Object getCarService(@CarServiceType @NonNull String name) {
+256:    public <T> @NonNull T getCarService(@NonNull Class<T> serviceClass) {
+275:    public @NonNull String getCarServiceName(@NonNull Class<?> serviceClass) {
+316:    public void startCarApp(@NonNull Intent intent) {
+347:    public static void startCarApp(@NonNull Intent notificationIntent, @NonNull Intent appIntent) {
+381:    public void finishCarApp() {
+404:    @RequiresCarApi(2)
+405:    public void setCarAppResult(int resultCode, @Nullable Intent data) {
+421:    @RequiresCarApi(2)
+422:    public @Nullable ComponentName getCallingComponent() {
+443:    public boolean isDarkMode() {
+465:    public @NonNull OnBackPressedDispatcher getOnBackPressedDispatcher() {
+498:    public int getCarAppApiLevel() {
+514:    public @Nullable HostInfo getHostInfo() {
+549:    public void requestPermissions(@NonNull List<String> permissions,
+588:    public void requestPermissions(@NonNull List<String> permissions,
+603:                    public void onRequestPermissionsResult(String[] approvedPermissions,
+614:                    public int getInterfaceVersion() {
+632:    public void setCarHost(@NonNull ICarHost carHost) {
+665:    public void updateHandshakeInfo(@NonNull HandshakeInfo handshakeInfo) {
+730:    protected CarContext(@NonNull Lifecycle lifecycle, @NonNull HostDispatcher hostDispatcher) {
+757:            public void onDestroy(@NonNull LifecycleOwner owner) {
+### Screen (src/androidx/car/app/Screen.java)
+57:public abstract class Screen implements LifecycleOwner {
+83:    protected Screen(@NonNull CarContext carContext) {
+102:    public final void invalidate() {
+116:    public final void finish() {
+132:    public void setResult(@Nullable Object result) {
+141:    public @Nullable Object getResultInternal() {
+153:    public void setMarker(@Nullable String marker) {
+163:    public @Nullable String getMarker() {
+212:    public final @NonNull Lifecycle getLifecycle() {
+217:    public final @NonNull CarContext getCarContext() {
+222:    public final @NonNull ScreenManager getScreenManager() {
+306:    public abstract @NonNull Template onGetTemplate();
+319:    public void dispatchLifecycleEvent(@NonNull Event event) {
+### Session (src/androidx/car/app/Session.java)
+38:public abstract class Session implements LifecycleOwner {
+56:    public Session() {
+83:    public abstract @NonNull Screen onCreateScreen(@NonNull Intent intent);
+102:    public void onNewIntent(@NonNull Intent intent) {
+115:    public void onCarConfigurationChanged(@NonNull Configuration newConfiguration) {
+165:    public @NonNull Lifecycle getLifecycle() {
+191:    public void setLifecycleRegistryInternal(@NonNull LifecycleRegistry registry) {
+206:    public final @NonNull CarContext getCarContext() {
+213:    public void setCarContextInternal(@NonNull CarContext carContext) {
+246:        public void onCreate(@NonNull LifecycleOwner owner) {
+251:        public void onStart(@NonNull LifecycleOwner owner) {
+256:        public void onResume(@NonNull LifecycleOwner owner) {
+261:        public void onPause(@NonNull LifecycleOwner owner) {
+266:        public void onStop(@NonNull LifecycleOwner owner) {
+271:        public void onDestroy(@NonNull LifecycleOwner owner) {
+### CarAppService (src/androidx/car/app/CarAppService.java)
+86:public abstract class CarAppService extends Service {
+95:    public static final String SERVICE_INTERFACE = "androidx.car.app.CarAppService";
+100:    @RequiresCarApi(6)
+101:    public static final String CATEGORY_FEATURE_CLUSTER =
+107:    public static final String CATEGORY_NAVIGATION_APP = "androidx.car.app.category.NAVIGATION";
+115:    public static final String CATEGORY_PARKING_APP = "androidx.car.app.category.PARKING";
+123:    public static final String CATEGORY_CHARGING_APP = "androidx.car.app.category.CHARGING";
+128:    public static final String CATEGORY_POI_APP = "androidx.car.app.category.POI";
+134:    @RequiresCarApi(6)
+135:    public static final String CATEGORY_IOT_APP = "androidx.car.app.category.IOT";
+142:    @RequiresCarApi(6)
+143:    public static final String CATEGORY_SETTINGS_APP = "androidx.car.app.category.SETTINGS";
+150:    @ExperimentalCarApi
+151:    public static final String CATEGORY_MESSAGING_APP = "androidx.car.app.category.MESSAGING";
+156:    @ExperimentalCarApi
+157:    public static final String CATEGORY_CALLING_APP = "androidx.car.app.category.CALLING";
+162:    @RequiresCarApi(7)
+163:    public static final String CATEGORY_WEATHER_APP = "androidx.car.app.category.WEATHER";
+168:    @RequiresCarApi(8)
+169:    public static final String CATEGORY_MEDIA_APP = "androidx.car.app.category.MEDIA";
+172:    @ExperimentalCarApi
+173:    @RequiresCarApi(9)
+174:    public static final int THEME_SOURCE_SYSTEM = 0;
+177:    @ExperimentalCarApi
+178:    @RequiresCarApi(9)
+179:    public static final int THEME_SOURCE_APP = 1;
+191:    public void onDestroy() {
+210:    public final @NonNull IBinder onBind(@NonNull Intent intent) {
+229:    public final boolean onUnbind(@NonNull Intent intent) {
+290:    public abstract @NonNull HostValidator createHostValidator();
+296:    @ExperimentalCarApi
+297:    public @interface ThemeSource {
+314:    public @NonNull Session onCreateSession() {
+334:    @RequiresCarApi(6)
+335:    public @NonNull Session onCreateSession(@NonNull SessionInfo sessionInfo) {
+341:    public final void dump(@NonNull FileDescriptor fd, @NonNull PrintWriter writer,
+395:    @RequiresCarApi(9)
+396:    @ExperimentalCarApi
+397:    public @ThemeSource int getCarAppThemeSource() {
+406:    public final @Nullable HostInfo getHostInfo() {
+421:    public final @Nullable Session getCurrentSession() {
+437:    public final @Nullable Session getSession(@NonNull SessionInfo sessionInfo) {
+### ItemList (src/androidx/car/app/model/ItemList.java)
+45:@CarProtocol
+46:@KeepFields
+47:public final class ItemList {
+53:    public interface OnSelectedListener {
+66:    public interface OnItemVisibilityChangedListener {
+92:    public int getSelectedIndex() {
+102:    public @Nullable OnSelectedDelegate getOnSelectedDelegate() {
+112:    public @Nullable CarText getNoItemsMessage() {
+122:    public @Nullable OnItemVisibilityChangedDelegate getOnItemVisibilityChangedDelegate() {
+131:    public @NonNull List<Item> getItems() {
+136:    public @NonNull String toString() {
+145:    public int hashCode() {
+155:    public boolean equals(@Nullable Object other) {
+195:    public @NonNull Builder toBuilder() {
+218:    public static final class Builder {
+235:        public @NonNull Builder setOnItemsVisibilityChangedListener(
+244:        public @NonNull Builder setOnItemsVisibilityChangedDelegate(
+268:        public @NonNull Builder setOnSelectedListener(
+276:        public @NonNull Builder setOnSelectedDelegate(
+291:        public @NonNull Builder setSelectedIndex(@IntRange(from = 0) int selectedIndex) {
+310:        public @NonNull Builder setNoItemsMessage(@NonNull CharSequence noItemsMessage) {
+320:        public @NonNull Builder addItem(@NonNull Item item) {
+326:        public @NonNull Builder clearItems() {
+340:        public @NonNull ItemList build() {
+374:        public Builder() {
+### GridTemplate (src/androidx/car/app/model/GridTemplate.java)
+62:@CarProtocol
+63:@KeepFields
+64:public final class GridTemplate implements Template {
+72:    @RequiresCarApi(8)
+81:    public @interface ItemSize {
+89:    @RequiresCarApi(8)
+90:    public static final int ITEM_SIZE_SMALL = (1 << 0);
+97:    @RequiresCarApi(8)
+98:    public static final int ITEM_SIZE_MEDIUM = (1 << 1);
+105:    @RequiresCarApi(8)
+106:    public static final int ITEM_SIZE_LARGE = (1 << 2);
+113:    @RequiresCarApi(8)
+121:    public @interface ItemImageShape {
+131:    @RequiresCarApi(8)
+132:    public static final int ITEM_IMAGE_SHAPE_UNSET = (1 << 0);
+139:    @RequiresCarApi(8)
+140:    public static final int ITEM_IMAGE_SHAPE_CIRCLE = (1 << 1);
+176:    @RequiresCarApi(7)
+187:    public @Nullable CarText getTitle() {
+200:    public @Nullable Action getHeaderAction() {
+212:    public @Nullable ActionStrip getActionStrip() {
+221:    public boolean isLoading() {
+231:    public @Nullable ItemList getSingleList() {
+240:    @RequiresCarApi(7)
+241:    public @NonNull List<Action> getActions() {
+250:    @RequiresCarApi(8)
+252:    public int getItemSize() {
+263:    @RequiresCarApi(8)
+265:    public int getItemImageShape() {
+277:    public @Nullable Header getHeader() {
+300:    public @NonNull String toString() {
+305:    public int hashCode() {
+311:    public boolean equals(@Nullable Object other) {
+357:    public static final class Builder {
+378:        public @NonNull Builder setLoading(boolean isLoading) {
+400:        public @NonNull Builder setHeaderAction(@NonNull Action headerAction) {
+420:        public @NonNull Builder setTitle(@NonNull CharSequence title) {
+431:        public @NonNull Builder setSingleList(@NonNull ItemList list) {
+453:        public @NonNull Builder setActionStrip(@NonNull ActionStrip actionStrip) {
+474:        @RequiresCarApi(7)
+475:        public @NonNull Builder addAction(@NonNull Action action) {
+500:        @RequiresCarApi(8)
+501:        public @NonNull Builder setItemSize(@ItemSize int gridItemSize) {
+514:        @RequiresCarApi(8)
+515:        public @NonNull Builder setItemImageShape(@ItemImageShape int itemImageShape) {
+528:        @RequiresCarApi(7)
+529:        public @NonNull Builder setHeader(@NonNull Header header) {
+566:        public @NonNull GridTemplate build() {
+586:        public Builder() {
+### ListTemplate (src/androidx/car/app/model/ListTemplate.java)
+67:@CarProtocol
+68:@KeepFields
+69:public final class ListTemplate implements Template {
+104:    @RequiresCarApi(7)
+116:    public @Nullable CarText getTitle() {
+129:    public @Nullable Action getHeaderAction() {
+141:    public @Nullable ActionStrip getActionStrip() {
+150:    public boolean isLoading() {
+160:    public @Nullable ItemList getSingleList() {
+169:    public @NonNull List<SectionedItemList> getSectionedLists() {
+178:    @RequiresCarApi(6)
+179:    public @NonNull List<Action> getActions() {
+191:    public @Nullable Header getHeader() {
+214:    public @NonNull String toString() {
+219:    public int hashCode() {
+225:    public boolean equals(@Nullable Object other) {
+270:    public ListTemplate.@NonNull Builder toBuilder() {
+275:    public static final class Builder {
+298:        public @NonNull Builder setLoading(boolean isLoading) {
+321:        public @NonNull Builder setHeaderAction(@NonNull Action headerAction) {
+342:        public @NonNull Builder setTitle(@NonNull CharSequence title) {
+356:        public @NonNull Builder setSingleList(@NonNull ItemList list) {
+381:        public @NonNull Builder addSectionedList(@NonNull SectionedItemList list) {
+412:        public @NonNull Builder clearSectionedLists() {
+435:        public @NonNull Builder setActionStrip(@NonNull ActionStrip actionStrip) {
+455:        @RequiresCarApi(6)
+456:        public @NonNull Builder addAction(@NonNull Action action) {
+477:        @RequiresCarApi(7)
+478:        public @NonNull Builder setHeader(@NonNull Header header) {
+516:        public @NonNull ListTemplate build() {
+543:        public Builder() {
+573:        public int decrement() {
+578:        public int decrement(int minus) {
+583:        public boolean canFit(int value) {
+587:        public int remainingItems() {
+### OnClickListener (src/androidx/car/app/model/OnClickListener.java)
+20:public interface OnClickListener {
+### CarText (src/androidx/car/app/model/CarText.java)
+86:@CarProtocol
+87:@KeepFields
+88:public final class CarText {
+98:    public static boolean isNullOrEmpty(@Nullable CarText carText) {
+110:    public static @NonNull CarText create(@NonNull CharSequence text) {
+119:    public boolean isEmpty() {
+129:    public @NonNull String toString() {
+141:    public @NonNull CharSequence toCharSequence() {
+156:    public @NonNull List<CharSequence> getVariants() {
+171:    public @NonNull List<SpanWrapper> getSpans() {
+178:    public @NonNull List<List<SpanWrapper>> getSpansForVariants() {
+187:    public static @Nullable String toShortString(@Nullable CarText text) {
+248:    public boolean equals(@Nullable Object other) {
+263:    public int hashCode() {
+272:    @CarProtocol
+273:    @KeepFields
+274:    public static class SpanWrapper {
+294:        public int getStart() {
+298:        public int getEnd() {
+302:        public int getFlags() {
+306:        public @NonNull CarSpan getCarSpan() {
+311:        public boolean equals(@Nullable Object other) {
+326:        public int hashCode() {
+331:        public @NonNull String toString() {
+337:    @CarProtocol
+338:    @KeepFields
+339:    public static final class Builder {
+355:        public Builder(@NonNull CharSequence text) {
+377:        @RequiresCarApi(2)
+378:        public @NonNull Builder addVariant(@NonNull CharSequence text) {
+386:        public @NonNull CarText build() {
+### Badge (src/androidx/car/app/model/Badge.java)
+37:@CarProtocol
+38:@RequiresCarApi(8)
+39:@KeepFields
+40:public class Badge {
+51:    public boolean hasDot() {
+58:    public @Nullable CarColor getDotColor() {
+68:    public @Nullable CarColor getBackgroundColor() {
+77:    public @Nullable CarIcon getIcon() {
+84:    public @Nullable CarColor getIconBackgroundColor() {
+89:    public @NonNull String toString() {
+97:    public int hashCode() {
+102:    public boolean equals(@Nullable Object other) {
+133:    public static final class Builder {
+145:        public @NonNull Builder setHasDot(boolean hasDot) {
+153:        public @NonNull Builder setDotColor(@NonNull CarColor color) {
+164:        public @NonNull Builder setBackgroundColor(@NonNull CarColor backgroundColor) {
+176:        public @NonNull Builder setIcon(@NonNull CarIcon icon) {
+184:        public @NonNull Builder setIconBackgroundColor(@NonNull CarColor color) {
+197:        public @NonNull Badge build() {
+213:        public Builder() {
+### ChipStyle (src/androidx/car/app/model/ChipStyle.java)
+42:@ExperimentalCarApi
+43:@CarProtocol
+44:@RequiresCarApi(9)
+45:@KeepFields
+46:public final class ChipStyle {
+60:    public CarColor getBackgroundColor() {
+68:    public CarColor getContentColor() {
+76:    public CarColor getOutlineColor() {
+84:    public Shape getShape() {
+90:    public String toString() {
+104:    public int hashCode() {
+109:    public boolean equals(@Nullable Object other) {
+139:    public static final class Builder {
+158:        public Builder setBackgroundColor(@NonNull CarColor backgroundColor) {
+178:        public Builder setContentColor(@NonNull CarColor contentColor) {
+191:        public Builder setOutlineColor(@NonNull CarColor outlineColor) {
+204:        public Builder setShape(@NonNull Shape shape) {
+213:        public ChipStyle build() {
+src/androidx/car/app/media/:
+CarAudioCallback.java
+CarAudioCallbackDelegate.java
+CarAudioRecord.java
+MediaConstants.kt
+MediaPlaybackManager.java
+OpenMicrophoneRequest.java
+OpenMicrophoneResponse.java
+model
+
+src/androidx/car/app/model/:
+Action.java
+ActionStrip.java
+Alert.java
+AlertCallback.java
+AlertCallbackDelegate.java
+AlertCallbackDelegateImpl.java
+Background.java
+Badge.java
+Banner.java
+BannerElement.java
+BannerSection.java
+BannerStyle.java
+CarColor.java
+CarIcon.java
+CarIconSpan.java
+CarIconStyle.java
+CarLocation.java
+CarProgressBar.java
+CarProgressBarStyle.java
+CarSpan.java
+CarText.java
+Chip.java
+ChipSection.java
+ChipStyle.java
+ClickableSpan.java
+CondensedItem.java
+CondensedItemStyle.java
+CondensedSection.java
+Content.java
+DateTimeWithZone.java
+Distance.java
+DistanceSpan.java
+DurationSpan.java
+ForegroundCarColorSpan.java
+GridItem.java
+GridSection.java
+GridTemplate.java
+Header.java
+InputCallback.java
+InputCallbackDelegate.java
+InputCallbackDelegateImpl.java
+Item.java
+ItemList.java
+ListTemplate.java
+LongMessageTemplate.java
+MessageTemplate.java
+Metadata.java
+ModelUtils.java
+OnCheckedChangeDelegate.java
+OnCheckedChangeDelegateImpl.java
+OnClickDelegate.java
+OnClickDelegateImpl.java
+OnClickListener.java
+OnContentRefreshDelegate.java
+OnContentRefreshDelegateImpl.java
+OnContentRefreshListener.java
+OnItemVisibilityChangedDelegate.java
+OnItemVisibilityChangedDelegateImpl.java
+OnSelectedDelegate.java
+OnSelectedDelegateImpl.java
+Pane.java
+PaneTemplate.java
+ParkedOnlyOnClickListener.java
+Place.java
+PlaceListMapTemplate.java
+PlaceMarker.java
+Row.java
+RowSection.java
+SearchCallback.java
+SearchCallbackDelegate.java
+SearchCallbackDelegateImpl.java
+SearchHeader.java
+SearchTemplate.java
+Section.java
+SectionHeader.java
+SectionedItemList.java
+SectionedItemTemplate.java
+Shape.java
+SpotlightSection.java
+StrokeCap.java
+Tab.java
+TabCallbackDelegate.java
+TabCallbackDelegateImpl.java
+TabContents.java
+TabStyle.java
+TabTemplate.java
+Template.java
+TemplateInfo.java
+TemplateWrapper.java
+TimerSpan.java
+Toggle.java
+constraints
+signin
