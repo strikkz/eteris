@@ -2,8 +2,6 @@ package lt.eteris.radio.ui
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.animateDpAsState
-import androidx.compose.ui.draw.blur
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -50,10 +48,8 @@ fun BangaApp(app: AppState) {
     BackHandler(enabled = settingsOpen && !playerOpen) { settingsOpen = false }
     BackHandler(enabled = !playerOpen && !settingsOpen && tab != Tab.HOME) { tab = Tab.HOME }
 
-    // Under the open player the app is blurred (Android 12+), so the translucent player looks like frosted glass.
-    val blur by animateDpAsState(if (playerOpen) 22.dp else 0.dp, tween(320), label = "blur")
     Box(Modifier.fillMaxSize().background(Banga.bg)) {
-      Box(Modifier.fillMaxSize().blur(blur)) {
+      Box(Modifier.fillMaxSize()) {
         when (tab) {
             Tab.HOME -> HomeScreen(
                 app,

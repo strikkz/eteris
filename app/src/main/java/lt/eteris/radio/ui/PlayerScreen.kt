@@ -77,7 +77,7 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
                 },
             )
             .blockTouchesBelow()
-            // Translucent in the middle (the blurred home screen shows through), solid at the edges.
+            // Translucent in the middle (the home screen shows through slightly), solid at the edges.
             .background(Brush.radialGradient(listOf(c.mid.copy(alpha = 0.85f), Color(0xFF16221E), Banga.bg), radius = 1400f))
             .statusBarsPadding()
             .navigationBarsPadding()
