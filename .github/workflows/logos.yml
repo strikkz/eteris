@@ -3,7 +3,7 @@ name: Station logos
 on:
   push:
     branches: [ logos ]
-    paths: [ 'tools/**', '.github/workflows/logos.yml' ]
+    paths: [ 'tools/logos.py', 'tools/logo_overrides.json', '.github/workflows/logos.yml' ]
 permissions:
   contents: write
 jobs:

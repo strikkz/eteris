@@ -1,0 +1,22 @@
+# Downloads hand-picked station logos and commits them to the "logos" branch.
+name: Custom logos
+on:
+  push:
+    branches: [ logos ]
+    paths: [ 'tools/custom_logo_urls.json', 'tools/fetch_custom_logos.py' ]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet pillow
+      - run: python3 -u tools/fetch_custom_logos.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/custom_logos app/src/main/assets/logos docs/custom_sheet.png
+          git commit -m "Add hand-picked station logos" || echo "no changes"
+          git push
