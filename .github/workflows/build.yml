@@ -3,7 +3,7 @@ name: Build APK
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, banga ]
   workflow_dispatch:
 
 permissions:
@@ -28,17 +28,18 @@ jobs:
         run: gradle :app:assembleRelease --no-daemon --stacktrace
 
       - name: Name the file
-        run: cp app/build/outputs/apk/release/app-release.apk "Eteris-1.0.${{ github.run_number }}.apk"
+        run: cp app/build/outputs/apk/release/app-release.apk "BANGA-2.0.${{ github.run_number }}.apk"
 
       - uses: actions/upload-artifact@v4
         with:
           name: Eteris-apk
-          path: Eteris-*.apk
+          path: BANGA-*.apk
 
       - name: Publish on the Releases page
+        if: github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.${{ github.run_number }}
-          name: Eteris 1.0.${{ github.run_number }}
-          files: Eteris-*.apk
+          tag_name: v2.0.${{ github.run_number }}
+          name: BANGA 2.0.${{ github.run_number }}
+          files: BANGA-*.apk
           make_latest: true

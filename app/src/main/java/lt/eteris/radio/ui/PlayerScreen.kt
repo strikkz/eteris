@@ -1,0 +1,151 @@
+package lt.eteris.radio.ui
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.clickable
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
+import lt.eteris.radio.AppState
+import lt.eteris.radio.PlayStatus
+import lt.eteris.radio.R
+
+/** Full-screen player: station artwork in its own colours, live label, heart, previous / play / next. */
+@Composable
+fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit) {
+    val st = app.current ?: return
+    val c = rememberColors(st)
+    Column(
+        Modifier
+            .fillMaxSize()
+            .background(Brush.radialGradient(listOf(c.mid.copy(alpha = 0.85f), Color(0xFF16221E), Banga.bg), radius = 1400f))
+            .statusBarsPadding()
+            .navigationBarsPadding()
+            .padding(horizontal = 24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Row(Modifier.fillMaxWidth().height(56.dp), verticalAlignment = Alignment.CenterVertically) {
+            IconButton48(R.drawable.ic_chevron_down, stringResource(R.string.collapse_player), onClose)
+            Text(
+                stringResource(R.string.now_playing).uppercase(),
+                style = Banga.eyebrow,
+                color = Color(0xFFC4D0C5),
+                modifier = Modifier.weight(1f),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+            )
+            Spacer(Modifier.size(48.dp))
+        }
+
+        // Cover: station colours + wave ring + the logo.
+        Box(
+            Modifier
+                .padding(top = 18.dp, bottom = 22.dp)
+                .widthIn(max = 340.dp)
+                .fillMaxWidth()
+                .aspectRatio(1f)
+                .shadow(24.dp, RoundedCornerShape(32.dp))
+                .clip(RoundedCornerShape(32.dp))
+                .background(Brush.radialGradient(listOf(c.light, c.mid, c.dark))),
+            contentAlignment = Alignment.Center,
+        ) {
+            WaveRing(Color.White.copy(alpha = 0.35f), Modifier.fillMaxSize().padding(start = 60.dp, top = 40.dp), stroke = 56.dp)
+            val logo = rememberLogo(st)
+            if (logo != null) {
+                Image(
+                    logo, null, contentScale = ContentScale.Crop,
+                    modifier = Modifier.fillMaxWidth(0.56f).aspectRatio(1f).shadow(16.dp, RoundedCornerShape(26.dp)).clip(RoundedCornerShape(26.dp)),
+                )
+            }
+        }
+
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.size(7.dp).clip(CircleShape).background(if (app.status == PlayStatus.ERROR) Banga.error else Banga.accent))
+            Text(
+                "  " + stringResource(R.string.live).uppercase(),
+                style = Banga.eyebrow,
+                color = if (app.status == PlayStatus.ERROR) Banga.error else Banga.accent,
+                modifier = Modifier.weight(1f),
+            )
+            HeartButton(st.id in app.favorites, { app.toggleFavorite(st.id) }, tint = Banga.text)
+        }
+        Text(st.name, style = Banga.screenTitle, color = Banga.text, maxLines = 2, overflow = TextOverflow.Ellipsis, modifier = Modifier.fillMaxWidth())
+        Spacer(Modifier.height(6.dp))
+        val genre = st.genres.firstOrNull()?.let { stringResource(it.label) }
+        val line = when (app.status) {
+            PlayStatus.CONNECTING -> stringResource(R.string.connecting)
+            PlayStatus.BUFFERING -> stringResource(R.string.buffering)
+            PlayStatus.ERROR -> stringResource(R.string.stream_unavailable)
+            else -> app.song ?: listOfNotNull(genre, stringResource(R.string.live)).joinToString(" · ")
+        }
+        Text(
+            line,
+            style = Banga.body,
+            color = if (app.status == PlayStatus.ERROR) Banga.error else Color(0xFFB1C2B8),
+            maxLines = 2,
+            overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.fillMaxWidth(),
+        )
+
+        Spacer(Modifier.weight(1f))
+        Row(
+            Modifier.fillMaxWidth().padding(vertical = 12.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            IconButton48(R.drawable.ic_prev, stringResource(R.string.previous), app::previous, big = true)
+            if (app.status == PlayStatus.ERROR) {
+                Pill(stringResource(R.string.retry), app::retry, accent = true)
+            } else {
+                PlayButton(app.status, 80.dp, app::toggle)
+            }
+            IconButton48(R.drawable.ic_next, stringResource(R.string.next), app::next, big = true)
+        }
+        Row(Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 18.dp)) {
+            Pill(stringResource(R.string.other_stations), onOtherStations)
+        }
+    }
+}
+
+@Composable
+fun IconButton48(icon: Int, description: String, onClick: () -> Unit, big: Boolean = false) {
+    Box(
+        Modifier
+            .size(if (big) 60.dp else 48.dp)
+            .clip(CircleShape)
+            .clickable(role = Role.Button, onClick = onClick)
+            .semantics { contentDescription = description },
+        contentAlignment = Alignment.Center,
+    ) {
+        Icon(painterResource(icon), null, tint = Banga.text, modifier = Modifier.size(if (big) 32.dp else 26.dp))
+    }
+}

@@ -37,7 +37,11 @@ data class Station(
     val variants: List<Variant>,
     val prio: Int,
     val votes: Long,
+    /** Catalog tags, lower case (e.g. "pop,hits,top 40"); used to sort stations into genres. */
+    val tags: String = "",
 ) {
+    val genres: List<Genre> by lazy { Genre.of(this) }
+
     val qualityLabel: String
         get() {
             val v = variants.first()
@@ -219,6 +223,7 @@ object StationRepository {
         var favicon: String? = null
         var votes = 0L
         val variants = mutableListOf<Variant>()
+        val tags = linkedSetOf<String>()
     }
 
     private fun parse(raw: String): List<Station> {
@@ -245,6 +250,7 @@ object StationRepository {
             g.votes += o.optLong("clickcount", 0)
             if (g.favicon == null) o.str("favicon").takeIf { it.startsWith("http") }?.let { g.favicon = it }
             if (g.variants.none { it.url == url }) g.variants += Variant(url, codec, br, hls, ok)
+            o.str("tags").lowercase().split(',').map { it.trim() }.filter { it.isNotEmpty() }.forEach { g.tags += it }
         }
         return groups.values.map { g ->
             val p = prioKeys.indexOf(g.key)
@@ -255,6 +261,7 @@ object StationRepository {
                 variants = g.variants.sortedBy(::score),
                 prio = if (p < 0) 999 else p,
                 votes = g.votes,
+                tags = g.tags.joinToString(","),
             )
         }.sortedWith(compareBy<Station> { it.prio }.thenByDescending { it.votes })
     }

@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bg">#F3F4F1</color>
-    <color name="panel">#FFFFFF</color>
-    <color name="fg">#14181C</color>
-    <color name="muted">#5D666E</color>
-    <color name="line">#D5DAD4</color>
-    <color name="accent">#D9480F</color>
-    <color name="accent_soft">#FBE4D8</color>
-    <color name="lcd">#14181C</color>
-    <color name="lcd_fg">#FFB37A</color>
-    <color name="lcd_dim">#A07A5C</color>
-    <color name="lcd_logo">#20262C</color>
-    <color name="on_accent">#FFFFFF</color>
-    <color name="launcher_bg">#D9480F</color>
+    <!-- BANGA tokens (tokens.json) -->
+    <color name="banga_bg">#0B0D0D</color>
+    <color name="banga_surface">#171B1A</color>
+    <color name="banga_accent">#DFFF63</color>
+    <color name="launcher_bg">#0B0D0D</color>
 </resources>
