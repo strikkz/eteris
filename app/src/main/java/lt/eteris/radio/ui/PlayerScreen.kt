@@ -1,6 +1,7 @@
 package lt.eteris.radio.ui
 
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.animateFloat
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.runtime.mutableStateOf
@@ -329,7 +330,7 @@ private fun SleepTimerButton() {
         DropdownMenu(
             expanded = open,
             onDismissRequest = { open = false },
-            containerColor = Banga.surfaceRaised,
+            modifier = Modifier.background(Banga.surfaceRaised),
         ) {
             Text(
                 if (SleepTimer.isOn) stringResource(R.string.sleep_left, left) else label,
