@@ -1,7 +1,6 @@
 package lt.eteris.radio
 
 import android.content.Context
-import android.net.Uri
 import android.os.SystemClock
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
@@ -49,11 +48,11 @@ data class Station(
 
     fun toMediaItem(variantIndex: Int = 0): MediaItem {
         val v = variants.getOrElse(variantIndex) { variants.first() }
+        // Only the title: Android Auto would otherwise print the name twice (title + artist).
         val meta = MediaMetadata.Builder()
             .setTitle(name)
-            .setArtist(name)
             .setStation(name)
-            .setArtworkUri(favicon?.let { Uri.parse(it) })
+            .setArtworkUri(Art.uri(id))
             .setIsBrowsable(false)
             .setIsPlayable(true)
             .setMediaType(MediaMetadata.MEDIA_TYPE_RADIO_STATION)
@@ -285,8 +284,29 @@ object StationRepository {
 
     fun lastId(ctx: Context): String? = prefs(ctx).getString("last", null)
 
+    /** Remembers the station and when it was played (favorites are shown most recent first). */
     fun setLast(ctx: Context, id: String) {
-        prefs(ctx).edit().putString("last", id).apply()
+        val history = JSONObject(prefs(ctx).getString("played", null) ?: "{}")
+        history.put(id, System.currentTimeMillis())
+        prefs(ctx).edit().putString("last", id).putString("played", history.toString()).apply()
+    }
+
+    private fun playedAt(ctx: Context): Map<String, Long> {
+        val o = runCatching { JSONObject(prefs(ctx).getString("played", null) ?: "{}") }.getOrNull() ?: return emptyMap()
+        return o.keys().asSequence().associateWith { o.optLong(it) }
+    }
+
+    /** Favorites, most recently played first. */
+    fun favoritesByRecent(ctx: Context): List<Station> {
+        val favs = favorites(ctx)
+        val played = playedAt(ctx)
+        return stations.filter { it.id in favs }.sortedByDescending { played[it.id] ?: 0L }
+    }
+
+    /** Recently played stations (any), newest first. */
+    fun recent(ctx: Context): List<Station> {
+        val played = playedAt(ctx)
+        return stations.filter { it.id in played }.sortedByDescending { played[it.id] ?: 0L }
     }
 
     fun search(query: String): List<Station> {

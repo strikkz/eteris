@@ -56,7 +56,7 @@ class StationAdapter(
         holder.name.text = st.name
         holder.quality.text = st.qualityLabel
         holder.quality.visibility = if (st.qualityLabel.isEmpty()) View.GONE else View.VISIBLE
-        Logos.bind(scope, st.favicon, holder.logo, holder.initials, st.name)
+        Logos.bind(scope, st, holder.logo, holder.initials)
 
         holder.itemView.setBackgroundResource(
             if (st.id == currentId) R.drawable.bg_card_selected else R.drawable.bg_card,

@@ -22,7 +22,11 @@ import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.exoplayer.upstream.DefaultBandwidthMeter
+import androidx.media3.session.CommandButton
 import androidx.media3.session.LibraryResult
+import androidx.media3.session.MediaConstants
+import androidx.media3.session.SessionCommand
+import androidx.media3.session.SessionResult
 import androidx.media3.session.MediaLibraryService
 import androidx.media3.session.MediaLibraryService.LibraryParams
 import androidx.media3.session.MediaLibraryService.MediaLibrarySession
@@ -47,14 +51,15 @@ class RadioService : MediaLibraryService() {
     companion object {
         const val ROOT = "root"
         const val FAV = "fav"
-        const val TOP = "top"
         const val ALL = "all"
+        /** Android Auto's side card ("For you") next to navigation. */
+        const val SUGGESTED = "suggested"
+        /** What Android shows to resume playback. */
+        const val RECENT = "recent"
 
-        // Android Auto display hints: station logos as a grid.
-        private const val STYLE_BROWSABLE = "android.media.browse.CONTENT_STYLE_BROWSABLE_HINT"
-        private const val STYLE_PLAYABLE = "android.media.browse.CONTENT_STYLE_PLAYABLE_HINT"
-        private const val STYLE_LIST = 1
-        private const val STYLE_GRID = 2
+        private const val AUTO_PACKAGE = "com.google.android.projection.gearhead"
+        private const val ACTION_FAVORITE = "lt.eteris.radio.FAVORITE"
+        private val FAVORITE_COMMAND = SessionCommand(ACTION_FAVORITE, Bundle.EMPTY)
 
         private const val TICK_MS = 20_000L
         /** A song title that has not changed for this long means the station's server is stuck. */
@@ -73,8 +78,9 @@ class RadioService : MediaLibraryService() {
     private val repoListener: () -> Unit = {
         scope.launch {
             session?.let { s ->
-                listOf(ROOT, FAV, TOP, ALL).forEach { s.notifyChildrenChanged(it, Int.MAX_VALUE, null) }
+                listOf(ROOT, FAV, ALL, SUGGESTED, RECENT).forEach { s.notifyChildrenChanged(it, Int.MAX_VALUE, null) }
             }
+            updateFavoriteButton()
         }
     }
 
@@ -117,6 +123,7 @@ class RadioService : MediaLibraryService() {
 
         StationRepository.addListener(repoListener)
         handler.postDelayed(ticker, TICK_MS)
+        updateFavoriteButton()
     }
 
     override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaLibrarySession? = session
@@ -180,6 +187,8 @@ class RadioService : MediaLibraryService() {
                 streamSong = null
                 handler.post { tick(force = true) }
             }
+            updateFavoriteButton()
+            notifyLists()
         }
 
         override fun onIsPlayingChanged(isPlaying: Boolean) {
@@ -281,9 +290,10 @@ class RadioService : MediaLibraryService() {
         if (item.mediaId != st.id) return
         val newTitle = song.ifEmpty { st.name }
         if (newTitle == item.mediaMetadata.title?.toString()) return
+        // Song playing: title = song, second line = station. No song: only the station name (shown once).
         val meta = item.mediaMetadata.buildUpon()
             .setTitle(newTitle)
-            .setArtist(st.name)
+            .setArtist(if (song.isEmpty()) null else st.name)
             .build()
         // Same stream address, so playback is not interrupted.
         player.replaceMediaItem(player.currentMediaItemIndex, item.buildUpon().setMediaMetadata(meta).build())
@@ -318,8 +328,15 @@ class RadioService : MediaLibraryService() {
 
     // ---------- Library: what Android Auto shows ----------
 
-    private fun folder(id: String, title: String): MediaItem =
-        MediaItem.Builder()
+    private fun folder(id: String, title: String, grid: Boolean): MediaItem {
+        val style = Bundle().apply {
+            putInt(
+                MediaConstants.EXTRAS_KEY_CONTENT_STYLE_PLAYABLE,
+                if (grid) MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_GRID_ITEM
+                else MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_LIST_ITEM,
+            )
+        }
+        return MediaItem.Builder()
             .setMediaId(id)
             .setMediaMetadata(
                 MediaMetadata.Builder()
@@ -327,23 +344,63 @@ class RadioService : MediaLibraryService() {
                     .setIsBrowsable(true)
                     .setIsPlayable(false)
                     .setMediaType(MediaMetadata.MEDIA_TYPE_FOLDER_RADIO_STATIONS)
+                    .setExtras(style)
                     .build(),
             )
             .build()
+    }
 
-    private fun children(parentId: String, all: List<Station>): List<MediaItem> {
-        val favs = StationRepository.favorites(this)
-        return when (parentId) {
-            ROOT -> buildList {
-                if (favs.isNotEmpty()) add(folder(FAV, getString(R.string.tab_favorites)))
-                add(folder(TOP, getString(R.string.tab_popular)))
-                add(folder(ALL, getString(R.string.tab_all)))
-            }
-            FAV -> all.filter { it.id in favs }.map { it.toMediaItem() }
-            TOP -> all.filter { it.prio < 999 }.ifEmpty { all.take(25) }.map { it.toMediaItem() }
-            ALL -> all.map { it.toMediaItem() }
-            else -> emptyList()
+    /** Favorites (most recently played first); if there are none yet, the best-known stations. */
+    private fun favoritesOrPopular(all: List<Station>): List<Station> =
+        StationRepository.favoritesByRecent(this).ifEmpty { all.filter { it.prio < 999 }.ifEmpty { all.take(20) } }
+
+    private fun children(parentId: String, all: List<Station>): List<MediaItem> = when (parentId) {
+        // Two tabs at the top of the Android Auto screen.
+        ROOT -> listOf(
+            folder(FAV, getString(R.string.tab_favorites), grid = true),
+            folder(ALL, getString(R.string.tab_all), grid = false),
+        )
+        FAV -> favoritesOrPopular(all).map { it.toMediaItem() }
+        ALL -> all.map { it.toMediaItem() }
+        SUGGESTED -> favoritesOrPopular(all).take(6).map { it.toMediaItem() }
+        RECENT -> listOfNotNull(StationRepository.byId(StationRepository.lastId(this))?.toMediaItem())
+        else -> emptyList()
+    }
+
+    private fun notifyLists() {
+        session?.let { s -> listOf(FAV, SUGGESTED, RECENT).forEach { s.notifyChildrenChanged(it, Int.MAX_VALUE, null) } }
+    }
+
+    // ---------- Favorite button on the Android Auto player screen ----------
+
+    private fun updateFavoriteButton() {
+        val s = session ?: return
+        val id = player.currentMediaItem?.mediaId
+        val isFav = id != null && id in StationRepository.favorites(this)
+        val button = CommandButton.Builder()
+            .setDisplayName(getString(if (isFav) R.string.fav_remove else R.string.fav_add))
+            .setIconResId(if (isFav) R.drawable.ic_star_filled else R.drawable.ic_star_border)
+            .setSessionCommand(FAVORITE_COMMAND)
+            .build()
+        s.setCustomLayout(ImmutableList.of(button))
+    }
+
+    // ---------- Start the last station when the app is opened in Android Auto ----------
+
+    private var lastAutoStart = 0L
+
+    private fun autoStart(all: List<Station>) {
+        val p = session?.player ?: return
+        val now = SystemClock.elapsedRealtime()
+        if (p.playWhenReady || now - lastAutoStart < 10_000) return
+        lastAutoStart = now
+        if (p.mediaItemCount == 0) {
+            val q = queueAround(StationRepository.lastId(this), all)
+            if (q.mediaItems.isEmpty()) return
+            p.setMediaItems(q.mediaItems, q.startIndex, C.TIME_UNSET)
         }
+        p.prepare()
+        p.play()
     }
 
     private fun <T> paginate(items: List<T>, page: Int, pageSize: Int): List<T> =
@@ -365,17 +422,49 @@ class RadioService : MediaLibraryService() {
 
     private inner class LibraryCallback : MediaLibrarySession.Callback {
 
+        override fun onConnect(
+            session: MediaSession,
+            controller: MediaSession.ControllerInfo,
+        ): MediaSession.ConnectionResult {
+            val commands = MediaSession.ConnectionResult.DEFAULT_SESSION_AND_LIBRARY_COMMANDS.buildUpon()
+                .add(FAVORITE_COMMAND)
+                .build()
+            return MediaSession.ConnectionResult.AcceptedResultBuilder(session)
+                .setAvailableSessionCommands(commands)
+                .build()
+        }
+
+        override fun onCustomCommand(
+            session: MediaSession,
+            controller: MediaSession.ControllerInfo,
+            customCommand: SessionCommand,
+            args: Bundle,
+        ): ListenableFuture<SessionResult> {
+            if (customCommand.customAction == ACTION_FAVORITE) {
+                player.currentMediaItem?.mediaId?.let { StationRepository.toggleFavorite(this@RadioService, it) }
+                updateFavoriteButton()
+                return Futures.immediateFuture(SessionResult(SessionResult.RESULT_SUCCESS))
+            }
+            return super.onCustomCommand(session, controller, customCommand, args)
+        }
+
         override fun onGetLibraryRoot(
             session: MediaLibrarySession,
             browser: MediaSession.ControllerInfo,
             params: LibraryParams?,
         ): ListenableFuture<LibraryResult<MediaItem>> {
+            val rootId = when {
+                params?.isRecent == true -> RECENT
+                params?.isSuggested == true -> SUGGESTED
+                else -> ROOT
+            }
             val extras = Bundle().apply {
-                putInt(STYLE_BROWSABLE, STYLE_LIST)
-                putInt(STYLE_PLAYABLE, STYLE_GRID)
+                // Tabs as text; stations as logo tiles unless a tab says otherwise.
+                putInt(MediaConstants.EXTRAS_KEY_CONTENT_STYLE_BROWSABLE, MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_LIST_ITEM)
+                putInt(MediaConstants.EXTRAS_KEY_CONTENT_STYLE_PLAYABLE, MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_GRID_ITEM)
             }
             val root = MediaItem.Builder()
-                .setMediaId(ROOT)
+                .setMediaId(rootId)
                 .setMediaMetadata(
                     MediaMetadata.Builder()
                         .setTitle(getString(R.string.app_name))
@@ -385,9 +474,12 @@ class RadioService : MediaLibraryService() {
                         .build(),
                 )
                 .build()
-            return Futures.immediateFuture(
-                LibraryResult.ofItem(root, LibraryParams.Builder().setExtras(extras).build()),
-            )
+            val out = LibraryParams.Builder()
+                .setRecent(rootId == RECENT)
+                .setSuggested(rootId == SUGGESTED)
+                .setExtras(extras)
+                .build()
+            return Futures.immediateFuture(LibraryResult.ofItem(root, out))
         }
 
         override fun onGetChildren(
@@ -399,6 +491,8 @@ class RadioService : MediaLibraryService() {
             params: LibraryParams?,
         ): ListenableFuture<LibraryResult<ImmutableList<MediaItem>>> = scope.future {
             val all = StationRepository.ensureLoaded(this@RadioService)
+            // The station tabs are requested when the app is opened in Android Auto (not for the side card).
+            if (parentId == ROOT && browser.packageName == AUTO_PACKAGE) autoStart(all)
             LibraryResult.ofItemList(paginate(children(parentId, all), page, pageSize), params)
         }
 
@@ -474,6 +568,7 @@ class RadioService : MediaLibraryService() {
         }
     }
 
+    /** The list "next/previous" (steering wheel) moves through: favorites if the station is one, otherwise all. */
     private fun queueAround(id: String?, all: List<Station>): MediaSession.MediaItemsWithStartPosition {
         val favs = StationRepository.favorites(this)
         val list = if (id != null && id in favs) all.filter { it.id in favs } else all

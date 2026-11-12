@@ -181,7 +181,7 @@ class MainActivity : AppCompatActivity() {
 
         lcdName.text = st?.name ?: getString(R.string.choose_station)
         if (st != null) {
-            Logos.bind(lifecycleScope, st.favicon, lcdLogo, lcdInitials, st.name)
+            Logos.bind(lifecycleScope, st, lcdLogo, lcdInitials)
         } else {
             lcdLogo.visibility = View.INVISIBLE
             lcdInitials.visibility = View.VISIBLE
