@@ -1,0 +1,23 @@
+# Builds the station logo pack (app/src/main/assets/logos) and commits it back to the "logos" branch.
+name: Station logos
+on:
+  push:
+    branches: [ logos ]
+    paths: [ 'tools/**', '.github/workflows/logos.yml' ]
+permissions:
+  contents: write
+jobs:
+  logos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet pillow cairosvg
+      - run: python3 -u tools/logos.py
+      - name: Commit logos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/src/main/assets/logos logos docs/logos_sheet.png
+          git commit -m "Update station logos" || echo "no changes"
+          git push
