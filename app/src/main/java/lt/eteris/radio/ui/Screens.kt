@@ -41,6 +41,8 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.core.os.ConfigurationCompat
 import lt.eteris.radio.AppState
 import lt.eteris.radio.Genre
@@ -63,7 +65,18 @@ private fun TopLine(title: String, onSettings: () -> Unit) {
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Wordmark(title)
-        CircleButton(R.drawable.ic_settings, stringResource(R.string.settings), onSettings)
+        // Settings: two tuning sliders (lime knob), no circle around them.
+        val label = stringResource(R.string.settings)
+        Box(
+            Modifier
+                .size(48.dp)
+                .clip(androidx.compose.foundation.shape.CircleShape)
+                .clickable(onClick = onSettings)
+                .semantics { contentDescription = label },
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(painterResource(R.drawable.ic_tune), null, tint = Color.Unspecified, modifier = Modifier.size(24.dp))
+        }
     }
 }
 

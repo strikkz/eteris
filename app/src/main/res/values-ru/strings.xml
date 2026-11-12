@@ -66,4 +66,5 @@
     <string name="about_station">О станции</string>
     <string name="open_website">Сайт</string>
     <string name="about_none">Описания пока нет. Подробнее — на сайте станции.</string>
+    <string name="genre_faith">Вера</string>
 </resources>
