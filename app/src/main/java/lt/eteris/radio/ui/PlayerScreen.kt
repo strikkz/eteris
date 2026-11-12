@@ -357,38 +357,41 @@ private fun SleepTimerButton() {
     }
 }
 
-/** Decorative "live wave" bars. They move only while the radio really plays and stand still otherwise
- *  (also when the phone has animations turned off). */
+/** Decorative "live wave": one smooth lime line, like the BANGA logo. While the radio plays it moves like a
+ *  sound trace (fading out at the ends); paused it settles almost flat. Still when the phone has animations off. */
 @Composable
 fun LiveWave(playing: Boolean, modifier: Modifier = Modifier) {
     val ctx = LocalContext.current
     val animationsOff = remember {
         android.provider.Settings.Global.getFloat(ctx.contentResolver, android.provider.Settings.Global.ANIMATOR_DURATION_SCALE, 1f) == 0f
     }
-    val bars = 42
-    val base = remember { List(bars) { i -> 0.25f + 0.75f * kotlin.math.abs(kotlin.math.sin(i * 1.7f) * kotlin.math.cos(i * 0.6f)) } }
     val t = androidx.compose.animation.core.rememberInfiniteTransition(label = "wave")
     val phase by t.animateFloat(
         initialValue = 0f, targetValue = (2 * Math.PI).toFloat(),
-        animationSpec = androidx.compose.animation.core.infiniteRepeatable(androidx.compose.animation.core.tween(2400, easing = androidx.compose.animation.core.LinearEasing)),
+        animationSpec = androidx.compose.animation.core.infiniteRepeatable(androidx.compose.animation.core.tween(1800, easing = androidx.compose.animation.core.LinearEasing)),
         label = "phase",
     )
     val moving = playing && !animationsOff
-    val level by androidx.compose.animation.core.animateFloatAsState(if (moving) 1f else 0.35f, tween(500), label = "level")
+    val level by androidx.compose.animation.core.animateFloatAsState(if (moving) 1f else 0.12f, tween(600), label = "level")
     androidx.compose.foundation.Canvas(modifier) {
-        val gap = size.width / bars
-        val w = gap * 0.42f
-        for (i in 0 until bars) {
-            val wobble = if (moving) 0.55f + 0.45f * kotlin.math.sin(phase * 2 + i * 0.55f) else 1f
-            val h = (size.height * base[i] * wobble * level).coerceAtLeast(w)
-            val x = i * gap + gap / 2
-            drawLine(
-                color = Banga.accent.copy(alpha = if (moving) 0.85f else 0.45f),
-                start = androidx.compose.ui.geometry.Offset(x, size.height / 2 - h / 2),
-                end = androidx.compose.ui.geometry.Offset(x, size.height / 2 + h / 2),
-                strokeWidth = w,
-                cap = androidx.compose.ui.graphics.StrokeCap.Round,
-            )
+        val w = size.width
+        val mid = size.height / 2
+        val amp = size.height * 0.42f * level
+        val p = if (moving) phase else 0f
+        fun y(x: Float): Float {
+            val u = x / w
+            val envelope = kotlin.math.sin(Math.PI.toFloat() * u)                      // quiet at both ends
+            val beat = 0.65f + 0.35f * kotlin.math.sin(p * 2f + u * 9f)              // "loudness" changes along the line
+            return mid + amp * envelope * beat * kotlin.math.sin(u * 22f - p * 3f)
         }
+        val path = androidx.compose.ui.graphics.Path()
+        val steps = 120
+        for (i in 0..steps) {
+            val x = w * i / steps
+            if (i == 0) path.moveTo(x, y(x)) else path.lineTo(x, y(x))
+        }
+        // Soft glow under the line, then the line itself.
+        drawPath(path, Banga.accent.copy(alpha = 0.18f), style = androidx.compose.ui.graphics.drawscope.Stroke(width = 10.dp.toPx(), cap = androidx.compose.ui.graphics.StrokeCap.Round, join = androidx.compose.ui.graphics.StrokeJoin.Round))
+        drawPath(path, Banga.accent.copy(alpha = if (moving) 0.95f else 0.55f), style = androidx.compose.ui.graphics.drawscope.Stroke(width = 3.dp.toPx(), cap = androidx.compose.ui.graphics.StrokeCap.Round, join = androidx.compose.ui.graphics.StrokeJoin.Round))
     }
 }

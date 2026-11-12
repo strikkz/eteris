@@ -81,7 +81,8 @@ class AppState(private val ctx: Context) {
         override fun onEvents(player: Player, events: Player.Events) = sync()
     }
 
-    val current: Station? get() = StationRepository.byId(currentId)
+    /** Reads [stations] too, so screens update when the list finishes loading after playback started. */
+    val current: Station? get() = stations.let { StationRepository.byId(currentId) }
 
     /** Favorites, most recently played first. */
     fun favoriteStations(): List<Station> = StationRepository.favoritesByRecent(ctx)
