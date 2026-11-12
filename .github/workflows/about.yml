@@ -1,0 +1,22 @@
+# Collects the main stations' own descriptions from their websites (for review) into tools/about_raw.json.
+name: Station descriptions
+on:
+  push:
+    branches: [ logos ]
+    paths: [ 'tools/about_pages.py' ]
+permissions:
+  contents: write
+jobs:
+  about:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet pillow
+      - run: python3 -u tools/about_pages.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/about_raw.json
+          git commit -m "Station descriptions (raw)" || echo "no changes"
+          git push
