@@ -48,10 +48,13 @@ abstract class BangaScreen(ctx: CarContext, val car: BangaCarSession) : Screen(c
     fun icon(res: Int): CarIcon =
         CarIcon.Builder(IconCompat.createWithResource(carContext, res)).build()
 
-    /** Plays [list] from [st] and opens the player; next/previous on the wheel then walk this list. */
+    /**
+     * Plays [list] from [st] and stays on this screen, so stations can be tried one after another.
+     * The player opens only from the playback bar or the "now playing" button.
+     * Next/previous on the wheel then walk this list.
+     */
     fun playFrom(list: List<Station>, st: Station) {
         car.play(list, list.indexOfFirst { it.id == st.id }.coerceAtLeast(0))
-        if (screenManager.top !is CarPlaybackScreen) screenManager.push(CarPlaybackScreen(carContext, car))
     }
 
     /** "Now playing" button in the header, the standard one when the car allows a click on it. */
