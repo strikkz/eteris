@@ -1,0 +1,17 @@
+name: Car App API
+on:
+  push:
+    branches: [ logos ]
+    paths: [ 'tools/carapp_api.sh' ]
+permissions:
+  contents: write
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash tools/carapp_api.sh
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/carapp_api.txt && git commit -m "Car App API signatures" && git push
