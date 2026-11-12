@@ -8,7 +8,7 @@ val buildNumber = System.getenv("GITHUB_RUN_NUMBER")?.toIntOrNull() ?: 1
 
 android {
     namespace = "lt.eteris.radio"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "lt.eteris.radio"
@@ -64,6 +64,10 @@ dependencies {
     implementation("androidx.media3:media3-exoplayer:$media3")
     implementation("androidx.media3:media3-exoplayer-hls:$media3")
     implementation("androidx.media3:media3-session:$media3")
+    // Android Auto screens built from Car App Library templates
+    implementation("androidx.car.app:app:1.9.0-alpha03")
+    implementation("androidx.car.app:app-projected:1.9.0-alpha03")
+    implementation("androidx.media:media:1.7.0")
 
     // Phone screens (BANGA design)
     implementation(platform("androidx.compose:compose-bom:2024.06.00"))

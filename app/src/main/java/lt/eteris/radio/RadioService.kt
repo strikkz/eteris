@@ -49,6 +49,9 @@ import java.net.URL
 class RadioService : MediaLibraryService() {
 
     companion object {
+        /** Android's own session token; the Android Auto car screens register it to show the playback bar. */
+        @Volatile var sessionCompatToken: android.support.v4.media.session.MediaSessionCompat.Token? = null
+
         const val ROOT = "root"
         const val FAV = "fav"
         const val ALL = "all"
@@ -120,6 +123,7 @@ class RadioService : MediaLibraryService() {
         session = MediaLibrarySession.Builder(this, RadioPlayer(player), LibraryCallback())
             .setSessionActivity(openApp)
             .build()
+        sessionCompatToken = session?.sessionCompatToken
 
         StationRepository.addListener(repoListener)
         handler.postDelayed(ticker, TICK_MS)
@@ -160,6 +164,7 @@ class RadioService : MediaLibraryService() {
     }
 
     override fun onDestroy() {
+        sessionCompatToken = null
         SleepTimer.onFire = null
         StationRepository.removeListener(repoListener)
         handler.removeCallbacksAndMessages(null)
