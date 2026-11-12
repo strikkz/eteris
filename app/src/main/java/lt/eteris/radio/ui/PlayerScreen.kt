@@ -140,7 +140,7 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
         // Top part: the cover, or the station description after a swipe up. Everything below stays in place.
         Box(
             Modifier
-                .padding(top = 18.dp)
+                .padding(top = 8.dp)
                 .widthIn(max = 340.dp)
                 .fillMaxWidth()
                 .aspectRatio(1f)
@@ -224,7 +224,7 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
 
         Spacer(Modifier.weight(1f))
         Row(
-            Modifier.fillMaxWidth().padding(vertical = 12.dp),
+            Modifier.fillMaxWidth().padding(top = 16.dp),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -236,7 +236,7 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
             }
             IconButton48(R.drawable.ic_next, stringResource(R.string.next), app::next, big = true)
         }
-        Row(Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 18.dp)) {
+        Row(Modifier.fillMaxWidth().padding(top = 2.dp, bottom = 8.dp)) {
             Pill(stringResource(R.string.other_stations), onOtherStations)
         }
     }
