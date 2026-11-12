@@ -46,10 +46,24 @@ def norm(s):
     return key or "".join(c for c in s.lower() if c.isalnum())
 
 
-def get(url, limit=3_000_000, timeout=5):
+def get(url, limit=3_000_000, timeout=5, total=8):
+    """Download with a hard time limit (some "logo" or "homepage" links are endless audio streams)."""
+    import time
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
+    start = time.time()
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.geturl(), r.headers.get("Content-Type", ""), r.read(limit)
+        ctype = r.headers.get("Content-Type", "")
+        if ctype.startswith(("audio/", "video/", "application/ogg")) or "mpegurl" in ctype:
+            raise ValueError("stream, not a page or image")
+        buf = bytearray()
+        while len(buf) < limit:
+            if time.time() - start > total:
+                raise TimeoutError("too slow")
+            chunk = r.read(65536)
+            if not chunk:
+                break
+            buf += chunk
+        return r.geturl(), ctype, bytes(buf)
 
 
 def load_image(data, ctype, url):
@@ -214,8 +228,22 @@ def main():
             g[3].append(s["homepage"])
     for f in os.listdir(OUT):
         os.remove(os.path.join(OUT, f))
-    with cf.ThreadPoolExecutor(32) as ex:
-        results = list(ex.map(process, groups.values()))
+    # Whatever is not finished in 6 minutes gets the generated tile in the app.
+    ex = cf.ThreadPoolExecutor(32)
+    futures = {ex.submit(process, g): g for g in groups.values()}
+    results = []
+    try:
+        for f in cf.as_completed(futures, timeout=360):
+            try:
+                results.append(f.result())
+            except Exception:
+                g = futures[f]
+                results.append((g[0], g[1], None))
+    except cf.TimeoutError:
+        print("time limit reached", flush=True)
+    done = {r[0] for r in results}
+    results += [(g[0], g[1], None) for g in groups.values() if g[0] not in done]
+    ex.shutdown(wait=False, cancel_futures=True)
     index = {k: v for k, _, v in results if v}
     os.makedirs("logos", exist_ok=True)
     json.dump({"found": index, "missing": [n for k, n, v in results if not v]}, open("logos/index.json", "w"), indent=1, ensure_ascii=False)
@@ -241,6 +269,7 @@ def main():
         d.text((x + 4, y + cell), n[:20], fill=(255, 255, 255), font=font)
         d.text((x + 4, y + cell + 13), (v or {}).get("kind", "—"), fill=(200, 200, 200), font=font)
     sheet.save("docs/logos_sheet.png", optimize=True)
+    os._exit(0)  # do not wait for stuck downloads
 
 
 if __name__ == "__main__":
