@@ -1,0 +1,1022 @@
+{
+ "m1dance": {
+  "name": "M-1 Dance ",
+  "homes": [
+   "https://radio.m-1.fm/m-1dance/aac"
+  ],
+  "pages": []
+ },
+ "easy": {
+  "name": "Easy FM",
+  "homes": [
+   "https://www.ziniuradijas.lt/easy-fm/"
+  ],
+  "pages": [
+   {
+    "url": "https://easyfm.lt/",
+    "og:description": "Easy FM - muzikinė radijo stotis, skirta klausytis tiek darbo, tiek poilsio metu. Gyvenk be įtamos - su tokiu šūkiu ir lengvo klausymo muzika kviečiame  praleisti kiekvieną savo dieną. Mūsų eteryje – 90 proc. muzikos ir 10 proc. naudingos informacijos. Be to, tai vienintelė radijo stotis, kuri transliuoja programą nemiegantiems. Naktimis galima klausytis ne tik muzikos, bet ir sužinoti daug įdomių dalykų.",
+    "twitter:description": "Easy FM - muzikinė radijo stotis, skirta klausytis tiek darbo, tiek poilsio metu. Gyvenk be įtamos - su tokiu šūkiu ir lengvo klausymo muzika kviečiame  praleisti kiekvieną savo dieną. Mūsų eteryje – 90 proc. muzikos ir 10 proc. naudingos informacijos. Be to, tai vienintelė radijo stotis, kuri transliuoja programą nemiegantiems. Naktimis galima klausytis ne tik muzikos, bet ir sužinoti daug įdomių dalykų.",
+    "paragraphs": []
+   }
+  ]
+ },
+ "jazz": {
+  "name": "Jazz FM",
+  "homes": [
+   "https://jazzfm.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://jazzfm.lt/",
+    "description": "Jazz FM 99.3 Mhz – klausykite geriausio džiazo, blues, soul ir funk muzikos.",
+    "og:description": "Jazz FM 99.3 Mhz – klausykite geriausio džiazo, blues, soul ir funk muzikos.",
+    "twitter:description": "Jazz FM 99.3 Mhz – klausykite geriausio džiazo, blues, soul ir funk muzikos.",
+    "paragraphs": [
+     "Atsiprašome, šiuo metu internetinė transliacija nepasiekiama. Prašome pabandyti vėliau."
+    ]
+   }
+  ]
+ },
+ "fiesta": {
+  "name": "Radio Fiesta",
+  "homes": [
+   "https://radiofiesta.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://www.radijas.lt/radiofiesta",
+    "paragraphs": []
+   }
+  ]
+ },
+ "lrtopus": {
+  "name": "LRT Opus",
+  "homes": [
+   "https://www.lrt.lt/mediateka/tiesiogiai/lrt-opus"
+  ],
+  "pages": [
+   {
+    "url": "https://www.lrt.lt/mediateka/tiesiogiai/lrt-opus",
+    "description": "Žiūrėkite LRT OPUS tiesiogiai internete. LRT OPUS - tai nacionalinės televizijos kanalas, transliuojantis naujienas, dokumentinius filmus, pramogines ir kultūrines programas.",
+    "og:description": "Žiūrėkite LRT OPUS tiesiogiai internete. LRT OPUS - tai nacionalinės televizijos kanalas, transliuojantis naujienas, dokumentinius filmus, pramogines ir kultūrines programas.",
+    "twitter:description": "Žiūrėkite LRT OPUS tiesiogiai internete. LRT OPUS - tai nacionalinės televizijos kanalas, transliuojantis naujienas, dokumentinius filmus, pramogines ir kultūrines programas.",
+    "paragraphs": [
+     "Meniu Paieška Tiesiogiai Pradžia Programa TV laidų sąrašas Filmai Serialai Programa Susisiekite Kitos nuorodos :"
+    ]
+   },
+   {
+    "url": "https://apie.lrt.lt/privatumo-politika",
+    "description": "Pagrindinė informacija apie privatumo politiką",
+    "og:description": "Pagrindinė informacija apie privatumo politiką",
+    "paragraphs": [
+     "PATVIRTINTA VšĮ Lietuvos nacionalinio radijo ir televizijos generalinio direktoriaus 2026 m. birželio 17 d. įsakymu Nr. VĮ-151",
+     "1.1. VšĮ „Lietuvos nacionalinis radijas ir televizija“ (LRT) Privatumo politika parengta įgyvendinant 2016 m. balandžio 27 d. Europos Parlamento ir Tarybos reglamento (ES) 2016/679 dėl fizinių asmenų apsaugos tvarkant asmens duomenis ir dėl laisvo tokių duomenų judėjimo ir kuriuo panaikinama Direktyva 95/46/EB (toliau – Reglamentas) nuostatas bei kitais asmens duomenų apsaugą reguliuojančiais teisės aktais.",
+     "1.2. Privatumo politikos tikslas – nustatyti asmens duomenų tvarkymo principus, naudojantis LRT teikiamomis paslaugomis, taip pat apibrėžti Jūsų kaip duomenų subjekto teises ir LRT kaip duomenų valdytojo pareigas.",
+     "1.3. Šioje Privatumo politikoje Jūs rasite visą informaciją, kokius Jūsų duomenis mes renkame ir tvarkome, kam juos naudojame, kiek laiko saugome ir kt. Ši informacija svarbi, todėl tikimės, kad atidžiai ją perskaitysite.",
+     "1.4. Pažymėtina, kad kai asmens duomenys tvarkomi žurnalistikos arba akademinės, meninės ar literatūrinės saviraiškos tikslais, ši Privatumo politika to neapima ir tiesiogiai taikomos Lietuvos Respublikos visuomenės informavimo įstatymo bei LRT redakcinės politikos nuostatos.",
+     "2.1. VšĮ „Lietuvos nacionalinis radijas ir televizija“ yra visuomeninis transliuotojas, siūlantis kokybišką, prasmingą televizijos, radijo ir naujienų portalo turinį, naujienlaiškių užsakymo paslaugas, suteikiantis galimybę lankytis LRT organizuojamuose renginiuose, filmavimuose ar ekskursijose ir pan.",
+     "2.3. LRT buveinės adresas – S. Konarskio g. 49, Vilnius, tel. Nr. +370 5 236 3000, el. paštas [email protected] .",
+     "2.4. Su LRT duomenų apsaugos pareigūnu galite susisiekti šiais kontaktais – [email protected] ; +370 602 02921.",
+     "3.1. Tvarkydami Jūsų asmens duomenis laikomės šių asmens duomenų tvarkymo principų:",
+     "3.1.1. Jūsų asmens duomenis tvarkome teisėtai, skaidriai ir sąžiningai;",
+     "3.1.2. Asmens duomenis tvarkome tik konkrečiais šioje Privatumo politikoje aiškiai apibrėžtais tikslais ir tik tokia apimtimi, kokios reikia konkrečiam tikslui pasiekti;",
+     "3.1.3. Imamės priemonių, kad asmens duomenys būtų tikslūs, prireikus atnaujinami, o netikslumui paaiškėjus nedelsiant ištaisomi;"
+    ]
+   }
+  ]
+ },
+ "europeanhit": {
+  "name": "European Hit Radio",
+  "homes": [
+   "https://europeanhitradio.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://europeanhitradio.lt/",
+    "description": "Klausyk European Hit Radio gyvai internetu arba per radiją: Vilniuje 99,7 FM, Kaune 102,5 FM, Klaipėdoje 96,2 FM. Didžiausi Europos hitai, TOP 40, laidų programa ir naujienos.",
+    "og:description": "Klausyk European Hit Radio gyvai internetu arba per radiją: Vilniuje 99,7 FM, Kaune 102,5 FM, Klaipėdoje 96,2 FM. Didžiausi Europos hitai, TOP 40, laidų programa ir naujienos.",
+    "twitter:description": "Klausyk European Hit Radio gyvai internetu arba per radiją: Vilniuje 99,7 FM, Kaune 102,5 FM, Klaipėdoje 96,2 FM. Didžiausi Europos hitai, TOP 40, laidų programa ir naujienos.",
+    "paragraphs": [
+     "Lankomumui matuoti naudojame Google Analytics slapukus. Juos įrašysime tik jums sutikus. ' + ' Slapukų politika",
+     "SUPER FM Klausytis gyvai SUPER FM 01 Pagrindinis Pagrindinis Programa Programa Muzika Muzika Partneriams Partneriams Naujienos Naujienos Kontaktai Kontaktai Prekės ženklas Prekės ženklas Europos hitai Nr. 1 kartu su tavimi European Hit Radio Naujausi hitai, populiariausios laidos, pramogos ir konkursai – viskas vienoje vietoje.",
+     "Klausytis gyvai Naujausi hitai, populiariausios laidos, pramogos ir konkursai – viskas vienoje vietoje.",
+     "Atrask partnerių naujienas, renginius, pasiūlymus ir aktualijas Naujienos Rekomenduojame · Partnerio turinys Dormeo Home – viskas jaukiems ir patogiems namams Jaukūs namai prasideda nuo detalių, kurios kuria komfortą kiekvieną dieną. Būtent tai ir siūlo Dormeo Home – platų namų prekių asortimentą, padedantį pasirūpinti tiek kokybišku…",
+     "LEA parama 2026 m.: proga atsinaujinti šildymą pigiau ir tvariau Šiuo metu vis daugiau gyventojų ieško sprendimų, kurie leistų sumažinti šildymo išlaidas, gauti valstybės…",
+     "Lietuva jau daugiau nei trisdešimt metų drąsiai žengia į Eurovizijos sceną, o 2026 m. gegužę Austrijos sostinėje Vienoje mūsų šalies atstovas atnešė naują energiją ir…",
+     "Šiuolaikinės pramogos vis dažniau persikelia į virtualų pasaulį, kuriame technologijos leidžia patirti nuotykius, apie kuriuos anksčiau buvo galima tik svajoti. Viena tokių…",
+     "Pernai savo pajamas VMI deklaravo daugiau nei 1,5 mln. Lietuvos dirbančiųjų. Iš jų tik apie 617 tūkst. žmonių skyrė GPM dalį paramai, t.y. vos 41 %. Tai reiškia, kad daugiau…",
+     "Maltos ordino pagalbos tarnybos (maltiečių) paramos senoliams akcija vyksta jau 20 metų. Gražu, kad tradicija tęsiasi, bet tai nėra jubiliejus, kuriuo reikėtų didžiuotis.…",
+     "„European Hit Radio“ – aktualiausių ir populiariausių hitų radijo stotis. Jau beveik 30 metų sekame pasaulines muzikos tendencijas ir pristatome kūrinius, kurie šiandien kyla į didžiausių muzikos topų viršūnes, o netrukus skamba visur.",
+     "Programą galima girdėti Vilniuje, Kaune ir Klaipėdoje, o internetu – klausytis iš bet kurios pasaulio vietos. „European Hit Radio“ – tavo dienos ritmas darbe, kelionėje ir laisvalaikiu.",
+     "Mūsų misija – pirmiesiems pristatyti aktualiausius pasaulio hitus ir leisti kalbėti muzikai. Be perteklinių kalbų – daugiau muzikos kiekvieną dieną. Atrask šiandien tai, kas netrukus skambės visur."
+    ]
+   }
+  ]
+ },
+ "3": {
+  "name": "Radijo stotis Radio3",
+  "homes": [
+   "https://radio3.tv3.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://radio3.tv3.lt/",
+    "description": "Radio 3 - klausykitės geriausių dainų tiesiogiai internetu. Lietuvos radijas su muzika 24/7. Vilnius 88.5 FM, Kaunas 105.4 FM, Klaipėda 89.1 FM ir kiti miestai.",
+    "og:description": "Klausykitės Radio 3 tiesiogiai internetu! Hitas po hito 24/7. Vilnius 88.5 FM, Kaunas 105.4 FM, Klaipėda 89.1 FM.",
+    "twitter:description": "Klausykitės Radio 3 tiesiogiai internetu! Hitas po hito 24/7. Vilnius 88.5 FM, Kaunas 105.4 FM, Klaipėda 89.1 FM.",
+    "paragraphs": [
+     "• iPhone: garsą keiskite telefono mygtukais Reklama Praleisti reklamą Paspauskite groti Nepavyko prisijungti prie transliacijos. Pabandykite vėliau. Neseniai grojo Nuo Iki Ieškoti Atstatyti Kraunama... Naujienos ← → Visos naujienos → Kraunama naujienas... Šios savaitės Top 15 dainų Kraunama šios savaitės Top 15... Klausykitės visoje Lietuvoje Kraunama dažnius... 🎙️ Žurnalistų namai - Laidos ir interviu 👍 Sekite mus Facebook iOS Atsisiųskite „Radio 3“ iš „App Store“ ▶ Atsisiųskite „Radio 3“ iš „Google Play“ info@radio3.lt © 2026 Radio 3. Visos teisės saugomos. | Privatumo politika · Privatumo nustatymai 🎵 Radio 3 Tiesiogiai Track Info Artist"
+    ]
+   }
+  ]
+ },
+ "lrtklasika": {
+  "name": "LRT Klasika",
+  "homes": [
+   "https://www.lrt.lt/mediateka/tiesiogiai/lrt-klasika"
+  ],
+  "pages": [
+   {
+    "url": "https://www.lrt.lt/mediateka/tiesiogiai/lrt-klasika",
+    "description": "Žiūrėkite LRT KLASIKA tiesiogiai internete. LRT KLASIKA - tai nacionalinės televizijos kanalas, transliuojantis naujienas, dokumentinius filmus, pramogines ir kultūrines programas.",
+    "og:description": "Žiūrėkite LRT KLASIKA tiesiogiai internete. LRT KLASIKA - tai nacionalinės televizijos kanalas, transliuojantis naujienas, dokumentinius filmus, pramogines ir kultūrines programas.",
+    "twitter:description": "Žiūrėkite LRT KLASIKA tiesiogiai internete. LRT KLASIKA - tai nacionalinės televizijos kanalas, transliuojantis naujienas, dokumentinius filmus, pramogines ir kultūrines programas.",
+    "paragraphs": [
+     "Meniu Paieška Tiesiogiai Pradžia Programa TV laidų sąrašas Filmai Serialai Programa Susisiekite Kitos nuorodos :"
+    ]
+   },
+   {
+    "url": "https://apie.lrt.lt/privatumo-politika",
+    "description": "Pagrindinė informacija apie privatumo politiką",
+    "og:description": "Pagrindinė informacija apie privatumo politiką",
+    "paragraphs": [
+     "PATVIRTINTA VšĮ Lietuvos nacionalinio radijo ir televizijos generalinio direktoriaus 2026 m. birželio 17 d. įsakymu Nr. VĮ-151",
+     "1.1. VšĮ „Lietuvos nacionalinis radijas ir televizija“ (LRT) Privatumo politika parengta įgyvendinant 2016 m. balandžio 27 d. Europos Parlamento ir Tarybos reglamento (ES) 2016/679 dėl fizinių asmenų apsaugos tvarkant asmens duomenis ir dėl laisvo tokių duomenų judėjimo ir kuriuo panaikinama Direktyva 95/46/EB (toliau – Reglamentas) nuostatas bei kitais asmens duomenų apsaugą reguliuojančiais teisės aktais.",
+     "1.2. Privatumo politikos tikslas – nustatyti asmens duomenų tvarkymo principus, naudojantis LRT teikiamomis paslaugomis, taip pat apibrėžti Jūsų kaip duomenų subjekto teises ir LRT kaip duomenų valdytojo pareigas.",
+     "1.3. Šioje Privatumo politikoje Jūs rasite visą informaciją, kokius Jūsų duomenis mes renkame ir tvarkome, kam juos naudojame, kiek laiko saugome ir kt. Ši informacija svarbi, todėl tikimės, kad atidžiai ją perskaitysite.",
+     "1.4. Pažymėtina, kad kai asmens duomenys tvarkomi žurnalistikos arba akademinės, meninės ar literatūrinės saviraiškos tikslais, ši Privatumo politika to neapima ir tiesiogiai taikomos Lietuvos Respublikos visuomenės informavimo įstatymo bei LRT redakcinės politikos nuostatos.",
+     "2.1. VšĮ „Lietuvos nacionalinis radijas ir televizija“ yra visuomeninis transliuotojas, siūlantis kokybišką, prasmingą televizijos, radijo ir naujienų portalo turinį, naujienlaiškių užsakymo paslaugas, suteikiantis galimybę lankytis LRT organizuojamuose renginiuose, filmavimuose ar ekskursijose ir pan.",
+     "2.3. LRT buveinės adresas – S. Konarskio g. 49, Vilnius, tel. Nr. +370 5 236 3000, el. paštas [email protected] .",
+     "2.4. Su LRT duomenų apsaugos pareigūnu galite susisiekti šiais kontaktais – [email protected] ; +370 602 02921.",
+     "3.1. Tvarkydami Jūsų asmens duomenis laikomės šių asmens duomenų tvarkymo principų:",
+     "3.1.1. Jūsų asmens duomenis tvarkome teisėtai, skaidriai ir sąžiningai;",
+     "3.1.2. Asmens duomenis tvarkome tik konkrečiais šioje Privatumo politikoje aiškiai apibrėžtais tikslais ir tik tokia apimtimi, kokios reikia konkrečiam tikslui pasiekti;",
+     "3.1.3. Imamės priemonių, kad asmens duomenys būtų tikslūs, prireikus atnaujinami, o netikslumui paaiškėjus nedelsiant ištaisomi;"
+    ]
+   }
+  ]
+ },
+ "geras": {
+  "name": "Geras FM",
+  "homes": [
+   "https://www.gerasfm.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://www.gerasfm.lt/",
+    "paragraphs": [
+     "Visiems ieškantiems pozityvių emocijų, geros muzikos bei prisiminimų, kuriuos ji sukelia, tobulas pasirinkimas – radijo stotis „Geras FM“. Jokių nereikalingų ir visiems pabodusių kalbų apie nieką. Radijo eteryje skamba tik pati svarbiausia informacija, kuri aktuali kiekvienam. Atsisakome smurto bei politinių intrigų, transliuojame tik rinktinius kelių paskutinių dešimtmečių muzikos hitus. „Geras FM“ – geros nuotaikos radijas, kuris leis negalvoti apie dienos rūpesčius bei gerai praleisti laiką kur bebūtumėte ir ką bedarytumėte. Šis radijas tai puikus „kompanionas“ bei muzikinis fonas vakarėlių, trumpų ar ilgų kelionių metu, tiek leidžiant laiką vienumoje, tiek draugų kompanijoje. Juk svarbiausia jaustis GERAI! Būtent tai ir siūlome savo klausytojams. „Geras FM“ programa transliuojama dviejuose didžiausiuose Lietuvos miestuose – Vilniuje bei Kaune. Vilniuje nuo 2003-ųjų – 101.9 MHz dažniu. Nuo 2007-ųjų transliacijos Kaune bei aplinkiniuose rajonuose – 91.9 MHz dažniu.",
+     "Dažniai Vilnius 101.9MHz Kaunas 91.9MHz Visais klausimais – info@gerasfm.lt",
+     "Įmonės rekvizitai: UAB „Geruda“ į/k 122043119 PVM mokėtojo kodas LT220431113 Gariūnų g. 43A, 02300 Vilnius, tel. (85) 2641028 a.s LT26 7180 3000 1746 7077 AB Šiaulių bankas Vilniaus fil., b/k 71803.",
+     "UAB „MEDIA LT” Įmonės kodas: 302802151 PVM mokėtojo kodas: LT100008845219 A/s: LT417180300010467287 Gariūnų g. 43A, 02300 Vilnius +37061027722 info@medialt.lt"
+    ]
+   },
+   {
+    "url": "http://www.gerasfm.lt/kas-tie-slapukai/",
+    "paragraphs": [
+     "Visiems ieškantiems pozityvių emocijų, geros muzikos bei prisiminimų, kuriuos ji sukelia, tobulas pasirinkimas – radijo stotis „Geras FM“. Jokių nereikalingų ir visiems pabodusių kalbų apie nieką. Radijo eteryje skamba tik pati svarbiausia informacija, kuri aktuali kiekvienam. Atsisakome smurto bei politinių intrigų, transliuojame tik rinktinius kelių paskutinių dešimtmečių muzikos hitus. „Geras FM“ – geros nuotaikos radijas, kuris leis negalvoti apie dienos rūpesčius bei gerai praleisti laiką kur bebūtumėte ir ką bedarytumėte. Šis radijas tai puikus „kompanionas“ bei muzikinis fonas vakarėlių, trumpų ar ilgų kelionių metu, tiek leidžiant laiką vienumoje, tiek draugų kompanijoje. Juk svarbiausia jaustis GERAI! Būtent tai ir siūlome savo klausytojams. „Geras FM“ programa transliuojama dviejuose didžiausiuose Lietuvos miestuose – Vilniuje bei Kaune. Vilniuje nuo 2003-ųjų – 101.9 MHz dažniu. Nuo 2007-ųjų transliacijos Kaune bei aplinkiniuose rajonuose – 91.9 MHz dažniu.",
+     "Dažniai Vilnius 101.9MHz Kaunas 91.9MHz Visais klausimais – info@gerasfm.lt",
+     "Įmonės rekvizitai: UAB „Geruda“ į/k 122043119 PVM mokėtojo kodas LT220431113 Gariūnų g. 43A, 02300 Vilnius, tel. (85) 2641028 a.s LT26 7180 3000 1746 7077 AB Šiaulių bankas Vilniaus fil., b/k 71803.",
+     "UAB „MEDIA LT” Įmonės kodas: 302802151 PVM mokėtojo kodas: LT100008845219 A/s: LT417180300010467287 Gariūnų g. 43A, 02300 Vilnius +37061027722 info@medialt.lt"
+    ]
+   }
+  ]
+ },
+ "lrt": {
+  "name": "LRT Radijas",
+  "homes": [
+   "https://www.lrt.lt/radioteka/lrt-radijas",
+   "https://www.lrt.lt/mediateka/tiesiogiai/lrt-radijas"
+  ],
+  "pages": [
+   {
+    "url": "https://www.lrt.lt/mediateka/tiesiogiai/lrt-radijas",
+    "description": "Žiūrėkite LRT RADIJAS tiesiogiai internete. LRT RADIJAS - tai nacionalinės televizijos kanalas, transliuojantis naujienas, dokumentinius filmus, pramogines ir kultūrines programas.",
+    "og:description": "Žiūrėkite LRT RADIJAS tiesiogiai internete. LRT RADIJAS - tai nacionalinės televizijos kanalas, transliuojantis naujienas, dokumentinius filmus, pramogines ir kultūrines programas.",
+    "twitter:description": "Žiūrėkite LRT RADIJAS tiesiogiai internete. LRT RADIJAS - tai nacionalinės televizijos kanalas, transliuojantis naujienas, dokumentinius filmus, pramogines ir kultūrines programas.",
+    "paragraphs": [
+     "Meniu Paieška Tiesiogiai Pradžia Programa TV laidų sąrašas Filmai Serialai Programa Susisiekite Kitos nuorodos :"
+    ]
+   },
+   {
+    "url": "https://apie.lrt.lt/privatumo-politika",
+    "description": "Pagrindinė informacija apie privatumo politiką",
+    "og:description": "Pagrindinė informacija apie privatumo politiką",
+    "paragraphs": [
+     "PATVIRTINTA VšĮ Lietuvos nacionalinio radijo ir televizijos generalinio direktoriaus 2026 m. birželio 17 d. įsakymu Nr. VĮ-151",
+     "1.1. VšĮ „Lietuvos nacionalinis radijas ir televizija“ (LRT) Privatumo politika parengta įgyvendinant 2016 m. balandžio 27 d. Europos Parlamento ir Tarybos reglamento (ES) 2016/679 dėl fizinių asmenų apsaugos tvarkant asmens duomenis ir dėl laisvo tokių duomenų judėjimo ir kuriuo panaikinama Direktyva 95/46/EB (toliau – Reglamentas) nuostatas bei kitais asmens duomenų apsaugą reguliuojančiais teisės aktais.",
+     "1.2. Privatumo politikos tikslas – nustatyti asmens duomenų tvarkymo principus, naudojantis LRT teikiamomis paslaugomis, taip pat apibrėžti Jūsų kaip duomenų subjekto teises ir LRT kaip duomenų valdytojo pareigas.",
+     "1.3. Šioje Privatumo politikoje Jūs rasite visą informaciją, kokius Jūsų duomenis mes renkame ir tvarkome, kam juos naudojame, kiek laiko saugome ir kt. Ši informacija svarbi, todėl tikimės, kad atidžiai ją perskaitysite.",
+     "1.4. Pažymėtina, kad kai asmens duomenys tvarkomi žurnalistikos arba akademinės, meninės ar literatūrinės saviraiškos tikslais, ši Privatumo politika to neapima ir tiesiogiai taikomos Lietuvos Respublikos visuomenės informavimo įstatymo bei LRT redakcinės politikos nuostatos.",
+     "2.1. VšĮ „Lietuvos nacionalinis radijas ir televizija“ yra visuomeninis transliuotojas, siūlantis kokybišką, prasmingą televizijos, radijo ir naujienų portalo turinį, naujienlaiškių užsakymo paslaugas, suteikiantis galimybę lankytis LRT organizuojamuose renginiuose, filmavimuose ar ekskursijose ir pan.",
+     "2.3. LRT buveinės adresas – S. Konarskio g. 49, Vilnius, tel. Nr. +370 5 236 3000, el. paštas [email protected] .",
+     "2.4. Su LRT duomenų apsaugos pareigūnu galite susisiekti šiais kontaktais – [email protected] ; +370 602 02921.",
+     "3.1. Tvarkydami Jūsų asmens duomenis laikomės šių asmens duomenų tvarkymo principų:",
+     "3.1.1. Jūsų asmens duomenis tvarkome teisėtai, skaidriai ir sąžiningai;",
+     "3.1.2. Asmens duomenis tvarkome tik konkrečiais šioje Privatumo politikoje aiškiai apibrėžtais tikslais ir tik tokia apimtimi, kokios reikia konkrečiam tikslui pasiekti;",
+     "3.1.3. Imamės priemonių, kad asmens duomenys būtų tikslūs, prireikus atnaujinami, o netikslumui paaiškėjus nedelsiant ištaisomi;"
+    ]
+   }
+  ]
+ },
+ "m1plius": {
+  "name": "M-1 Plius",
+  "homes": [
+   "http://www.pliusas.fm/",
+   "https://www.pliusas.fm/"
+  ],
+  "pages": [
+   {
+    "url": "https://m1play.15min.lt/m1plius",
+    "description": "Klausyk M1 Plius gyvai internetu ir programėlėje: laiko patikrinti užsienio hitai, pokalbiai ir naujausia informacija.",
+    "og:description": "Klausyk M1 Plius gyvai internetu ir programėlėje: laiko patikrinti užsienio hitai, pokalbiai ir naujausia informacija.",
+    "twitter:description": "Klausyk M1 Plius gyvai internetu ir programėlėje: laiko patikrinti užsienio hitai, pokalbiai ir naujausia informacija.",
+    "paragraphs": [
+     "M1 PLAY Pagrindinis Tinklalaidės Reels Žinios Dalyvauk Žaisk ir laimėk TOP'ai M1 muzikos apdovanojimai Mano radijas Mėgstamiausi Mano biblioteka Radijo stotys M1 Lietus M1 PLIUS M1 DANCE Laluna Teminės stotys M1 hitai #1 Lietus LAB M1 PLIUS DRIVE M1 PLIUS LOVE M1 DANCE WORKOUT Laluna Lounge Pauzė tarp dainų? Skaityk 15min naujienas Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Kl a usyk M1 Plius Pagrindinis Laidos Vedėjai Žaisk ir laimėk Pamėgti Vilnius FM 106.2 MHz 16:00 - 19:00 Pakeliui namo Laida, kuri primena, kad jau laikas galvoti apie darbų pabaigą ir nerti į poilsį. Juk vien nuo minties, kad esi „pakeliui namo“, prasideda gyvenimas. Gyvenimas su PLIUSU!",
+     "Radijo stotys M1 M1 Lietus Lietus M1 PLIUS M1 PLIUS M1 DANCE M1 DANCE Laluna Laluna Teminės stotys M1 hitai #1 M1 hitai #1 Lietus LAB Lietus LAB M1 PLIUS DRIVE M1 PLIUS DRIVE M1 PLIUS LOVE M1 PLIUS LOVE M1 DANCE WORKOUT M1 DANCE WORKOUT Laluna Lounge Laluna Lounge Mediateka Mėgstamiausi Mėgstamiausi Mano biblioteka Mano biblioteka Tinklalaidės Tinklalaidės Dažniai Dažniai Informacija Naujienos Naujienos Apie mus Apie mus Reklama Reklama Projektai Projektai 15min grupė 15min grupė Kontaktai Kontaktai Klausyk dar patogiau:",
+     "Group © 2026 UAB „M-1“ Privatumo politika Privatumo politika Slapukų nustatymai Slapukų nustatymai M1 00:00:00 00:00:00 Tiesiogiai M1 Ką tik grojo Visos šiandienos dainos Visos šiandienos dainos Bendraukime Tavo šansas patekti į eterį – paskambink arba parašyk vedėjams!",
+     "Skambink 1829 Žinutė vedėjams Skambinant iš užsienio: +37052740755 Trumpi klipai Žaisk ir laimėk Dar daugiau turinio M1 Plius Ar tavo geriausia draugė – tikrai draugė? 👀💔 Draugių nuodėmės ir atviri prisipažinimai – antrajam 910 peržiūros",
+     "Kada grožio procedūrų jau per daug? 👀💋 Atviros nuomonės ir karštos diskusijos – pirmajame „FEMME“ 11 tūkst. peržiūros",
+     "Gimei 90–aisiais? Tuomet tavo gimimo metai slepia vieną iš TO meto hitų! 📼🎶 Kokia daina tau atite 556 peržiūros",
+     "Dirbtinis intelektas jau gavo naktinę pamainą radijuje! 👀🎙️ Susipažinkit su Miku – pirmuoju Balti 1,2 tūkst. peržiūros",
+     "Kurią iš šių 70–ųjų legendų galėtumėte klausyti vėl ir vėl? 📀 #M1Plius #70s 1,1 tūkst. peržiūros",
+     "Ar M1 Plius vedėjos @juste_zinkeviciute ir @cijunelyte žino, ką groja? 👀 5 sekundės dainai atspėti 6,4 tūkst. peržiūros",
+     "Žaidimai Daugiau žaidimų Programėlėje M1 kojinės Dešimtmečių hitai Nuo rokenrolo klasikos iki šių laikų hitų – ar žinai, kuriais dešimtmečiais pasirodė šios legendinės dainos? Pasitikrink savo muzikines žinias! Kiekvieną savaitę iš daugiausiai taškų surinkusių dalyvių burtų keliu išrenkamas vienas nugalėtojas, kuriam įteikiamos M1 kojinės. Jei šį kartą sėkmė tau nenusišypsos, bandyk dar kartą kitą savaitę – naujame žaidime!"
+    ]
+   },
+   {
+    "url": "https://m1play.15min.lt/apie-mus",
+    "description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "og:description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "twitter:description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "paragraphs": [
+     "M1 PLAY Pagrindinis Tinklalaidės Reels Žinios Dalyvauk Žaisk ir laimėk TOP'ai M1 muzikos apdovanojimai Mano radijas Mėgstamiausi Mano biblioteka Radijo stotys M1 Lietus M1 PLIUS M1 DANCE Laluna Teminės stotys M1 hitai #1 Lietus LAB M1 PLIUS DRIVE M1 PLIUS LOVE M1 DANCE WORKOUT Laluna Lounge Pauzė tarp dainų? Skaityk 15min naujienas Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Apie mus Esame dalis „15min grupės\" – vienos didžiausių žiniasklaidos grupių Lietuvoje. Mūsų radijo šeimoje – 5 lyderiaujančios radijo stotys, kurios kasdien jungia gerą muziką, gyvus pokalbius ir ištikimą klausytojų bendruomenę.",
+     "Klausomiausia radijo stotis Lietuvoje, kuri groja jau nuo 1989 m. Klausytojų širdis (ir ausis) užkariaujame populiariausiais hitais, bajeriais eteryje ir netikėtomis idėjomis. M1 neseka tendencijomis, jis pats jas kuria!",
+     "Antra didžiausia radijo stotis Lietuvoje. Ištikimiems klausytojams „Lietus“ ne svečias prašalaitis, o artimas draugas jų namuose. Geriausi lietuviški hitai, kuriuos iš širdies traukia visi.",
+     "Laiko patikrinti užsienio hitai, įdomūs pokalbiai bei patikima, naujausia informacija. Vertinantiems kokybę.",
+     "Nesvarbu, kuri savaitės diena ar valanda – M1 DANCE serviruoja vakarėlį. Tiems, kurie neskaičiuoja valandų praleistų judesy ir nori šokių aikštelę turėti visur ir visada.",
+     "Populiariausia Klaipėdos radijo stotis, tapusi tikru klaipėdiečių pasididžiavimu. Gerą nuotaiką užtikrinanti muzika su aktualiausia informacija būtent šiam regionui.",
+     "Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Apie mus Esame dalis „15min grupės\" – vienos didžiausių žiniasklaidos grupių Lietuvoje. Mūsų radijo šeimoje – 5 lyderiaujančios radijo stotys, kurios kasdien jungia gerą muziką, gyvus pokalbius ir ištikimą klausytojų bendruomenę.",
+     "Klausomiausia radijo stotis Lietuvoje, kuri groja jau nuo 1989 m. Klausytojų širdis (ir ausis) užkariaujame populiariausiais hitais, bajeriais eteryje ir netikėtomis idėjomis. M1 neseka tendencijomis, jis pats jas kuria!",
+     "Antra didžiausia radijo stotis Lietuvoje. Ištikimiems klausytojams „Lietus“ ne svečias prašalaitis, o artimas draugas jų namuose. Geriausi lietuviški hitai, kuriuos iš širdies traukia visi.",
+     "Laiko patikrinti užsienio hitai, įdomūs pokalbiai bei patikima, naujausia informacija. Vertinantiems kokybę.",
+     "Nesvarbu, kuri savaitės diena ar valanda – M1 DANCE serviruoja vakarėlį. Tiems, kurie neskaičiuoja valandų praleistų judesy ir nori šokių aikštelę turėti visur ir visada.",
+     "Populiariausia Klaipėdos radijo stotis, tapusi tikru klaipėdiečių pasididžiavimu. Gerą nuotaiką užtikrinanti muzika su aktualiausia informacija būtent šiam regionui."
+    ]
+   }
+  ]
+ },
+ "super": {
+  "name": "Super FM",
+  "homes": [
+   "http://www.superfmradio.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://europeanhitradio.lt/super-fm",
+    "description": "SUPER FM – visi super hitai. Visada tavo dienos ritmu.",
+    "og:description": "SUPER FM – visi super hitai. Visada tavo dienos ritmu.",
+    "twitter:description": "SUPER FM – visi super hitai. Visada tavo dienos ritmu.",
+    "paragraphs": [
+     "Lankomumui matuoti naudojame Google Analytics slapukus. Juos įrašysime tik jums sutikus. ' + ' Slapukų politika",
+     "+370 685 56560 Partneriams Kontaktai Privatumo politika Slapukų politika SUPER FM",
+     "SFM Dabar eteryje Celestial Tiesiogiai EHR SUPER FM SFM Prieš tai grojome",
+     "Išsisaugok šį puslapį savo telefono naršyklėje ir pradėk klausytis muzikos vienu paspaudimu."
+    ]
+   }
+  ]
+ },
+ "powerhit": {
+  "name": "Power Hit Radio LT",
+  "homes": [
+   "https://powerhitradio.tv3.lt/apie-pwr",
+   "https://powerhitradio.tv3.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://powerhitradio.tv3.lt/apie-pwr",
+    "description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "og:description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "paragraphs": [
+     "„Power Hit Radio\" komanda kasdien leidžia į eterį pasaulyje populiariausią ir klausomiausią šokių muziką ir supažindina klausytojus su perspektyviausiais ir talentingiausiais lietuviškos šokių muzikos kūrėjais. „Power Hit Radio\" programoje – daugybė laidų, tarp kurių klausytojų labiausiai mėgstamos: „Šok į kelnes\" su Elena Karaliene ir Sauliumi Baniuliu, „Power hitai\" su Laurynu Matoniu ir Roku Lukošaičiu, „Power popietė\" su Jonu Lukausku ir Laura Ignatovičiūte.",
+     "„Power Hit Radio\" komanda nori būti geriausia. Viena iš galimybių to pasiekti – pasinaudoti radijo stoties populiarumu geriems tikslams. Darbe mums linksma, norime, kad linksma būtų ir mūsų klausytojams, tačiau suprantame, jog dėl savo populiarumo į šį verslą turime žvelgti dar atsakingiau.",
+     "Partnerystė, bendravimas ir bendradarbiavimas – svarbios vertybės, todėl daug dėmesio „Power Hit Radio\" skiria draugiškiems ir kokybiškiems santykiams: atsakingai elgiamės su partneriais, užsakovais, darbuotojais, aplinkiniais, o svarbiausia – su klausytojais.",
+     "„Power Hit Radio“ laikosi visų žiniasklaidai galiojančių įstatymų ir taisyklių. Tai aprėpia viską – programos, laidų turinį, rėmėjų medžiagą, reklamą, etiką, kalbos kultūrą. Darbuotojai užtikrina, kad viso to būtų paisoma.",
+     "„Power Hit Radio“ neabejinga ir socialinėms iniciatyvoms – rūpinasi visų mūsų ateitimi žalioje, švarioje Lietuvoje. Su „Power Hit Radio“ klausytojais ir žinomais žmonėmis garsiai ir drąsiai kalbame apie patyčių mokykloje žalą.",
+     "Klausytojų palaikymo sulaukė ir radijo stoties bendradarbiavimas su neįgaliųjų laisvalaikio centru „Pasikeisk“. „Power Hit Radio“ padėjo neįgaliam jaunimui susirasti naujų bendraminčių.",
+     "„Power Hit Radio“ eteryje geros valios klausytojų dėka ne kartą yra rinktos lėšos gyvūnų globos namams bei „žalios“ mąstysenos – atliekų rūšiavimo ir gamtos tausojimo – akcijoms.",
+     "„Power Hit Radio“ priklauso žiniasklaidos grupei All Media Baltics. Laikomės visų žiniasklaidos priemonėms galiojančių įstatymų ir taisyklių. Tai aprėpia viską – programų turinį, rėmėjų medžiagą ir darbuotojų elgesį. Socialinė atsakomybė yra būdas užtikrinti darnų verslo plėtojimą. Ją sudaro keturios dalys: verslo atsakomybė, transliavimo ir rinkodaros atsakomybė, atsakomybė darbuotojams ir atsakomybė visuomenei.",
+     "Lietuviškos muzikos pristatymas Savo autorinius šokių ar elektroninės muzikos kūrinius siųskite MP3 formatu (ne mažiau kaip 192 Kbps kokybės), pridėdami informaciją apie kūrinio autorius, autorinę agentūrą, savo trumpą prisistatymą ir, pageidautiną, dainos \"COVERĮ\" (jpg) arba savo nuotrauką (JPG). El. paštas: [email protected]"
+    ]
+   },
+   {
+    "url": "https://powerhitradio.tv3.lt/apie-pwr/laidu-vedejai",
+    "description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "og:description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "paragraphs": []
+   },
+   {
+    "url": "https://powerhitradio.tv3.lt/apie-pwr/reklama",
+    "description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "og:description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "paragraphs": [
+     "Studijos telefonas: 1897 Studijos numeris skambinantiems iš užsienio: +37068598770 Visais klausimais – [email protected] Reklama – [email protected]",
+     "Reklamos skyriaus telefonas: +37067319792 (skambinti tik reklamos užsakymo klausimais)",
+     "UAB ALL MEDIA RADIJAS P. Lukšio g. 23, LT-09132 Vilnius Tel. +370 5 2030101 Įmonės kodas: 126021636 PVM mokėtojo kodas: LT260216314 A/s LT22 7300 0100 7356 9601 Bankas: „Swedbank“, AB Banko kodas: 73000",
+     "„Power Hit Radio\" komanda kasdien leidžia į eterį pasaulyje populiariausią ir klausomiausią šokių muziką ir supažindina klausytojus su perspektyviausiais ir talentingiausiais lietuviškos šokių muzikos kūrėjais. „Power Hit Radio\" programoje – daugybė laidų, tarp kurių klausytojų labiausiai mėgstamos: „Šok į kelnes\" su Sauliumi Baniuliu ir Elena Karaliene, „Power hitai\" su Laurynu Matoniu ir Roku Lukošaičiu, „Power popietė\" su Edgaru Kožuchovskiu ir Laura Ignatovičiūte, ir savaitgalio laida su Roku Lukošaičiu."
+    ]
+   },
+   {
+    "url": "https://powerhitradio.tv3.lt/",
+    "description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "og:description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "paragraphs": [
+     "'; var spLink = document.createElement('a'); spLink.href = 'https://open.spotify.com/search/' + searchQuery; spLink.target = '_blank'; spLink.rel = 'noopener'; spLink.title = 'Ieškoti Spotify'; spLink.innerHTML = ' '; linksEl.appendChild(ytLink); linksEl.appendChild(spLink); // Dainos informacija var infoEl = document.createElement('div'); infoEl.className = 'pwr-top15__info'; var artistEl = document.createElement('div'); artistEl.className = 'pwr-top15__artist'; artistEl.textContent = capWords(entry.artist); infoEl.appendChild(artistEl); if (entry.title) { var titleEl = document.createElement('div'); titleEl.className = 'pwr-top15__title'; titleEl.textContent = entry.title; infoEl.appendChild(titleEl); } if (entry.last_position && entry.last_position !== entry.position) { var lpEl = document.createElement('div'); lpEl.className = 'pwr-top15__prev-pos'; lpEl.textContent = 'Praeitą savaitę: #' + entry.last_position; infoEl.appendChild(lpEl); } // Savaičių skaičius var weeksEl = document.createElement('div'); weeksEl.className = 'pwr-top15__weeks'; weeksEl.innerHTML = ' ' + entry.weeks_in_chart + ' ' + ' sav. '; li.appendChild(posEl); li.appendChild(changeEl); li.appendChild(artEl); li.appendChild(infoEl); li.appendChild(linksEl); li.appendChild(weeksEl); list.appendChild(li); }); } function renderFunFacts(currentWeek) { var ff = allData.fun_facts; var year = currentWeek.date.substring(0, 4); var cards = [ { label: 'Ilgiausiai tope ' + year + ' metais', artist: ff.longest_this_year ? capWords(ff.longest_this_year.artist) : '–', title: ff.longest_this_year ? ff.longest_this_year.title : '', stat: ff.longest_this_year ? ff.longest_this_year.weeks : 0, unit: 'sav.' }, { label: 'Ilgiausiai tope – visų laikų rekordas', artist: capWords(ff.longest_ever.artist), title: ff.longest_ever.title, stat: ff.longest_ever.weeks, unit: 'sav.' }, { label: 'Daugiausiai savaičių Nr.1', artist: capWords(ff.most_weeks_at_number_one[0].artist), title: ff.most_weeks_at_number_one[0].title, stat: ff.most_weeks_at_number_one[0].weeks, unit: 'sav. Nr.1' }, { label: 'Archyvo apimtis', artist: allData.total_weeks + ' savaitės', title: allData.date_range.from + ' – ' + allData.date_range.to, stat: ff.total_unique_songs, unit: 'unikalios dainos' } ]; var grid = document.getElementById('factsGrid'); if (grid) { grid.innerHTML = cards.map(function(c) { return ' ' + ' ' + c.label + ' ' + ' ' + c.artist + ' ' + (c.title ? ' ' + c.title + ' ' : '') + ' ' + c.stat + ' ' + c.unit + ' ' + ' '; }).join(''); } } function buildYearTabs() { var years = []; allData.charts.forEach(function(w) { var y = w.date.substring(0, 4); if (years.indexOf(y) === -1) years.push(y); }); years.sort().reverse(); var tabsEl = document.getElementById('yearTabs'); if (tabsEl) { years.forEach(function(year, i) { var btn = document.createElement('button'); btn.className = 'pwr-top15__year-tab' + (i === 0 ? ' pwr-top15__year-tab--active' : ''); btn.textContent = year; btn.addEventListener('click', function() { document.querySelectorAll('.pwr-top15__year-tab').forEach(function(t) { t.classList.remove('pwr-top15__year-tab--active'); }); btn.classList.add('pwr-top15__year-tab--active'); buildWeekGrid(year); }); tabsEl.appendChild(btn); }); } buildWeekGrid(years[0]); } function buildWeekGrid(year) { var grid = document.getElementById('weekGrid'); if (!grid) return; grid.innerHTML = ''; allData.charts .map(function(w, i) { return { date: w.date, index: i }; }) .filter(function(w) { return w.date.substring(0, 4) === year; }) .forEach(function(week) { var btn = document.createElement('button'); btn.className = 'pwr-top15__week-btn' + (week.index === currentIndex ? ' pwr-top15__week-btn--active' : ''); btn.dataset.index = week.index; var parts = week.date.split('-').map(Number); btn.textContent = parts[2] + ' ' + LT_MONTHS[parts[1] - 1].substring(0, 3) + '.'; btn.addEventListener('click', function() { renderWeek(week.index); buildWeekGrid(year); }); grid.appendChild(btn); }); } function capWords(str) { if (!str) return ''; if (str === str.toUpperCase() && str.length > 3) return str.toLowerCase().replace(/(?:^|\\s|&|,)\\S/g, function(c) { return c.toUpperCase(); }); return str; } loadData(); Power Hit Radio TIK TOK kanalas - - - - - - Programa Nepraleiskite gerų įspūdžių - klausykite įrašų Visa programa 11:00",
+     "\"Power Hit Radio\" komanda kasdien leidžia į eterį pasaulyje populiariausią ir klausomiausią šokių muziką ir supažindina klausytojus su perspektyviausiais ir talentingiausiais lietuviškos šokių muzikos kūrėjais."
+    ]
+   }
+  ]
+ },
+ "powergold": {
+  "name": "Power Gold",
+  "homes": [
+   "https://powerhitradio.lt/",
+   "https://powerhitradio.tv3.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://powerhitradio.tv3.lt/",
+    "description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "og:description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "paragraphs": [
+     "'; var spLink = document.createElement('a'); spLink.href = 'https://open.spotify.com/search/' + searchQuery; spLink.target = '_blank'; spLink.rel = 'noopener'; spLink.title = 'Ieškoti Spotify'; spLink.innerHTML = ' '; linksEl.appendChild(ytLink); linksEl.appendChild(spLink); // Dainos informacija var infoEl = document.createElement('div'); infoEl.className = 'pwr-top15__info'; var artistEl = document.createElement('div'); artistEl.className = 'pwr-top15__artist'; artistEl.textContent = capWords(entry.artist); infoEl.appendChild(artistEl); if (entry.title) { var titleEl = document.createElement('div'); titleEl.className = 'pwr-top15__title'; titleEl.textContent = entry.title; infoEl.appendChild(titleEl); } if (entry.last_position && entry.last_position !== entry.position) { var lpEl = document.createElement('div'); lpEl.className = 'pwr-top15__prev-pos'; lpEl.textContent = 'Praeitą savaitę: #' + entry.last_position; infoEl.appendChild(lpEl); } // Savaičių skaičius var weeksEl = document.createElement('div'); weeksEl.className = 'pwr-top15__weeks'; weeksEl.innerHTML = ' ' + entry.weeks_in_chart + ' ' + ' sav. '; li.appendChild(posEl); li.appendChild(changeEl); li.appendChild(artEl); li.appendChild(infoEl); li.appendChild(linksEl); li.appendChild(weeksEl); list.appendChild(li); }); } function renderFunFacts(currentWeek) { var ff = allData.fun_facts; var year = currentWeek.date.substring(0, 4); var cards = [ { label: 'Ilgiausiai tope ' + year + ' metais', artist: ff.longest_this_year ? capWords(ff.longest_this_year.artist) : '–', title: ff.longest_this_year ? ff.longest_this_year.title : '', stat: ff.longest_this_year ? ff.longest_this_year.weeks : 0, unit: 'sav.' }, { label: 'Ilgiausiai tope – visų laikų rekordas', artist: capWords(ff.longest_ever.artist), title: ff.longest_ever.title, stat: ff.longest_ever.weeks, unit: 'sav.' }, { label: 'Daugiausiai savaičių Nr.1', artist: capWords(ff.most_weeks_at_number_one[0].artist), title: ff.most_weeks_at_number_one[0].title, stat: ff.most_weeks_at_number_one[0].weeks, unit: 'sav. Nr.1' }, { label: 'Archyvo apimtis', artist: allData.total_weeks + ' savaitės', title: allData.date_range.from + ' – ' + allData.date_range.to, stat: ff.total_unique_songs, unit: 'unikalios dainos' } ]; var grid = document.getElementById('factsGrid'); if (grid) { grid.innerHTML = cards.map(function(c) { return ' ' + ' ' + c.label + ' ' + ' ' + c.artist + ' ' + (c.title ? ' ' + c.title + ' ' : '') + ' ' + c.stat + ' ' + c.unit + ' ' + ' '; }).join(''); } } function buildYearTabs() { var years = []; allData.charts.forEach(function(w) { var y = w.date.substring(0, 4); if (years.indexOf(y) === -1) years.push(y); }); years.sort().reverse(); var tabsEl = document.getElementById('yearTabs'); if (tabsEl) { years.forEach(function(year, i) { var btn = document.createElement('button'); btn.className = 'pwr-top15__year-tab' + (i === 0 ? ' pwr-top15__year-tab--active' : ''); btn.textContent = year; btn.addEventListener('click', function() { document.querySelectorAll('.pwr-top15__year-tab').forEach(function(t) { t.classList.remove('pwr-top15__year-tab--active'); }); btn.classList.add('pwr-top15__year-tab--active'); buildWeekGrid(year); }); tabsEl.appendChild(btn); }); } buildWeekGrid(years[0]); } function buildWeekGrid(year) { var grid = document.getElementById('weekGrid'); if (!grid) return; grid.innerHTML = ''; allData.charts .map(function(w, i) { return { date: w.date, index: i }; }) .filter(function(w) { return w.date.substring(0, 4) === year; }) .forEach(function(week) { var btn = document.createElement('button'); btn.className = 'pwr-top15__week-btn' + (week.index === currentIndex ? ' pwr-top15__week-btn--active' : ''); btn.dataset.index = week.index; var parts = week.date.split('-').map(Number); btn.textContent = parts[2] + ' ' + LT_MONTHS[parts[1] - 1].substring(0, 3) + '.'; btn.addEventListener('click', function() { renderWeek(week.index); buildWeekGrid(year); }); grid.appendChild(btn); }); } function capWords(str) { if (!str) return ''; if (str === str.toUpperCase() && str.length > 3) return str.toLowerCase().replace(/(?:^|\\s|&|,)\\S/g, function(c) { return c.toUpperCase(); }); return str; } loadData(); Power Hit Radio TIK TOK kanalas - - - - - - Programa Nepraleiskite gerų įspūdžių - klausykite įrašų Visa programa 11:00",
+     "\"Power Hit Radio\" komanda kasdien leidžia į eterį pasaulyje populiariausią ir klausomiausią šokių muziką ir supažindina klausytojus su perspektyviausiais ir talentingiausiais lietuviškos šokių muzikos kūrėjais."
+    ]
+   },
+   {
+    "url": "https://powerhitradio.tv3.lt/apie-pwr",
+    "description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "og:description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "paragraphs": [
+     "„Power Hit Radio\" komanda kasdien leidžia į eterį pasaulyje populiariausią ir klausomiausią šokių muziką ir supažindina klausytojus su perspektyviausiais ir talentingiausiais lietuviškos šokių muzikos kūrėjais. „Power Hit Radio\" programoje – daugybė laidų, tarp kurių klausytojų labiausiai mėgstamos: „Šok į kelnes\" su Elena Karaliene ir Sauliumi Baniuliu, „Power hitai\" su Laurynu Matoniu ir Roku Lukošaičiu, „Power popietė\" su Jonu Lukausku ir Laura Ignatovičiūte.",
+     "„Power Hit Radio\" komanda nori būti geriausia. Viena iš galimybių to pasiekti – pasinaudoti radijo stoties populiarumu geriems tikslams. Darbe mums linksma, norime, kad linksma būtų ir mūsų klausytojams, tačiau suprantame, jog dėl savo populiarumo į šį verslą turime žvelgti dar atsakingiau.",
+     "Partnerystė, bendravimas ir bendradarbiavimas – svarbios vertybės, todėl daug dėmesio „Power Hit Radio\" skiria draugiškiems ir kokybiškiems santykiams: atsakingai elgiamės su partneriais, užsakovais, darbuotojais, aplinkiniais, o svarbiausia – su klausytojais.",
+     "„Power Hit Radio“ laikosi visų žiniasklaidai galiojančių įstatymų ir taisyklių. Tai aprėpia viską – programos, laidų turinį, rėmėjų medžiagą, reklamą, etiką, kalbos kultūrą. Darbuotojai užtikrina, kad viso to būtų paisoma.",
+     "„Power Hit Radio“ neabejinga ir socialinėms iniciatyvoms – rūpinasi visų mūsų ateitimi žalioje, švarioje Lietuvoje. Su „Power Hit Radio“ klausytojais ir žinomais žmonėmis garsiai ir drąsiai kalbame apie patyčių mokykloje žalą.",
+     "Klausytojų palaikymo sulaukė ir radijo stoties bendradarbiavimas su neįgaliųjų laisvalaikio centru „Pasikeisk“. „Power Hit Radio“ padėjo neįgaliam jaunimui susirasti naujų bendraminčių.",
+     "„Power Hit Radio“ eteryje geros valios klausytojų dėka ne kartą yra rinktos lėšos gyvūnų globos namams bei „žalios“ mąstysenos – atliekų rūšiavimo ir gamtos tausojimo – akcijoms.",
+     "„Power Hit Radio“ priklauso žiniasklaidos grupei All Media Baltics. Laikomės visų žiniasklaidos priemonėms galiojančių įstatymų ir taisyklių. Tai aprėpia viską – programų turinį, rėmėjų medžiagą ir darbuotojų elgesį. Socialinė atsakomybė yra būdas užtikrinti darnų verslo plėtojimą. Ją sudaro keturios dalys: verslo atsakomybė, transliavimo ir rinkodaros atsakomybė, atsakomybė darbuotojams ir atsakomybė visuomenei.",
+     "Lietuviškos muzikos pristatymas Savo autorinius šokių ar elektroninės muzikos kūrinius siųskite MP3 formatu (ne mažiau kaip 192 Kbps kokybės), pridėdami informaciją apie kūrinio autorius, autorinę agentūrą, savo trumpą prisistatymą ir, pageidautiną, dainos \"COVERĮ\" (jpg) arba savo nuotrauką (JPG). El. paštas: [email protected]"
+    ]
+   },
+   {
+    "url": "https://powerhitradio.tv3.lt/apie-pwr/laidu-vedejai",
+    "description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "og:description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "paragraphs": []
+   },
+   {
+    "url": "https://powerhitradio.tv3.lt/apie-pwr/reklama",
+    "description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "og:description": "Power Hit Radio | Šokių muzikos hitai NR1",
+    "paragraphs": [
+     "Studijos telefonas: 1897 Studijos numeris skambinantiems iš užsienio: +37068598770 Visais klausimais – [email protected] Reklama – [email protected]",
+     "Reklamos skyriaus telefonas: +37067319792 (skambinti tik reklamos užsakymo klausimais)",
+     "UAB ALL MEDIA RADIJAS P. Lukšio g. 23, LT-09132 Vilnius Tel. +370 5 2030101 Įmonės kodas: 126021636 PVM mokėtojo kodas: LT260216314 A/s LT22 7300 0100 7356 9601 Bankas: „Swedbank“, AB Banko kodas: 73000",
+     "„Power Hit Radio\" komanda kasdien leidžia į eterį pasaulyje populiariausią ir klausomiausią šokių muziką ir supažindina klausytojus su perspektyviausiais ir talentingiausiais lietuviškos šokių muzikos kūrėjais. „Power Hit Radio\" programoje – daugybė laidų, tarp kurių klausytojų labiausiai mėgstamos: „Šok į kelnes\" su Sauliumi Baniuliu ir Elena Karaliene, „Power hitai\" su Laurynu Matoniu ir Roku Lukošaičiu, „Power popietė\" su Edgaru Kožuchovskiu ir Laura Ignatovičiūte, ir savaitgalio laida su Roku Lukošaičiu."
+    ]
+   }
+  ]
+ },
+ "laluna": {
+  "name": "Laluna [AAC]",
+  "homes": [
+   "https://laluna.lt/",
+   "http://laluna.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://m1play.15min.lt/laluna",
+    "description": "Klausyk Lalunos gyvai internetu ir programėlėje: populiariausia Klaipėdos radijo stotis. Muzika, regiono naujienos ir laida „Ant bangos“.",
+    "og:description": "Klausyk Lalunos gyvai internetu ir programėlėje: populiariausia Klaipėdos radijo stotis. Muzika, regiono naujienos ir laida „Ant bangos“.",
+    "twitter:description": "Klausyk Lalunos gyvai internetu ir programėlėje: populiariausia Klaipėdos radijo stotis. Muzika, regiono naujienos ir laida „Ant bangos“.",
+    "paragraphs": [
+     "M1 PLAY Pagrindinis Tinklalaidės Reels Žinios Dalyvauk Žaisk ir laimėk TOP'ai M1 muzikos apdovanojimai Mano radijas Mėgstamiausi Mano biblioteka Radijo stotys M1 Lietus M1 PLIUS M1 DANCE Laluna Teminės stotys M1 hitai #1 Lietus LAB M1 PLIUS DRIVE M1 PLIUS LOVE M1 DANCE WORKOUT Laluna Lounge Pauzė tarp dainų? Skaityk 15min naujienas Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Klausyk Lalunos Pagrindinis Laidos Vedėjai Žaisk ir laimėk Pamėgti Klaipėda FM 94.9 MHz 17:00 - 19:00 Ko širdelė geidžia Norite išgirsti savo mėgstamą kūrinį? Po 17 val. „Laluna“ neria į Jūsų pageidavimus. Paskambinkite arba parašykite mums, įsijunkite „Laluną“, mėgaukitės mėgstamiausia muzika ir paskatinkite prisijungti draugus!",
+     "Ką tik grojo Visos šiandienos dainos Visos šiandienos dainos Bendraukime Tavo šansas patekti į eterį – paskambink arba parašyk vedėjams!",
+     "Skambink +370 46 390 800 Žinutė vedėjams Sekmadieniais 17:00 – 19:00 LALUNA TOP 40 Spausk žvaigždelę prie dainų ir padėk joms pakilti į LALUNA TOP 40! Balsuoti gali 1 kartą per dieną.",
+     "Spausk žvaigždelę prie dainų ir padėk joms pakilti į LALUNA TOP 40! Balsuoti gali 1 kartą per dieną.",
+     "TOP 40 Sekmadieniais 17:00 – 19:00 LALUNA TOP 40 Spausk žvaigždelę prie dainų ir padėk joms pakilti į LALUNA TOP 40! Balsuoti gali 1 kartą per dieną.",
+     "Savaitės naujienos Trumpi klipai Žinios 17:00 – LALUNOS ŽINIOS 2026 11 12 15:58 – LALUNOS ŽINIOS 2026 11 12 15:00 – LALUNOS ŽINIOS 2026 11 12 14:00 – LALUNOS ŽINIOS 2026 11 12 13:00 – LALUNOS ŽINIOS 2026 11 12 12:00 – LALUNOS ŽINIOS 2026 11 12 11:00 – LALUNOS ŽINIOS 2026 11 12 10:00 – LALUNOS ŽINIOS 2026 11 12 09:00 – LALUNOS ŽINIOS 2026 11 12 08:00 – LALUNOS ŽINIOS 2026 11 12 07:00 – LALUNOS ŽINIOS 2026 11 12 18:00 – LALUNOS ŽINIOS 2026 11 11 17:00 – LALUNOS ŽINIOS 2026 11 11 16:00 – LALUNOS ŽINIOS 2026 11 11 15:00 – LALUNOS ŽINIOS 2026 11 11 14:00 – LALUNOS ŽINIOS 2026 11 11 13:00 – LALUNOS ŽINIOS 2026 11 11 12:00 – LALUNOS ŽINIOS 2026 11 11 11:00 – LALUNOS ŽINIOS 2026 11 11 10:00 – LALUNOS ŽINIOS 2026 11 11 Radijo stotys M1 M1 Lietus Lietus M1 PLIUS M1 PLIUS M1 DANCE M1 DANCE Laluna Laluna Teminės stotys M1 hitai #1 M1 hitai #1 Lietus LAB Lietus LAB M1 PLIUS DRIVE M1 PLIUS DRIVE M1 PLIUS LOVE M1 PLIUS LOVE M1 DANCE WORKOUT M1 DANCE WORKOUT Laluna Lounge Laluna Lounge Mediateka Mėgstamiausi Mėgstamiausi Mano biblioteka Mano biblioteka Tinklalaidės Tinklalaidės Dažniai Dažniai Informacija Naujienos Naujienos Apie mus Apie mus Reklama Reklama Projektai Projektai 15min grupė 15min grupė Kontaktai Kontaktai Klausyk dar patogiau:",
+     "Group © 2026 UAB „M-1“ Privatumo politika Privatumo politika Slapukų nustatymai Slapukų nustatymai M1 00:00:00 00:00:00 Tiesiogiai M1 Dar daugiau turinio Laluna Ar pažistamas šis jausmas?🙃 Vienišinių diena11.11 #klaipeda #radijas #laluna #jura #geranuotaika 348 peržiūros",
+     "Taip prasideda jų diena 😴😅#klaipeda #radijas #rytas #laluna 1,6 tūkst. peržiūros",
+     "Komandinis darbas 👷‍♂️👷‍♂️ #teamwork #komandinisdarbas #work #darbas #laluna #klaipeda #pica #darb 3,8 tūkst. peržiūros"
+    ]
+   },
+   {
+    "url": "https://m1play.15min.lt/apie-mus",
+    "description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "og:description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "twitter:description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "paragraphs": [
+     "M1 PLAY Pagrindinis Tinklalaidės Reels Žinios Dalyvauk Žaisk ir laimėk TOP'ai M1 muzikos apdovanojimai Mano radijas Mėgstamiausi Mano biblioteka Radijo stotys M1 Lietus M1 PLIUS M1 DANCE Laluna Teminės stotys M1 hitai #1 Lietus LAB M1 PLIUS DRIVE M1 PLIUS LOVE M1 DANCE WORKOUT Laluna Lounge Pauzė tarp dainų? Skaityk 15min naujienas Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Apie mus Esame dalis „15min grupės\" – vienos didžiausių žiniasklaidos grupių Lietuvoje. Mūsų radijo šeimoje – 5 lyderiaujančios radijo stotys, kurios kasdien jungia gerą muziką, gyvus pokalbius ir ištikimą klausytojų bendruomenę.",
+     "Klausomiausia radijo stotis Lietuvoje, kuri groja jau nuo 1989 m. Klausytojų širdis (ir ausis) užkariaujame populiariausiais hitais, bajeriais eteryje ir netikėtomis idėjomis. M1 neseka tendencijomis, jis pats jas kuria!",
+     "Antra didžiausia radijo stotis Lietuvoje. Ištikimiems klausytojams „Lietus“ ne svečias prašalaitis, o artimas draugas jų namuose. Geriausi lietuviški hitai, kuriuos iš širdies traukia visi.",
+     "Laiko patikrinti užsienio hitai, įdomūs pokalbiai bei patikima, naujausia informacija. Vertinantiems kokybę.",
+     "Nesvarbu, kuri savaitės diena ar valanda – M1 DANCE serviruoja vakarėlį. Tiems, kurie neskaičiuoja valandų praleistų judesy ir nori šokių aikštelę turėti visur ir visada.",
+     "Populiariausia Klaipėdos radijo stotis, tapusi tikru klaipėdiečių pasididžiavimu. Gerą nuotaiką užtikrinanti muzika su aktualiausia informacija būtent šiam regionui.",
+     "Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Apie mus Esame dalis „15min grupės\" – vienos didžiausių žiniasklaidos grupių Lietuvoje. Mūsų radijo šeimoje – 5 lyderiaujančios radijo stotys, kurios kasdien jungia gerą muziką, gyvus pokalbius ir ištikimą klausytojų bendruomenę.",
+     "Klausomiausia radijo stotis Lietuvoje, kuri groja jau nuo 1989 m. Klausytojų širdis (ir ausis) užkariaujame populiariausiais hitais, bajeriais eteryje ir netikėtomis idėjomis. M1 neseka tendencijomis, jis pats jas kuria!",
+     "Antra didžiausia radijo stotis Lietuvoje. Ištikimiems klausytojams „Lietus“ ne svečias prašalaitis, o artimas draugas jų namuose. Geriausi lietuviški hitai, kuriuos iš širdies traukia visi.",
+     "Laiko patikrinti užsienio hitai, įdomūs pokalbiai bei patikima, naujausia informacija. Vertinantiems kokybę.",
+     "Nesvarbu, kuri savaitės diena ar valanda – M1 DANCE serviruoja vakarėlį. Tiems, kurie neskaičiuoja valandų praleistų judesy ir nori šokių aikštelę turėti visur ir visada.",
+     "Populiariausia Klaipėdos radijo stotis, tapusi tikru klaipėdiečių pasididžiavimu. Gerą nuotaiką užtikrinanti muzika su aktualiausia informacija būtent šiam regionui."
+    ]
+   }
+  ]
+ },
+ "start942mhzvilnius": {
+  "name": "Start FM 94.2 MHz Vilnius [MP3]",
+  "homes": [
+   "http://www.startfm.lt/"
+  ],
+  "pages": [
+   {
+    "url": "http://www.startfm.lt/",
+    "paragraphs": []
+   }
+  ]
+ },
+ "rock": {
+  "name": "Rock Radio",
+  "homes": [
+   "https://rockfm.lt/",
+   "https://rockradio.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://www.radijas.lt/rockfm",
+    "paragraphs": []
+   }
+  ]
+ },
+ "top": {
+  "name": "TOP FM LT",
+  "homes": [
+   "https://topfm.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://topfm.lt/",
+    "description": "TOP FM — tiesioginė radijo transliacija internetu. Klausykis geriausios muzikos, balsuok už savaitės TOP 15 kūrinius, sek naujienas ir laidų tvarkaraštį.",
+    "og:description": "Tiesioginė radijo transliacija internetu. Klausykis, balsuok už savaitės TOP 15 ir sek naujienas.",
+    "twitter:description": "Tiesioginė radijo transliacija internetu. Klausykis, balsuok už savaitės TOP 15 ir sek naujienas.",
+    "paragraphs": [
+     "Geriausia nauja muzika, tavo žmonės ir ritmas, kuris palaiko miestą gyvą — kiekvieną dieną.",
+     "Nuo pirmo kavos gurkšnio iki paskutinio šokio — išsirink laidą, kuri juda tavo tempu.",
+     "Naujausi lietuviškų atlikėjų kūriniai — balsuok ir padėk jiems pakilti.",
+     "Esi lietuviškas atlikėjas ir turi naują kūrinį? Atsiųsk jį mums — geriausi patenka į šį sąrašą ir į eterį.",
+     "Studijos naujienos, komandos pokyčiai ir viskas, ką verta žinoti apie TOP FM.",
+     "Prekės ženklai ir renginių organizatoriai, su kuriais kuriame miesto garso takelį.",
+     "Nori tapti TOP FM partneriu? Rašyk mums ir aptarkime bendrus projektus, renginius ir eterio integracijas."
+    ]
+   }
+  ]
+ },
+ "relax": {
+  "name": "Relax FM",
+  "homes": [
+   "https://relaxfm.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://relaxfm.lt/",
+    "description": "Lietuviškos muzikos namai. Populiarios, mylimos dainos, klausytojų sveikinimai, TOP 15 rinkimai, lietuviškos premjeros, kas valandą atnaujinamos žinios, laidų įra…",
+    "og:description": "Lietuviškos muzikos namai. Populiarios, mylimos dainos, klausytojų sveikinimai, TOP 15 rinkimai, lietuviškos premjeros, kas valandą atnaujinamos žinios, laidų įra…",
+    "twitter:description": "Lietuviškos muzikos namai. Populiarios, mylimos dainos, klausytojų sveikinimai, TOP 15 rinkimai, lietuviškos premjeros, kas valandą atnaujinamos žinios, laidų įra…",
+    "paragraphs": [
+     "RELAX FM - lietuviškos muzikos radijas internetu ir FM bangomis. RADIOCENTRAS ZIP FM ROCK FM RADIO R RADIO FIESTA RADIJAS.LT ŽINUTĖ Į STUDIJĄ MUZIKA RELAX FM TOP 15 DAINŲ ISTORIJA PREMJERA ĮVERTINK DAINĄ 100 HITŲ SENTIMENTAI AUKSINĖS DAINOS MUZIKOS RADARAS VIENOS TEMOS DAINOS ATLIKĖJAI LAIDOS ATSUK TRANSLIACIJĄ RELAX FM PROGRAMA GERIAUSIA DIENA SVEIKINIMŲ LAIDA „GERA PROGA”﻿ APIE MUS KOMANDA DAŽNIAI KONTAKTAI REKLAMA Žinutė į studiją × Relax FM - lietuviškos muzikos namai Pasirinkite, kam skirta žinutė.",
+     "Pasirinkite dieną, kada sveikinimas turi būti transliuojamas, ir parašykite žinutę. Nepamirškite nurodyti visos reikalingos informacijos! Sveikinimus galite rašyti likus 3-4 paroms iki gimtadienio dienos. Šios dienos sveikinimus priimame iki 18:30.",
+     "Kiekvienos darbo dienos rytą \"GERIAUSIA DIENA\" netikėtu originaliu skambučiu žadina ir sveikina dienos jubiliatus. Žinutes \"Ryto skambučio\" rubrikai galite rašyti prieš 3-4 dienas. Šios dienos žinutes priimame iki 9 val. ryto. Rašydami žinutę nepamirškite nurodyti visos reikalingos informacijos!",
+     "ŽINUTĖ Į STUDIJĄ MUZIKA RELAX FM TOP 15 DAINŲ ISTORIJA PREMJERA ĮVERTINK DAINĄ 100 HITŲ SENTIMENTAI AUKSINĖS DAINOS MUZIKOS RADARAS VIENOS TEMOS DAINOS ATLIKĖJAI LAIDOS ATSUK TRANSLIACIJĄ RELAX FM PROGRAMA GERIAUSIA DIENA SVEIKINIMŲ LAIDA „GERA PROGA”﻿ APIE MUS KOMANDA DAŽNIAI KONTAKTAI REKLAMA ETERYJE DIENOS ASORTI DONATAS GAILIUŠIS NAUJAS DUETAS RELAX FM ETERYJE KLAUSYTI ŽINUTĖ Į STUDIJĄ MUZIKOS RADARAS Istorija kraunama... Dabar groja Lietuviškos muzikos namai RELAX FM ETERYJE DIENOS ASORTI DONATAS GAILIUŠIS Istorija kraunama... ‹ › ⤢ RELAX FM Lietuviškos muzikos namai Klausykite Relax FM, „100 HITŲ“ ir „Sentimentų“, raskite grojusias dainas, laidų įrašus, programą, atlikėjus ir naujausias lietuviškos muzikos premjeras, balsuokite RELAX FM TOP 15.",
+     "Klausykite Relax FM, „100 HITŲ“ ir „Sentimentų“, raskite grojusias dainas, laidų įrašus, programą, atlikėjus ir naujausias lietuviškos muzikos premjeras, balsuokite RELAX FM TOP 15.",
+     "Radijas.lt programėlė Google Play App Store © RELAX FM 2026 visos teisės saugomos.",
+     "Lietuviškos muzikos namai RELAX FM Žinutė į studiją × Relax FM - lietuviškos muzikos namai Pasirinkite, kam skirta žinutė.",
+     "Pasirinkite dieną, kada sveikinimas turi būti transliuojamas, ir parašykite žinutę. Nepamirškite nurodyti visos reikalingos informacijos! Sveikinimus galite rašyti likus 3-4 paroms iki gimtadienio dienos. Šios dienos sveikinimus priimame iki 18:30.",
+     "Kiekvienos darbo dienos rytą \"GERIAUSIA DIENA\" netikėtu originaliu skambučiu žadina ir sveikina dienos jubiliatus. Žinutes \"Ryto skambučio\" rubrikai galite rašyti prieš 3-4 dienas. Šios dienos žinutes priimame iki 9 val. ryto. Rašydami žinutę nepamirškite nurodyti visos reikalingos informacijos!",
+     "Mes ir mūsų partneriai naudojame slapukus, kad užtikrintume sklandų svetainės veikimą, analizuotume naršymo statistiką. Jūs galite pasirinkti, kokius duomenis leidžiate mums rinkti. Išsamesnę informaciją rasite mūsų PRIVATUMO POLITIKOJE .",
+     "Pasirinkimą bet kada pakeisite puslapio apačioje: „Privatumo nustatymai“."
+    ]
+   },
+   {
+    "url": "https://relaxfm.lt/dainu-paieska/",
+    "description": "RELAX FM – radijas internetu su gera muzika, laidomis, lietuviškos muzikos naujienomis, TOP 15 ir laidų įrašais.",
+    "og:description": "RELAX FM – radijas internetu su gera muzika, laidomis, lietuviškos muzikos naujienomis, TOP 15 ir laidų įrašais.",
+    "twitter:description": "RELAX FM – radijas internetu su gera muzika, laidomis, lietuviškos muzikos naujienomis, TOP 15 ir laidų įrašais.",
+    "paragraphs": [
+     "DAINŲ PAIEŠKA – RELAX FM RADIOCENTRAS ZIP FM ROCK FM RADIO R RADIO FIESTA RADIJAS.LT ŽINUTĖ Į STUDIJĄ MUZIKA RELAX FM TOP 15 DAINŲ ISTORIJA PREMJERA ĮVERTINK DAINĄ 100 HITŲ SENTIMENTAI AUKSINĖS DAINOS MUZIKOS RADARAS VIENOS TEMOS DAINOS ATLIKĖJAI LAIDOS ATSUK TRANSLIACIJĄ RELAX FM PROGRAMA GERIAUSIA DIENA SVEIKINIMŲ LAIDA „GERA PROGA”﻿ APIE MUS KOMANDA DAŽNIAI KONTAKTAI REKLAMA Žinutė į studiją × Relax FM - lietuviškos muzikos namai Pasirinkite, kam skirta žinutė.",
+     "Pasirinkite dieną, kada sveikinimas turi būti transliuojamas, ir parašykite žinutę. Nepamirškite nurodyti visos reikalingos informacijos! Sveikinimus galite rašyti likus 3-4 paroms iki gimtadienio dienos. Šios dienos sveikinimus priimame iki 18:30.",
+     "Kiekvienos darbo dienos rytą \"GERIAUSIA DIENA\" netikėtu originaliu skambučiu žadina ir sveikina dienos jubiliatus. Žinutes \"Ryto skambučio\" rubrikai galite rašyti prieš 3-4 dienas. Šios dienos žinutes priimame iki 9 val. ryto. Rašydami žinutę nepamirškite nurodyti visos reikalingos informacijos!",
+     "ŽINUTĖ Į STUDIJĄ MUZIKA RELAX FM TOP 15 DAINŲ ISTORIJA PREMJERA ĮVERTINK DAINĄ 100 HITŲ SENTIMENTAI AUKSINĖS DAINOS MUZIKOS RADARAS VIENOS TEMOS DAINOS ATLIKĖJAI LAIDOS ATSUK TRANSLIACIJĄ RELAX FM PROGRAMA GERIAUSIA DIENA SVEIKINIMŲ LAIDA „GERA PROGA”﻿ APIE MUS KOMANDA DAŽNIAI KONTAKTAI REKLAMA Dainų istorija Girdėjote labai patinkančią dainą ir nežinote, kaip ji vadinasi? Šiame puslapyje galite sužinoti, kokias paskutines dainas grojo “Relax FM”, “Relax FM 100 Hitų” ir “Relax FM Sentimentai”.",
+     "Radijas.lt programėlė Google Play App Store © RELAX FM 2026 visos teisės saugomos.",
+     "Lietuviškos muzikos namai RELAX FM Žinutė į studiją × Relax FM - lietuviškos muzikos namai Pasirinkite, kam skirta žinutė.",
+     "Pasirinkite dieną, kada sveikinimas turi būti transliuojamas, ir parašykite žinutę. Nepamirškite nurodyti visos reikalingos informacijos! Sveikinimus galite rašyti likus 3-4 paroms iki gimtadienio dienos. Šios dienos sveikinimus priimame iki 18:30.",
+     "Kiekvienos darbo dienos rytą \"GERIAUSIA DIENA\" netikėtu originaliu skambučiu žadina ir sveikina dienos jubiliatus. Žinutes \"Ryto skambučio\" rubrikai galite rašyti prieš 3-4 dienas. Šios dienos žinutes priimame iki 9 val. ryto. Rašydami žinutę nepamirškite nurodyti visos reikalingos informacijos!",
+     "Mes ir mūsų partneriai naudojame slapukus, kad užtikrintume sklandų svetainės veikimą, analizuotume naršymo statistiką. Jūs galite pasirinkti, kokius duomenis leidžiate mums rinkti. Išsamesnę informaciją rasite mūsų PRIVATUMO POLITIKOJE .",
+     "Pasirinkimą bet kada pakeisite puslapio apačioje: „Privatumo nustatymai“."
+    ]
+   }
+  ]
+ },
+ "gold": {
+  "name": "Gold FM",
+  "homes": [
+   "https://goldfm.lt/",
+   "http://goldfm.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://goldfm.lt/",
+    "paragraphs": []
+   },
+   {
+    "url": "https://goldfm.lt/apie-mus/",
+    "og:description": "„Gold FM“ – radijas žinantiems vertę. Tai radijo stotis, kuri leidžia negalvoti apie dienos rūpesčius, atsipalaiduoti bei mėgautis visų laikų žinomiausių hitų grojaraščiu. Radijo eteryje nuolatos skamba 1950-ųjų–1980-ųjų auksiniai muzikos hitai, naudingos, informatyvios, motyvuojančios laidos. Gera nuotaika, puikus muzikinis fonas, kur bebūtumei ir ką bedarytumei.„Gold FM“ radijo erą pradėjo 2016 m. skambant Abba kūriniui „Waterloo“.",
+    "paragraphs": [
+     "Tai radijo stotis, kuri leidžia negalvoti apie dienos rūpesčius, atsipalaiduoti bei mėgautis visų laikų žinomiausių hitų grojaraščiu. Radijo eteryje nuolatos skamba 1950-ųjų–1980-ųjų auksiniai muzikos hitai, naudingos, informatyvios, motyvuojančios laidos. Gera nuotaika, puikus muzikinis fonas, kur bebūtumei ir ką bedarytumei.„Gold FM“ radijo erą pradėjo 2016 m. skambant Abba kūriniui „Waterloo“."
+    ]
+   }
+  ]
+ },
+ "pukas": {
+  "name": "Puko Radijas",
+  "homes": [
+   "https://pukas.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://pukas.lt/",
+    "description": "Pukas televizija, Puko radijas. Puko radijas 2",
+    "og:description": "Pukas televizija, Puko radijas. Puko radijas 2",
+    "paragraphs": [
+     "Pūko radijas galite klausytis kompiuteryje, planšetėje ir išmaniajame telefone, spauskite : klausyti radiją .",
+     "Savaitės programų tvarkaraštis, dažniai miestuose, apie Pūko radijas ( skaityti išsamiau… ) Tiesioginio eterio telefonai: 8 37 340077, 8 37 342202",
+     "Pūko radijas 2 galite klausytis kompiuteryje, planšetėje ir išmaniajame telefone, spauskite : klausyti radiją",
+     "Savaitės programų tvarkaraštis, dažniai miestuose, apie Pūko radijas 2 ( skaityti išsamiau… )",
+     "Savaitės programų tvarkaraštis, dažniai miestuose, apie Pūkas televiziją (skaityti išsamiau… ) Tiesioginio eterio telefonas 8 37 340077",
+     "1995 m. rugsėjo 21 d. UAB “Pūkas” pateikė prašymą Ryšių reguliavimo tarnybai gauti dažnį radijo programos transliavimui Kaune. Priėmiau sprendimą įkurti radijo stotį.",
+     "Pradėjome ruoštis statyboms ir rekonstrukcijoms, pritaikant gyvenamąsias patalpas radijo stoties darbui. Nutarta statyti nuosavą bokštą televizijos ir radijo stočių antenoms įrengti savo sklype, Šaldytuvų gatvėje Kaune. Tai viena iš aukščiausių vietų Kaune, 110 metrų virš jūros lygio. Bokšto iš kurio transliuojamos televizijos ir dviejų radijo stočių programos yra septyniasdešimties metrų aukščio virš žemės paviršiaus. Bokštas buvo statomas per du etapus, pirmuoju etapu buvo pastatytas penkiasdešimties metrų aukščio bokštas, antruoju etapu jis buvo paaukštintas iki septyniasdešimties metrų. Televizijos ir radijo stočių programų užtikrinto priėmimo zona yra apie penkiasdešimt kilometrų aplinkui Kauną, o galimo priėmimo iki septyniasdešimties. 1996 m. kovo 7 d. baigėme darbus.",
+     "Pirmos, tik lietuviškai transliuojančios radijo stoties šaukiniai nuskambėjo eteryje Kauno apskrityje. Šiuo metu radijo stotį „Pūkas“ galima girdi visame pasaulyje internetu, o antžeminės programos transliavimas dengia visą Lietuvą, radijo siųstuvai įrengti dvidešimtyje miestų. Tai viena iš stipriausių nacionalinių transliuotojų šalyje.",
+     "Plečiant veiklą 1998 m. pateikėme RTK plėtros planą dėl ruošimosi kurti antrą radijo stoties projektą „Pūkas 2“ ir televiziją „Pūkas TV“. Įgyvendinant plėtros strategiją 2000 m. pradėjome kurti televiziją. Televizijos kanalas pradėjo transliuoti savo programą 2001 m. liepos 1 d. Šiandieną transliuojame Kauno apskrityje skaitmeniniu 54 kanalu HD ir SD formatu.",
+     "Radijo stotis “Pūkas 2” transliuoja didžiuosiuose Lietuvos miestuose klasika tapusius geriausius pasaulinės muzikos kūrinius intelektualesniems klausytojams: džiazą, bliuzą ir klasikinę muziką. Transliavimą radijo stotis pradėjo 2002 m. liepos 1 d. transliuojame ir internetu visam pasauliui.",
+     "Žinių tarnyba ruošia informaciją, remiantis dokumentais ir faktine medžiaga."
+    ]
+   },
+   {
+    "url": "https://pukas.lt/apie-mus/",
+    "description": "Tel.: (8-37) 34 24 24, Faksas (8-37) 34 24 34, El.paštas: pukas@pukas.lt , Reklamos skyrius El. paštas: reklama@pukas.lt",
+    "og:description": "Tel.: (8-37) 34 24 24, Faksas (8-37) 34 24 34, El.paštas: pukas@pukas.lt , Reklamos skyrius El. paštas: reklama@pukas.lt",
+    "paragraphs": [
+     "Generalinis direktorius Lina Pūkienė Tel.: (8-37) 34 24 24 Faksas (8-37) 34 24 34 El.paštas: pukas@pukas.lt",
+     "Reklamos skyrius El. paštas: reklama@pukas.lt Šaldytuvų g. 25 LT – 45123, Kaunas",
+     "UAB „Pūkas“Įmonės kodas 132950015 PVM kodas LT329500113 Įm. įregistruota 1991-08-27 Kauno m. valdyboje Įm. įregistravimo Nr. AB 91-861 Draudėjo kodas 28-439514 “Swedbank” AB A.s. LT09 7300 0100 0223 7975",
+     "norinčių ir galinčių dirbti televizijoje ir radijuje, nebijančių darbo, atsakomybės, iškalbingų, išradingų, įdomių, malonių, intelektualių, reprezentatyvių bei kūrybingų ir meniškų sielų.",
+     "Gyvenimo aprašymą su pareigybės nuoroda siųsti el. paštu: kaunas@pukas.lt. Telefonas pasiteirauti 8685 24624.",
+     "UAB “Pūkas” įsteigta 1991 08 27. Tai pirmoji Lietuvoje įmonė, pradėjusi veiklą tik muzikos srityje. Esame išleidę į rinką ir sukaupę fonduose per 16 000 įvairaus žanro lietuviškų dainų.",
+     "Sovietinės okupacijos laikotarpiu, lietuviškos dainos buvo išstumtos iš radijo eterio ir nepageidaujamos tuometinėje santvarkoje. Lietuvos radijas grodavo tik tam istoriniam laikotarpiui patogias dainas, kurios neturėjo, kaip sakydavo KGB – „nacionalinio kvapelio“. Atkūrus Lietuvoje nepriklausomybę, visos komercinės televizijos ir radijo stotys kaip švytuoklė pakrypo į priešingą pusę, į vakarietišką stilių. Ir vėl Lietuvoje neliko galimybių vystytis lietuviškai muzikos rinkai. Pasirinkome sunkią misiją – sugrąžinti lietuvišką muziką į Lietuvą lietuviams. Sudaryti galimybes lietuviškos muzikos produktui konkuruoti šalies rinkoje.",
+     "Plėtodama savo verslą, UAB “Pūkas” susidūrė su rimtomis problemomis – masine “piratinės” produkcijos gamyba ir jos platinimu Lietuvoje. 1994 m. vasario mėnesį kreipėmės į Lietuvos Generalinę prokuratūrą dėl neteisėto produkcijos atgaminimo ir platinimo. Atsižvelgdama į mūsų prašymus, Generalinė prokuratūra, bendradarbiaudama su Ekonominių nusikaltimų tyrimo tarnyba, iškėlė per 30 baudžiamųjų bylų. Tai buvo pirmosios baudžiamosios bylos (buvusioje Sovietų Sąjungoje) iškeltos pagal LR BK 142 straipsnį (už autoriaus teisių pažeidimus). Tokiu būdu buvo suduotas stiprus smūgis „piratams“. Atsiradus rinkoje legaliam produktui (tada buvo tik audiokasetės ir juostos) pradėjo vystytis legali lietuviškos muzikos rinka. Lietuvos rinkoje niekada nebuvo lietuviškos muzikos įrašų prekyboje ir nei viena komercinė radijo ir televizijos stotis netransliavo lietuviškos muzikos, todėl paklausa buvo labai didelė. Pradėjo steigtis garso įrašų studijos, profesionalūs kūrėjai ir atlikėjai sugrįžo į sceną. Netrukus lietuviškų produkto konkurencingumas stipriai aplenkė kitų šalių muzikos pardavimus.",
+     "Siekdama suvienyti lietuviškos muzikos atlikėjų, autorių ir leidėjų jėgas, UAB “Pūkas” inicijavo Lietuvos Muzikos Industrijos Asociacijos (LMIA) įkūrimą ir ją įsteigė. Ši nevyriausybinė organizacija įkurta 1995 metais. Ji subūrė stambiausius Lietuvos muzikinės produkcijos gamintojus ir platintojus. LMIA visuomet dalyvavo kuriant bei tobulinant autorių ir gretutinių teisių įstatymus bei harmoningą intelektinės nuosavybės apsaugos ir administravimo sistemą Lietuvoje. Ji yra gretutinių teisių agentūros “AGATA” steigėja.",
+     "1995 m. rugsėjo 21 d. UAB “Pūkas” pateikė prašymą Ryšių reguliavimo tarnybai gauti dažnį radijo programos transliavimui Kaune. Priėmiau sprendimą įkurti radijo stotį „Pūkas“. Pradėjome ruoštis statyboms ir rekonstrukcijoms, pritaikant gyvenamąsias patalpas radijo stoties darbui. Nutarta statyti savo bokštą radijo antenoms įrengti Šaldytuvų gatvėje Kaune. Tai viena iš aukščiausių vietų Kaune, 110 m. virš jūros lygio. 1996 m. kovo 7 d. baigėme darbus. Pirmos, tik lietuviškai transliuojančios radijo stoties „Pūkas“ šaukiniai nuskambėjo eteryje Kauno apskrityje. Šiuo metu radijo stotį „Pūkas“ galima girdi visame pasaulyje internetu, o antžeminės programos transliavimas dengia visą Lietuvą. Tai viena iš stipriausių nacionalinių transliuotojų šalyje.",
+     "Plečiant veiklą 1998 m. pateikėme RTK plėtros planą dėl ruošimosi kurti antrą radijo stoties projektą „Pūkas-2“ ir televiziją „Pūkas-TV“. Įgyvendinant plėtros strategiją 2000 m. pradėjome kurti televiziją. Televizijos kanalas “Pūkas-TV” pradėjo transliuoti savo programą 2001 m. liepos 1 d. Šiandieną transliuojame Kauno apskrityje skaitmeniniu 54 kanalu HD ir SD formatu.",
+     "Radijo stotis “Pūkas-2” transliuoja didžiuosiuose Lietuvos miestuose klasika tapusius geriausius pasaulinės muzikos kūrinius intelektualesniems klausytojams: džiazą, bliuzą ir klasikinę muziką. Transliavimą radijo stotis pradėjo 2002 m. liepos 1 d. transliuojame ir internetu visam pasauliui."
+    ]
+   }
+  ]
+ },
+ "lietus": {
+  "name": "Radio Lietus",
+  "homes": [
+   "https://lietus.fm/",
+   "https://lietus.15min.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://m1play.15min.lt/lietus",
+    "description": "Klausyk radijo Lietus gyvai internetu ir programėlėje: geriausi lietuviški hitai, laida „Su daina“ ir sekmadienio TOP 20.",
+    "og:description": "Klausyk radijo Lietus gyvai internetu ir programėlėje: geriausi lietuviški hitai, laida „Su daina“ ir sekmadienio TOP 20.",
+    "twitter:description": "Klausyk radijo Lietus gyvai internetu ir programėlėje: geriausi lietuviški hitai, laida „Su daina“ ir sekmadienio TOP 20.",
+    "paragraphs": [
+     "M1 PLAY Pagrindinis Tinklalaidės Reels Žinios Dalyvauk Žaisk ir laimėk TOP'ai M1 muzikos apdovanojimai Mano radijas Mėgstamiausi Mano biblioteka Radijo stotys M1 Lietus M1 PLIUS M1 DANCE Laluna Teminės stotys M1 hitai #1 Lietus LAB M1 PLIUS DRIVE M1 PLIUS LOVE M1 DANCE WORKOUT Laluna Lounge Pauzė tarp dainų? Skaityk 15min naujienas Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Klausyk Lietaus Pagrindinis Laidos Vedėjai Žaisk ir laimėk Pamėgti Vilnius FM 103.1 MHz 17:00 - 21:00 Širdelės Ištikimiausi „Lietaus“ klausytojai puikiai žino – kai eteryje Kotryna, laikas romantikai bei kerinčioms meilės istorijoms. Ieškantiems – lašelis vilties, pasimetusiems – santykių ekspertų patarimai, švenčiantiems – nuoširdūs sveikinimai.",
+     "Radijo stotys M1 M1 Lietus Lietus M1 PLIUS M1 PLIUS M1 DANCE M1 DANCE Laluna Laluna Teminės stotys M1 hitai #1 M1 hitai #1 Lietus LAB Lietus LAB M1 PLIUS DRIVE M1 PLIUS DRIVE M1 PLIUS LOVE M1 PLIUS LOVE M1 DANCE WORKOUT M1 DANCE WORKOUT Laluna Lounge Laluna Lounge Mediateka Mėgstamiausi Mėgstamiausi Mano biblioteka Mano biblioteka Tinklalaidės Tinklalaidės Dažniai Dažniai Informacija Naujienos Naujienos Apie mus Apie mus Reklama Reklama Projektai Projektai 15min grupė 15min grupė Kontaktai Kontaktai Klausyk dar patogiau:",
+     "Group © 2026 UAB „M-1“ Privatumo politika Privatumo politika Slapukų nustatymai Slapukų nustatymai M1 00:00:00 00:00:00 Tiesiogiai M1 Ką tik grojo Visos šiandienos dainos Visos šiandienos dainos Bendraukime Tavo šansas patekti į eterį – paskambink arba parašyk vedėjams!",
+     "Skambink 1823 Žinutė vedėjams Skambinant iš užsienio: +37052740840 Lietaus klausimas Ar skiepijatės nuo sezoninių ligų? Lietaus klausimas Ar skiepijatės nuo sezoninių ligų? Skiepijuosi nuo visų 0 % Tik nuo gripo 0 % Nesiskiepiju visai 0 % Žaisk ir laimėk Žaisk ir laimėk Sekmadieniais 17:00 – 19:00 LIETUS TOP 20 Spausk žvaigždelę prie dainų ir padėk joms pakilti į LIETUS TOP 20! Balsuoti gali 1 kartą per dieną.",
+     "Spausk žvaigždelę prie dainų ir padėk joms pakilti į LIETUS TOP 20! Balsuoti gali 1 kartą per dieną.",
+     "TOP 20 Sekmadieniais 17:00 – 19:00 LIETUS TOP 20 Spausk žvaigždelę prie dainų ir padėk joms pakilti į LIETUS TOP 20! Balsuoti gali 1 kartą per dieną.",
+     "Savaitės naujienos Trumpi klipai Žaisk ir laimėk Konkursai Žaidimai Daugiau žaidimų Lietus Pasveikinkim vieni kitus Pasveikinkim vieni kitus – juk tai daryti „Lietaus“ eteryje šitaip lengva! Nesvarbu, ar artimojo gimtadienis, vestuvės, sukaktis, ar tiesiog norite kažkam padovanoti šypseną – užpildykite formą, ir jūsų sveikinimas bei šilti linkėjimai nuskambės radijo stoties „Lietus“ bangomis. Nuoširdžios emocijos ir gera nuotaika – jūsų sveikinimas taps ne tik dovana brangiam žmogui, bet ir mažyte švente visiems klausytojams.",
+     "Konkursai Žaidimai Daugiau žaidimų Lietus Pasveikinkim vieni kitus Pasveikinkim vieni kitus – juk tai daryti „Lietaus“ eteryje šitaip lengva! Nesvarbu, ar artimojo gimtadienis, vestuvės, sukaktis, ar tiesiog norite kažkam padovanoti šypseną – užpildykite formą, ir jūsų sveikinimas bei šilti linkėjimai nuskambės radijo stoties „Lietus“ bangomis. Nuoširdžios emocijos ir gera nuotaika – jūsų sveikinimas taps ne tik dovana brangiam žmogui, bet ir mažyte švente visiems klausytojams.",
+     "Lietus Detektyvas tęsiasi! 🕵️ Užuominos renkamos, juokas skamba, o žalioji širma vis dar saugo savo pasla 1,5 tūkst. peržiūros",
+     "Jau kurį laiką „Lietaus“ eteryje skamba naujas balsas, o dabar pagaliau galime tai paskelbti oficial 4,2 tūkst. peržiūros",
+     "O kas gi slepiasi už širmos? Gal net pats Arnoldas Schwarzeneggeris? 😄 Spėjimų netrūko, bet ar pav 2 tūkst. peržiūros",
+     "@aurimas.ses jau išsirinko gražiausią rudens dalyką! 🍂 O kas rudenį gražiausia jums? Pasidalinkite 1,8 tūkst. peržiūros"
+    ]
+   },
+   {
+    "url": "https://m1play.15min.lt/apie-mus",
+    "description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "og:description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "twitter:description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "paragraphs": [
+     "M1 PLAY Pagrindinis Tinklalaidės Reels Žinios Dalyvauk Žaisk ir laimėk TOP'ai M1 muzikos apdovanojimai Mano radijas Mėgstamiausi Mano biblioteka Radijo stotys M1 Lietus M1 PLIUS M1 DANCE Laluna Teminės stotys M1 hitai #1 Lietus LAB M1 PLIUS DRIVE M1 PLIUS LOVE M1 DANCE WORKOUT Laluna Lounge Pauzė tarp dainų? Skaityk 15min naujienas Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Apie mus Esame dalis „15min grupės\" – vienos didžiausių žiniasklaidos grupių Lietuvoje. Mūsų radijo šeimoje – 5 lyderiaujančios radijo stotys, kurios kasdien jungia gerą muziką, gyvus pokalbius ir ištikimą klausytojų bendruomenę.",
+     "Klausomiausia radijo stotis Lietuvoje, kuri groja jau nuo 1989 m. Klausytojų širdis (ir ausis) užkariaujame populiariausiais hitais, bajeriais eteryje ir netikėtomis idėjomis. M1 neseka tendencijomis, jis pats jas kuria!",
+     "Antra didžiausia radijo stotis Lietuvoje. Ištikimiems klausytojams „Lietus“ ne svečias prašalaitis, o artimas draugas jų namuose. Geriausi lietuviški hitai, kuriuos iš širdies traukia visi.",
+     "Laiko patikrinti užsienio hitai, įdomūs pokalbiai bei patikima, naujausia informacija. Vertinantiems kokybę.",
+     "Nesvarbu, kuri savaitės diena ar valanda – M1 DANCE serviruoja vakarėlį. Tiems, kurie neskaičiuoja valandų praleistų judesy ir nori šokių aikštelę turėti visur ir visada.",
+     "Populiariausia Klaipėdos radijo stotis, tapusi tikru klaipėdiečių pasididžiavimu. Gerą nuotaiką užtikrinanti muzika su aktualiausia informacija būtent šiam regionui.",
+     "Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Apie mus Esame dalis „15min grupės\" – vienos didžiausių žiniasklaidos grupių Lietuvoje. Mūsų radijo šeimoje – 5 lyderiaujančios radijo stotys, kurios kasdien jungia gerą muziką, gyvus pokalbius ir ištikimą klausytojų bendruomenę.",
+     "Klausomiausia radijo stotis Lietuvoje, kuri groja jau nuo 1989 m. Klausytojų širdis (ir ausis) užkariaujame populiariausiais hitais, bajeriais eteryje ir netikėtomis idėjomis. M1 neseka tendencijomis, jis pats jas kuria!",
+     "Antra didžiausia radijo stotis Lietuvoje. Ištikimiems klausytojams „Lietus“ ne svečias prašalaitis, o artimas draugas jų namuose. Geriausi lietuviški hitai, kuriuos iš širdies traukia visi.",
+     "Laiko patikrinti užsienio hitai, įdomūs pokalbiai bei patikima, naujausia informacija. Vertinantiems kokybę.",
+     "Nesvarbu, kuri savaitės diena ar valanda – M1 DANCE serviruoja vakarėlį. Tiems, kurie neskaičiuoja valandų praleistų judesy ir nori šokių aikštelę turėti visur ir visada.",
+     "Populiariausia Klaipėdos radijo stotis, tapusi tikru klaipėdiečių pasididžiavimu. Gerą nuotaiką užtikrinanti muzika su aktualiausia informacija būtent šiam regionui."
+    ]
+   }
+  ]
+ },
+ "m1": {
+  "name": "m-1",
+  "homes": [
+   "https://m-1.fm/",
+   "http://m-1.lt/",
+   "https://m-1.15min.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://m1play.15min.lt/m1",
+    "description": "Klausyk M1 gyvai internetu ir programėlėje - klausomiausia Lietuvos radijo stotis nuo 1989 m. Hitai, „Skaivos ir Silvos šou“ ir M1 TOP 40.",
+    "og:description": "Klausyk M1 gyvai internetu ir programėlėje - klausomiausia Lietuvos radijo stotis nuo 1989 m. Hitai, „Skaivos ir Silvos šou“ ir M1 TOP 40.",
+    "twitter:description": "Klausyk M1 gyvai internetu ir programėlėje - klausomiausia Lietuvos radijo stotis nuo 1989 m. Hitai, „Skaivos ir Silvos šou“ ir M1 TOP 40.",
+    "paragraphs": [
+     "M1 PLAY Pagrindinis Tinklalaidės Reels Žinios Dalyvauk Žaisk ir laimėk TOP'ai M1 muzikos apdovanojimai Mano radijas Mėgstamiausi Mano biblioteka Radijo stotys M1 Lietus M1 PLIUS M1 DANCE Laluna Teminės stotys M1 hitai #1 Lietus LAB M1 PLIUS DRIVE M1 PLIUS LOVE M1 DANCE WORKOUT Laluna Lounge Pauzė tarp dainų? Skaityk 15min naujienas Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Kl a usyk M1 Muzikos apdovanojimai Pagrindinis Laidos Vedėjai Žaisk ir laimėk Pamėgti Vilnius FM 106.8 MHz 16:00 - 19:00 Čia mano radijas Čia, kur mano radijas – čia ir M1 garsūs vyrai Arnoldas Eisimantas ir Tomas Jaz, šiokiadieniais nuo 16 iki 19 val. Lietuvai vis primenantys, kad jau laikas baigti darbus ir pradėti gyventi! Čia skamba ir gyva muzika, ir anksčiau nei kitur nuskamba muzikinės premjeros, ir transliuojama iš lėktuvų, laivų bei Vatikano aikštės.",
+     "Radijo stotys M1 M1 Lietus Lietus M1 PLIUS M1 PLIUS M1 DANCE M1 DANCE Laluna Laluna Teminės stotys M1 hitai #1 M1 hitai #1 Lietus LAB Lietus LAB M1 PLIUS DRIVE M1 PLIUS DRIVE M1 PLIUS LOVE M1 PLIUS LOVE M1 DANCE WORKOUT M1 DANCE WORKOUT Laluna Lounge Laluna Lounge Mediateka Mėgstamiausi Mėgstamiausi Mano biblioteka Mano biblioteka Tinklalaidės Tinklalaidės Dažniai Dažniai Informacija Naujienos Naujienos Apie mus Apie mus Reklama Reklama Projektai Projektai 15min grupė 15min grupė Kontaktai Kontaktai Klausyk dar patogiau:",
+     "Group © 2026 UAB „M-1“ Privatumo politika Privatumo politika Slapukų nustatymai Slapukų nustatymai M1 00:00:00 00:00:00 Tiesiogiai M1 M1 Muzikos apdovanojiMai 2026 12 09 Žinai, kas nusipelnė laimėti M1 muzikos apdovanojimus? Balsuok už savo favoritą jau dabar!",
+     "Dedam tašką! Labai trupantį batoną pjaunu: Dedam tašką! Labai trupantį batoną pjaunu: Virš kriauklės 0 % Kaip įprasta 0 % Ką tik grojo Visos šiandienos dainos Visos šiandienos dainos Bendraukime Tavo šansas patekti į eterį – paskambink arba parašyk vedėjams!",
+     "Skambink 1830 Žinutė vedėjams Skambinant iš užsienio: +37052740750 Sekmadieniais 17:00 – 19:00 M1 TOP 40 Spausk žvaigždelę prie dainų ir padėk joms pakilti į M1 TOP 40! Balsuoti gali 1 kartą per dieną.",
+     "Spausk žvaigždelę prie dainų ir padėk joms pakilti į M1 TOP 40! Balsuoti gali 1 kartą per dieną.",
+     "TOP 40 Sekmadieniais 17:00 – 19:00 M1 TOP 40 Spausk žvaigždelę prie dainų ir padėk joms pakilti į M1 TOP 40! Balsuoti gali 1 kartą per dieną.",
+     "Savaitės naujienos Pristato Jos žino, ko nori! Ypatinga proga: Nauja rankinė ar žiedas su deimantu? ar Pristato Jos žino, ko nori! Ypatinga proga: Nauja rankinė ar žiedas su deimantu? ar Trumpi klipai Žaisk ir laimėk Naujausios tinklalaidės Daugiau tinklalaidžių Prisijunk ir atrask daugiau M1 turinio – klausyk tinklalaidžių, išsisaugok ir grįžk kada nori.",
+     "Despotin Fam GYVAS ORAS 2026 11 12 • 22:12 Prisijunk ir atrask daugiau M1 turinio – klausyk tinklalaidžių, išsisaugok ir grįžk kada nori.",
+     "Ar mano geriausia draugė - tikrai draugė? Femme 2026 11 10 • 43:51 Prisijunk ir atrask daugiau M1 turinio – klausyk tinklalaidžių, išsisaugok ir grįžk kada nori.",
+     "Vardas, zodiakas, profesija – jau viskas aišku Mums reikia pasikalbėti 2026 11 06 • 01:09:45 Prisijunk ir atrask daugiau M1 turinio – klausyk tinklalaidžių, išsisaugok ir grįžk kada nori.",
+     "Antras paukštelis Kas čia per Paukštis? 2026 11 05 • 16:12 Prisijunk ir atrask daugiau M1 turinio – klausyk tinklalaidžių, išsisaugok ir grįžk kada nori."
+    ]
+   },
+   {
+    "url": "https://m1play.15min.lt/apie-mus",
+    "description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "og:description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "twitter:description": "M1 PLAY - 15min grupės radijo šeima: M1 (nuo 1989 m.), Lietus, M1 Plius, M1 Dance ir Laluna. Sužinokite, kuo skiriasi kiekviena stotis.",
+    "paragraphs": [
+     "M1 PLAY Pagrindinis Tinklalaidės Reels Žinios Dalyvauk Žaisk ir laimėk TOP'ai M1 muzikos apdovanojimai Mano radijas Mėgstamiausi Mano biblioteka Radijo stotys M1 Lietus M1 PLIUS M1 DANCE Laluna Teminės stotys M1 hitai #1 Lietus LAB M1 PLIUS DRIVE M1 PLIUS LOVE M1 DANCE WORKOUT Laluna Lounge Pauzė tarp dainų? Skaityk 15min naujienas Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Apie mus Esame dalis „15min grupės\" – vienos didžiausių žiniasklaidos grupių Lietuvoje. Mūsų radijo šeimoje – 5 lyderiaujančios radijo stotys, kurios kasdien jungia gerą muziką, gyvus pokalbius ir ištikimą klausytojų bendruomenę.",
+     "Klausomiausia radijo stotis Lietuvoje, kuri groja jau nuo 1989 m. Klausytojų širdis (ir ausis) užkariaujame populiariausiais hitais, bajeriais eteryje ir netikėtomis idėjomis. M1 neseka tendencijomis, jis pats jas kuria!",
+     "Antra didžiausia radijo stotis Lietuvoje. Ištikimiems klausytojams „Lietus“ ne svečias prašalaitis, o artimas draugas jų namuose. Geriausi lietuviški hitai, kuriuos iš širdies traukia visi.",
+     "Laiko patikrinti užsienio hitai, įdomūs pokalbiai bei patikima, naujausia informacija. Vertinantiems kokybę.",
+     "Nesvarbu, kuri savaitės diena ar valanda – M1 DANCE serviruoja vakarėlį. Tiems, kurie neskaičiuoja valandų praleistų judesy ir nori šokių aikštelę turėti visur ir visada.",
+     "Populiariausia Klaipėdos radijo stotis, tapusi tikru klaipėdiečių pasididžiavimu. Gerą nuotaiką užtikrinanti muzika su aktualiausia informacija būtent šiam regionui.",
+     "Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Apie mus Esame dalis „15min grupės\" – vienos didžiausių žiniasklaidos grupių Lietuvoje. Mūsų radijo šeimoje – 5 lyderiaujančios radijo stotys, kurios kasdien jungia gerą muziką, gyvus pokalbius ir ištikimą klausytojų bendruomenę.",
+     "Klausomiausia radijo stotis Lietuvoje, kuri groja jau nuo 1989 m. Klausytojų širdis (ir ausis) užkariaujame populiariausiais hitais, bajeriais eteryje ir netikėtomis idėjomis. M1 neseka tendencijomis, jis pats jas kuria!",
+     "Antra didžiausia radijo stotis Lietuvoje. Ištikimiems klausytojams „Lietus“ ne svečias prašalaitis, o artimas draugas jų namuose. Geriausi lietuviški hitai, kuriuos iš širdies traukia visi.",
+     "Laiko patikrinti užsienio hitai, įdomūs pokalbiai bei patikima, naujausia informacija. Vertinantiems kokybę.",
+     "Nesvarbu, kuri savaitės diena ar valanda – M1 DANCE serviruoja vakarėlį. Tiems, kurie neskaičiuoja valandų praleistų judesy ir nori šokių aikštelę turėti visur ir visada.",
+     "Populiariausia Klaipėdos radijo stotis, tapusi tikru klaipėdiečių pasididžiavimu. Gerą nuotaiką užtikrinanti muzika su aktualiausia informacija būtent šiam regionui."
+    ]
+   },
+   {
+    "url": "https://m1play.15min.lt/",
+    "description": "Klausyk M1, Lietus, M1 Plius, M1 Dance ir Laluna radijo gyvai. Tinklalaidės, žinios, žaidimai ir M1 muzikos apdovanojimai vienoje vietoje.",
+    "og:description": "Klausyk M1, Lietus, M1 Plius, M1 Dance ir Laluna radijo gyvai. Tinklalaidės, žinios, žaidimai ir M1 muzikos apdovanojimai vienoje vietoje.",
+    "twitter:description": "Klausyk M1, Lietus, M1 Plius, M1 Dance ir Laluna radijo gyvai. Tinklalaidės, žinios, žaidimai ir M1 muzikos apdovanojimai vienoje vietoje.",
+    "paragraphs": [
+     "M1 PLAY Pagrindinis Tinklalaidės Reels Žinios Dalyvauk Žaisk ir laimėk TOP'ai M1 muzikos apdovanojimai Mano radijas Mėgstamiausi Mano biblioteka Radijo stotys M1 Lietus M1 PLIUS M1 DANCE Laluna Teminės stotys M1 hitai #1 Lietus LAB M1 PLIUS DRIVE M1 PLIUS LOVE M1 DANCE WORKOUT Laluna Lounge Pauzė tarp dainų? Skaityk 15min naujienas Balsavimas jau prasidėjo! Balsuok už metų geriausius! M1 muzikos apdovanojimai BALSUOK Balsavimas jau prasidėjo! Balsuok už metų geriausius! M1 muzikos apdovanojimai BALSUOK Balsavimas jau prasidėjo! Balsuok už metų geriausius! M1 muzikos apdovanojimai BALSUOK Balsavimas jau prasidėjo! Balsuok už metų geriausius! M1 muzikos apdovanojimai BALSUOK Prisijungti M1 PLAY Prisijungti M1 PLAY Prisijungti Kl a usyk tiesiogi a i M1 16:00 - 19:00 Čia mano radijas Labai trupantį batoną pjaunu: Virš kriauklės Kaip įprasta M1 Lietus 17:00 - 21:00 Širdelės Ar skiepijatės nuo sezoninių ligų? Skiepijuosi nuo visų Tik nuo gripo Nesiskiepiju visai Lietus M1 Plius 16:00 - 19:00 Pakeliui namo Kada Jums geriausia klausytis M1 PLIUS? Ryte pakeliui į darbą Vakare atsipalaiduojant M1 PLIUS M1 Dance 17:00 - 18:00 The Mix Masters M1 DANCE Laluna 17:00 - 19:00 Ko širdelė geidžia Kaip dažnai nuvažiuojate prie Baltijos jūros? Kartą per savaitę Kartą per mėnesį Kartą per metus Laluna Radijo stotys M1 M1 Lietus Lietus M1 PLIUS M1 PLIUS M1 DANCE M1 DANCE Laluna Laluna Teminės stotys M1 hitai #1 M1 hitai #1 Lietus LAB Lietus LAB M1 PLIUS DRIVE M1 PLIUS DRIVE M1 PLIUS LOVE M1 PLIUS LOVE M1 DANCE WORKOUT M1 DANCE WORKOUT Laluna Lounge Laluna Lounge Mediateka Mėgstamiausi Mėgstamiausi Mano biblioteka Mano biblioteka Tinklalaidės Tinklalaidės Dažniai Dažniai Informacija Naujienos Naujienos Apie mus Apie mus Reklama Reklama Projektai Projektai 15min grupė 15min grupė Kontaktai Kontaktai Klausyk dar patogiau:",
+     "Group © 2026 UAB „M-1“ Privatumo politika Privatumo politika Slapukų nustatymai Slapukų nustatymai M1 00:00:00 00:00:00 Tiesiogiai M1 Teminės stotys M1 hitai #1 00:00 - 24:00 M1 hitai #1 Visų laikų geriausia M1 muzika.",
+     "M1 hitai #1 Lietus LAB 00:00 - 24:00 „Lietus LAB“ Lietuviškos muzikos laboratorija su netikėtais muzikiniais eksperimentais.",
+     "Lietuviškos muzikos laboratorija su netikėtais muzikiniais eksperimentais.",
+     "Lietus LAB M1 PLIUS DRIVE 00:00 - 24:00 M1 PLIUS DRIVE Muzika iš taško A į tašką B.",
+     "M1 PLIUS DRIVE M1 PLIUS LOVE 00:00 - 24:00 M1 PLIUS LOVE Mylėti(s) dar niekada nebuvo taip malonu.",
+     "M1 PLIUS LOVE M1 DANCE WORKOUT 00:00 - 24:00 M1 DANCE WORKOUT Tavo dopamino muzika.",
+     "M1 DANCE WORKOUT Laluna Lounge 00:00 - 24:00 „Laluna Lounge“ Chill muzika, atpūsta iš pajūrio.",
+     "Laluna Lounge Prisijunk ir klausyk dar patogiau! Susikūręs paskyrą M1 PLAY – klausysi dar patogiau. Viskas bus pritaikyta būtent tau.",
+     "Žinai, kas nusipelnė laimėti M1 muzikos apdovanojimus? Balsuok už savo favoritą jau dabar!",
+     "Žaisk ir laimėk Pristato Jos žino, ko nori! Ypatinga proga: Nauja rankinė ar žiedas su deimantu? ar Pristato Jos žino, ko nori! Ypatinga proga: Nauja rankinė ar žiedas su deimantu? ar Naujausios tinklalaidės Daugiau tinklalaidžių Prisijunk ir atrask daugiau M1 turinio – klausyk tinklalaidžių, išsisaugok ir grįžk kada nori.",
+     "Despotin Fam GYVAS ORAS 2026 11 12 • 22:12 Prisijunk ir atrask daugiau M1 turinio – klausyk tinklalaidžių, išsisaugok ir grįžk kada nori."
+    ]
+   }
+  ]
+ },
+ "radiocentras": {
+  "name": "Radiocentras",
+  "homes": [
+   "https://rc.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://rc.lt/",
+    "description": "Klausykis „Radiocentro“ gyvai internetu! Geriausi muzikos hitai, populiarios laidos, linksmi vedėjai, žaidimai ir įspūdingi prizai. Įsijunk RC jau dabar!",
+    "og:description": "Klausykis „Radiocentro“ gyvai internetu! Geriausi muzikos hitai, populiarios laidos, linksmi vedėjai, žaidimai ir įspūdingi prizai. Įsijunk RC jau dabar!",
+    "twitter:description": "Klausykis „Radiocentro“ gyvai internetu! Geriausi muzikos hitai, populiarios laidos, linksmi vedėjai, žaidimai ir įspūdingi prizai. Įsijunk RC jau dabar!",
+    "paragraphs": [
+     "PAGRINDINIS TRYS IŠ EILĖS DALYVAUK DAINŲ ISTORIJA MUZIKA GROJAMIAUSIOS MĖGSTAMIAUSIOS KOMANDA APIE MUS R PAGRINDINĖ STOTIS PAGRINDINĖ STOTIS PAGRINDINIS TRYS IŠ EILĖS DALYVAUK DAINŲ ISTORIJA MUZIKA GROJAMIAUSIOS MĖGSTAMIAUSIOS KOMANDA APIE MUS DABAR GROJA RC Skamba gerai! RADIOCENTRAS RC DABAR ETERYJE · IKI 19:00 Eteryje Simona Lisicyna",
+     "YouTube Spotify ŽINUTĖ Į STUDIJĄ 06 628 6288 WHATSAPP BALSO ŽINUTĖ DAINŲ ISTORIJA Ką tik mūsų eteryje skambėjo gerai:",
+     "KAIP KLAUSYTI INTERNETU mobiliajame telefone ir automobilyje (CarPlay bei Android Auto) RADIOCENTRO patogiausia klausyti per programėlę RADIJAS.LT.",
+     "KLAUSYTI GYVAI KLAUSYTI PER RADIJAS.LT UAB RADIOCENTRAS ĮMONĖS KODAS 123051873 PVM MOKĖTOJO KODAS LT230518716 ADRESAS Laisvės pr. 60, 05120 Vilnius EL. PAŠTAS info@rc.lt TELEFONAS +370 5 212 8706 DAINOS ETERIUI muzika@rc.lt REKLAMA Išskirtinis RADIOCENTRO atstovas reklamai",
+     "ŽINUTĖ IŠSIŲSTA, AČIŪ! × ● BALSO ŽINUTĖ Prieš siunčiant galėsi perklausyti ir įrašyti iš naujo.",
+     "Jei turi kelis mikrofonus, pasirink tinkamą. Kitu atveju nieko keisti nereikia.",
+     "Jeigu nepavyksta įrašyti, nukopijuok šį tekstą ir perduok svetainės administratoriui. Garso įrašas ar įrenginio identifikatorius neperduodami.",
+     "BALSAS ĮSKAITYTAS PRIVATUMAS Slapukų pasirinkimai Mes ir mūsų partneriai naudojame slapukus, kad užtikrintume sklandų svetainės veikimą, analizuotume naršymo statistiką. Jūs galite pasirinkti, kokius duomenis leidžiate mums rinkti. Išsamesnę informaciją rasite mūsų PRIVATUMO POLITIKOJE .",
+     "Pasirinkimą bet kada pakeisite puslapio apačioje: „Privatumo nustatymai“."
+    ]
+   },
+   {
+    "url": "https://rc.lt/apie-mus/",
+    "description": "RADIOCENTRAS – viena populiariausių radijo stočių Lietuvoje jau daugiau nei 35 metus. Kiekvieną dieną stengiamės, kad įsijungę išgirstumėte – SKAMBA GERAI!",
+    "og:description": "RADIOCENTRAS – viena populiariausių radijo stočių Lietuvoje jau daugiau nei 35 metus. Kiekvieną dieną stengiamės, kad įsijungę išgirstumėte – SKAMBA GERAI!",
+    "twitter:description": "RADIOCENTRAS – viena populiariausių radijo stočių Lietuvoje jau daugiau nei 35 metus. Kiekvieną dieną stengiamės, kad įsijungę išgirstumėte – SKAMBA GERAI!",
+    "paragraphs": [
+     "PAGRINDINIS TRYS IŠ EILĖS DALYVAUK DAINŲ ISTORIJA MUZIKA GROJAMIAUSIOS MĖGSTAMIAUSIOS KOMANDA APIE MUS R PAGRINDINĖ STOTIS PAGRINDINĖ STOTIS PAGRINDINIS TRYS IŠ EILĖS DALYVAUK DAINŲ ISTORIJA MUZIKA GROJAMIAUSIOS MĖGSTAMIAUSIOS KOMANDA APIE MUS DABAR GROJA RC Skamba gerai! APIE MUS RC DABAR ETERYJE · IKI 19:00 Eteryje Simona Lisicyna",
+     "YouTube Spotify ŽINUTĖ Į STUDIJĄ 06 628 6288 WHATSAPP BALSO ŽINUTĖ APIE MUS RADIOCENTRAS – viena populiariausių radijo stočių Lietuvoje jau daugiau nei 35 metus. Mėgstami laidų vedėjai, kuriems rūpi tai, kas rūpi ir jums. Išskirtiniai žaidimai ir vertingi prizai kasdien. Naudinga informacija ir naujausios žinios. Ryškiausi pastarojo meto užsienio bei lietuviškos muzikos hitai. Kiekvieną dieną stengiamės, kad įsijungę išgirstumėte – SKAMBA GERAI!",
+     "RADIOCENTRO istorija prasidėjo Vilniaus Sporto rūmų komentatorių kabinoje – iš ten vos kelias valandas per parą vyko pirmosios transliacijos. Bet netrukus radijas pradėjo transliuoti visą parą, o studija ir redakcija persikėlė į Spaudos rūmus.",
+     "Per daugiau nei tris dešimtmečius mūsų istorijoje daugybė radijo balsų, laidų, muzikos ir didžiulių renginių. Pirmieji tokie Lietuvoje RADIOCENTRO muzikiniai apdovanojimai, šokių muzikos festivalis SAULĖS SMŪGIS, kiti koncertai ir renginiai tapo Lietuvos pramogų pasaulio dalimi. O ryškūs ir įsimintini didžiuliai radijo žaidimai bei akcijos klausytojų gyvenimo istorijomis.",
+     "Nuotraukoje pirmoji RADIOCENTRO komanda. Iš kairės: RADIOCENTRO įkūrėjas Rimantas Pleikys, Sigitas Žilionis, Artūras Mirončikas, Arnas Klivečka ir Audrius Atroška.",
+     "RADIOCENTRO grupei taip pat priklauso FM radijo stotys ZIP FM, RELAX FM, ROCK FM, RADIO R, RADIO FIESTA ir internetinės radijo stotys RELAX 100 HITŲ, RELAX SENTIMENTAI, ZIP FM IŠ KASETĖS bei RADIO R ENERGY .",
+     "RADIOCENTRO radijo stočių grupės radijo stotis patogiai galima klausyti per radijo klausymo programėlę RADIJAS.LT",
+     "INTERNETU mobiliajame telefone ir automobilyje (CarPlay bei Android Auto) RADIOCENTRO patogiausia klausyti per programėlę RADIJAS.LT.",
+     "KLAUSYTI GYVAI KLAUSYTI PER RADIJAS.LT UAB RADIOCENTRAS ĮMONĖS KODAS 123051873 PVM MOKĖTOJO KODAS LT230518716 ADRESAS Laisvės pr. 60, 05120 Vilnius EL. PAŠTAS info@rc.lt TELEFONAS +370 5 212 8706 DAINOS ETERIUI muzika@rc.lt REKLAMA Išskirtinis RADIOCENTRO atstovas reklamai",
+     "ŽINUTĖ IŠSIŲSTA, AČIŪ! × ● BALSO ŽINUTĖ Prieš siunčiant galėsi perklausyti ir įrašyti iš naujo.",
+     "Jei turi kelis mikrofonus, pasirink tinkamą. Kitu atveju nieko keisti nereikia.",
+     "Jeigu nepavyksta įrašyti, nukopijuok šį tekstą ir perduok svetainės administratoriui. Garso įrašas ar įrenginio identifikatorius neperduodami."
+    ]
+   },
+   {
+    "url": "https://rc.lt/dainu-istorija/",
+    "description": "Pamatyk paskutines RADIOCENTRO eteryje skambėjusias dainas, atlikėjus ir jų grojimo laiką.",
+    "og:description": "Pamatyk paskutines RADIOCENTRO eteryje skambėjusias dainas, atlikėjus ir jų grojimo laiką.",
+    "twitter:description": "Pamatyk paskutines RADIOCENTRO eteryje skambėjusias dainas, atlikėjus ir jų grojimo laiką.",
+    "paragraphs": [
+     "PAGRINDINIS TRYS IŠ EILĖS DALYVAUK DAINŲ ISTORIJA MUZIKA GROJAMIAUSIOS MĖGSTAMIAUSIOS KOMANDA APIE MUS R PAGRINDINĖ STOTIS PAGRINDINĖ STOTIS PAGRINDINIS TRYS IŠ EILĖS DALYVAUK DAINŲ ISTORIJA MUZIKA GROJAMIAUSIOS MĖGSTAMIAUSIOS KOMANDA APIE MUS DABAR GROJA RC Skamba gerai! DAINŲ ISTORIJA RC DABAR ETERYJE · IKI 19:00 Eteryje Simona Lisicyna",
+     "YouTube Spotify ŽINUTĖ Į STUDIJĄ 06 628 6288 WHATSAPP BALSO ŽINUTĖ DAINŲ ISTORIJA Ką tik RADIOCENTRO eteryje skambėjo gerai :",
+     "KLAUSYTI GYVAI KLAUSYTI PER RADIJAS.LT UAB RADIOCENTRAS ĮMONĖS KODAS 123051873 PVM MOKĖTOJO KODAS LT230518716 ADRESAS Laisvės pr. 60, 05120 Vilnius EL. PAŠTAS info@rc.lt TELEFONAS +370 5 212 8706 DAINOS ETERIUI muzika@rc.lt REKLAMA Išskirtinis RADIOCENTRO atstovas reklamai",
+     "ŽINUTĖ IŠSIŲSTA, AČIŪ! × ● BALSO ŽINUTĖ Prieš siunčiant galėsi perklausyti ir įrašyti iš naujo.",
+     "Jei turi kelis mikrofonus, pasirink tinkamą. Kitu atveju nieko keisti nereikia.",
+     "Jeigu nepavyksta įrašyti, nukopijuok šį tekstą ir perduok svetainės administratoriui. Garso įrašas ar įrenginio identifikatorius neperduodami.",
+     "BALSAS ĮSKAITYTAS PRIVATUMAS Slapukų pasirinkimai Mes ir mūsų partneriai naudojame slapukus, kad užtikrintume sklandų svetainės veikimą, analizuotume naršymo statistiką. Jūs galite pasirinkti, kokius duomenis leidžiate mums rinkti. Išsamesnę informaciją rasite mūsų PRIVATUMO POLITIKOJE .",
+     "Pasirinkimą bet kada pakeisite puslapio apačioje: „Privatumo nustatymai“."
+    ]
+   }
+  ]
+ },
+ "marijos": {
+  "name": "Marijos radijas",
+  "homes": [
+   "http://www.marijosradijas.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://www.marijosradijas.lt/",
+    "description": "„Marijos radijas“ - radijas tiems, kurie ieško Dievo ir nori patirti Jo veikimą savo gyvenime, tai didžiausia katalikiška radijo stotis Lietuvoje, kurią savo aukomis pilnai išlaiko klausytojai.",
+    "paragraphs": [
+     "Naujienos Programa Įrašai Šv. Mišios ir Maldos Pokalbiai ir susitikimai Tikėjimo pažinimas Naujausi laidų įrašai Laidos nuo A iki Z Archyvas Audio knygos Apie mus Apie Marijos radiją Radijo dažniai Savanorystė Kontaktai PAREMTI × Naujienos Programa Įrašai Šv. Mišios ir Maldos Pokalbiai ir susitikimai Tikėjimo pažinimas Naujausi laidų įrašai Laidos nuo A iki Z Archyvas Audio knygos Apie mus Apie Marijos radiją Radijo dažniai Savanorystė Kontaktai PAREMTI Your browser does not support the audio element. 17:20 Aktualieji Bažnytinės teisės klausimai Aptariami Romos katalikų bažnyčios kanonų teisės kodekso kanonai. Laidą veda kun. Virginijus Veprauskas.",
+     "Tiesiogiai 10:20 40:80 1x Donato Pranckevičiaus nuotrauka DABAR ETERYJE 17:20 Aktualieji Bažnytinės teisės klausimai Aptariami Romos katalikų bažnyčios kanonų teisės kodekso kanonai. Laidą veda kun. Virginijus Veprauskas.",
+     "Kauno arkivyskupijos muziejaus direktorės dr. Romos Zajančkauskienės knygą „Dieviškųjų dorybių žmogus. Palaimintasis Teofilius Matulionis“ pristato knygos autorė. Kalbina Marijos radijo programų direktorius kun. dr. Nerijus Pipiras.",
+     "Operos solistas, auksinio kryžiaus laureatas, tenoras Kęstutis Alčiauskis pasakoja apie savo karjerą, gyvenimo nuotykius bei vaikystės kelius. Laidą veda aktorius ir rašytojas Juozas Gaižauskas.",
+     "KLAUSYTI PAREMTI PROGRAMA INTENCIJOS/KLAUSIMAI ANONSAS ANONSAS ANONSAS Naujienos ir įvykiai Visos naujienos 2026-11-12 Kviečiame į naktinę Švč. Sakramento adoraciją Šiluvoje. Lapkričio 12 d. nuo 22 val. Skaityti daugiau 2026-11-12 Medžiugorje. Marijos šviesa. Lapkričio mėn. Skaityti daugiau 2026-11-10 Kur artimiausiu metu rinksime aukas radijo veiklai Skaityti daugiau 2026-11-09 Aušros Vartų Švč. Mergelės Marijos, Gailestingumo motinos atlaidai! Lapkričio 15–22 d. Skaityti daugiau Visos naujienos Programa Pilna programa Š 7 S 8 P 9 A 10 T 11 K 12 PN 13 Š 14 S 15 P 16 A 17 17:20 Eteryje 17:20 Aktualieji Bažnytinės teisės klausimai Aptariami Romos katalikų bažnyčios kanonų teisės kodekso kanonai. Laidą veda kun. Virginijus Veprauskas.",
+     "Klausyti 18:00 18:00 Viešpaties Angelo malda Malda \"Viešpaties Angelas\" kalbama rytmetį, vidudienį ir vakare prisimenant Viešpaties įsikūnijimo slėpinį.",
+     "Gauti priminimą 18:03 18:03 Skelbimai Artimiausių dvasinių ir kultūrinių renginių, rekolekcijų anonsai bei kita informacija.",
+     "Gauti priminimą 18:15 18:15 Knygų lentynoje Kauno arkivyskupijos muziejaus direktorės dr. Romos Zajančkauskienės knygą „Dieviškųjų dorybių žmogus. Palaimintasis Teofilius Matulionis“ pristato knygos autorė. Kalbina Marijos radijo programų direktorius kun. dr. Nerijus Pipiras.",
+     "Gauti priminimą 19:00 19:00 Rožinio malda. Litanija Transliacija iš Kauno Kristaus Prisikėlimo bazilikos.",
+     "Gauti priminimą 19:40 19:40 Dievo Žodis Homiliją sako mons. Vytautas Grigaravičius. Švento Rašto skaitinius skaito Vilius Kaminskas.",
+     "Klausyti įrašo 20:00 20:00 Pašaukimo džiaugsmas Operos solistas, auksinio kryžiaus laureatas, tenoras Kęstutis Alčiauskis pasakoja apie savo karjerą, gyvenimo nuotykius bei vaikystės kelius. Laidą veda aktorius ir rašytojas Juozas Gaižauskas.",
+     "Gauti priminimą 20:40 20:40 Biblija mažiesiems Ruta ir Naomė. Ruta Boazo lauke. Rutos knyga. Skaito aktorė Aldona Bendoriūtė, komentuoja ir meldžiasi Konstantinopolio patriarchato kunigas Vitalijus Mockus."
+    ]
+   },
+   {
+    "url": "https://www.marijosradijas.lt/apie-mus/apie-marijos-radija.html",
+    "description": "„Marijos radijas“ - radijas tiems, kurie ieško Dievo ir nori patirti Jo veikimą savo gyvenime, tai didžiausia katalikiška radijo stotis Lietuvoje, kurią savo aukomis pilnai išlaiko klausytojai.",
+    "paragraphs": [
+     "Naujienos Programa Įrašai Šv. Mišios ir Maldos Pokalbiai ir susitikimai Tikėjimo pažinimas Naujausi laidų įrašai Laidos nuo A iki Z Archyvas Audio knygos Apie mus Apie Marijos radiją Radijo dažniai Savanorystė Kontaktai PAREMTI × Naujienos Programa Įrašai Šv. Mišios ir Maldos Pokalbiai ir susitikimai Tikėjimo pažinimas Naujausi laidų įrašai Laidos nuo A iki Z Archyvas Audio knygos Apie mus Apie Marijos radiją Radijo dažniai Savanorystė Kontaktai PAREMTI Your browser does not support the audio element. 17:20 Aktualieji Bažnytinės teisės klausimai Aptariami Romos katalikų bažnyčios kanonų teisės kodekso kanonai. Laidą veda kun. Virginijus Veprauskas.",
+     "Tiesiogiai 10:20 40:80 1x Aistės Karpytės nuotrauka Apie Marijos Radiją Pradžia / Apie mus / Apie Marijos radiją Pradžia Marijos radijas Lietuvoje Pasaulinė Marijos radijo šeima Naujoji studija Pradžia Marijos radijo istorija prasidėjo 1983 metais Italijoje. Tai buvo dviejų žmonių, kunigo Livio Fanzaga ir pasauliečio verslininko Emanuele Ferrario tandemas. Jų iniciatyvos ir bendro darbo karštis davė stulbinančius rezultatus. Labai greitai iš parapijos radijo stoties ji tapo Italijos Marijos radiju.",
+     "Šių dviejų žmonių, kunigo Livio Fanzaga ir prezidento Emanuellio Ferrario, iniciatyva, tolygiai kūrėsi pasaulinė Marijos radijo šeima, kuriai dabar priklauso apie 80 šalių.",
+     "Lietuvoje Marijos radijas transliacijas pradėjo 2004 m. Kaune, Šiluvos Švč. Mergelės Marijos gimimo atlaidų savaitės metu. Po mėnesio buvo įjungti siųstuvai Klaipėdoje ir Šiauliuose. 2005 m. birželio 29 d. programa pradėta transliuoti Vilniaus mieste ir apylinkėje. Šiuo metu Lietuvos Marijos radijas turi 26 dažnius.",
+     "Nuo 2005 metų Lietuvos Marijos radijas taip pat yra tarptautinės Marijos radijo asociacijos (World Family of Radio Maria) narys. Tuomet, apie vienerius metus, Lietuvos Marijos radiją rėmė aukotojai iš Italijos. Jų lėšomis buvo įsigyta įranga, atsiskaityta už dažnius, padengtos kitos susijusios išlaidos. Viso pasaulio Marijos radijo veikla išlaikoma klausytojų ir kitų privačių rėmėjų aukomis, ir šiuo požiūriu Marijos radijas yra unikalus.",
+     "Marijos radijas žengė dar vieną svarbų žingsnį – duris atvėrė nauja radijo studija. Tai ne tik naujos patalpos ar modernesnė techninė erdvė. Tai vieta, iš kurios kasdien klausytojus pasiekia gyvas žodis, malda, pokalbiai, liudijimai ir žmonių istorijos.",
+     "Kuriant naująją studiją buvo siekiama, kad ji būtų patogi laidų vedėjams ir svečiams, pritaikyta šiuolaikinei radijo veiklai bei leistų užtikrinti dar kokybiškesnį garsą ir transliacijas. Tačiau svarbiausia išlieka ne technika. Marijos radijo studijos širdis visada yra žmogus – tas, kuris kalba prie mikrofono, ir tas, kuris klausosi kitoje radijo imtuvo pusėje.",
+     "Studijos atidarymas buvo ypatinga proga padėkoti visiems, kurie prisidėjo prie jos įrengimo: savo darbu, žiniomis, malda ir parama. Marijos radijas gyvuoja klausytojų dėka, todėl ir ši nauja studija yra bendro mūsų bendruomenės rūpesčio bei dosnumo vaisius.",
+     "Tikimės, kad iš šios studijos skamba ne tik informacija ar pokalbiai, bet ir žodžiai, kurie padrąsina, padeda ieškoti atsakymų, stiprina tikėjimą ir primena, kad žmogus nėra vienas.",
+     "Atverdami naujosios Marijos radijo studijos duris, kartu pradėjome ir naują jos istorijos puslapį. Tegul ši vieta tampa erdve prasmingiems susitikimams, nuoširdiems pokalbiams ir Gerajai Naujienai, kuri radijo bangomis pasiekia žmones jų namuose, darbuose, kelionėse ir kasdienybėje.",
+     "Skaityti daugiau 2026-11-12 Medžiugorje. Marijos šviesa. Lapkričio mėn. Skaityti daugiau 2026-11-10 Kur artimiausiu metu rinksime aukas radijo veiklai Skaityti daugiau 2026-11-09 Aušros Vartų Švč. Mergelės Marijos, Gailestingumo motinos atlaidai! Lapkričio 15–22 d. Skaityti daugiau Visos naujienos Tapk marijos radijo rėmėju Kviečiame padėti Marijos radijui savo auka ir malda, nes šis radijas neturi kito savo veiklos finansavimo šaltinio, kaip tik geranoriškas klausytojų ir kitų privačių rėmėjų aukas."
+    ]
+   },
+   {
+    "url": "https://www.marijosradijas.lt/apie-mus/radijo-dazniai.html",
+    "description": "„Marijos radijas“ - radijas tiems, kurie ieško Dievo ir nori patirti Jo veikimą savo gyvenime, tai didžiausia katalikiška radijo stotis Lietuvoje, kurią savo aukomis pilnai išlaiko klausytojai.",
+    "paragraphs": [
+     "Naujienos Programa Įrašai Šv. Mišios ir Maldos Pokalbiai ir susitikimai Tikėjimo pažinimas Naujausi laidų įrašai Laidos nuo A iki Z Archyvas Audio knygos Apie mus Apie Marijos radiją Radijo dažniai Savanorystė Kontaktai PAREMTI × Naujienos Programa Įrašai Šv. Mišios ir Maldos Pokalbiai ir susitikimai Tikėjimo pažinimas Naujausi laidų įrašai Laidos nuo A iki Z Archyvas Audio knygos Apie mus Apie Marijos radiją Radijo dažniai Savanorystė Kontaktai PAREMTI Your browser does not support the audio element. 17:20 Aktualieji Bažnytinės teisės klausimai Aptariami Romos katalikų bažnyčios kanonų teisės kodekso kanonai. Laidą veda kun. Virginijus Veprauskas.",
+     "Tiesiogiai 10:20 40:80 1x Radijo dažniai Pradžia / Apie mus / Radijo dažniai Girdimumas Lietuvoje Kviečiame padėti Marijos radijui savo auka ir malda, nes šis radijas neturi kito savo veiklos finansavimo šaltinio, kaip tik geranoriškas klausytojų ir kitų privačių rėmėjų aukas. Šiuo metu Marijos radijas Lietuvoje turi 26 dažnius. Pasitikrinkite, kokiu radijo dažniu galite girdėti Marijos radiją savo namuose!",
+     "Kviečiame padėti Marijos radijui savo auka ir malda, nes šis radijas neturi kito savo veiklos finansavimo šaltinio, kaip tik geranoriškas klausytojų ir kitų privačių rėmėjų aukas."
+    ]
+   },
+   {
+    "url": "https://www.marijosradijas.lt/apie-mus/savanoryste.html",
+    "description": "„Marijos radijas“ - radijas tiems, kurie ieško Dievo ir nori patirti Jo veikimą savo gyvenime, tai didžiausia katalikiška radijo stotis Lietuvoje, kurią savo aukomis pilnai išlaiko klausytojai.",
+    "paragraphs": [
+     "Naujienos Programa Įrašai Šv. Mišios ir Maldos Pokalbiai ir susitikimai Tikėjimo pažinimas Naujausi laidų įrašai Laidos nuo A iki Z Archyvas Audio knygos Apie mus Apie Marijos radiją Radijo dažniai Savanorystė Kontaktai PAREMTI × Naujienos Programa Įrašai Šv. Mišios ir Maldos Pokalbiai ir susitikimai Tikėjimo pažinimas Naujausi laidų įrašai Laidos nuo A iki Z Archyvas Audio knygos Apie mus Apie Marijos radiją Radijo dažniai Savanorystė Kontaktai PAREMTI Your browser does not support the audio element. 17:20 Aktualieji Bažnytinės teisės klausimai Aptariami Romos katalikų bažnyčios kanonų teisės kodekso kanonai. Laidą veda kun. Virginijus Veprauskas.",
+     "Tiesiogiai 10:20 40:80 1x Savanorystė Pradžia / Apie mus / Savanorystė SAVANORYSTĖ MARIJOS RADIJUJE Marijos radijas yra kitoks. Populiariausiu eterio laiku transliuoja Rožinį ir Valandų liturgiją. Necukruoja Bažnyčios mokymo ir „nevynioja į vatą“. Prodiusavimą patiki savanoriams. Neparduoda reklamos. Gyvuoja vien iš klausytojų aukų. Nepaisant to – stebuklas – 2004 metais pradėjusi transliacijas kuklioje Kauno studijoje, šiandien ši radijo stotis klausytojų pageidavimu girdima beveik visoje Lietuvoje! - Vincentas Vobolevičius",
+     "Scenoje ieškome tiesos per vaidmenį, o Marijos radijas leidžia kalbėti be kaukių – paprastai, tikrai ir iš širdies. Tai vieta, kur žodis tampa liudijimu",
+     "00:00 01:35 Gintaras Grušas Vilniaus arkivyskupas metropolitas, Lietuvos Vyskupų Konferencijos pirmininkas „Marijos radijas“ – tai evangelizacijos priemonė, kuri pasiekia žmogų jo kasdienybėje. Per eterį skamba ne tik žodis, bet ir Bažnyčios artumas kiekvienam.",
+     "00:00 01:35 Diak. doc. dr. Benas Ulevičius Diakonas, VDU Katalikų teologijos fakulteto dekanas Šiandien žmogui reikia ne triukšmo, o prasmės. Marijos radijas kuria erdvę mąstymui, dialogui ir tikėjimo gilinimui – be skubėjimo, su pagarba klausimui.",
+     "00:00 01:35 Kun. Saulius Stumbra Per Marijos radiją Dievo žodis pasiekia tuos, kurie galbūt negali ateiti į bažnyčią. Tai tylus, bet labai veiksmingas pastoracijos būdas.",
+     "00:00 01:35 Vyskupas Saulius Bužauskas Kauno arkivyskupijos vyskupas Bažnyčios misija – skelbti Gerąją Naujieną visais įmanomais būdais. Marijos radijas yra šiuolaikinė sakykla, iš kurios sklinda viltis ir tikėjimo šviesa.",
+     "00:00 01:35 Žygimantas Jacevičius Marijos radijas – tai balsas, kuris lydi žmogų kasdienybėje: kelyje, darbuose, abejonėse. Tai priminimas, kad Dievas kalba ir šiandien."
+    ]
+   }
+  ]
+ },
+ "zip": {
+  "name": "ZIP FM",
+  "homes": [
+   "https://zipfm.lt/",
+   "http://www.zipfm.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://zipfm.lt/",
+    "description": "Radijo stotis ZIP FM savo programą transliuoja FM bangomis ir internetu visoje Lietuvoje.",
+    "og:description": "Radijo stotis ZIP FM savo programą transliuoja FM bangomis ir internetu visoje Lietuvoje.",
+    "twitter:description": "Radijo stotis ZIP FM savo programą transliuoja FM bangomis ir internetu visoje Lietuvoje.",
+    "paragraphs": [
+     "PAGRINDINIS DAINŲ ISTORIJA MYLIMIAUSIŲ TOP20 NAUJOS DAINOS IŠ KASETĖS APIE MUS PAGRINDINĖ STOTIS PAGRINDINĖ STOTIS ZIP FM IŠ KASETĖS PAPILDOMAS KANALAS PAGRINDINIS DAINŲ ISTORIJA MYLIMIAUSIŲ TOP20 NAUJOS DAINOS IŠ KASETĖS APIE MUS ZIP FM Daugiau muzikos! ZIP FM DABAR GROJA Tiesioginis eteris ZIP FM",
+     "YouTube Spotify ŽINUTĖ Į STUDIJĄ PRASTUMTAS TOP3 Balsuok už savo favoritą.",
+     "KLAUSYTI GYVAI KLAUSYTI PER RADIJAS.LT KONTAKTAI ADRESAS Laisvės pr. 60, Vilnius 05120, Lietuva El. paštas info@zipfm.lt Telefonas +37052128706 Kūrinius siųskite: muzika@zipfm.lt REKLAMA tango.lt ZIP FM DAŽNIAI Vilnius 100.1 FM Kaunas 104.1 FM Klaipėda 92.5 FM Šiauliai 88.2 FM Panevėžys 99.1 FM Utena 105.0 FM Tauragė 105.7 FM Marijampolė 100.8 FM © 2026 ZIP FM. VISOS TEISĖS SAUGOMOS PRIVATUMO POLITIKA PRIVATUMO NUSTATYMAI ŽINUTĖ Į STUDIJĄ Interneto svetainė",
+     "ŽINUTĖ IŠSIŲSTA, AČIŪ! BALSAS ĮSKAITYTAS PRIVATUMAS Slapukų pasirinkimai Mes ir mūsų partneriai naudojame slapukus, kad užtikrintume sklandų svetainės veikimą, analizuotume naršymo statistiką. Jūs galite pasirinkti, kokius duomenis leidžiate mums rinkti. Išsamesnę informaciją rasite mūsų PRIVATUMO POLITIKOJE .",
+     "Pasirinkimą bet kada pakeisite puslapio apačioje: „Privatumo nustatymai“."
+    ]
+   },
+   {
+    "url": "https://zipfm.lt/dainu-istorija/",
+    "description": "Peržiūrėk paskutines ZIP FM eteryje skambėjusias dainas, atlikėjus ir grojimo laiką.",
+    "og:description": "Peržiūrėk paskutines ZIP FM eteryje skambėjusias dainas, atlikėjus ir grojimo laiką.",
+    "twitter:description": "Peržiūrėk paskutines ZIP FM eteryje skambėjusias dainas, atlikėjus ir grojimo laiką.",
+    "paragraphs": [
+     "PAGRINDINIS DAINŲ ISTORIJA MYLIMIAUSIŲ TOP20 NAUJOS DAINOS IŠ KASETĖS APIE MUS PAGRINDINĖ STOTIS PAGRINDINĖ STOTIS ZIP FM IŠ KASETĖS PAPILDOMAS KANALAS PAGRINDINIS DAINŲ ISTORIJA MYLIMIAUSIŲ TOP20 NAUJOS DAINOS IŠ KASETĖS APIE MUS ZIP FM Daugiau muzikos! DAINŲ ISTORIJA DABAR GROJA Tiesioginis eteris ZIP FM",
+     "YouTube Spotify ŽINUTĖ Į STUDIJĄ DAINŲ ISTORIJA Sužinok, kokias paskutines dainas grojo ZIP FM",
+     "KLAUSYTI GYVAI KLAUSYTI PER RADIJAS.LT KONTAKTAI ADRESAS Laisvės pr. 60, Vilnius 05120, Lietuva El. paštas info@zipfm.lt Telefonas +37052128706 Kūrinius siųskite: muzika@zipfm.lt REKLAMA tango.lt ZIP FM DAŽNIAI Vilnius 100.1 FM Kaunas 104.1 FM Klaipėda 92.5 FM Šiauliai 88.2 FM Panevėžys 99.1 FM Utena 105.0 FM Tauragė 105.7 FM Marijampolė 100.8 FM © 2026 ZIP FM. VISOS TEISĖS SAUGOMOS PRIVATUMO POLITIKA PRIVATUMO NUSTATYMAI ŽINUTĖ Į STUDIJĄ Interneto svetainė",
+     "ŽINUTĖ IŠSIŲSTA, AČIŪ! BALSAS ĮSKAITYTAS PRIVATUMAS Slapukų pasirinkimai Mes ir mūsų partneriai naudojame slapukus, kad užtikrintume sklandų svetainės veikimą, analizuotume naršymo statistiką. Jūs galite pasirinkti, kokius duomenis leidžiate mums rinkti. Išsamesnę informaciją rasite mūsų PRIVATUMO POLITIKOJE .",
+     "Pasirinkimą bet kada pakeisite puslapio apačioje: „Privatumo nustatymai“."
+    ]
+   }
+  ]
+ },
+ "kelyje": {
+  "name": "Radijo Stotis Kelyje",
+  "homes": [
+   "https://kelyje.lt/",
+   "https://radijaskelyje.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://radijaskelyje.lt/",
+    "description": "Radijo stotis „Kelyje“ – tavo ištikimas palydovas kelyje ir kasdienybėje! Transliuojame geriausią muziką, dalijamės naujienomis.",
+    "og:description": "Radijo stotis „Kelyje“ – tavo ištikimas palydovas kelyje ir kasdienybėje! Transliuojame geriausią muziką, dalijamės naujienomis.",
+    "paragraphs": [
+     "Pagrindinis Apie mus Vedėjai Reklama Kontaktai Facebook-f Instagram Youtube Facebook-f Instagram Youtube Pagrindinis Apie mus Vedėjai Reklama Kontaktai Pagrindinis Apie mus Vedėjai Reklama Kontaktai Tiesioginio eterio numeris 037422202 Studijos numeris 061142222 061121000 Kaunas Vilnius, Klaipėda Tiesioginio eterio numeris 037422202 Studijos numeris Kaunas Vilnius, Klaipėda 061142222 061121000 Programa NAKTIS KELYJE 00:00 – 07:00",
+     "Radijo stotis „Kelyje“ – tavo ištikimas palydovas kelyje ir kasdienybėje! Transliuojame geriausią muziką, dalijamės aktualiausiomis naujienomis, informuojame apie eismo sąlygas ir kviečiame dalyvauti įdomiose rubrikose bei žaidimuose, kurie gali praskaidrinti tavo dieną.",
+     "Instagram Youtube Copyright © 2026 Radijaskelyje.lt All rights reserved."
+    ]
+   },
+   {
+    "url": "https://radijaskelyje.lt/apie-mus/",
+    "description": "Mūsų istorija prasidėjo 2000-ųjų birželį, kai Kaune nuskambėjo pirmieji „Kelyje“ eterio šaukiniai. Radijas greitai sulaukė didelio klausytojų dėmesio ir pripažinimo, todėl dar po 3 metų transliacijos išsiplėtė į Vilnių ir Klaipėdą.",
+    "og:description": "Mūsų istorija prasidėjo 2000-ųjų birželį, kai Kaune nuskambėjo pirmieji „Kelyje“ eterio šaukiniai. Radijas greitai sulaukė didelio klausytojų dėmesio ir pripažinimo, todėl dar po 3 metų transliacijos išsiplėtė į Vilnių ir Klaipėdą.",
+    "paragraphs": [
+     "Pagrindinis Apie mus Vedėjai Reklama Kontaktai Facebook-f Instagram Youtube Facebook-f Instagram Youtube Pagrindinis Apie mus Vedėjai Reklama Kontaktai Pagrindinis Apie mus Vedėjai Reklama Kontaktai Apie mus Apie mus Mūsų istorija prasidėjo 2000-ųjų birželį, kai Kaune nuskambėjo pirmieji „Kelyje“ eterio šaukiniai. Radijas greitai sulaukė didelio klausytojų dėmesio ir pripažinimo, todėl dar po 3 metų transliacijos išsiplėtė į Vilnių ir Klaipėdą.",
+     "Esame vienintelė radijo stotis Lietuvoje, kuri nuolat informuoja apie eismo sąlygas Kaune, Vilniuje ir Klaipėdoje – tai mūsų išskirtinumas, leidžiantis prisidėti prie saugesnio ir sklandesnio judėjimo miestuose.",
+     "Taigi, Radijo stotis „Kelyje“ – tavo ištikimas palydovas kelyje ir kasdienybėje! Transliuojame geriausią muziką, dalijamės aktualiausiomis naujienomis, informuojame apie eismo sąlygas ir kviečiame dalyvauti įdomiose rubrikose bei žaidimuose, kurie gali praskaidrinti tavo dieną. Nesvarbu, kur keliauji – į darbą, namo ar į naujus nuotykius – mes stengiamės, kad tavo kelionė būtų ne tik saugi, bet ir kupina gerų emocijų.",
+     "Radijo stotis „Kelyje“ – tavo ištikimas palydovas kelyje ir kasdienybėje! Transliuojame geriausią muziką, dalijamės aktualiausiomis naujienomis, informuojame apie eismo sąlygas ir kviečiame dalyvauti įdomiose rubrikose bei žaidimuose, kurie gali praskaidrinti tavo dieną.",
+     "Instagram Youtube Copyright © 2026 Radijaskelyje.lt All rights reserved."
+    ]
+   }
+  ]
+ },
+ "ziniu": {
+  "name": "Žinių Radijas",
+  "homes": [
+   "https://www.ziniuradijas.lt/",
+   "http://www.ziniuradijas.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://www.ziniuradijas.lt/",
+    "description": "Naujienos šiandien - politika, verslas, sportas, kultūra, orai, tiesioginės laidų transliacijos ir laidos video formatu",
+    "og:description": "Naujienos šiandien - politika, verslas, sportas, kultūra, orai, tiesioginės laidų transliacijos ir laidos video formatu",
+    "paragraphs": [
+     "Prieinamumo nustatymai Prieinamumo nustatymai × Tekstas − 100 % + Eilučių aukštis 1,5 Eilučių aukštis 1,8 Eilučių aukštis 2 Tarpai tarp raidžių Disleksijos šriftas Lygiuoti kairėn Spalvos Tamsus režimas Didelis kontrastas Šviesus kontrastas Nespalvotas Mažas sodrumas Skaitymas Paryškintos nuorodos Paryškintos antraštės Ryškus fokusas Slėpti paveikslėlius Didelis žymeklis Skaitymo kaukė Sustabdyti animacijas Atstatyti nustatymus dabar eteryje Proto mankšta Studijos telefonas: +370 5 2 431 431 greitai eteryje 18:00 Aktualusis interviu Toggle navigation --> dabar eteryje Proto mankšta Laidos Archyvas Visi Trumpai Rekomenduojame Plius Programa EASY FM Reklama Euranet Plus Mokymai Konferencija Sėkmės receptai Prisijungti Analitika Verslas Ką gali Europa? Pažink save Naujoji karta Paskambinkite į studiją"
+    ]
+   }
+  ]
+ },
+ "vaiku": {
+  "name": "Vaikų radijas",
+  "homes": [
+   "http://www.vaikuradijas.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://vaikuradijas.lt/",
+    "description": "Vaiku Radijas transluoja 24/7 nemokamai viso pasaulio Lietuvos vaikuciams daineles, pasakeles ir dar...",
+    "paragraphs": [
+     "Atsivertę naują rudens „Vakaro žvaigždelės“ numerį tiek mažieji, tiek suaugusieji ras daug įvairių rubrikų, kuriose kalbama apie tokias svarbias vertybes kaip drąsa, tvirtumas, meilė, sąžiningumas, ...",
+     "Atsivertę naują vasaros „Vakaro žvaigždelės“ numerį tiek mažieji, tiek suaugusieji ras daug įvairių rubrikų, kuriose kalbama apie tokias svarbias vertybes kaip tikėjimas, viltis, susivaldymas, ...",
+     "Šiame žiemos numeryje vaikų laukia įdomus komiksas apie lietuvių misionierius Indijoje – Kristupą ir Urtę Lokius. Dar viename komikse avelė papasakos vilkui, kodėl negražu keiktis ir kaip galima ...",
+     "Su rudens spalvomis į tavo namus atkeliauja žurnalas „Vakaro žvaigždelė“! Atsivertę naują rudens žurnalo numerį rubrikoje „Pasaulis vaiko akimis“ sužinosite kaip pasitelkus gamtoje rastas ...",
+     "Atsivertę naują rudens „Vakaro žvaigždelės“ numerį tiek mažieji, tiek suaugusieji ras daug įvairių …",
+     "Sveiki, noriu padėkoti už smagią radijo stotį vaikams. Esu dviejų vaikų tėvelis: Poviliukui 6 m. Igniukui 1,3 m. Regis ne tik vaikams įdomu klausytis,kad ir man smagu. O jau Poviliukas automobilyje kelionės metu tik ir dainuoja daineles klausant Jūsų radijo dainų. O jei mieste viešai skambėtų Jūsų radijas parkuose vaikams, tik pagyvintų gyvenimą mieste."
+    ]
+   },
+   {
+    "url": "https://vaikuradijas.lt/apie-mus/",
+    "description": "Vaiku Radijas transluoja 24/7 nemokamai viso pasaulio Lietuvos vaikuciams daineles, pasakeles ir dar...",
+    "paragraphs": [
+     "„Vaikų radijas“ – tai pirmoji ir unikali lietuviška radijo stotis skirta Lietuvoje gyvenantiems ir visame pasaulyje išsibarsčiusiems lietuviukams. Joje skamba specialiai vaikams pritaikyta vaikiška populiarioji muzika, rengiamos šviečiamosios, muzikinės laidos, pamokėlės, žaidimai, konkursai vaikams ir visai šeimai.",
+     "Radijo stotis skirta vaikučiams nuo gimimo iki 12 m., bet jei įdomu, tai mūsų klausytis gali ir vyresnio amžiaus vaikai. Kadangi tai internetinė radijo stotis, klausytis mūsų galima visame pasaulyje. Vilniečiai „Vaikų Radijo” klausytis gali ir FM bangomis – 94,9 MHz dažniu.",
+     "Vaikų radijo klausosi nuo 2000 iki 5000 klausytojų per dieną. Radijo bangomis Vilniuje – 5000 -7000 klausytojų per dieną. Vaikų radijas yra įtrauktas į televizijos „Gala“ paketą, klausytojų skaičius nuolatos auga.",
+     "Vaikų radijo klausomasi vaikų darželiuose, socialinėse grupėse, vaikų žaidimų kambariuose, lietuvių bendruomenėse ir kitose vaikų susibūrimo vietose.",
+     "Mūsų klausytojams norėčiau palinkėti, išmokti svajoti, nes viskas prasideda nuo svajonės, paskui likti ištikimiems savo svajonei, tikėti ja ir siekti jos. Siųskite mums savo palinkėjimus, pageidavimus, pasiūlymus bei dalyvaukite piešinių, nuotraukų ir eilėraščių kūrimo konkursuose…",
+     "Jei esi kūrybingas, darbštus, komunikabilus, kruopštus, atsakingas, atsiduodantis daromai veiklai, jei domiesi renginiais, naujienomis bei veiklomis skirtomis vaikams – TU esi reikalingas mums! „Vaikų radijas“ siūlo tapti komandos nariu – savanoriu, ir prisidėti prie vaikų radijo populiarinimo bei augimo.",
+     "Savanoriaudami jūs atliksite savanorišką praktiką, įgysite patirties bei specifinių gebėjimų, kuriais papildysite savo gyvenimo aprašymą ir ateityje galėsite lengviau susirasti darbą!",
+     "Jei esi verslininkas ir tau taip pat patinka “Vaikų radijo” projektas, gal būt norėtum tapti “Vaikų radijo” mecenatu, generaliniu rėmėju ar tiesiog rėmėju. Mums labai reikia tavo pagalbos.",
+     "Panaudotų lėšų ataskaita viešai bus skelbiama sausio mėnesį už praėjusius metus.",
+     "Susidomėjus arba kilus klausimams rašykite e-paštu: info@vaikuradijas.lt"
+    ]
+   },
+   {
+    "url": "https://vaikuradijas.lt/apie-mus/musu-komanda/",
+    "description": "Vaiku Radijas transluoja 24/7 nemokamai viso pasaulio Lietuvos vaikuciams daineles, pasakeles ir dar...",
+    "paragraphs": []
+   }
+  ]
+ },
+ "vilnius": {
+  "name": "Radio Vilnius",
+  "homes": [
+   "https://radiovilnius.live/",
+   "https://vilniusfm.lt/"
+  ],
+  "pages": [
+   {
+    "url": "https://radiovilnius.live/",
+    "paragraphs": [
+     "LIVE Archive Events Shop About Sultys ŠVIEŽIOS SUPPORT US SUPPORT US MENU Play Pause — 0:00:00 / 0:00:00 Nėra Laiko w/ Pijus Džiugas Meižis • Merch • 2026.11.10 Check the new additions to the Radio Vilnius merch collection!",
+     "Laidoje „Kalba sultys“ Domininkas Kunčinas tęsia pažintį su kylančiomis grupėmis - naujausiame epizode svečiuojasi grupė Ginklas (Peilis)",
+     "Gabalų (su nurodyta metadata / mp3 formatu / google drive link'e) ir trumpų bio laukiam adresu sultys@radiovilnius.live Projektą finansuoja Lietuvos Kultūros Taryba bei Autorių teisių ir gretutinių teisių apsauga.",
+     "A conversation with electronic music pioneer Suzanne Ciani ahead of her performance at Elevators, Radio Vilnius’ event series dedicated to women composers reshaping the music scene.",
+     "Justas Kontrimas went wandering around Syria and returned with a collection of sounds and things to tell.",
+     "were you ever driving at 3 in the morning down some 2 lane road & it was raining & the only thing you can get on the radio is some station out of nowhere which comes in perfectly clear & plays great music like life is but a dream du wop du wop & you just turn it up & say to yourself “where has this track been all my life?”"
+    ]
+   },
+   {
+    "url": "https://radiovilnius.live/about/",
+    "description": "were you ever driving at 3 in the morning down some 2 lane road & it was raining & the only thing you can get on the radio is some station out of nowhere which comes in perfectly clear & plays great music like life is but a dream du wop du wop & you",
+    "og:description": "were you ever driving at 3 in the morning down some 2 lane road & it was raining & the only thing you can get on the radio is some station out of nowhere which comes in perfectly clear & plays great music like life is but a dream du wop du wop & you",
+    "twitter:description": "were you ever driving at 3 in the morning down some 2 lane road & it was raining & the only thing you can get on the radio is some station out of nowhere which comes in perfectly clear & plays great music like life is but a dream du wop du wop & you",
+    "paragraphs": []
+   },
+   {
+    "url": "https://vilniusfm.lt/",
+    "description": "Vilnius FM - pozityvios minties radijo stotis. Eteryje - muzika, kultūra, istorija, verslas, bendruomenių aktualijos. Vilnius FM tiesiogiai ir internete.",
+    "og:description": "Vilnius FM - 104.3 MHz | Radijas mylintiems Vilnių!",
+    "twitter:description": "Vilnius FM - 104.3 MHz | Radijas mylintiems Vilnių!",
+    "paragraphs": [
+     "Vilnius FM - 104.3 MHz Palaukite... Transliuojama Search ... Žiūrėti viską Laidų programa Pirmadienis 07:00 - 11:00 Labas, Vilniau! 14:00 - 18:00 Vilniaus ritmu 18:00 - 19:00 Verslo sostinė Antradienis 07:00 - 11:00 Labas, Vilniau! 14:00 - 18:00 Vilniaus ritmu 18:00 - 19:00 Sostinės horizontai Trečiadienis 07:00 - 11:00 Labas, Vilniau! 14:00 - 18:00 Vilniaus ritmu 18:00 - 19:00 Algoritmai Ketvirtadienis 07:00 - 11:00 Labas, Vilniau! 14:00 - 18:00 Vilniaus ritmu 18:00 - 19:00 Vilniaus kodas Penktadienis 07:00 - 11:00 Labas, Vilniau! 14:00 - 18:00 Vilniaus ritmu 18:00 - 19:00 Skanus Vilnius Šeštadienis 11:00 - 12:00 Sėkmės kaina Sekmadienis 10:00 - 11:00 Gyvenimo papartėliai 18:00 - 19:00 Genijų šlepetės Naujienos VISOS NAUJIENOS 2026-11-12 VILNIAUS RITMU. Ūla Ambrasaitė ir Rasa Morkūnaitė: apie naują literatūros festivalį Vilniuje 2026-11-12 LABAS, VILNIAU! Martynas Butkevičius: kodėl kultūra yra ne tik kūryba, bet ir verslas? 2026-11-11 ATSAKINGA TĖVYSTĖ. Audronė Kancė-Grdzelišvili: tėvai, kokiais norėjome būti, ir tėvai, kokie esame 2026-11-11 VILNIAUS RITMU. Jonas Staselis ir Paulius Zujus: „Art Capital“- kaip finansuoti kultūros ateitį? Rodyti daugiau Mecenatai Rubrikos Vilnius FM eteryje šalia muzikos ir laidų galite išgirsti įvairių rubrikų. Jei nespėjote kurios nors išklausyti ar norite rasti dar negirdėtų, kviečiame su jomis susipažinti ir mūsų puslapyje.",
+     "PERŽIŪRĖTI VISAS RUBRIKAS Loading track list... Laidos VISOS LAIDOS LABAS, VILNIAU! Kiekvieną darbo dieną nuo 7 iki 11 val. Laidą veda: Timūras Augucevičius VILNIAUS RITMU. Kiekvieną darbo dieną nuo 14 iki 18 val. Laidą veda: Jūratė Pilibaitienė GROJANTIS MIESTAS. Darbo dienomis nuo 11 val. Laidą veda: Simona Jančaitytė VERSLO SOSTINĖ. Pirmadieniais nuo 18 val. Laidą veda: Vytautas Siaurusaitis Rodyti daugiau Draugai Kontaktai Gedimino pr. 50, Vilnius redakcija@vilniusfm.lt +37060983082 Rekvizitai Įmonės kodas: 303167064 PVM mokėtojo kodas: LT100017422618"
+    ]
+   },
+   {
+    "url": "https://vilniusfm.lt/apie-mus/",
+    "description": "VšĮ „Sostinės media“ (radijas Vilnius FM) įtraukta į 2026 metų Vilniaus miesto reprezentacinių kultūros įstaigų, kurioms gali būti skirta asmenų parama, sąrašą. Organizacijoms, remiančioms VšĮ „Sostinės media“, suteikiama teisė iki 70 proc. sumažinti arba visiškai nemokėti žemės, valstybinės žemės nuomos ir nekilnojamojo turto mokesčių (jeigu nesinaudojama papildomomis nekilnojamojo turto lengvatomis. Pagal Vilniaus miesto savivaldybės tarybos sprendimą organizacijoms, remiančioms Vilniaus miesto reprezentacines kultūros įstaigas suteikiama teisė pasinaudoti šiomis mokesčių lengvatomis. Kviečiame verslo įmones ir kitus partnerius prisidėti prie mūsų veiklos. Jūsų parama padeda kurti kokybišką kultūrinį ir informacinį turinį, įgyvendinti naujus projektus bei stiprinti Vilniaus kultūrinį gyvenimą, o kartu suteikia galimybę pasinaudoti teisės aktuose numatytomis mokesčių lengvatomis. Dėl paramos ir bendradarbiavimo galimybių kviečiame susisiekti su mumis.",
+    "og:description": "VšĮ „Sostinės media“ (radijas Vilnius FM) įtraukta į 2026 metų Vilniaus miesto reprezentacinių kultūros įstaigų, kurioms gali būti skirta asmenų parama, sąrašą. Organizacijoms, remiančioms VšĮ „Sostinės media“, suteikiama teisė iki 70 proc. sumažinti arba visiškai nemokėti žemės, valstybinės žemės nuomos ir nekilnojamojo turto mokesčių (jeigu nesinaudojama papildomomis nekilnojamojo turto lengvatomis. Pagal Vilniaus miesto savivaldybės tarybos sprendimą organizacijoms, remiančioms Vilniaus miesto reprezentacines kultūros įstaigas suteikiama teisė pasinaudoti šiomis mokesčių lengvatomis. Kviečiame verslo įmones ir kitus partnerius prisidėti prie mūsų veiklos. Jūsų parama padeda kurti kokybišką kultūrinį ir informacinį turinį, įgyvendinti naujus projektus bei stiprinti Vilniaus kultūrinį gyvenimą, o kartu suteikia galimybę pasinaudoti teisės aktuose numatytomis mokesčių lengvatomis. Dėl paramos ir bendradarbiavimo galimybių kviečiame susisiekti su mumis.",
+    "twitter:description": "VšĮ „Sostinės media“ (radijas Vilnius FM) įtraukta į 2026 metų Vilniaus miesto reprezentacinių kultūros įstaigų, kurioms gali būti skirta asmenų parama, sąrašą. Organizacijoms, remiančioms VšĮ „Sostinės media“, suteikiama teisė iki 70 proc. sumažinti arba visiškai nemokėti žemės, valstybinės žemės nuomos ir nekilnojamojo turto mokesčių (jeigu nesinaudojama papildomomis nekilnojamojo turto lengvatomis. Pagal Vilniaus miesto savivaldybės tarybos sprendimą organizacijoms, remiančioms Vilniaus miesto reprezentacines kultūros įstaigas suteikiama teisė pasinaudoti šiomis mokesčių lengvatomis. Kviečiame verslo įmones ir kitus partnerius prisidėti prie mūsų veiklos. Jūsų parama padeda kurti kokybišką kultūrinį ir informacinį turinį, įgyvendinti naujus projektus bei stiprinti Vilniaus kultūrinį gyvenimą, o kartu suteikia galimybę pasinaudoti teisės aktuose numatytomis mokesčių lengvatomis. Dėl paramos ir bendradarbiavimo galimybių kviečiame susisiekti su mumis.",
+    "paragraphs": [
+     "Vilnius FM - 104.3 MHz Palaukite... Transliuojama Search ... Žiūrėti viską Apie mus Vilniaus miesto reprezentacinė kultūros įstaiga VšĮ „Sostinės media“ (radijas Vilnius FM ) įtraukta į 2026 metų Vilniaus miesto reprezentacinių kultūros įstaigų, kurioms gali būti skirta asmenų parama, sąrašą . Organizacijoms, remiančioms VšĮ „Sostinės media“, suteikiama teisė iki 70 proc. sumažinti arba visiškai nemokėti žemės, valstybinės žemės nuomos ir nekilnojamojo turto mokesčių (jeigu nesinaudojama papildomomis nekilnojamojo turto lengvatomis. Pagal Vilniaus miesto savivaldybės tarybos sprendimą organizacijoms, remiančioms Vilniaus miesto reprezentacines kultūros įstaigas suteikiama teisė pasinaudoti šiomis mokesčių lengvatomis. Kviečiame verslo įmones ir kitus partnerius prisidėti prie mūsų veiklos. Jūsų parama padeda kurti kokybišką kultūrinį ir informacinį turinį, įgyvendinti naujus projektus bei stiprinti Vilniaus kultūrinį gyvenimą, o kartu suteikia galimybę pasinaudoti teisės aktuose numatytomis mokesčių lengvatomis. Dėl paramos ir bendradarbiavimo galimybių kviečiame susisiekti su mumis. Radijas mylintiems Vilnių Mes kuriame radijo stotį Vilniui ir kviečiame būti radijo stoties dalimi. Vilnius FM – pozityvios ir konstruktyvios minties radijas, čia negirdėsite kriminalų ir skandalų. Dėmesys skiriamas kultūrai, istorijai bei kitiems aktualiems Vilniaus gyventojams klausimams. Vilnius FM ne tik informuojantis, bet ir edukuojantis, ieškantis sprendimų radijas. Kurdami radijo stotį, siekiame tapti jungtimi tarp miesto ir jo žmonių. Nuo paslėptų istorijų iki didžiausių kultūros renginių, nuo Vilniaus istorijos iki šių dienų aktualijų – norime sujungti tai, kas vyksta Vilniuje, su tais, kuriems tai rūpi.",
+     "Gedimino pr. 50, Vilnius redakcija@vilniusfm.lt +37060983082 Rekvizitai Įmonės kodas: 303167064 PVM mokėtojo kodas: LT100017422618"
+    ]
+   }
+  ]
+ }
+}
