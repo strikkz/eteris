@@ -191,8 +191,27 @@ object StationRepository {
         )
         val key = t.replace(Regex("[^a-z0-9]+"), "")
         // Names in other alphabets (e.g. Cyrillic) would become empty: keep their letters instead.
-        return key.ifEmpty { s.lowercase().filter { it.isLetterOrDigit() } }
+        val k = key.ifEmpty { s.lowercase().filter { it.isLetterOrDigit() } }
+        return ALIASES[k] ?: k
     }
+
+    /** The same station listed in the catalog under another name. */
+    private val ALIASES = mapOf(
+        "powerhitradiolithuania" to "powerhit",
+        "zipfm" to "zip",
+        "radijostotism1" to "m1",
+        "radiostotislaluna" to "laluna",
+        "radijostotisradio3" to "3",
+        "radijostotiskelyje" to "kelyje",
+        "goldfm" to "gold",
+        "pmrworldmusic" to "pmr",
+        "puko" to "pukas",
+    )
+
+    /** Streams that are wrongly listed as Lithuanian (e.g. Estonian Power Hit Radio on the Levira server). */
+    private val BLOCKED_STREAMS = listOf(
+        Regex("leviracloud\\.eu/phr", RegexOption.IGNORE_CASE),
+    )
 
     private fun JSONObject.str(k: String): String = if (isNull(k)) "" else optString(k, "").trim()
 
@@ -209,6 +228,7 @@ object StationRepository {
             val o = arr.optJSONObject(i) ?: continue
             val url = o.str("url_resolved").ifEmpty { o.str("url") }
             if (!url.startsWith("http")) continue
+            if (BLOCKED_STREAMS.any { it.containsMatchIn(url) }) continue
             val name = o.str("name")
             val key = norm(name)
             if (key.isEmpty()) continue

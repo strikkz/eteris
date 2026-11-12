@@ -43,7 +43,16 @@ def norm(s):
     t = re.sub(r"\b\d+\s*k(bps|b/s)?\b", " ", t)
     t = re.sub(r"\b(lt|lietuva|radijas|radio|fm|online|aac\+?|aacp|he-?aac|mp3|ogg|flac|hq|hd|high|low|stream)\b", " ", t)
     key = re.sub(r"[^a-z0-9]+", "", t)
-    return key or "".join(c for c in s.lower() if c.isalnum())
+    key = key or "".join(c for c in s.lower() if c.isalnum())
+    return ALIASES.get(key, key)
+
+
+# Must match StationRepository.ALIASES in the app.
+ALIASES = {
+    "powerhitradiolithuania": "powerhit", "zipfm": "zip", "radijostotism1": "m1",
+    "radiostotislaluna": "laluna", "radijostotisradio3": "3", "radijostotiskelyje": "kelyje",
+    "goldfm": "gold", "pmrworldmusic": "pmr", "puko": "pukas",
+}
 
 
 def get(url, limit=3_000_000, timeout=5, total=8):
@@ -185,6 +194,10 @@ def render(orig):
 
 def process(station):
     key, name, favicons, homes = station
+    custom = f"tools/custom_logos/{key}.png"
+    if os.path.exists(custom):  # hand-picked logo
+        render(Image.open(custom).convert("RGBA")).save(f"{OUT}/{key}.png", optimize=True)
+        return key, name, {"kind": "custom", "url": custom, "score": 0}
     cands = []
     ov = OVERRIDES.get(key)
     if ov == "none":
