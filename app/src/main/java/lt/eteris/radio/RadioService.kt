@@ -360,8 +360,6 @@ class RadioService : MediaLibraryService() {
         if (t.isEmpty() || Regex("^[-–—\\s.]*$").matches(t)) return ""
         if (t.equals(st.name, ignoreCase = true) || StationRepository.norm(t) == st.id) return ""
         if (Regex("^(unknown|n/a|null|undefined)$", RegexOption.IGNORE_CASE).matches(t)) return ""
-        // Stations' websites name news / ads blocks like this; it is not a song.
-        if (Regex("^(eteryje|informacija|reklama|žinios|ziniu|news|advert\\w*)(\\s*[-–—]\\s*(informacija|reklama|žinios|news))?$", RegexOption.IGNORE_CASE).matches(t)) return ""
         return t.replace(Regex("\\s+-\\s+"), " — ")
     }
 
