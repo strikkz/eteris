@@ -46,7 +46,7 @@ def norm(s):
     return key or "".join(c for c in s.lower() if c.isalnum())
 
 
-def get(url, limit=6_000_000, timeout=15):
+def get(url, limit=3_000_000, timeout=5):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.geturl(), r.headers.get("Content-Type", ""), r.read(limit)
@@ -80,7 +80,7 @@ def trim(im):
 def homepage_candidates(home):
     out = []
     try:
-        final, ctype, html = get(home, limit=1_500_000)
+        final, ctype, html = get(home, limit=600_000)
     except Exception:
         return out
     html = html.decode("utf-8", "replace")
@@ -180,8 +180,12 @@ def process(station):
     cands += [("catalog", f) for f in favicons]
     for home in homes[:2]:
         cands += homepage_candidates(home)
+    import time
+    deadline = time.time() + 25
     seen, best = set(), None
-    for kind, url in cands:
+    for kind, url in cands[:12]:
+        if time.time() > deadline:
+            break
         if not url.startswith("http") or url in seen:
             continue
         seen.add(url)
@@ -192,6 +196,7 @@ def process(station):
         return key, name, None
     tile = render(best[3])
     tile.save(f"{OUT}/{key}.png", optimize=True)
+    print("ok", name, best[1], flush=True)
     return key, name, {"kind": best[1], "url": best[2], "score": round(best[0])}
 
 
@@ -209,7 +214,7 @@ def main():
             g[3].append(s["homepage"])
     for f in os.listdir(OUT):
         os.remove(os.path.join(OUT, f))
-    with cf.ThreadPoolExecutor(12) as ex:
+    with cf.ThreadPoolExecutor(32) as ex:
         results = list(ex.map(process, groups.values()))
     index = {k: v for k, _, v in results if v}
     os.makedirs("logos", exist_ok=True)
