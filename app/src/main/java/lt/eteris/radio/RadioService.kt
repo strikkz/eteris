@@ -143,9 +143,20 @@ class RadioService : MediaLibraryService() {
 
     override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaLibrarySession? = session
 
+    /**
+     * The app was swiped away in the recent-apps screen: stop the radio and close.
+     * Exception: Android Auto is connected - then the car keeps playing.
+     */
     override fun onTaskRemoved(rootIntent: Intent?) {
-        val p = session?.player
-        if (p == null || !p.playWhenReady || p.mediaItemCount == 0) stopSelf()
+        val s = session
+        val carConnected = s?.connectedControllers?.any { it.packageName == AUTO_PACKAGE } == true
+        if (s != null && carConnected && s.player.playWhenReady) return
+        s?.player?.run {
+            pause()
+            clearMediaItems()
+        }
+        SleepTimer.set(0)
+        stopSelf()
     }
 
     override fun onDestroy() {
@@ -422,23 +433,6 @@ class RadioService : MediaLibraryService() {
         s.setCustomLayout(ImmutableList.of(button))
     }
 
-    // ---------- Start the last station when the app is opened in Android Auto ----------
-
-    private var lastAutoStart = 0L
-
-    private fun autoStart(all: List<Station>) {
-        val p = session?.player ?: return
-        val now = SystemClock.elapsedRealtime()
-        if (p.playWhenReady || now - lastAutoStart < 10_000) return
-        lastAutoStart = now
-        if (p.mediaItemCount == 0) {
-            val q = queueAround(StationRepository.lastId(this), all)
-            if (q.mediaItems.isEmpty()) return
-            p.setMediaItems(q.mediaItems, q.startIndex, C.TIME_UNSET)
-        }
-        p.prepare()
-        p.play()
-    }
 
     private fun <T> paginate(items: List<T>, page: Int, pageSize: Int): List<T> =
         if (pageSize <= 0 || pageSize == Int.MAX_VALUE || page <= 0 && pageSize >= items.size) items
@@ -528,8 +522,6 @@ class RadioService : MediaLibraryService() {
             params: LibraryParams?,
         ): ListenableFuture<LibraryResult<ImmutableList<MediaItem>>> = scope.future {
             val all = StationRepository.ensureLoaded(this@RadioService)
-            // The station tabs are requested when the app is opened in Android Auto (not for the side card).
-            if (parentId == ROOT && browser.packageName == AUTO_PACKAGE) autoStart(all)
             LibraryResult.ofItemList(paginate(children(parentId, all), page, pageSize), params)
         }
 
