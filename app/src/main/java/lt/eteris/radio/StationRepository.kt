@@ -219,6 +219,19 @@ object StationRepository {
         Regex("leviracloud\\.eu/phr", RegexOption.IGNORE_CASE),
     )
 
+    /**
+     * Streams on the M-1 group server (M-1, Lietus, M-1 Plius, Laluna, M-1 Dance) carry the real station in the path:
+     * radio.m-1.fm/lietus/... is Lietus whatever name the catalog gives it (one "m-1" entry points to Lietus).
+     */
+    private val M1_SERVER = Regex("""m-1\.fm/([^/]+)/""", RegexOption.IGNORE_CASE)
+    private fun streamOwner(url: String): String? = M1_SERVER.find(url)?.groupValues?.get(1)?.let(::norm)?.ifEmpty { null }
+
+    /** Better-quality streams the catalog does not list. */
+    private val EXTRA_STREAMS = mapOf(
+        "m1" to listOf(Variant("https://radio.m-1.fm/m1/MP3320", "MP3", 320, false, true)),
+        "lietus" to listOf(Variant("https://radio.m-1.fm/lietus/MP3320", "MP3", 320, false, true)),
+    )
+
     private fun JSONObject.str(k: String): String = if (isNull(k)) "" else optString(k, "").trim()
 
     private class Group(val key: String, val name: String) {
@@ -238,8 +251,10 @@ object StationRepository {
             if (!url.startsWith("http")) continue
             if (BLOCKED_STREAMS.any { it.containsMatchIn(url) }) continue
             val name = o.str("name")
-            val key = norm(name)
+            val byName = norm(name)
+            val key = streamOwner(url) ?: byName
             if (key.isEmpty()) continue
+            val relabeled = key != byName
             // The catalog sometimes has junk values ("UNKNOWN", 3667 kbps for adaptive streams).
             var codec = o.str("codec").uppercase()
             if (codec == "UNKNOWN") codec = ""
@@ -249,12 +264,20 @@ object StationRepository {
             val hls = o.optInt("hls", 0) == 1 || url.contains(".m3u8", ignoreCase = true)
             val ok = o.optInt("lastcheckok", 1) == 1
 
-            val g = groups.getOrPut(key) { Group(key, name) }
+            val g = groups.getOrPut(key) { Group(key, if (relabeled) key else name) }
             g.votes += o.optLong("clickcount", 0)
+            if (relabeled) {   // a mislabeled entry gives only its stream, not its name, logo or website
+                if (g.variants.none { it.url == url }) g.variants += Variant(url, codec, br, hls, ok)
+                continue
+            }
             if (g.favicon == null) o.str("favicon").takeIf { it.startsWith("http") }?.let { g.favicon = it }
             if (g.variants.none { it.url == url }) g.variants += Variant(url, codec, br, hls, ok)
             if (g.homepage == null) o.str("homepage").takeIf { it.startsWith("http") }?.let { g.homepage = it }
             o.str("tags").lowercase().split(',').map { it.trim() }.filter { it.isNotEmpty() }.forEach { g.tags += it }
+        }
+        for ((k, extra) in EXTRA_STREAMS) {
+            val g = groups[k] ?: continue
+            extra.filter { e -> g.variants.none { it.url.equals(e.url, ignoreCase = true) } }.forEach { g.variants += it }
         }
         return groups.values.map { g ->
             val p = prioKeys.indexOf(g.key)
