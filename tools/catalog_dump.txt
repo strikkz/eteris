@@ -1,25 +1,25 @@
-{"name": "RELAX FM Lietuva", "url": "https://stream1.relaxfm.lt/relaxfm128.mp3", "url_resolved": "https://stream1.relaxfm.lt/relaxfm128.mp3", "bitrate": 128, "codec": "MP3", "hls": 0, "homepage": "https://relaxfm.lt/", "favicon": "https://relaxfm.lt/wp-content/uploads/2018/12/cropped-r-relax-fm-copy-1-192x192.png", "clickcount": 22, "votes": 4485, "lastcheckok": 1}
-{"name": "Radio Lietus", "url": "https://stream.m-1.fm/lietus/mp3", "url_resolved": "https://stream.m-1.fm/lietus/mp3", "bitrate": 192, "codec": "MP3", "hls": 0, "homepage": "https://lietus.15min.lt/", "favicon": "https://lietus.15min.lt/content/uploads/cropped-lietus_320-192x192.jpg", "clickcount": 12, "votes": 18, "lastcheckok": 1}
-{"name": "M-1 Plius", "url": "http://radio.m-1.fm/m1plius/mp3", "url_resolved": "http://radio.m-1.fm/m1plius/mp3", "bitrate": 192, "codec": "MP3", "hls": 0, "homepage": "http://www.pliusas.fm/", "favicon": "", "clickcount": 12, "votes": 5216, "lastcheckok": 1}
-{"name": "Радио Лента", "url": "https://stream1.unknownclient.com/radio-lenta.mp3", "url_resolved": "https://stream1.unknownclient.com/radio-lenta.mp3", "bitrate": 128, "codec": "MP3", "hls": 0, "homepage": "https://worldreport.today/", "favicon": "", "clickcount": 12, "votes": 37, "lastcheckok": 1}
-{"name": "M-1 Radio", "url": "https://stream.m-1.fm/m1/mp3", "url_resolved": "https://stream.m-1.fm/m1/mp3", "bitrate": 192, "codec": "MP3", "hls": 0, "homepage": "https://m-1.15min.lt/", "favicon": "https://m-1.15min.lt/content/themes/m-1/mlogo.png", "clickcount": 8, "votes": 5, "lastcheckok": 1}
-{"name": "ZipFM", "url": "https://stream2.zipfm.lt/zipfm128.mp3", "url_resolved": "https://stream2.zipfm.lt/zipfm128.mp3", "bitrate": 128, "codec": "MP3", "hls": 0, "homepage": "https://zipfm.lt/", "favicon": "https://zipfm.lt/wp-content/uploads/2023/11/cropped-zipfm-icon-180x180.png", "clickcount": 7, "votes": 2967, "lastcheckok": 1}
-{"name": "M-1 Dance ", "url": "https://radio.m-1.fm/m-1dance/aac", "url_resolved": "https://radio.m-1.fm/m-1dance/aac", "bitrate": 256, "codec": "AAC", "hls": 0, "homepage": "https://radio.m-1.fm/m-1dance/aac", "favicon": "", "clickcount": 7, "votes": 2260, "lastcheckok": 1}
-{"name": "Radio R", "url": "https://stream1.relaxfm.lt/rrb128.mp3", "url_resolved": "https://stream1.relaxfm.lt/rrb128.mp3", "bitrate": 128, "codec": "MP3", "hls": 0, "homepage": "https://radior.lt/", "favicon": "", "clickcount": 6, "votes": 13, "lastcheckok": 1}
-{"name": "m-1", "url": "https://stream.m-1.fm/lietus/MP3320.m3u", "url_resolved": "http://radio.m-1.fm/lietus/MP3320", "bitrate": 320, "codec": "MP3", "hls": 0, "homepage": "http://m-1.lt/", "favicon": "", "clickcount": 5, "votes": 957, "lastcheckok": 1}
-{"name": "ZIP FM", "url": "https://stream1.zipfm.lt/zipfm128.mp3", "url_resolved": "https://stream1.zipfm.lt/zipfm128.mp3", "bitrate": 128, "codec": "MP3", "hls": 0, "homepage": "http://www.zipfm.lt/", "favicon": "https://zipfm.lt/wp-content/uploads/2023/11/cropped-zipfm-icon-180x180.png", "clickcount": 4, "votes": 338, "lastcheckok": 1}
-{"name": "M-1 Plius", "url": "https://radio.m-1.fm/m1plius/aacp64", "url_resolved": "https://radio.m-1.fm/m1plius/aacp64", "bitrate": 192, "codec": "AAC+", "hls": 0, "homepage": "https://www.pliusas.fm/", "favicon": "", "clickcount": 3, "votes": 161, "lastcheckok": 1}
-{"name": "Laluna [MP3]", "url": "http://stream.laluna.lt/laluna/mp3.m3u", "url_resolved": "http://radio.m-1.fm/laluna/mp3", "bitrate": 160, "codec": "MP3", "hls": 0, "homepage": "http://laluna.lt/", "favicon": "http://laluna.lt/favicon.ico", "clickcount": 3, "votes": 5028, "lastcheckok": 1}
-{"name": "Radijo stotis M-1", "url": "https://stream.m-1.fm/m1/aacp64", "url_resolved": "https://stream.m-1.fm/m1/aacp64", "bitrate": 192, "codec": "AAC+", "hls": 0, "homepage": "https://m-1.15min.lt/", "favicon": "", "clickcount": 2, "votes": 7, "lastcheckok": 1}
-{"name": "Radio LaLuna", "url": "http://radio.m-1.fm/laluna/high", "url_resolved": "http://radio.m-1.fm/laluna/high", "bitrate": 192, "codec": "AAC+", "hls": 0, "homepage": "https://laluna.lt/", "favicon": "https://laluna.lt/favicon.ico", "clickcount": 1, "votes": 106, "lastcheckok": 1}
-{"name": "Laluna [AAC]", "url": "http://stream.laluna.lt/laluna/high.m3u", "url_resolved": "http://radio.m-1.fm/laluna/high", "bitrate": 192, "codec": "AAC+", "hls": 0, "homepage": "http://laluna.lt/", "favicon": "http://laluna.lt/favicon.ico", "clickcount": 1, "votes": 859, "lastcheckok": 1}
-{"name": "Radio stotis Laluna", "url": "https://radio.m-1.fm/laluna/mp3", "url_resolved": "https://radio.m-1.fm/laluna/mp3", "bitrate": 160, "codec": "MP3", "hls": 0, "homepage": "https://www.laluna.lt/", "favicon": "https://www.laluna.lt/favicon.ico", "clickcount": 0, "votes": 267, "lastcheckok": 1}
-
---- ICY headers ---
-Radio Lietus | https://stream.m-1.fm/lietus/mp3 | ['icy-description:Lietus', 'icy-name:Lietus', 'icy-url:http://www.lietus.fm']
-M-1 Plius | http://radio.m-1.fm/m1plius/mp3 | ['icy-description:M-1 Plius', 'icy-name:M-1 Plius', 'icy-url:http://www.pliusas.fm']
-M-1 Radio | https://stream.m-1.fm/m1/mp3 | ['icy-description:M-1', 'icy-name:M-1', 'icy-url:http://www.M-1.fm']
-M-1 Dance  | https://radio.m-1.fm/m-1dance/aac | ['icy-description:M1 Dance', 'icy-name:M1 Dance', 'icy-url:https://m-1dance.fm']
-m-1 | http://radio.m-1.fm/lietus/MP3320 | ['icy-description:Lietus', 'icy-name:Lietus', 'icy-url:http://www.lietus.fm']
-M-1 Plius | https://radio.m-1.fm/m1plius/aacp64 | ['icy-description:M-1 Plius', 'icy-name:M-1 Plius', 'icy-url:http://www.pliusas.fm']
-Radijo stotis M-1 | https://stream.m-1.fm/m1/aacp64 | ['icy-description:M-1', 'icy-name:M-1', 'icy-url:http://www.M-1.fm']
+https://radio.m-1.fm/m1/MP3320 | HTTP/1.0 200 OK Content-Type: audio/mpeg icy-br:320 icy-name:M-1 
+https://radio.m-1.fm/m1/mp3320 | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/m1/mp3 | HTTP/1.0 200 OK Content-Type: audio/mpeg icy-br:192 icy-name:M-1 
+https://radio.m-1.fm/m1/aac | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/m1/high | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/m1plius/MP3320 | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/m1plius/mp3320 | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/m1plius/mp3 | HTTP/1.0 200 OK Content-Type: audio/mpeg icy-br:192 icy-name:M-1 Plius 
+https://radio.m-1.fm/m1plius/aac | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/m1plius/high | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/lietus/MP3320 | HTTP/1.0 200 OK Content-Type: audio/mpeg icy-br:320 icy-name:Lietus 
+https://radio.m-1.fm/lietus/mp3320 | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/lietus/mp3 | HTTP/1.0 200 OK Content-Type: audio/mpeg icy-br:192 icy-name:Lietus 
+https://radio.m-1.fm/lietus/aac | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/lietus/high | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/laluna/MP3320 | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/laluna/mp3320 | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/laluna/mp3 | HTTP/1.0 200 OK Content-Type: audio/mpeg icy-br:160 icy-name:LALUNA 
+https://radio.m-1.fm/laluna/aac | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/laluna/high | HTTP/1.0 200 OK Content-Type: audio/aacp icy-br:192 icy-name:LALUNA 
+https://radio.m-1.fm/m-1dance/MP3320 | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/m-1dance/mp3320 | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
+https://radio.m-1.fm/m-1dance/mp3 | HTTP/1.0 200 OK Content-Type: audio/mpeg icy-name:M1 Dance 
+https://radio.m-1.fm/m-1dance/aac | HTTP/1.0 200 OK Content-Type: audio/aac icy-br:256 icy-br:256 icy-name:M1 Dance 
+https://radio.m-1.fm/m-1dance/high | HTTP/1.0 404 File Not Found Content-Type: text/html; charset=utf-8 
