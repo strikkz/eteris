@@ -602,10 +602,19 @@ class RadioService : MediaLibraryService() {
         }
     }
 
-    /** The list "next/previous" (steering wheel) moves through: favorites if the station is one, otherwise all. */
+    /**
+     * The list "next/previous" (steering wheel) moves through: the favorites (as listed in the car, world
+     * stations included) if the station is one; a world station that is not a favorite plays on its own;
+     * otherwise all Lithuanian stations.
+     */
     private fun queueAround(id: String?, all: List<Station>): MediaSession.MediaItemsWithStartPosition {
         val favs = StationRepository.favorites(this)
-        val list = if (id != null && id in favs) all.filter { it.id in favs } else all
+        val st = StationRepository.byId(id)
+        val list = when {
+            id != null && id in favs -> StationRepository.favoritesByRecent(this)
+            st != null && st.isWorld -> listOf(st)
+            else -> all
+        }
         val index = list.indexOfFirst { it.id == id }.coerceAtLeast(0)
         return MediaSession.MediaItemsWithStartPosition(list.map { it.toMediaItem() }, index, C.TIME_UNSET)
     }
