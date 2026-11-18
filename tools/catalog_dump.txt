@@ -1,15 +1,9 @@
 https://liveam.tv/img/2494.jpg app-UA: 200 9982  browser-UA: 200 9982
-Traceback (most recent call last):
-  File "<string>", line 2, in <module>
-    from PIL import Image; im=Image.open('/tmp/l.jpg'); print('size',im.size)
-    ^^^^^^^^^^^^^^^^^^^^^
-ModuleNotFoundError: No module named 'PIL'
+/tmp/l.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=3, software=Adobe Photoshop CS5 Windows, datetime=2012-06-01T14:37:26+03:00], baseline, precision 8, 250x250, components 3
+/tmp/tg.png: PNG image data, 1024 x 500, 8-bit/color RGBA, non-interlaced
 http://liveam.tv/img/2494.jpg app-UA: 301 167  browser-UA: 301 167
-Traceback (most recent call last):
-  File "<string>", line 2, in <module>
-    from PIL import Image; im=Image.open('/tmp/l.jpg'); print('size',im.size)
-    ^^^^^^^^^^^^^^^^^^^^^
-ModuleNotFoundError: No module named 'PIL'
+/tmp/l.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=3, software=Adobe Photoshop CS5 Windows, datetime=2012-06-01T14:37:26+03:00], baseline, precision 8, 250x250, components 3
+/tmp/tg.png: PNG image data, 1024 x 500, 8-bit/color RGBA, non-interlaced
 == https://europaplus.ru/
 <meta property="og:image" content="/tg.png">
 == https://www.europaplus.ru/
