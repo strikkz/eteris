@@ -27,6 +27,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -249,7 +253,15 @@ fun ExploreScreen(
     genre: Genre?,
     onGenre: (Genre?) -> Unit,
     onSettings: () -> Unit,
+    world: Boolean,
+    onWorld: (Boolean) -> Unit,
+    worldQuery: String,
+    onWorldQuery: (String) -> Unit,
 ) {
+    if (world) {
+        WorldExplore(app, worldQuery, onWorldQuery, onSettings, onWorld)
+        return
+    }
     val stations = app.stations
     val genres = remember(stations) { Genre.entries.map { g -> g to stations.count { g in it.genres } }.filter { it.second > 0 } }
     val results = remember(stations, query, genre) {
@@ -270,6 +282,8 @@ fun ExploreScreen(
         item {
             Spacer(Modifier.height(26.dp))
             DisplayTitle(stringResource(R.string.explore_title_1), stringResource(R.string.explore_title_2))
+            Spacer(Modifier.height(18.dp))
+            ScopeSwitch(world = false, onWorld)
             SearchField(query, onQuery)
         }
         if (!browsing) {
@@ -312,8 +326,105 @@ fun ExploreScreen(
     }
 }
 
+/** "Lithuania | Whole world": the world part lives apart from the Lithuanian lists. */
 @Composable
-private fun SearchField(query: String, onQuery: (String) -> Unit) {
+private fun ScopeSwitch(world: Boolean, onWorld: (Boolean) -> Unit) {
+    Row(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(999.dp)).background(Banga.surface).padding(4.dp),
+    ) {
+        listOf(false to R.string.explore_lt, true to R.string.explore_world).forEach { (w, label) ->
+            val on = w == world
+            Box(
+                Modifier
+                    .weight(1f)
+                    .height(42.dp)
+                    .clip(RoundedCornerShape(999.dp))
+                    .background(if (on) Banga.accent else Color.Transparent)
+                    .clickable { onWorld(w) },
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(
+                    stringResource(label),
+                    style = Banga.supporting,
+                    fontWeight = FontWeight.Bold,
+                    color = if (on) Banga.onAccent else Banga.textSecondary,
+                )
+            }
+        }
+    }
+}
+
+/** Search across the whole world catalog. These stations never appear in the genre or popular lists. */
+@Composable
+private fun WorldExplore(
+    app: AppState,
+    query: String,
+    onQuery: (String) -> Unit,
+    onSettings: () -> Unit,
+    onWorld: (Boolean) -> Unit,
+) {
+    val ctx = androidx.compose.ui.platform.LocalContext.current
+    var results by remember { mutableStateOf<List<Station>?>(null) }
+    var loading by remember { mutableStateOf(false) }
+    var failed by remember { mutableStateOf(false) }
+    var attempt by remember { mutableIntStateOf(0) }
+    LaunchedEffect(query, attempt) {
+        if (query.isNotBlank()) kotlinx.coroutines.delay(450)   // wait until typing stops
+        loading = true
+        val r = StationRepository.searchWorld(ctx, query)
+        failed = r == null
+        if (r != null) results = r
+        loading = false
+    }
+    val list = results.orEmpty()
+
+    LazyColumn(
+        Modifier.fillMaxSize().statusBarsPadding(),
+        contentPadding = PaddingValues(start = SIDE, end = SIDE, bottom = DOCK_SPACE),
+    ) {
+        item { TopLine(stringResource(R.string.nav_explore).lowercase(), onSettings) }
+        item {
+            Spacer(Modifier.height(26.dp))
+            DisplayTitle(stringResource(R.string.explore_title_1), stringResource(R.string.explore_title_2))
+            Spacer(Modifier.height(18.dp))
+            ScopeSwitch(world = true, onWorld)
+            SearchField(query, onQuery, stringResource(R.string.world_hint))
+            Text(stringResource(R.string.world_note), style = Banga.supporting, color = Banga.textSecondary)
+        }
+        item {
+            SectionHeader(
+                when {
+                    loading && results == null -> stringResource(R.string.world_searching)
+                    query.isBlank() -> stringResource(R.string.world_popular)
+                    else -> stringResource(R.string.world_found)
+                },
+            )
+        }
+        if (failed && list.isEmpty()) {
+            item {
+                EmptyBox(stringResource(R.string.world_error), "") {
+                    Pill(stringResource(R.string.retry), { attempt++ })
+                }
+            }
+        } else if (!loading && results != null && list.isEmpty()) {
+            item {
+                EmptyBox(stringResource(R.string.no_results), query) {
+                    Pill(stringResource(R.string.clear_search), { onQuery("") })
+                }
+            }
+        }
+        itemsIndexed(list, key = { _, st -> "w_" + st.id }) { i, st ->
+            StationRow(
+                st, st.id == app.currentId, app.status, app.song, st.id in app.favorites,
+                onClick = { app.play(list, i) },
+                onFavorite = { app.toggleFavorite(st.id) },
+            )
+        }
+    }
+}
+
+@Composable
+private fun SearchField(query: String, onQuery: (String) -> Unit, hint: String? = null) {
     Row(
         Modifier
             .padding(vertical = 22.dp)
@@ -328,7 +439,7 @@ private fun SearchField(query: String, onQuery: (String) -> Unit) {
         Icon(painterResource(R.drawable.ic_search), null, tint = Color(0xFF969A9A), modifier = Modifier.size(20.dp))
         Spacer(Modifier.width(12.dp))
         Box(Modifier.weight(1f)) {
-            if (query.isEmpty()) Text(stringResource(R.string.search_hint), style = Banga.body, color = Color(0xFF747979))
+            if (query.isEmpty()) Text(hint ?: stringResource(R.string.search_hint), style = Banga.body, color = Color(0xFF747979))
             BasicTextField(
                 value = query,
                 onValueChange = onQuery,

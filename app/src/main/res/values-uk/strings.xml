@@ -72,4 +72,12 @@
     <string name="sleep_minutes">%1$d хв</string>
     <string name="sleep_left">Вимкнеться через %1$d хв</string>
     <string name="sleep_set">Радіо вимкнеться через %1$d хв</string>
+    <string name="explore_lt">Литва</string>
+    <string name="explore_world">Увесь світ</string>
+    <string name="world_hint">Станція, країна чи жанр…</string>
+    <string name="world_popular">Найпопулярніші у світі</string>
+    <string name="world_found">Знайдено у світі</string>
+    <string name="world_searching">Пошук…</string>
+    <string name="world_error">Не вдалося дістатися до каталогу станцій світу</string>
+    <string name="world_note">Станції світу показуються лише тут. Улюблені збережуться в «Улюблених».</string>
 </resources>

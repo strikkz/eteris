@@ -72,4 +72,12 @@
     <string name="sleep_minutes">%1$d min</string>
     <string name="sleep_left">Stops in %1$d min</string>
     <string name="sleep_set">Radio will stop in %1$d min</string>
+    <string name="explore_lt">Lithuania</string>
+    <string name="explore_world">Whole world</string>
+    <string name="world_hint">Station, country or genre…</string>
+    <string name="world_popular">Most popular worldwide</string>
+    <string name="world_found">Found worldwide</string>
+    <string name="world_searching">Searching…</string>
+    <string name="world_error">Could not reach the world station catalog</string>
+    <string name="world_note">World stations appear only here. Ones you like are saved in Favorites.</string>
 </resources>

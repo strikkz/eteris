@@ -41,7 +41,17 @@ data class Station(
     val tags: String = "",
     /** Station website from the catalog. */
     val homepage: String? = null,
+    /** Country code, only for stations from the "whole world" search (Lithuanian ones leave it empty). */
+    val country: String = "",
 ) {
+    /** A station from the world search: lives apart from the Lithuanian catalog, genres and lists. */
+    val isWorld: Boolean get() = id.startsWith(StationRepository.WORLD_PREFIX)
+
+    /** Country name in the app language, e.g. "Latvija", "Германия". */
+    val countryName: String
+        get() = if (country.isEmpty()) "" else
+            java.util.Locale("", country).getDisplayCountry(java.util.Locale.getDefault()).ifEmpty { country }
+
     val genres: List<Genre> by lazy { Genre.of(this) }
 
     val qualityLabel: String
@@ -101,7 +111,7 @@ object StationRepository {
     @Volatile private var refreshing = false
     @Volatile private var lastNetTry = 0L
 
-    fun byId(id: String?): Station? = id?.let { byIdMap[it] }
+    fun byId(id: String?): Station? = id?.let { byIdMap[it] ?: world[it] }
 
     fun addListener(l: () -> Unit) { listeners += l }
     fun removeListener(l: () -> Unit) { listeners -= l }
@@ -109,6 +119,7 @@ object StationRepository {
     /** Returns stations at once (from cache if needed) and refreshes from the internet in the background. */
     suspend fun ensureLoaded(ctx: Context): List<Station> {
         val app = ctx.applicationContext
+        loadSavedWorld(app)
         mutex.withLock {
             if (stations.isEmpty()) withContext(Dispatchers.IO) {
                 val cached = runCatching { cacheFile(app).readText() }.getOrNull()
@@ -334,6 +345,7 @@ object StationRepository {
         val set = favorites(ctx).toMutableSet()
         if (!set.remove(id)) set.add(id)
         prefs(ctx).edit().putStringSet("favs", set).apply()
+        if (id.startsWith(WORLD_PREFIX)) saveWorld(ctx)
         listeners.forEach { runCatching { it() } }
     }
 
@@ -344,6 +356,7 @@ object StationRepository {
         val history = JSONObject(prefs(ctx).getString("played", null) ?: "{}")
         history.put(id, System.currentTimeMillis())
         prefs(ctx).edit().putString("last", id).putString("played", history.toString()).apply()
+        if (id.startsWith(WORLD_PREFIX)) saveWorld(ctx)
     }
 
     private fun playedAt(ctx: Context): Map<String, Long> {
@@ -355,13 +368,13 @@ object StationRepository {
     fun favoritesByRecent(ctx: Context): List<Station> {
         val favs = favorites(ctx)
         val played = playedAt(ctx)
-        return stations.filter { it.id in favs }.sortedByDescending { played[it.id] ?: 0L }
+        return (stations + world.values).distinctBy { it.id }.filter { it.id in favs }.sortedByDescending { played[it.id] ?: 0L }
     }
 
     /** Recently played stations (any), newest first. */
     fun recent(ctx: Context): List<Station> {
         val played = playedAt(ctx)
-        return stations.filter { it.id in played }.sortedByDescending { played[it.id] ?: 0L }
+        return (stations + world.values).distinctBy { it.id }.filter { it.id in played }.sortedByDescending { played[it.id] ?: 0L }
     }
 
     fun search(query: String): List<Station> {
@@ -369,6 +382,158 @@ object StationRepository {
         if (raw.isEmpty()) return emptyList()
         val q = norm(raw)
         return stations.filter { it.id.contains(q) || it.name.contains(raw, ignoreCase = true) }
+    }
+
+    // ---------- Whole world (search only; never mixed into the Lithuanian lists) ----------
+
+    const val WORLD_PREFIX = "w-"
+
+    /** World stations found in searches this session, plus the saved ones (favorites, recently played). */
+    private val world = java.util.concurrent.ConcurrentHashMap<String, Station>()
+    private val worldCache = java.util.concurrent.ConcurrentHashMap<String, Pair<Long, List<Station>>>()
+    @Volatile private var worldLoaded = false
+
+    private fun worldFile(ctx: Context) = File(ctx.filesDir, "world.json")
+
+    /**
+     * Searches the whole catalog by station name, country and genre (Lithuanian stations are left out:
+     * they are in the main part). An empty query gives the most listened stations of the world.
+     * Returns null if the catalog could not be reached.
+     */
+    suspend fun searchWorld(ctx: Context, query: String): List<Station>? = withContext(Dispatchers.IO) {
+        loadSavedWorld(ctx.applicationContext)
+        val q = query.trim()
+        val cacheKey = q.lowercase()
+        worldCache[cacheKey]?.let { (at, list) -> if (SystemClock.elapsedRealtime() - at < 10 * 60_000) return@withContext list }
+        val enc = java.net.URLEncoder.encode(q, "UTF-8")
+        val common = "hidebroken=true&order=clickcount&reverse=true"
+        val paths = if (q.isEmpty()) listOf("/json/stations/search?$common&limit=120")
+        else listOf(
+            "/json/stations/search?name=$enc&$common&limit=100",
+            "/json/stations/search?country=$enc&$common&limit=80",
+            "/json/stations/search?tag=$enc&$common&limit=60",
+        )
+        var anyOk = false
+        val raw = mutableListOf<JSONObject>()
+        for (path in paths) {
+            val text = fetch(path) ?: continue
+            anyOk = true
+            val arr = runCatching { JSONArray(text) }.getOrNull() ?: continue
+            for (i in 0 until arr.length()) arr.optJSONObject(i)?.let { raw += it }
+        }
+        if (!anyOk) return@withContext null
+        val list = parseWorld(raw).let { if (q.isEmpty()) it.take(50) else it }
+        list.forEach { world.putIfAbsent(it.id, it) }
+        worldCache[cacheKey] = SystemClock.elapsedRealtime() to list
+        list
+    }
+
+    private fun fetch(path: String): String? {
+        for (base in SERVERS.shuffled()) {
+            try {
+                val conn = URL(base + path).openConnection() as HttpURLConnection
+                conn.connectTimeout = 6000
+                conn.readTimeout = 10000
+                conn.setRequestProperty("User-Agent", USER_AGENT)
+                try {
+                    if (conn.responseCode == 200) {
+                        val text = conn.inputStream.bufferedReader().use { it.readText() }
+                        if (text.trimStart().startsWith("[")) return text
+                    }
+                } finally {
+                    conn.disconnect()
+                }
+            } catch (_: Exception) {
+            }
+        }
+        return null
+    }
+
+    /** Same station in several qualities in one country becomes one card, as in the Lithuanian list. */
+    private fun parseWorld(items: List<JSONObject>): List<Station> {
+        class W(val id: String, val name: String, val country: String) {
+            var favicon: String? = null; var homepage: String? = null; var votes = 0L
+            val variants = mutableListOf<Variant>(); val tags = linkedSetOf<String>()
+        }
+        val groups = LinkedHashMap<String, W>()
+        val seen = HashSet<String>()
+        for (o in items) {
+            val uuid = o.str("stationuuid")
+            if (uuid.isEmpty() || !seen.add(uuid)) continue
+            val cc = o.str("countrycode").uppercase()
+            if (cc == "LT") continue
+            val url = o.str("url_resolved").ifEmpty { o.str("url") }
+            if (!url.startsWith("http")) continue
+            val name = o.str("name")
+            if (name.isEmpty()) continue
+            val key = norm(name) + "|" + cc
+            var codec = o.str("codec").uppercase()
+            if (codec == "UNKNOWN") codec = ""
+            var br = o.optInt("bitrate", 0)
+            if (br > 512) br = 0
+            if (br == 0) br = bitrateFromUrl(url)
+            val hls = o.optInt("hls", 0) == 1 || url.contains(".m3u8", ignoreCase = true)
+            val g = groups.getOrPut(key) { W(WORLD_PREFIX + uuid, name, cc) }
+            g.votes += o.optLong("clickcount", 0)
+            if (g.variants.none { it.url == url }) g.variants += Variant(url, codec, br, hls, o.optInt("lastcheckok", 1) == 1)
+            if (g.favicon == null) o.str("favicon").takeIf { it.startsWith("http") }?.let { g.favicon = it }
+            if (g.homepage == null) o.str("homepage").takeIf { it.startsWith("http") }?.let { g.homepage = it }
+            o.str("tags").lowercase().split(',').map { it.trim() }.filter { it.isNotEmpty() }.take(8).forEach { g.tags += it }
+        }
+        return groups.values.map { g ->
+            // Already known (saved or found before): keep the same object, so favorites and the player match.
+            world[g.id] ?: Station(
+                id = g.id, name = g.name, favicon = g.favicon, variants = g.variants.sortedBy(::score),
+                prio = 999, votes = g.votes, tags = g.tags.joinToString(","), homepage = g.homepage, country = g.country,
+            )
+        }
+    }
+
+    /** Saved world stations: the favorites and the recently played ones (so the player and history know them). */
+    private fun loadSavedWorld(ctx: Context) {
+        if (worldLoaded) return
+        synchronized(world) {
+            if (worldLoaded) return
+            runCatching {
+                val arr = JSONArray(worldFile(ctx).readText())
+                for (i in 0 until arr.length()) {
+                    val o = arr.getJSONObject(i)
+                    val vs = o.getJSONArray("variants")
+                    val variants = (0 until vs.length()).map { j ->
+                        val v = vs.getJSONObject(j)
+                        Variant(v.getString("url"), v.optString("codec"), v.optInt("bitrate"), v.optBoolean("hls"), true)
+                    }
+                    if (variants.isEmpty()) continue
+                    val st = Station(
+                        id = o.getString("id"), name = o.getString("name"), favicon = o.optString("favicon").ifEmpty { null },
+                        variants = variants, prio = 999, votes = 0, tags = o.optString("tags"),
+                        homepage = o.optString("homepage").ifEmpty { null }, country = o.optString("country"),
+                    )
+                    world[st.id] = st
+                }
+            }
+            worldLoaded = true
+        }
+    }
+
+    private fun saveWorld(ctx: Context) {
+        val app = ctx.applicationContext
+        loadSavedWorld(app)
+        val keep = favorites(app) + playedAt(app).entries.filter { it.key.startsWith(WORLD_PREFIX) }
+            .sortedByDescending { it.value }.take(30).map { it.key }
+        val arr = JSONArray()
+        world.values.filter { it.id in keep }.forEach { st ->
+            arr.put(JSONObject().apply {
+                put("id", st.id); put("name", st.name); put("favicon", st.favicon ?: ""); put("tags", st.tags)
+                put("homepage", st.homepage ?: ""); put("country", st.country)
+                put("variants", JSONArray().apply {
+                    st.variants.take(4).forEach { v ->
+                        put(JSONObject().apply { put("url", v.url); put("codec", v.codec); put("bitrate", v.bitrate); put("hls", v.hls) })
+                    }
+                })
+            })
+        }
+        runCatching { worldFile(app).writeText(arr.toString()) }
     }
 
     fun initials(name: String): String =

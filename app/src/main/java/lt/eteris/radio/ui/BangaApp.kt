@@ -42,6 +42,8 @@ fun BangaApp(app: AppState) {
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
     var query by rememberSaveable { mutableStateOf("") }
     var genreName by rememberSaveable { mutableStateOf<String?>(null) }
+    var world by rememberSaveable { mutableStateOf(false) }
+    var worldQuery by rememberSaveable { mutableStateOf("") }
     val genre = genreName?.let { n -> Genre.entries.firstOrNull { it.name == n } }
 
     BackHandler(enabled = playerOpen) { playerOpen = false }
@@ -60,12 +62,14 @@ fun BangaApp(app: AppState) {
             Tab.HOME -> HomeScreen(
                 app,
                 onSettings = { settingsOpen = true },
-                onGenre = { genreName = it.name; query = ""; tab = Tab.EXPLORE },
+                onGenre = { genreName = it.name; query = ""; world = false; tab = Tab.EXPLORE },
                 onOpenPlayer = { playerOpen = true },
             )
             Tab.EXPLORE -> ExploreScreen(
                 app, query, { query = it }, genre, { genreName = it?.name },
                 onSettings = { settingsOpen = true },
+                world = world, onWorld = { world = it },
+                worldQuery = worldQuery, onWorldQuery = { worldQuery = it },
             )
             Tab.FAVORITES -> FavoritesScreen(app, onSettings = { settingsOpen = true }, onExplore = { tab = Tab.EXPLORE })
         }

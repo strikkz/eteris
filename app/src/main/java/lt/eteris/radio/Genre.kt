@@ -41,6 +41,7 @@ enum class Genre(@StringRes val label: Int, val from: Long, val to: Long, privat
         )
 
         fun of(st: Station): List<Genre> {
+            if (st.isWorld) return emptyList()   // world stations stay out of the genre lists
             KNOWN[st.id]?.let { return it }
             val tags = st.tags.split(',').map { it.trim().lowercase() }.filter { it.isNotEmpty() }
             val name = st.name.lowercase()

@@ -60,21 +60,58 @@ object Art {
         runCatching { ctx.assets.open("logos/$id.png").close(); true }.getOrDefault(false)
 
     /** The picture file for a station (created on first use). */
-    @Synchronized
     fun file(ctx: Context, id: String): File {
         val f = File(dir(ctx), URLEncoder.encode(id, "UTF-8") + ".png")
         if (f.exists() && f.length() > 0) return f
-        val tmp = File(f.path + ".tmp")
+        val tmp = File(f.path + "." + System.nanoTime() + ".tmp")
         val copied = runCatching {
             ctx.assets.open("logos/$id.png").use { input -> FileOutputStream(tmp).use { input.copyTo(it) } }
         }.isSuccess
         if (!copied) {
-            val name = StationRepository.byId(id)?.name ?: id
-            FileOutputStream(tmp).use { generate(name).compress(Bitmap.CompressFormat.PNG, 100, it) }
+            val st = StationRepository.byId(id)
+            // World stations: their own logo from the catalog, when it can be downloaded and read.
+            val bmp = st?.takeIf { it.isWorld }?.favicon?.let(::download) ?: generate(st?.name ?: id)
+            FileOutputStream(tmp).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
         }
-        tmp.renameTo(f)
+        if (!tmp.renameTo(f)) tmp.delete()
         return f
     }
+
+    /** Downloads a station logo and puts it on a white square, so every picture has the same shape. */
+    private fun download(url: String): Bitmap? = runCatching {
+        val conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
+        conn.connectTimeout = 5000
+        conn.readTimeout = 7000
+        conn.instanceFollowRedirects = true
+        conn.setRequestProperty("User-Agent", StationRepository.USER_AGENT)
+        val bytes = try {
+            if (conn.responseCode != 200) return null
+            conn.inputStream.use { input ->
+                val out = java.io.ByteArrayOutputStream()
+                val buf = ByteArray(16 * 1024)
+                while (true) {
+                    val n = input.read(buf)
+                    if (n < 0) break
+                    out.write(buf, 0, n)
+                    if (out.size() > 3_000_000) return null
+                }
+                out.toByteArray()
+            }
+        } finally {
+            conn.disconnect()
+        }
+        val src = BitmapFactory.decodeByteArray(bytes, 0, bytes.size) ?: return null
+        if (src.width < 16 || src.height < 16) return null
+        val out = Bitmap.createBitmap(SIZE, SIZE, Bitmap.Config.ARGB_8888)
+        val c = Canvas(out)
+        c.drawColor(Color.WHITE)
+        val scale = minOf(SIZE.toFloat() / src.width, SIZE.toFloat() / src.height)
+        val w = src.width * scale
+        val h = src.height * scale
+        val dst = android.graphics.RectF((SIZE - w) / 2, (SIZE - h) / 2, (SIZE + w) / 2, (SIZE + h) / 2)
+        c.drawBitmap(src, null, dst, Paint(Paint.FILTER_BITMAP_FLAG or Paint.ANTI_ALIAS_FLAG))
+        out
+    }.getOrNull()
 
     fun bitmap(ctx: Context, id: String): Bitmap? = runCatching {
         BitmapFactory.decodeFile(file(ctx, id).path)

@@ -220,7 +220,10 @@ fun GenreTile(genre: Genre, count: Int, onClick: () -> Unit, modifier: Modifier 
 }
 
 fun subtitleOf(st: Station, genreName: String?, liveLabel: String): String =
-    listOfNotNull(genreName, st.qualityLabel.takeIf { it.isNotEmpty() } ?: liveLabel).joinToString(" · ")
+    listOfNotNull(
+        if (st.isWorld) st.countryName.ifEmpty { null } else genreName,
+        st.qualityLabel.takeIf { it.isNotEmpty() } ?: liveLabel,
+    ).joinToString(" · ")
 
 /** Station row: logo, name, genre or what is playing, heart. */
 @Composable

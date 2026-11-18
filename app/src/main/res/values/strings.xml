@@ -73,4 +73,12 @@
     <string name="sleep_minutes">%1$d min.</string>
     <string name="sleep_left">Išsijungs po %1$d min.</string>
     <string name="sleep_set">Radijas išsijungs po %1$d min.</string>
+    <string name="explore_lt">Lietuva</string>
+    <string name="explore_world">Visas pasaulis</string>
+    <string name="world_hint">Stotis, šalis ar žanras…</string>
+    <string name="world_popular">Populiariausios pasaulyje</string>
+    <string name="world_found">Rasta pasaulyje</string>
+    <string name="world_searching">Ieškoma…</string>
+    <string name="world_error">Nepavyko pasiekti pasaulio stočių katalogo</string>
+    <string name="world_note">Pasaulio stotys rodomos tik čia. Pamėgtas rasi skiltyje „Mėgstami“.</string>
 </resources>
