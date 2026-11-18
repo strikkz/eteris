@@ -1,10 +1,16 @@
-RU | Europa Plus | 16 | http://liveam.tv/img/2494.jpg | 200 image/jpeg 9982 https://liveam.tv/img/2494.jpg redirects=1 | JPEG image data, Exif standard: [TIFF image data, little-end
-RU | Europa Plus 128aac | 6 |  | 
-RU | Europa Plus K-Pop | 4 | http://liveam.tv/img/2494.jpg | 200 image/jpeg 9982 https://liveam.tv/img/2494.jpg redirects=1 | JPEG image data, Exif standard: [TIFF image data, little-end
-RU | Europa Plus (128 kbps) | 3 | http://www.europaplus.ru/favicon.ico | 200 image/vnd.microsoft.icon 1150 https://europaplus.ru/favicon.ico redirects=1 | MS Windows icon resource - 1 icon, 16x16, 32 bits/pixel
-RU | EUROPA PLUS 101.6FM | 3 | null | 000  0 http://null/ redirects=0 | MS Windows icon resource - 1 icon, 16x16, 32 bits/pixel
-KG | Europa Plus Kyrgyzstan | 2 |  | 
-RU | Europa Plus Light | 1 | https://europaplus.ru/favicon.ico | 200 image/vnd.microsoft.icon 1150 https://europaplus.ru/favicon.ico redirects=0 | MS Windows icon resource - 1 icon, 16x16, 32 bits/pixel
-RU | СВЕЖЕЕ Europa Plus | 1 |  | 
-RU | Europa plus НН | 1 |  | 
-RU | EUROPA PLUS EKB URAL | 1 | null | 000  0 http://null/ redirects=0 | MS Windows icon resource - 1 icon, 16x16, 32 bits/pixel
+https://liveam.tv/img/2494.jpg app-UA: 200 9982  browser-UA: 200 9982
+Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+    from PIL import Image; im=Image.open('/tmp/l.jpg'); print('size',im.size)
+    ^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'PIL'
+http://liveam.tv/img/2494.jpg app-UA: 301 167  browser-UA: 301 167
+Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+    from PIL import Image; im=Image.open('/tmp/l.jpg'); print('size',im.size)
+    ^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'PIL'
+== https://europaplus.ru/
+<meta property="og:image" content="/tg.png">
+== https://www.europaplus.ru/
+<meta property="og:image" content="/tg.png">
