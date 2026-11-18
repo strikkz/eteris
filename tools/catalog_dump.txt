@@ -1,10 +1,111 @@
-https://liveam.tv/img/2494.jpg app-UA: 200 9982  browser-UA: 200 9982
-/tmp/l.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=3, software=Adobe Photoshop CS5 Windows, datetime=2012-06-01T14:37:26+03:00], baseline, precision 8, 250x250, components 3
-/tmp/tg.png: PNG image data, 1024 x 500, 8-bit/color RGBA, non-interlaced
-http://liveam.tv/img/2494.jpg app-UA: 301 167  browser-UA: 301 167
-/tmp/l.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=3, software=Adobe Photoshop CS5 Windows, datetime=2012-06-01T14:37:26+03:00], baseline, precision 8, 250x250, components 3
-/tmp/tg.png: PNG image data, 1024 x 500, 8-bit/color RGBA, non-interlaced
-== https://europaplus.ru/
-<meta property="og:image" content="/tg.png">
-== https://www.europaplus.ru/
-<meta property="og:image" content="/tg.png">
+28 | RELAX FM Lietuva | lithuanian | lithuania,pop | https://relaxfm.lt/ | 
+23 | Power Gold LT | lithuanian | dance,pop | https://powerhitradio.tv3.lt/ | 
+18 | Radio Lietus |  |  | https://lietus.15min.lt/ | 
+17 | Радио Лента | russian | news,talk | https://worldreport.today/ | Kaunas
+17 | M-1 Radio |  |  | https://m-1.15min.lt/ | 
+16 | Radiocentras |  | pop rock | https://rc.lt/ | 
+15 | m-1 |  |  | http://m-1.lt/ | 
+12 | ZipFM |  |  | https://zipfm.lt/ | 
+12 | LRT Radijas |  |  | https://www.lrt.lt/mediateka/tiesiogiai/lrt-radija | 
+12 | Easy FM | english,lithuanian | classic rock,jazz,lounge,smooth jazz | https://www.ziniuradijas.lt/easy-fm/ | 
+11 | Truckers Rave | english | gabber,hard house,hard techno,hard trance,hardcore,hardstyle | https://radio.eugenijus.lt/ | Vilnius
+11 | PowerHitRadio Lithuania |  |  | https://powerhitradio.tv3.lt/ | 
+11 | M-1 Dance |  |  | https://radio.m-1.fm/m-1dance/aac | Vilniaus m.
+10 | Žinių radijas [64 kbps MP3] | lithuanian |  | http://www.ziniuradijas.lt/ | 
+9 | M-1 Plius | lithuanian | uab m-1 | http://www.pliusas.fm/ | Vilniaus m.
+8 | Radiocentras |  |  | https://rc.lt/ | 
+8 | Draugystės radijas | lithuanian | oldies |  | Šiauliai
+8 | Neringa FM – The soundtrack of endless holidays |  | balearic,chillout,deep house,downtempo,dub techno,electronic | https://neringafm.lt/listen-neringa-fm-online/ | Nida
+7 | LRT Opus |  |  | https://www.lrt.lt/mediateka/tiesiogiai/lrt-opus | 
+7 | Tavo Balsas LT |  |  | https://tavobalsas.fm/ | 
+6 | Žinių Radijas | lithuanian | lietuvos zinios,lithuanian news radio,zinios,zinios is lietu | http://www.ziniuradijas.lt/ | Vilniaus m.
+6 | Power Hit Radio LT | lithuanian | dance | https://powerhitradio.tv3.lt/ | 
+6 | European Hit Radio |  |  | https://europeanhitradio.lt/ | Vilniaus m.
+5 | Upso Radijas |  |  | https://upsas.lt/ | 
+5 | Radijo stotis M-1 |  | pop,talk,top 40 | https://m-1.15min.lt/ | Vilnius
+5 | LRT Klasika |  |  | https://www.lrt.lt/mediateka/tiesiogiai/lrt-klasik | 
+5 | ZIP FM | lithuanian | pop music | http://www.zipfm.lt/ | 
+5 | Radio 3 | lithuanian | 2000s,80s,90s,classic rock,dance,pop | https://radio3.tv3.lt/ | Vilnius
+5 | Super FM |  | pop music | http://www.superfmradio.lt/ | 
+5 | Power Hit Radio LT |  |  | https://powerhitradio.tv3.lt/ | Vilnius 
+4 | COOL RADIO | lithuanian | hits,pop | https://stations.radioboss.fm/r/coolradio | Kaunas
+4 | Christmas Radio | english | christmas | https://zeno.fm/radio/christmas-radio-MV/ | Vilnius
+4 | Fred Film Radio-24 lietuvių kalba | lithuanian | film | https://www.fred.fm/ | 
+4 | Laluna [MP3] | lithuanian | uab radijo stotis laluna | http://laluna.lt/ | Klaipėdos m.
+4 | Power Gold | lithuanian |  | https://powerhitradio.lt/ | 
+4 | Taktas FM | lithuanian | dance,electronic,international hits,lithuanian music,pop | https://taktasfm.lt/ | 
+4 | Kelyje Klaipėda |  |  | https://www.radijaskelyje.lt/ | Klaipėda 
+4 | Pulsas |  |  | https://pulsas.lt/ | 
+4 | Mantinho Dance Pulse FM |  |  | https://mantinhodancepulsefm.com/ | 
+3 | Audiomastering.lt |  |  | https://radio.audiomastering.lt/ | 
+3 | Palanga Street Radio | english | eclectic | https://palanga.live/ | Vilnius
+3 | pmr.lt - world music radio |  | world music | https://pmr.lt/ | 
+3 | Mantra Radio | hindi | meditation,religious | https://mantraradio.eu/ | Vilnius
+3 | Vilnius fm |  |  | https://vilniusfm.lt/ | Vilnius
+3 | M-1 Plius |  |  | https://www.pliusas.fm/ | 
+3 | Радио Свободынх Народов | komi,sakha,tatar,tyvan | world music | https://freenations.online/ | 
+3 | -=PoWeR=- | english,lithuanian,russian |  | https://powerradio.webstarts.com/ | 
+3 | Радио RDTK | russian | society,talk | https://rdtk.me/ | Vilnius
+3 | Radio R | lithuanian,russian | pop music | https://radior.lt/ | 
+2 | Relax FM 100 Hitu |  |  | https://100hitu.lt/ | Vilnius
+2 | Relax FM Senti |  |  | https://relaxfm.lt/ | Vilnius
+2 | TOP FM LT |  |  | https://topfm.lt/ | Vilnius
+2 | Start FM 94.2 MHz Vilnius [MP3] | lithuanian | underground | http://www.startfm.lt/ | 
+2 | Zip FM is Kasetes |  |  | https://zipfm.lt/ | Vilnius
+2 | Radijo Musikii |  |  | https://www.radijo-musikii.net/ | 
+2 | Relax FM | lithuanian | pop | https://relaxfm.lt/ | Vilnius
+2 | RADIOR ENERGY | russian | club,dance,hits,pop | https://radior.lt/ | Vilnius
+2 | BEVEIK RADIJAS | lithuanian | active rock,alternative rock,indie rock,rock | https://beveikradijas.com/ | Vilnius
+2 | Haze Pub Radio | lithuanian | alternative,drum bass,electronic,hip hop,metal,punk,rap,rock | https://kalaver.in/rocks/ | Vilnius
+2 | Monsters FM | english | comedy | https://zeno.fm/radio/monsters-fm/ | Vilnius
+2 | estakada99 | english,lithuanian | 24/7,alternative,community radio,experimental,non-profit,wei | https://e99.live/ | 
+2 | Fréquence Protestante |  |  | https://frequenceprotestante.com/ | 
+2 | Vaikų radijas | lithuanian | uab proarsa | http://www.vaikuradijas.lt/ | 
+2 | GoldFM |  |  | https://goldfm.lt/ | 
+2 | Neringa FM |  | university radio |  | 
+2 | MANO FM LT | lithuanian |  | http://manofm.lt/new/ | 
+2 | Mazeikiai FM |  | pop music | https://www.facebook.com/Mazeikiai.FM/ | 
+2 | Gold FM |  |  | http://goldfm.lt/ | 
+2 | Puko Radijas |  |  | https://pukas.lt/ | Kaunas 
+1 | Mano FM |  |  | http://klausyk.manofm.lt:8000/Icecast2 | 
+1 | Truckers Rave | english | gabber,happy hardcore,hard house,hard techno,hard trance,har | https://radio.eugenijus.lt/ | Vilnius
+1 | Pūkas-2 |  |  | http://pukas.lt/ | Kaunas 
+1 | RADIO MOON | english | smooth jazz | http://193.70.34.27:20330/kdime | 
+1 | Leproradio |  |  | https://leproradio.com/ | 
+1 | Radijo stotis Radio3 | lithuanian | adult contemporary,disco,pop,rock,top 40 | https://radio3.tv3.lt/ | Vilnius
+1 | Radijo Stotis Kelyje | lithuanian | pop | https://radijaskelyje.lt/ | Vilnius
+1 | Jazz FM | lithuanian | blues,funk,jazz,soul | https://jazzfm.lt/ | Vilnius
+1 | Radijo stotis FM99 | lithuanian | news,pop,rock,talk,top 40 | https://fm99.lt/ | Alytus
+1 | Radio Vilnius | english | electronic | https://radiovilnius.live/ | Vilnius
+1 | Life Chill Music | lithuanian | chill out,downtempo,lounge | https://www.lifechillmusic.com/ | Šiauliai
+1 | Radijo Klubas | lithuanian | pop | https://www.didzdvaris.lt/radijo-klubas/ | Šiauliai
+1 | Criminal Tribe | lithuanian | hits |  | Vilnius
+1 | X-RADIO | язык: русский |  | http://185.8.60.5:8000/; | 
+1 | Radio LaLuna | lithuanian,russian | classic hits,hits,pop,russian hits | https://laluna.lt/ | 
+1 | Neringa fm * |  |  | https://neringafm.lt/listen-neringa-fm-online/ | Vilnius
+1 | Geras FM | lithuanian |  | https://www.gerasfm.lt/ | 
+1 | PMR |  | world music | https://pmr.lt/ | 
+1 | Rock Radio |  | metal,rock | https://rockradio.lt/ | 
+1 | Play Radio |  |  | https://n08.radiojar.com/d9cm273ystzuv | Vilniaus m.
+1 | radio.audiomastering.lt |  |  | https://radio.audiomastering.lt/ | 
+1 | Tau | lithuanian | uab artvydas | http://www.tau.lt/ | 
+1 | Mažeikių Aidas | lithuanian |  |  | 
+1 | Radio Fiesta |  |  | https://radiofiesta.lt/ | 
+1 | Laluna [AAC] | lithuanian | uab radijo stotis laluna | http://laluna.lt/ | Klaipėdos m.
+1 | Kapsai |  | pop music | https://www.facebook.com/radijaskapsai/ | 
+1 | Kelyje Kaunas |  |  | https://www.radijaskelyje.lt/ | Kaunas 
+1 | Utenos Radijas |  |  | https://utenosradijas.lt/ | Utena 
+1 | Power LT |  |  | https://powerradio.yourwebsitespace.com/ | Vilnius
+0 | Marijos radijas | lithuanian | catholic,christian | http://www.marijosradijas.lt/ | 
+0 | Radijo Stotis Kelyje | lithuanian | news,pop,talk | https://radijaskelyje.lt/ | Kaunas
+0 | XFM Radijas | lithuanian | christian,klaipėda,uab aukštaitijos radijas,uab centro medij | http://xfm.lt/ | 
+0 | zzz-rock-zzz | english | classic rock,hard rock,rock | http://www.zzz-rock-zzz.com/ | Vilnius
+0 | Patejago Radijas | lithuanian | dance,hits,pop | https://www.patejago.lt/ | Vilnius
+0 | MRPL |  |  | https://mrpl.babrai.com/ | 
+0 | MRPL | lithuanian | various | https://mrpl.babrai.com/ | 
+0 | PMR.lt | english | ethnic,folk | https://pmr.lt/en | Vilnius
+0 | Pukas 2 | lietuviškai | blues rock,folklore,smooth jazz | https://pukas.lt/ | 
+0 | Marso Radijas |  | variuos topics | https://marsas.me/ | 
+0 | Radio stotis Laluna |  |  | https://www.laluna.lt/ | 
+0 | Revo Banga Rock |  | clear |  | 
+0 | Geras2 FM |  |  | http://www.gerasfm.lt/ | Vilnius 
