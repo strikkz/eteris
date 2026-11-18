@@ -69,21 +69,48 @@ object Art {
         }.isSuccess
         if (!copied) {
             val st = StationRepository.byId(id)
-            // World stations: their own logo from the catalog, when it can be downloaded and read.
-            val bmp = st?.takeIf { it.isWorld }?.favicon?.let(::download) ?: generate(st?.name ?: id)
-            FileOutputStream(tmp).use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+            // World stations: their own logo (catalog pictures, then the website's icon), if one can be downloaded.
+            val logo = st?.takeIf { it.isWorld && id !in failed }?.let { worldLogo(it) }
+            if (st != null && st.isWorld && logo == null) {
+                // No logo this time: show initials, but do not keep them, so the logo is tried again next launch.
+                failed += id
+                val tile = File(f.path + ".tile")
+                if (!tile.exists()) FileOutputStream(tmp).use { generate(st.name).compress(Bitmap.CompressFormat.PNG, 100, it) }
+                    .also { if (!tmp.renameTo(tile)) tmp.delete() }
+                return tile
+            }
+            FileOutputStream(tmp).use { (logo ?: generate(st?.name ?: id)).compress(Bitmap.CompressFormat.PNG, 100, it) }
         }
         if (!tmp.renameTo(f)) tmp.delete()
         return f
     }
 
+    private val failed = java.util.Collections.newSetFromMap(java.util.concurrent.ConcurrentHashMap<String, Boolean>())
+
+    private fun worldLogo(st: Station): Bitmap? {
+        val candidates = st.favicon.orEmpty().split('\n').map { it.trim() }.filter { it.startsWith("http") }.toMutableList()
+        st.homepage?.let { runCatching { java.net.URL(it).host }.getOrNull() }?.takeIf { it.isNotEmpty() }?.let { host ->
+            candidates += "https://www.google.com/s2/favicons?domain=$host&sz=256"
+        }
+        return candidates.distinct().firstNotNullOfOrNull(::download)
+    }
+
     /** Downloads a station logo and puts it on a white square, so every picture has the same shape. */
     private fun download(url: String): Bitmap? = runCatching {
-        val conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
-        conn.connectTimeout = 5000
-        conn.readTimeout = 7000
-        conn.instanceFollowRedirects = true
-        conn.setRequestProperty("User-Agent", StationRepository.USER_AGENT)
+        // Redirects are followed by hand: Android does not follow http -> https on its own.
+        var conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
+        var hops = 0
+        while (true) {
+            conn.connectTimeout = 5000
+            conn.readTimeout = 7000
+            conn.instanceFollowRedirects = false
+            conn.setRequestProperty("User-Agent", StationRepository.USER_AGENT)
+            val code = conn.responseCode
+            if (code !in 300..399 || hops++ >= 5) break
+            val next = conn.getHeaderField("Location") ?: break
+            conn.disconnect()
+            conn = java.net.URL(conn.url, next).openConnection() as java.net.HttpURLConnection
+        }
         val bytes = try {
             if (conn.responseCode != 200) return null
             conn.inputStream.use { input ->
@@ -101,7 +128,7 @@ object Art {
             conn.disconnect()
         }
         val src = BitmapFactory.decodeByteArray(bytes, 0, bytes.size) ?: return null
-        if (src.width < 16 || src.height < 16) return null
+        if (src.width < 48 || src.height < 48) return null   // a tiny site icon would look blurry; initials look better
         val out = Bitmap.createBitmap(SIZE, SIZE, Bitmap.Config.ARGB_8888)
         val c = Canvas(out)
         c.drawColor(Color.WHITE)

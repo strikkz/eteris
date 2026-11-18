@@ -452,7 +452,7 @@ object StationRepository {
     /** Same station in several qualities in one country becomes one card, as in the Lithuanian list. */
     private fun parseWorld(items: List<JSONObject>): List<Station> {
         class W(val id: String, val name: String, val country: String) {
-            var favicon: String? = null; var homepage: String? = null; var votes = 0L
+            val favicons = mutableListOf<String>(); var homepage: String? = null; var votes = 0L
             val variants = mutableListOf<Variant>(); val tags = linkedSetOf<String>()
         }
         val groups = LinkedHashMap<String, W>()
@@ -476,14 +476,15 @@ object StationRepository {
             val g = groups.getOrPut(key) { W(WORLD_PREFIX + uuid, name, cc) }
             g.votes += o.optLong("clickcount", 0)
             if (g.variants.none { it.url == url }) g.variants += Variant(url, codec, br, hls, o.optInt("lastcheckok", 1) == 1)
-            if (g.favicon == null) o.str("favicon").takeIf { it.startsWith("http") }?.let { g.favicon = it }
+            // Several pictures from the duplicates: the first one that downloads well is used.
+            o.str("favicon").takeIf { it.startsWith("http") }?.let { if (it !in g.favicons && g.favicons.size < 4) g.favicons += it }
             if (g.homepage == null) o.str("homepage").takeIf { it.startsWith("http") }?.let { g.homepage = it }
             o.str("tags").lowercase().split(',').map { it.trim() }.filter { it.isNotEmpty() }.take(8).forEach { g.tags += it }
         }
         return groups.values.map { g ->
             // Already known (saved or found before): keep the same object, so favorites and the player match.
             world[g.id] ?: Station(
-                id = g.id, name = g.name, favicon = g.favicon, variants = g.variants.sortedBy(::score),
+                id = g.id, name = g.name, favicon = g.favicons.joinToString("\n").ifEmpty { null }, variants = g.variants.sortedBy(::score),
                 prio = 999, votes = g.votes, tags = g.tags.joinToString(","), homepage = g.homepage, country = g.country,
             )
         }
