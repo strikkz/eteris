@@ -92,8 +92,16 @@ object Art {
         st.homepage?.let { runCatching { java.net.URL(it).host }.getOrNull() }?.takeIf { it.isNotEmpty() }?.let { host ->
             candidates += "https://www.google.com/s2/favicons?domain=$host&sz=256"
         }
-        return candidates.distinct().firstNotNullOfOrNull(::download)
+        val list = candidates.distinct()
+        // Directly first; then through a public image proxy (images.weserv.nl): it reaches sites that are
+        // blocked or unreachable from here and turns ICO/SVG/WebP pictures into PNG.
+        return list.firstNotNullOfOrNull(::download)
+            ?: list.firstNotNullOfOrNull { download(viaProxy(it)) }
     }
+
+    private fun viaProxy(url: String): String =
+        "https://images.weserv.nl/?url=" + URLEncoder.encode(url.substringAfter("://"), "UTF-8") +
+            "&w=256&h=256&fit=contain&output=png"
 
     /** Downloads a station logo and puts it on a white square, so every picture has the same shape. */
     private fun download(url: String): Bitmap? = runCatching {
