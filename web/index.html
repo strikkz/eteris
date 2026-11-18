@@ -259,6 +259,8 @@ const PRIORITY = ["LRT Radijas","LRT Klasika","LRT Opus","M-1","Lietus","M-1 Pli
 const ALIASES = {powerhitradiolithuania:"powerhit",zipfm:"zip",radijostotism1:"m1",radiostotislaluna:"laluna",radijostotisradio3:"3",
   radijostotiskelyje:"kelyje",goldfm:"gold",pmrworldmusic:"pmr",puko:"pukas"};
 const BLOCKED = [/leviracloud\.eu\/phr/i];
+const NOT_LT_NAMES = ["Радио Лента","Радио Свободынх Народов","Fréquence Protestante","Christmas Radio","Monsters FM","Leproradio","X-RADIO"];
+let NOT_LT = null;
 const M1_SERVER = /m-1\.fm\/([^/]+)\//i;
 const EXTRA = {m1:[{url:"https://radio.m-1.fm/m1/MP3320",codec:"MP3",br:320,hls:false,ok:true}],
                lietus:[{url:"https://radio.m-1.fm/lietus/MP3320",codec:"MP3",br:320,hls:false,ok:true}]};
@@ -292,6 +294,8 @@ function parse(arr){
     const name = (o.name || "").trim(), byName = norm(name);
     const m = url.match(M1_SERVER); const owner = m ? norm(m[1]) : "";
     const key = owner || byName; if(!key) continue;
+    if(!NOT_LT) NOT_LT = new Set(NOT_LT_NAMES.map(norm));
+    if(NOT_LT.has(key)) continue;
     const relabeled = key !== byName;
     let codec = (o.codec || "").toUpperCase(); if(codec === "UNKNOWN") codec = "";
     let br = +o.bitrate || 0; if(br > 512) br = 0; if(!br) br = brFromUrl(url);

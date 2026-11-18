@@ -243,6 +243,18 @@ object StationRepository {
         "lietus" to listOf(Variant("https://radio.m-1.fm/lietus/MP3320", "MP3", 320, false, true)),
     )
 
+    /**
+     * Listed as Lithuanian in the catalog but clearly foreign (Russian news, French, zeno.fm channels...).
+     * Hidden from the Lithuanian lists; still findable in the "whole world" search.
+     * Lithuanian stations in other languages (e.g. Radio R) stay.
+     */
+    private val NOT_LITHUANIAN by lazy {
+        listOf(
+            "Радио Лента", "Радио Свободынх Народов", "Fréquence Protestante", "Christmas Radio",
+            "Monsters FM", "Leproradio", "X-RADIO",
+        ).map(::norm).toSet()
+    }
+
     private fun JSONObject.str(k: String): String = if (isNull(k)) "" else optString(k, "").trim()
 
     private class Group(val key: String, val name: String) {
@@ -265,6 +277,7 @@ object StationRepository {
             val byName = norm(name)
             val key = streamOwner(url) ?: byName
             if (key.isEmpty()) continue
+            if (key in NOT_LITHUANIAN) continue
             val relabeled = key != byName
             // The catalog sometimes has junk values ("UNKNOWN", 3667 kbps for adaptive streams).
             var codec = o.str("codec").uppercase()
@@ -461,7 +474,7 @@ object StationRepository {
             val uuid = o.str("stationuuid")
             if (uuid.isEmpty() || !seen.add(uuid)) continue
             val cc = o.str("countrycode").uppercase()
-            if (cc == "LT") continue
+            if (cc == "LT" && norm(o.str("name")) !in NOT_LITHUANIAN) continue
             val url = o.str("url_resolved").ifEmpty { o.str("url") }
             if (!url.startsWith("http")) continue
             val name = o.str("name")
