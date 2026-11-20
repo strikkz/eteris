@@ -994,7 +994,41 @@ function plain(html){
   const d = document.createElement("div"); d.innerHTML = String(html || "").replace(/<br\s*\/?>|<\/p>|<\/li>/gi, "\n");
   return (d.textContent || "").replace(/[ \t]+/g, " ").replace(/\n\s*\n\s*\n+/g, "\n\n").trim();
 }
+/* Power Hit Radio shows: the station keeps every broadcast hour as an MP3 for about a week.
+   Its site does not answer browsers directly, so the weekly schedule ships with this page (phr.json). */
+let PHR = null;
+async function phrShows(){
+  if(PHR) return PHR;
+  try{ const r = await fetch("phr.json"); const l = await r.json();
+    PHR = l.map(x => { const p = {id: -(1000000 + parseInt(epHash(x.slug), 16) % 2147483647), title: x.title, author: "Power Hit Radio", art: x.img, phr: x.slots};
+      P.pods[p.id] = p; return p; });
+  }catch{ PHR = []; }
+  return PHR;
+}
+function phrEpisodes(p){
+  const out = [], now = Date.now();
+  const fmt = new Intl.DateTimeFormat("en-CA", {timeZone: "Europe/Vilnius", year: "numeric", month: "2-digit", day: "2-digit", weekday: "short"});
+  const label = new Intl.DateTimeFormat({uk:"uk-UA",ru:"ru-RU",en:"en-GB",lt:"lt-LT"}[lang], {timeZone: "Europe/Vilnius", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"});
+  const iso = {Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6, Sun:7};
+  for(let d = 0; d < 7; d++){
+    const parts = Object.fromEntries(fmt.formatToParts(new Date(now - d * 86400000)).map(x => [x.type, x.value]));
+    for(const [wd, from, to] of p.phr){
+      if(wd !== iso[parts.weekday]) continue;
+      for(let h = from; h < to; h++){
+        const hh = String(h).padStart(2, "0"), start = lrtTime(`${parts.year}.${parts.month}.${parts.day} ${hh}:00`);
+        if(start + 65 * 60000 > now) continue;
+        const stamp = `${parts.year}${parts.month}${parts.day}${hh}`;
+        const title = label.format(new Date(start));
+        const ep = {id: "ep:" + p.id + ":" + stamp, pid: p.id, ptitle: p.title, title: title.charAt(0).toUpperCase() + title.slice(1), desc: "",
+          url: `https://powerhitradio.tv3.lt/record/pwr_${stamp}0000.mp3`, date: start, dur: 3600000, img: p.art};
+        EPS[ep.id] = ep; out.push(ep);
+      }
+    }
+  }
+  return out.sort((a, b) => b.date - a.date);
+}
 async function podEpisodes(p, force){
+  if(p.phr) return phrEpisodes(p);
   const k = "e:" + p.id; if(P.cache[k] && !force) return P.cache[k];
   const j = await apple(`lookup?id=${p.id}&entity=podcastEpisode&limit=200&country=lt`); if(!j) return null;
   const list = (j.results || []).filter(o => o.wrapperType === "podcastEpisode" && o.episodeUrl).map(o => {
@@ -1109,7 +1143,7 @@ function erow(ep, showPod){
 }
 function loadPodHome(){
   if(P.loading || (P.top && P.lrt)) return; P.loading = true;
-  Promise.all([podTop(), podSearch("LRT", 100)]).then(([top, lrt]) => {
+  Promise.all([podTop(), podSearch("LRT", 100), phrShows()]).then(([top, lrt]) => {
     P.top = top; P.lrt = lrt ? lrt.filter(p => p.author.toLowerCase() === "lrt") : null; P.failed = !top && !lrt; P.loading = false;
     if(S.tab === "podcasts") render();
   });
@@ -1145,6 +1179,7 @@ function renderPodcasts(keepFocus){
     if(P.subs.length && P.fresh && P.fresh.length) h += `<div class="section-h"><h2>${esc(t("new_episodes"))}</h2></div><div class="rows-2">${P.fresh.map(e => erow(e, true)).join("")}</div>`;
     if(P.failed) h += `<div class="empty"><h3>${esc(t("podcasts_error"))}</h3><p></p><button class="pill" id="retryP">${esc(t("retry"))}</button></div>`;
     if(P.lrt && P.lrt.length) h += `<div class="section-h"><h2>${esc(t("lrt_podcasts"))}</h2></div><div class="hscroll">${P.lrt.map(ptile).join("")}</div>`;
+    if(PHR && PHR.length) h += `<div class="section-h"><h2>${esc(t("phr_shows"))}</h2></div><div class="hscroll">${PHR.map(ptile).join("")}</div>`;
     if(P.top && P.top.length) h += `<div class="section-h"><h2>${esc(t("top_lt"))}</h2></div><div class="rows-2">${P.top.map((p, i) => prow(p, i)).join("")}</div>`;
     if(P.loading) h += `<div class="loading" style="margin-top:20px;height:120px">${esc(t("loading"))}</div>`;
   }
