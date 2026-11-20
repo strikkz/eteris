@@ -235,6 +235,7 @@ class AppState(private val ctx: Context) {
             else -> {
                 if (!allowedToPlay()) return
                 if (c.playbackState == Player.STATE_IDLE || c.playerError != null) c.prepare()
+                if (c.playbackState == Player.STATE_ENDED) c.seekTo(0)   // finished episode: play it again
                 c.play()
             }
         }
