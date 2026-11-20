@@ -1,67 +1,19 @@
-== Apple top LT
-ERR Expecting value: line 1 column 1 (char 0)
-== itunes top charts LT (older rss)
-25
-1550172371 | Proto Pemza
-300172145 | Эхо Москвы
-1471974950 | Vakaro pasaka
-1488941996 | Negyvas Eteris
-1583956271 | Du Bitai
-1712508674 | Tapk Geresniu
-1291423644 | The Diary Of A CEO with Steven Bartlett
-135067274 | Global News Podcast
-1486598237 | O, Dangau!
-1766347403 | Diagnozė: gyvenimas
-360084272 | The Joe Rogan Experience
-1616175210 | Живой Гвоздь
-1751952287 | Kas ten dedasi?
-1537788786 | The Rest Is History
-1200361736 | The Daily
-151230264 | Economist Podcasts
-1434243584 | Lex Fridman Podcast
-1438449989 | FT News Briefing
-1612424182 | Ukraine: The Latest
-1517954480 | Rotten Mango
-1364954186 | Pralaužk vieną šaltą
-1479576917 | Čia ir dabar
-1523005356 | ФЕЙГИН LIVE
-1545953110 | Huberman Lab
-1744631325 | Prof G Markets
-== search LRT country=lt
-15
-1434811262 | Lietuvos diena | LRT | https://www.spreaker.com/show/3085666/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
-1434813213 | Ryto garsai | LRT | https://www.spreaker.com/show/3085705/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
-1471997316 | LRT Aktualijų studija | LRT | https://www.spreaker.com/show/3131625/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
-622366888 | Vakaras su knyga | LRT | https://www.spreaker.com/show/3085751/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
-1837333971 | Buvo nebėra | LRT | https://www.spreaker.com/show/6715753/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
-584918597 | Radijo dokumentika | LRT | https://www.spreaker.com/show/3085699/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
-1479576917 | Čia ir dabar | LRT | https://www.spreaker.com/show/4042772/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
-1402050944 | 10–12 | LRT | https://www.spreaker.com/show/3075170/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
-1434811539 | Mažoji studija. Dievo žodis. | LRT | https://www.spreaker.com/show/3085672/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
-1471974950 | Vakaro pasaka | LRT | https://www.spreaker.com/show/3085752/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
-1502958800 | Homo cultus. Žmogus ir miestas | LRT | https://www.spreaker.com/show/4252847/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
-1435061717 | Tuzinas | LRT | https://www.spreaker.com/show/3131810/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
-1679711627 | LRT Radijo ringas | LRT | https://www.spreaker.com/show/4956879/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
-1766347403 | Diagnozė: gyvenimas | LRT | https://www.spreaker.com/show/6270290/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
-1706806909 | Homo cultus. Paribio pokalbiai | LRT | https://www.spreaker.com/show/5952669/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
-== search 'podkastas'
-15
-1443453815 | BasketNews.lt podkastas | BasketNews.lt | https://feed.podbean.com/basketnews/feed.xml
-1751227702 | Pirmyn Podkastas | Laurynas Bilotas | https://anchor.fm/s/fb1b6efc/podcast/rss
-1540368943 | IT srautas | IT naujienų podkastas | https://feeds.redcircle.com/9a3d0e49-d9e3-4572-ae49-904a5c17b282
-1495396420 | Eurodiena.lt podkastas apie „Euroviziją“ | Eurodiena.lt | https://anchor.fm/s/12789bd4/podcast/rss
-1515662786 | Lauryno Podkastas | Laurynas Jonika | https://anchor.fm/s/22345324/podcast/rss
-1605645383 | Dūzė Pua Eurovizijos podkastas | Dūzė Pua | https://anchor.fm/s/9d17d2c8/podcast/rss
-1509982745 | Bogdano Podkastas | Bogdan Javgurean | https://anchor.fm/s/1e4941fc/podcast/rss
-1491327044 | LRT tyrimų podkastas | LRT | https://www.spreaker.com/show/4169014/episodes/feed
-1496618187 | 5AM Podkastas | 5AM | https://rss.buzzsprout.com/810641.rss
-1200699228 | Rinkodaros podkastas | Komunikacijos amatininkai | https://feeds.soundcloud.com/users/soundcloud:users:285869280/sounds.rss
-1287601911 | Kaip Nepasenti Podkastas | Kaip Nepasenti | https://feeds.soundcloud.com/users/soundcloud:users:333429861/sounds.rss
-1545231598 | kaRtu | kaRtu Podkastas | https://anchor.fm/s/4491bd6c/podcast/rss
-1553692509 | PodKasta | Podkasta | https://anchor.fm/s/207ebb50/podcast/rss
-1503739549 | PODKASTA | Cerita.kasta | https://anchor.fm/s/1398b170/podcast/rss
-1509196540 | 2qika300podkasta | Binkabinka | https://anchor.fm/s/1d563b24/podcast/rss
-== a feed
-https://www.spreaker.com/show/3085666/episodes/feed
-<?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Lietuvos diena</title><link>https://www.spreaker.com/podcast/lietuvos-diena--3085666</link><description><![CDATA[Naujausi Lietuvos ir pasaulio įvykiai bei jų komentarai. Kasdien 12.15 val. per LRT RADIJĄ.]]></description><atom:link href="https://www.spreaker.com/show/3085666/episodes/feed" rel="self" type="application/rss+xml"/><language>lt</language><category>News</category><copyright>Copyright LRT</copyright><image><url>https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/8e4465b269aa2cb4b864c48f1c26ca78.jpg</url><title>Lietuvos diena</title><link>https://www.spreaker.com/podcast/lietuvos-diena--3085666</link></image><lastBuildDate>Mon, 02 Nov 2026 19:14:17 +0000</lastBuildDate><itunes:author>LRT</itunes:author><itunes:owner><itunes:name>LRT</itunes:name><itunes:email>podcasts@lrt.lt</itunes:email></itunes:owner><itunes:image href="https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/8e4465b269aa2cb4b864c48f1c26ca78.jpg"/><itunes:subtitle>Naujausi Lietuvos ir pasaulio įvykiai bei jų komentarai. Kasdien 12.15 val. per LRT RADIJĄ.</itunes:subtitle><itunes:summary><![CDATA[Naujausi Lietuvos ir pasaulio įvykiai bei jų komentarai. Kasdien 12.15 val. per LRT RADIJĄ.]]></itunes:summary><itunes:category text="News"/><itunes:explicit>false</itunes:explicit><podcast:guid>1e2a1d1a-65e0-5143-bb20-a3a2906629fa</podcast:guid><itunes:type>episodic</itunes:type><item><title>Per Vėlines ant kapų degančios žvakės primena, kad meilė ir pagarba neturi laiko ribų</title><link>https://www.spreaker.com/episode/per-velines-ant-kapu-degancios-zvakes-primena-kad-meile-ir-pagarba-neturi-laiko-ribu--76133753</link><description><![CDATA[Ukrainos Chersono srityje per savaitę trukusias paliaubas iš Oleškų miesto evakuota apie aštuoni šimtai gyventojų.<br /><br />Mirusiųjų pagerbimo dieną kapinėse dega tūkstančiai žvakių, primenančių, kad meilė ir ryšys neturi laiko ribų.<br /><br />Kaip savo artimuosius prisimena kitų Europos šalių gyventojai?<br /><br />Kodėl daugiabučių kiemuose nemažėja apleistų automobilių?<br /><br /><br />Ved. Madona Lučkaitė]]></description><guid isPermaLink="false">https:
+== https://itunes.apple.com/search?media=podcast&entity=podcast&country=lt&limit=2&term=LRT
+HTTP/2 200 
+content-type: text/javascript; charset=utf-8
+access-control-allow-origin: *
+== https://itunes.apple.com/lookup?id=1434811262&entity=podcastEpisode&limit=3&country=lt
+HTTP/2 200 
+content-type: text/javascript; charset=utf-8
+access-control-allow-origin: *
+== https://itunes.apple.com/lt/rss/toppodcasts/limit=5/json
+HTTP/2 200 
+content-type: text/javascript; charset=UTF-8
+access-control-allow-origin: *
+== https://www.spreaker.com/show/3085666/episodes/feed
+HTTP/2 200 
+content-type: text/xml
+{'wrapperType': 'track', 'kind': 'podcast', 'collectionId': '1434811262', 'trackName': 'Lietuvos diena', 'releaseDate': '2026-11-01T10:15:00Z', 'trackTimeMillis': '2608', 'artworkUrl600': 'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3f/06/5d/3f065d7f-0072-6'}
+{'artworkUrl600': 'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3f/06/5d/3f065d7f-0072-6', 'episodeUrl': 'https://api.spreaker.com/download/episode/76133753/2026_11_02_3119_1_20261102134', 'collectionId': '1434811262', 'artworkUrl160': 'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3f/06/5d/3f065d7f-0072-6', 'episodeGuid': 'https://api.spreaker.com/episode/76133753', 'releaseDate': '2026-11-02T10:14:00Z', 'trackName': 'Per Vėlines ant kapų degančios žvakės primena, kad meilė ir pagarba neturi laiko', 'kind': 'podcast-episode', 'wrapperType': 'podcastEpisode', 'description': 'Ukrainos Chersono srityje per savaitę trukusias paliaubas iš Oleškų miesto evaku', 'trackTimeMillis': '2569000'}
+{'artworkUrl600': 'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3f/06/5d/3f065d7f-0072-6', 'episodeUrl': 'https://api.spreaker.com/download/episode/76131211/2026_11_01_3119_1_20261101133', 'collectionId': '1434811262', 'artworkUrl160': 'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3f/06/5d/3f065d7f-0072-6', 'episodeGuid': 'https://api.spreaker.com/episode/76131211', 'releaseDate': '2026-11-01T10:15:00Z', 'trackName': 'Vėlinių tradiciją Margionyse įtrauks į nematerialaus kultūros paveldo vertybių s', 'kind': 'podcast-episode', 'wrapperType': 'podcastEpisode', 'description': 'Ar Margionių Vėlinių tradiciją bus siūloma įtraukti į Lietuvos nematerialaus kul', 'trackTimeMillis': '2608000'}
+{'artworkUrl600': 'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3f/06/5d/3f065d7f-0072-6', 'episodeUrl': 'https://api.spreaker.com/download/episode/76101962/2026_10_31_3119_1_20261031130', 'collectionId': '1434811262', 'artworkUrl160': 'https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/3f/06/5d/3f065d7f-0072-6', 'episodeGuid': 'https://api.spreaker.com/episode/76101962', 'releaseDate': '2026-10-31T10:15:00Z', 'trackName': 'Kaip Lenkijai pavyks įveikti politinę krizę?', 'kind': 'podcast-episode', 'wrapperType': 'podcastEpisode', 'description': 'Kaip Lenkijai pavyks įveikti politinę krizę, kai dėl Konstitucinio Teismo kontro', 'trackTimeMillis': '2658000'}
