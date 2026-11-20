@@ -552,8 +552,26 @@ function filtered(){
 }
 const scopeSwitch = () => `<div class="scope">${[["lt","explore_lt"],["world","explore_world"]].map(([v, k]) =>
   `<button data-scope="${v}" aria-pressed="${S.scope === v}">${esc(t(k))}</button>`).join("")}</div>`;
+/* A search in Explore also looks through podcasts and station shows (people search here first). */
+const exPods = {q: "", list: [], timer: 0};
+function exPodsHtml(){
+  return exPods.list.length ? `<div class="section-h"><h2>${esc(t("podcasts_and_shows"))}</h2></div><div class="rows-2">${exPods.list.map(p => prow(p)).join("")}</div>` : "";
+}
+function exPodsSearch(q){
+  q = q.trim(); clearTimeout(exPods.timer);
+  if(q.length < 2 || S.genre){ exPods.q = ""; exPods.list = []; return; }
+  if(q === exPods.q) return;
+  exPods.timer = setTimeout(async () => {
+    const [shows, found] = await Promise.all([phrShows(), podSearch(q)]);
+    const local = (shows || []).filter(p => p.title.toLowerCase().includes(q.toLowerCase()));
+    exPods.q = q; const seen = new Set();
+    exPods.list = [...local, ...(found || [])].filter(p => !seen.has(p.id) && seen.add(p.id)).slice(0, 15);
+    if(S.tab === "explore" && S.scope !== "world") renderExplore(document.activeElement && document.activeElement.id === "q");
+  }, 450);
+}
 function renderExplore(keepFocus){
   if(S.scope === "world"){ renderWorld(keepFocus); return; }
+  if(S.query.trim() !== exPods.q) { if(!S.query.trim()) exPods.list = []; exPodsSearch(S.query); }
   const list = filtered();
   const head = `<h1 class="display" style="margin-top:28px">${esc(t("explore_title_1"))}<span>${esc(t("explore_title_2"))}</span></h1>
     ${scopeSwitch()}<label class="search">${I.search}<span class="sr">${esc(t("search_hint"))}</span><input id="q" type="search" autocomplete="off" placeholder="${esc(t("search_hint"))}" value="${esc(S.query)}">
@@ -561,8 +579,8 @@ function renderExplore(keepFocus){
   const genres = !S.query ? `<div class="section-h"><h2>${esc(t("genres_moods"))}</h2></div>
     <div class="genres">${presentGenres().map(g => `<button class="gtile" data-genre="${g}" aria-pressed="${S.genre === g}" style="--g1:${GENRES[g].c[0]};--g2:${GENRES[g].c[1]}">${esc(t(GENRES[g].k))}</button>`).join("")}</div>` : "";
   const body = list.length ? `<div class="section-h"><h2>${esc(S.genre ? t(GENRES[S.genre].k) : t("all_stations"))}</h2><span style="color:var(--text2);font-size:12px">${list.length}</span></div>
-    <div class="rows-2">${list.map(s => row(s, "filtered")).join("")}</div>`
-    : S.loading ? `<div class="loading" style="margin-top:20px">${esc(t("loading"))}</div>`
+    <div class="rows-2">${list.map(s => row(s, "filtered")).join("")}</div>${exPodsHtml()}`
+    : exPods.list.length ? exPodsHtml() : S.loading ? `<div class="loading" style="margin-top:20px">${esc(t("loading"))}</div>`
     : `<div class="empty"><h3>${esc(t("no_results"))}</h3><p>${esc(S.query)}</p><button class="pill" id="clearQ2">${esc(t("clear_search"))}</button></div>`;
   $("view").innerHTML = head + genres + body;
   if(keepFocus){ const q = $("q"); q.focus(); q.setSelectionRange(q.value.length, q.value.length); }

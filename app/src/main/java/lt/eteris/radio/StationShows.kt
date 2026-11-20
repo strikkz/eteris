@@ -156,7 +156,14 @@ object StationShows {
 
     private suspend fun ziniu(): List<Podcast>? = PodcastRepository.cached("zr") {
         coroutineScope {
-            listOf("ac", "df", "gy", "jl", "mo", "ps", "tu", "vz").map { letter ->
+            // The archive page shows the latest episodes: those shows are on air now and go first
+            // (the site also lists many shows that ended years ago).
+            val active = async {
+                PodcastRepository.get("$ZR/archyvas/")?.let { h ->
+                    Regex("class=\"episode-name\"><a href=\"(/laidos/[a-z0-9-]+)\"").findAll(h).map { it.groupValues[1] }.distinct().toList()
+                }.orEmpty()
+            }
+            val all = listOf("ac", "df", "gy", "jl", "mo", "ps", "tu", "vz").map { letter ->
                 async {
                     val html = PodcastRepository.get("$ZR/laidos?letter=$letter") ?: return@async emptyList<Podcast>()
                     html.split("class=\"show-item").drop(1).mapNotNull { b ->
@@ -167,6 +174,8 @@ object StationShows {
                     }
                 }
             }.awaitAll().flatten().distinctBy { it.id }
+            val order = active.await()
+            all.sortedBy { p -> order.indexOf(p.feedUrl.removePrefix("zr:")).let { if (it < 0) Int.MAX_VALUE else it } }
         }.ifEmpty { null }
     }.let { remember("ziniu", it) }
 
@@ -203,7 +212,13 @@ object StationShows {
     private const val MR_PAGE = "$MR/irasai/naujausi-laidu-irasai.html"
     @Volatile private var mrToken: String? = null
 
+    /** Marijos radijas filters by show only within a session (cookie), so the app keeps cookies. */
+    private fun cookies() {
+        if (java.net.CookieHandler.getDefault() == null) java.net.CookieHandler.setDefault(java.net.CookieManager())
+    }
+
     private suspend fun marijos(): List<Podcast>? = PodcastRepository.cached("mr") {
+        cookies()
         val html = PodcastRepository.get(MR_PAGE) ?: return@cached null
         mrToken = Regex("var ajaxData = \\{'([0-9a-f]+)':'1'\\}").find(html)?.groupValues?.get(1)
         Regex("class=\"filter-option\" data-filter=\"(\\d+)\" data-title=\"([^\"]+)\"").findAll(html)
@@ -216,6 +231,7 @@ object StationShows {
     private val mrDate = fmt("yyyy-MM-dd HH:mm:ss")
 
     private fun marijosEpisodes(p: Podcast, filter: String): List<Episode>? {
+        cookies()
         val token = mrToken ?: PodcastRepository.get(MR_PAGE)?.let { h ->
             Regex("var ajaxData = \\{'([0-9a-f]+)':'1'\\}").find(h)?.groupValues?.get(1)
         }?.also { mrToken = it } ?: return null
@@ -224,6 +240,8 @@ object StationShows {
             val body = JSONObject().put(token, "1").put("task", "getnextpage").put("page", page).put("filter", filter).put("date", "").toString()
             val html = PodcastRepository.get(MR_PAGE, post = body) ?: break
             val cards = Regex("<span class=\"listen-btn\"([^>]+)>").findAll(html).toList()
+                // only this show's recordings (if the site ignores the filter, nothing wrong is shown)
+                .filter { c -> Regex("data-title=\"([^\"]*)\"").find(c.groupValues[1])?.groupValues?.get(1)?.let(PodcastRepository::unescape)?.trim().equals(p.title, ignoreCase = true) }
             if (cards.isEmpty()) break
             for (c in cards) {
                 val a = c.groupValues[1]
