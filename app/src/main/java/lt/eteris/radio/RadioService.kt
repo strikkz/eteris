@@ -127,6 +127,7 @@ class RadioService : MediaLibraryService() {
 
         StationRepository.addListener(repoListener)
         handler.postDelayed(ticker, TICK_MS)
+        handler.postDelayed(progressTicker, 5_000L)
         updateFavoriteButton()
         SleepTimer.onFire = ::fadeOutAndPause
     }
@@ -152,6 +153,7 @@ class RadioService : MediaLibraryService() {
      * Exception: Android Auto is connected - then the car keeps playing.
      */
     override fun onTaskRemoved(rootIntent: Intent?) {
+        saveEpisodeProgress()
         val s = session
         val carConnected = s?.connectedControllers?.any { it.packageName == AUTO_PACKAGE } == true
         if (s != null && carConnected && s.player.playWhenReady) return
@@ -207,6 +209,7 @@ class RadioService : MediaLibraryService() {
 
         override fun onPlaybackStateChanged(playbackState: Int) {
             if (playbackState == Player.STATE_READY) retries = 0
+            if (playbackState == Player.STATE_ENDED) saveEpisodeProgress(ended = true)
         }
 
         override fun onMediaItemTransition(mediaItem: MediaItem?, reason: Int) {
@@ -214,7 +217,12 @@ class RadioService : MediaLibraryService() {
                 attempts.clear()
                 retries = 0
             }
-            mediaItem?.mediaId?.let { StationRepository.setLast(this@RadioService, it) }
+            val id = mediaItem?.mediaId
+            if (id != null && !PodcastRepository.isEpisode(id)) {
+                StationRepository.setLast(this@RadioService, id)
+                // Radio always at normal speed (a podcast may have been sped up).
+                if (player.playbackParameters.speed != 1f) player.setPlaybackSpeed(1f)
+            }
             if (reason != Player.MEDIA_ITEM_TRANSITION_REASON_PLAYLIST_CHANGED) {
                 streamSong = null
                 handler.post { tick(force = true) }
@@ -224,7 +232,11 @@ class RadioService : MediaLibraryService() {
         }
 
         override fun onIsPlayingChanged(isPlaying: Boolean) {
-            if (isPlaying) handler.post { tick(force = true) }
+            if (isPlaying) handler.post { tick(force = true) } else saveEpisodeProgress()
+        }
+
+        override fun onPositionDiscontinuity(old: Player.PositionInfo, new: Player.PositionInfo, reason: Int) {
+            if (reason == Player.DISCONTINUITY_REASON_SEEK) saveEpisodeProgress()
         }
 
         /**
@@ -282,6 +294,22 @@ class RadioService : MediaLibraryService() {
     private fun saveStale() {
         getSharedPreferences("eteris", MODE_PRIVATE).edit()
             .putString("stale_titles", JSONObject(staleTitles as Map<*, *>).toString()).apply()
+    }
+
+    /** Podcast episode: remember where the listener is, every few seconds. */
+    private val progressTicker = object : Runnable {
+        override fun run() {
+            if (player.isPlaying) saveEpisodeProgress()
+            handler.postDelayed(this, 5_000L)
+        }
+    }
+
+    private fun saveEpisodeProgress(ended: Boolean = false) {
+        val id = player.currentMediaItem?.mediaId ?: return
+        if (!PodcastRepository.isEpisode(id)) return
+        val dur = player.duration.takeIf { it != C.TIME_UNSET && it > 0 } ?: 0L
+        if (!ended && player.playbackState == Player.STATE_IDLE) return
+        PodcastRepository.saveProgress(this, id, player.currentPosition, dur, ended)
     }
 
     private val ticker = object : Runnable {
@@ -429,6 +457,10 @@ class RadioService : MediaLibraryService() {
     private fun updateFavoriteButton() {
         val s = session ?: return
         val id = player.currentMediaItem?.mediaId
+        if (PodcastRepository.isEpisode(id)) {          // no "favorite station" star for a podcast episode
+            s.setCustomLayout(ImmutableList.of())
+            return
+        }
         val isFav = id != null && id in StationRepository.favorites(this)
         val button = CommandButton.Builder()
             .setDisplayName(getString(if (isFav) R.string.fav_remove else R.string.fav_add))
@@ -445,6 +477,12 @@ class RadioService : MediaLibraryService() {
 
     /** Turns a request (an id, or a voice search like "play Power Hit Radio") into a playable station. */
     private fun resolve(item: MediaItem, all: List<Station>): MediaItem? {
+        if (PodcastRepository.isEpisode(item.mediaId)) {
+            PodcastRepository.episode(item.mediaId)?.let { return it.toMediaItem() }
+            // Not known in this process (yet): the app sends the address along.
+            val uri = item.requestMetadata.mediaUri ?: return null
+            return item.buildUpon().setUri(uri).build()
+        }
         StationRepository.byId(item.mediaId)?.let { return it.toMediaItem() }
         val query = item.requestMetadata.searchQuery
         if (query != null) {
@@ -477,7 +515,8 @@ class RadioService : MediaLibraryService() {
             args: Bundle,
         ): ListenableFuture<SessionResult> {
             if (customCommand.customAction == ACTION_FAVORITE) {
-                player.currentMediaItem?.mediaId?.let { StationRepository.toggleFavorite(this@RadioService, it) }
+                player.currentMediaItem?.mediaId?.takeIf { !PodcastRepository.isEpisode(it) }
+                    ?.let { StationRepository.toggleFavorite(this@RadioService, it) }
                 updateFavoriteButton()
                 return Futures.immediateFuture(SessionResult(SessionResult.RESULT_SUCCESS))
             }
@@ -583,6 +622,13 @@ class RadioService : MediaLibraryService() {
         ): ListenableFuture<MediaSession.MediaItemsWithStartPosition> = scope.future {
             val all = StationRepository.ensureLoaded(this@RadioService)
             val resolved = mediaItems.mapNotNull { resolve(it, all) }
+            val first = resolved.firstOrNull()
+            if (first != null && PodcastRepository.isEpisode(first.mediaId)) {
+                // An episode plays on its own, from where it was left off.
+                return@future MediaSession.MediaItemsWithStartPosition(
+                    listOf(first), 0, PodcastRepository.startPosition(this@RadioService, first.mediaId),
+                )
+            }
             if (resolved.size > 1) {
                 val start = if (startIndex == C.INDEX_UNSET) 0 else startIndex.coerceIn(0, resolved.size - 1)
                 MediaSession.MediaItemsWithStartPosition(resolved, start, C.TIME_UNSET)

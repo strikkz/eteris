@@ -59,12 +59,12 @@ import lt.eteris.radio.StationRepository
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-private val SIDE = 22.dp
+internal val SIDE = 22.dp
 /** Room at the bottom of every list for the mini-player and navigation bar. */
 val DOCK_SPACE = 170.dp
 
 @Composable
-private fun TopLine(title: String, onSettings: () -> Unit) {
+internal fun TopLine(title: String, onSettings: () -> Unit) {
     Row(
         Modifier.fillMaxWidth().padding(top = 12.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -424,7 +424,7 @@ private fun WorldExplore(
 }
 
 @Composable
-private fun SearchField(query: String, onQuery: (String) -> Unit, hint: String? = null) {
+internal fun SearchField(query: String, onQuery: (String) -> Unit, hint: String? = null) {
     Row(
         Modifier
             .padding(vertical = 22.dp)
@@ -502,6 +502,7 @@ fun FavoritesScreen(app: AppState, onSettings: () -> Unit, onExplore: () -> Unit
 
 @Composable
 fun MiniPlayer(app: AppState, onOpen: () -> Unit) {
+    app.episode?.let { EpisodeMiniPlayer(app, it, onOpen); return }
     val st = app.current ?: return
     val sub = when (app.status) {
         PlayStatus.CONNECTING -> stringResource(R.string.connecting)
@@ -544,6 +545,7 @@ fun MiniPlayer(app: AppState, onOpen: () -> Unit) {
 enum class Tab(val label: Int, val icon: Int) {
     HOME(R.string.nav_home, R.drawable.ic_home),
     EXPLORE(R.string.nav_explore, R.drawable.ic_search),
+    PODCASTS(R.string.nav_podcasts, R.drawable.ic_podcast),
     FAVORITES(R.string.nav_favorites, R.drawable.ic_heart_border),
 }
 

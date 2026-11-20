@@ -44,11 +44,15 @@ fun BangaApp(app: AppState) {
     var genreName by rememberSaveable { mutableStateOf<String?>(null) }
     var world by rememberSaveable { mutableStateOf(false) }
     var worldQuery by rememberSaveable { mutableStateOf("") }
+    var podcastQuery by rememberSaveable { mutableStateOf("") }
+    var openPodcastId by rememberSaveable { mutableStateOf<Long?>(null) }
+    val openPodcast = openPodcastId?.let { lt.eteris.radio.PodcastRepository.podcast(it) }
     val genre = genreName?.let { n -> Genre.entries.firstOrNull { it.name == n } }
 
     BackHandler(enabled = playerOpen) { playerOpen = false }
     BackHandler(enabled = settingsOpen && !playerOpen) { settingsOpen = false }
-    BackHandler(enabled = !playerOpen && !settingsOpen && tab != Tab.HOME) { tab = Tab.HOME }
+    BackHandler(enabled = !playerOpen && !settingsOpen && openPodcast != null && tab == Tab.PODCASTS) { openPodcastId = null }
+    BackHandler(enabled = !playerOpen && !settingsOpen && tab != Tab.HOME && !(openPodcast != null && tab == Tab.PODCASTS)) { tab = Tab.HOME }
 
     androidx.compose.material3.MaterialTheme(
         colorScheme = androidx.compose.material3.darkColorScheme(
@@ -71,6 +75,15 @@ fun BangaApp(app: AppState) {
                 world = world, onWorld = { world = it },
                 worldQuery = worldQuery, onWorldQuery = { worldQuery = it },
             )
+            Tab.PODCASTS -> if (openPodcast != null) {
+                lt.eteris.radio.ui.PodcastPage(app, openPodcast) { openPodcastId = null }
+            } else {
+                PodcastsScreen(
+                    app, podcastQuery, { podcastQuery = it },
+                    onSettings = { settingsOpen = true },
+                    onOpenPodcast = { openPodcastId = it.id },
+                )
+            }
             Tab.FAVORITES -> FavoritesScreen(app, onSettings = { settingsOpen = true }, onExplore = { tab = Tab.EXPLORE })
         }
 
@@ -115,15 +128,28 @@ fun BangaApp(app: AppState) {
         }
 
         AnimatedVisibility(
-            visible = playerOpen && app.current != null,
+            visible = playerOpen && (app.current != null || app.episode != null),
             enter = slideInVertically(tween(340)) { it } + fadeIn(tween(240)),
             exit = slideOutVertically(tween(300)) { it } + fadeOut(tween(200)),
         ) {
-            PlayerScreen(
-                app,
-                onClose = { playerOpen = false },
-                onOtherStations = { playerOpen = false; tab = Tab.EXPLORE },
-            )
+            val ep = app.episode
+            if (ep != null) {
+                EpisodePlayerScreen(
+                    app, ep,
+                    onClose = { playerOpen = false },
+                    onOpenPodcast = { id ->
+                        if (lt.eteris.radio.PodcastRepository.podcast(id) != null) {
+                            openPodcastId = id; tab = Tab.PODCASTS; playerOpen = false
+                        }
+                    },
+                )
+            } else {
+                PlayerScreen(
+                    app,
+                    onClose = { playerOpen = false },
+                    onOtherStations = { playerOpen = false; tab = Tab.EXPLORE },
+                )
+            }
         }
     }
     }

@@ -299,7 +299,7 @@ private fun AboutPanel(name: String, about: StationAbout, modifier: Modifier) {
 
 /** "Timer" pill next to "Other stations": choose when the radio stops. Turns lime and shows minutes left while on. */
 @Composable
-private fun SleepTimerButton() {
+internal fun SleepTimerButton() {
     var open by remember { mutableStateOf(false) }
     val ctx = LocalContext.current
     // Re-read the minutes left every 20 s while the timer runs.

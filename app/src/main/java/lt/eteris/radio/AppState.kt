@@ -84,6 +84,52 @@ class AppState(private val ctx: Context) {
     /** Reads [stations] too, so screens update when the list finishes loading after playback started. */
     val current: Station? get() = stations.let { StationRepository.byId(currentId) }
 
+    // ---------- Podcasts ----------
+
+    /** The podcast episode in the player, if that is what plays (then [current] is null). */
+    val episode: Episode? get() = PodcastRepository.episode(currentId)
+
+    /** Changes when subscriptions or listening progress change, so podcast screens redraw. */
+    var podcastVersion by mutableStateOf(0)
+        private set
+    private val podcastListener: () -> Unit = {
+        ContextCompat.getMainExecutor(ctx).execute { podcastVersion++ }
+    }
+
+    var speed by mutableStateOf(1f)
+        private set
+
+    /** Plays an episode from where it was left off. */
+    fun playEpisode(ep: Episode) {
+        val c = controller ?: return
+        if (!allowedToPlay()) return
+        if (c.currentMediaItem?.mediaId == ep.id && c.playerError == null) {
+            if (c.playbackState == Player.STATE_ENDED) c.seekTo(0)
+            if (!c.isPlaying) { if (c.playbackState == Player.STATE_IDLE) c.prepare(); c.play() }
+            return
+        }
+        c.setMediaItems(listOf(ep.toMediaItem()), 0, PodcastRepository.startPosition(ctx, ep.id))
+        c.prepare()
+        c.play()
+        speed = c.playbackParameters.speed
+    }
+
+    fun position(): Long = controller?.currentPosition?.coerceAtLeast(0L) ?: 0L
+    fun duration(): Long = controller?.duration?.takeIf { it != C.TIME_UNSET && it > 0 } ?: episode?.durationMs ?: 0L
+    fun seekTo(ms: Long) = controller?.seekTo(ms.coerceAtLeast(0L)) ?: Unit
+    fun skipBack() = controller?.seekBack() ?: Unit
+    fun skipForward() = controller?.seekForward() ?: Unit
+
+    /** 1x -> 1.25x -> 1.5x -> 1.75x -> 2x -> 0.8x -> 1x */
+    fun nextSpeed() {
+        val c = controller ?: return
+        val steps = listOf(1f, 1.25f, 1.5f, 1.75f, 2f, 0.8f)
+        val i = steps.indexOfFirst { kotlin.math.abs(it - c.playbackParameters.speed) < 0.01f }
+        val v = steps[(i + 1) % steps.size]
+        c.setPlaybackSpeed(v)
+        speed = v
+    }
+
     /** Favorites, most recently played first. */
     fun favoriteStations(): List<Station> = StationRepository.favoritesByRecent(ctx)
 
@@ -98,6 +144,7 @@ class AppState(private val ctx: Context) {
 
     fun start(onReady: (AppState) -> Unit = {}) {
         StationRepository.addListener(repoListener)
+        PodcastRepository.addListener(podcastListener)
         online = isOnlineNow()
         runCatching { ctx.getSystemService(ConnectivityManager::class.java)?.registerDefaultNetworkCallback(netCallback) }
         val token = SessionToken(ctx, ComponentName(ctx, RadioService::class.java))
@@ -113,6 +160,7 @@ class AppState(private val ctx: Context) {
     fun stop() {
         runCatching { ctx.getSystemService(ConnectivityManager::class.java)?.unregisterNetworkCallback(netCallback) }
         StationRepository.removeListener(repoListener)
+        PodcastRepository.removeListener(podcastListener)
         controller?.removeListener(playerListener)
         future?.let { MediaController.releaseFuture(it) }
         future = null
@@ -124,6 +172,7 @@ class AppState(private val ctx: Context) {
         if (id != currentId) startedId = null
         currentId = id
         if (c.isPlaying) startedId = id
+        speed = c.playbackParameters.speed
 
         val st = StationRepository.byId(id)
         val title = c.mediaMetadata.title?.toString()?.trim().orEmpty()
@@ -181,7 +230,8 @@ class AppState(private val ctx: Context) {
         val c = controller ?: return
         when {
             isActive -> c.pause()
-            c.mediaItemCount == 0 -> currentId?.let { playStation(it) } ?: stations.firstOrNull()?.let { playStation(it.id) }
+            c.mediaItemCount == 0 -> episode?.let { playEpisode(it) }
+                ?: currentId?.let { playStation(it) } ?: stations.firstOrNull()?.let { playStation(it.id) }
             else -> {
                 if (!allowedToPlay()) return
                 if (c.playbackState == Player.STATE_IDLE || c.playerError != null) c.prepare()
@@ -196,7 +246,7 @@ class AppState(private val ctx: Context) {
         if (c.mediaItemCount > 0) {
             if (!allowedToPlay()) return
             c.prepare(); c.play()
-        } else playStation(id)
+        } else episode?.let { playEpisode(it) } ?: playStation(id)
     }
 
     fun next() = controller?.seekToNext() ?: Unit

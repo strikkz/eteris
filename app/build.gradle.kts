@@ -74,6 +74,8 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.activity:activity-compose:1.9.1")
     implementation("androidx.palette:palette-ktx:1.0.0")
+    // Podcast covers
+    implementation("io.coil-kt:coil-compose:2.7.0")
 
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
