@@ -1,15 +1,51 @@
-0 days ago 20261120 08h: 200
-1 days ago 20261119 08h: 200
-3 days ago 20261117 08h: 200
-6 days ago 20261114 08h: 200
-7 days ago 20261113 08h: 200
-8 days ago 20261112 08h: 404
-10 days ago 20261110 08h: 404
-14 days ago 20261106 08h: 404
-      8 scheduleItemBlock wkd-1
-      8 scheduleItemBlock wkd-2
-      7 scheduleItemBlock wkd-3
-      8 scheduleItemBlock wkd-4
-     10 scheduleItemBlock wkd-5
-     13 scheduleItemBlock wkd-6
-     14 scheduleItemBlock wkd-7
+SKIP  class="scheduleItemBlock wkd-1" style="display:none;" data-programid="52" data-timeon="00:00:00" data-timeoff="07:00:00
+SKIP  class="scheduleItemBlock wkd-2" style="display:none;" data-programid="28" data-timeon="01:00:00" data-timeoff="07:00:00
+SKIP  class="scheduleItemBlock wkd-2" style="display:none;" data-programid="53" data-timeon="21:00:00" data-timeoff="22:00:00
+SKIP  class="scheduleItemBlock wkd-2" style="display:none;" data-programid="54" data-timeon="22:00:00" data-timeoff="00:00:00
+SKIP  class="scheduleItemBlock wkd-3" style="display:none;" data-programid="26" data-timeon="19:00:00" data-timeoff="20:00:00
+SKIP  class="scheduleItemBlock wkd-3" style="display:none;" data-programid="56" data-timeon="22:00:00" data-timeoff="00:00:00
+SKIP  class="scheduleItemBlock wkd-3" style="display:none;" data-programid="56" data-timeon="22:00:00" data-timeoff="00:00:00
+SKIP  class="scheduleItemBlock wkd-4" style="display:none;" data-programid="57" data-timeon="00:00:00" data-timeoff="07:00:00
+SKIP  class="scheduleItemBlock wkd-4" style="display:none;" data-programid="26" data-timeon="19:00:00" data-timeoff="20:00:00
+SKIP  class="scheduleItemBlock wkd-4" style="display:none;" data-programid="61" data-timeon="22:00:00" data-timeoff="23:00:00
+SKIP  class="scheduleItemBlock wkd-5" data-programid="60" data-timeon="00:00:00" data-timeoff="07:00:00"> <p class="scheduleI
+SKIP  class="scheduleItemBlock wkd-5" data-programid="24" data-timeon="17:00:00" data-timeoff="19:00:00"> <p class="scheduleI
+SKIP  class="scheduleItemBlock wkd-5" data-programid="64" data-timeon="22:00:00" data-timeoff="23:00:00"> <p class="scheduleI
+SKIP  class="scheduleItemBlock wkd-5" data-programid="63" data-timeon="23:00:00" data-timeoff="23:59:59"> <p class="scheduleI
+SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="62" data-timeon="01:00:00" data-timeoff="02:00:00
+SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="29" data-timeon="02:00:00" data-timeoff="06:59:59
+SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="31" data-timeon="07:00:00" data-timeoff="11:00:00
+SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="18" data-timeon="11:00:00" data-timeoff="12:00:00
+SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="32" data-timeon="17:00:00" data-timeoff="18:00:00
+SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="33" data-timeon="18:00:00" data-timeoff="20:00:00
+SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="56" data-timeon="22:00:00" data-timeoff="00:00:00
+SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="56" data-timeon="22:00:00" data-timeoff="00:00:00
+SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="40" data-timeon="01:00:00" data-timeoff="02:00:00
+SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="36" data-timeon="02:00:00" data-timeoff="07:00:00
+SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="31" data-timeon="07:00:00" data-timeoff="11:00:00
+SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="18" data-timeon="11:00:00" data-timeoff="12:00:00
+SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="32" data-timeon="17:00:00" data-timeoff="18:00:00
+SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="34" data-timeon="18:00:00" data-timeoff="19:59:59
+SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="50" data-timeon="21:00:00" data-timeoff="22:00:00
+SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="51" data-timeon="22:00:00" data-timeoff="23:59:59
+sok-i-kelnes | Šok į kelnes | /Uploads/image/SiJ500v2.PNG | [(1, 7, 11), (2, 7, 11), (3, 7, 11), (4, 7, 11), (5, 7, 11)]
+power-hitai | Power hitai | /Uploads/image/LiR500.JPG | [(1, 11, 15), (2, 11, 15), (3, 11, 15), (4, 11, 15), (5, 11, 15)]
+power-popiete | Power popietė | /Uploads/image/LiJ500.JPG | [(1, 15, 19), (2, 15, 19), (3, 15, 19), (4, 15, 19), (5, 15, 19)]
+flow-music-radio | Flow Music Radio | /Uploads/image/DJ%20ALKO.png | [(1, 19, 21)]
+tom-bones | Tom Bones | /Uploads/image/Tom%20Bones.png | [(1, 21, 22)]
+decks-and-stories | Decks & Stories | https://www.tv3.lt/Uploads/image/DAndS.JPG | [(1, 22, 23)]
+driule-the-gang | Driule & The Gang | /Uploads/file/dj/c_driule.png | [(1, 23, 24), (5, 21, 22)]
+g-spot-dj-s-on-air | G-Spot DJ’s ON AIR | /Uploads/file/dj/c_gspot.png | [(2, 0, 2), (5, 20, 21)]
+ignotaviciute-groja | Groja Ignatovičiūtė | /Uploads/image/Laura500.JPG | [(2, 19, 21)]
+sundu | Sundu Radio Show | /Uploads/image/Sundu2.png | [(3, 20, 22)]
+lost-and-found | Lost and Found | /Uploads/image/lostfound.jpg | [(4, 20, 21), (7, 0, 1)]
+dj-cafe-radio | DJ Cafe Radio show | /Uploads/image/dj_cafe_radio.jpg | [(4, 23, 24)]
+beleo-vibes | BeLeo Vibes | /Uploads/file/dj/c_beleo.png | [(5, 19, 20)]
+musical-freedom | Musical Freedom | /Uploads/image/MucisFreedom.png | [(6, 0, 1)]
+power-savaitgalis | Power savaitgalis | /Uploads/image/Joris%20PWR%20siena.png | [(6, 12, 16), (7, 12, 16)]
+pagaminta-lietuvoje | Pagaminta Lietuvoje | /pimg/player/dj/dj_none.jpg | [(6, 16, 17), (7, 16, 17)]
+megahitai | Auksinė valanda | /pimg/player/dj/dj_none.jpg | [(6, 20, 21), (7, 9, 10)]
+jovaniclub | Jovani@Club | /Uploads/jovani-1.png | [(6, 21, 22)]
+cosmology | Cosmology | /Uploads/cosmology-356x356.png | [(7, 19, 20)]
+ten-walls | Ten Walls Runemark Sessions | /Uploads/image/Ten_Wallssmall.png | [(7, 20, 21)]
+20
