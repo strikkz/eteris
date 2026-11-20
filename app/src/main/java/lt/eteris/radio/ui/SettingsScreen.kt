@@ -100,6 +100,8 @@ fun SettingsScreen(app: AppState, onBack: () -> Unit) {
             Text(stringResource(R.string.stations_in_catalog, app.stations.size), style = Banga.supporting, color = Banga.textSecondary)
             Spacer(Modifier.height(4.dp))
             Text(stringResource(R.string.tagline), style = Banga.supporting, color = Banga.textSecondary)
+            Spacer(Modifier.height(4.dp))
+            Text("AF", style = Banga.supporting, color = Banga.textSecondary)
         }
     }
 }
