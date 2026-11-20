@@ -107,4 +107,7 @@
     <string name="podcast_empty_subs">Subscribe to a podcast – its new episodes will appear here.</string>
     <string name="speed">Speed</string>
     <string name="phr_shows">Power Hit Radio shows</string>
+    <string name="station_shows">Radio station shows</string>
+    <string name="podcasts_and_shows">Podcasts and shows</string>
+    <string name="shows_count">%1$d shows</string>
 </resources>

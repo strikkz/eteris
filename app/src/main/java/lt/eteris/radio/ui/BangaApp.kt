@@ -46,13 +46,17 @@ fun BangaApp(app: AppState) {
     var worldQuery by rememberSaveable { mutableStateOf("") }
     var podcastQuery by rememberSaveable { mutableStateOf("") }
     var openPodcastId by rememberSaveable { mutableStateOf<Long?>(null) }
+    var openStation by rememberSaveable { mutableStateOf<String?>(null) }
     val openPodcast = openPodcastId?.let { lt.eteris.radio.PodcastRepository.podcast(it) }
     val genre = genreName?.let { n -> Genre.entries.firstOrNull { it.name == n } }
 
     BackHandler(enabled = playerOpen) { playerOpen = false }
     BackHandler(enabled = settingsOpen && !playerOpen) { settingsOpen = false }
-    BackHandler(enabled = !playerOpen && !settingsOpen && openPodcast != null && tab == Tab.PODCASTS) { openPodcastId = null }
-    BackHandler(enabled = !playerOpen && !settingsOpen && tab != Tab.HOME && !(openPodcast != null && tab == Tab.PODCASTS)) { tab = Tab.HOME }
+    val inPodcastPage = tab == Tab.PODCASTS && (openPodcast != null || openStation != null)
+    BackHandler(enabled = !playerOpen && !settingsOpen && inPodcastPage) {
+        if (openPodcast != null) openPodcastId = null else openStation = null
+    }
+    BackHandler(enabled = !playerOpen && !settingsOpen && tab != Tab.HOME && !inPodcastPage) { tab = Tab.HOME }
 
     androidx.compose.material3.MaterialTheme(
         colorScheme = androidx.compose.material3.darkColorScheme(
@@ -75,14 +79,16 @@ fun BangaApp(app: AppState) {
                 onSettings = { settingsOpen = true },
                 world = world, onWorld = { world = it },
                 worldQuery = worldQuery, onWorldQuery = { worldQuery = it },
+                onOpenPodcast = { openStation = null; openPodcastId = it.id; tab = Tab.PODCASTS },
             )
-            Tab.PODCASTS -> if (openPodcast != null) {
-                lt.eteris.radio.ui.PodcastPage(app, openPodcast) { openPodcastId = null }
-            } else {
-                PodcastsScreen(
+            Tab.PODCASTS -> when {
+                openPodcast != null -> PodcastPage(app, openPodcast) { openPodcastId = null }
+                openStation != null -> StationShowsPage(app, openStation!!, onBack = { openStation = null }, onOpenPodcast = { openPodcastId = it.id })
+                else -> PodcastsScreen(
                     app, podcastQuery, { podcastQuery = it },
                     onSettings = { settingsOpen = true },
                     onOpenPodcast = { openPodcastId = it.id },
+                    onOpenStation = { openStation = it },
                 )
             }
             Tab.FAVORITES -> FavoritesScreen(app, onSettings = { settingsOpen = true }, onExplore = { tab = Tab.EXPLORE })

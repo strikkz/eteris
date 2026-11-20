@@ -107,4 +107,7 @@
     <string name="podcast_empty_subs">Підпишіться на подкаст – його нові епізоди з’являться тут.</string>
     <string name="speed">Швидкість</string>
     <string name="phr_shows">Передачі Power Hit Radio</string>
+    <string name="station_shows">Передачі радіостанцій</string>
+    <string name="podcasts_and_shows">Подкасти та передачі</string>
+    <string name="shows_count">Передач: %1$d</string>
 </resources>

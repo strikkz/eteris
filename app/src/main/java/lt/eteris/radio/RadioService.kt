@@ -547,9 +547,10 @@ class RadioService : MediaLibraryService() {
         else items.drop(page.coerceAtLeast(0) * pageSize).take(pageSize)
 
     /** Turns a request (an id, or a voice search like "play Power Hit Radio") into a playable station. */
-    private fun resolve(item: MediaItem, all: List<Station>): MediaItem? {
+    private suspend fun resolve(item: MediaItem, all: List<Station>): MediaItem? {
         if (PodcastRepository.isEpisode(item.mediaId)) {
-            PodcastRepository.episode(item.mediaId)?.let { return it.toMediaItem() }
+            PodcastRepository.playable(item.mediaId)?.let { return it.toMediaItem() }
+            if (PodcastRepository.episode(item.mediaId) != null) return null   // its recording could not be found
             // Not known in this process (yet): the app sends the address along.
             val uri = item.requestMetadata.mediaUri ?: return null
             return item.buildUpon().setUri(uri).build()
@@ -695,6 +696,10 @@ class RadioService : MediaLibraryService() {
             val all = StationRepository.ensureLoaded(this@RadioService)
             val resolved = mediaItems.mapNotNull { resolve(it, all) }
             val first = resolved.firstOrNull()
+            if (first == null && PodcastRepository.isEpisode(mediaItems.firstOrNull()?.mediaId)) {
+                // The recording could not be found on the station's site: do not start some radio station instead.
+                return@future MediaSession.MediaItemsWithStartPosition(emptyList(), 0, C.TIME_UNSET)
+            }
             if (first != null && PodcastRepository.isEpisode(first.mediaId)) {
                 // An episode plays on its own, from where it was left off.
                 return@future MediaSession.MediaItemsWithStartPosition(

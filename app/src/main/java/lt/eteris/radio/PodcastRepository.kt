@@ -122,10 +122,11 @@ object PodcastRepository {
 
     private const val COUNTRY = "lt"
     private const val UA = "BANGA/2.0 (Android; podcasts)"
+    private const val BROWSER_UA = "Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Mobile Safari/537.36"
 
     /** Every episode seen this session (and the saved ones), so the player can find them by id. */
-    private val episodes = ConcurrentHashMap<String, Episode>()
-    private val podcasts = ConcurrentHashMap<Long, Podcast>()
+    internal val episodes = ConcurrentHashMap<String, Episode>()
+    internal val podcasts = ConcurrentHashMap<Long, Podcast>()
     private val feedCache = ConcurrentHashMap<Long, Pair<Long, List<Episode>>>()
     private val listCache = ConcurrentHashMap<String, Pair<Long, List<Podcast>>>()
 
@@ -166,6 +167,17 @@ object PodcastRepository {
         }
     }
 
+    /** One podcast from the directory by its id. */
+    suspend fun lookupOne(id: Long): Podcast? = withContext(Dispatchers.IO) { lookup(listOf(id))?.firstOrNull() }
+
+    /** The episode ready to play: station recordings whose audio address is on their page get it looked up now. */
+    suspend fun playable(id: String?): Episode? {
+        val ep = episode(id) ?: return null
+        if (!ep.audioUrl.startsWith("lazy:")) return ep
+        val real = StationShows.resolveAudio(ep.audioUrl) ?: return null
+        return ep.copy(audioUrl = real).also { episodes[it.id] = it }
+    }
+
     private suspend fun lookup(ids: List<Long>): List<Podcast>? {
         if (ids.isEmpty()) return emptyList()
         val text = get("https://itunes.apple.com/lookup?entity=podcast&country=$COUNTRY&id=" + ids.joinToString(","))
@@ -192,7 +204,7 @@ object PodcastRepository {
         }
     }
 
-    private suspend fun cached(key: String, load: suspend () -> List<Podcast>?): List<Podcast>? {
+    internal suspend fun cached(key: String, load: suspend () -> List<Podcast>?): List<Podcast>? {
         listCache[key]?.let { (at, list) -> if (SystemClock.elapsedRealtime() - at < 30 * 60_000) return list }
         val list = withContext(Dispatchers.IO) { load() } ?: return null
         listCache[key] = SystemClock.elapsedRealtime() to list
@@ -205,6 +217,15 @@ object PodcastRepository {
     suspend fun episodes(p: Podcast, force: Boolean = false): List<Episode>? {
         podcasts[p.id] = p
         if (p.feedUrl.startsWith(PHR_FEED)) return powerHitEpisodes(p)
+        if (StationShows.isStationFeed(p.feedUrl)) {
+            if (!force) feedCache[p.id]?.let { (at, list) -> if (SystemClock.elapsedRealtime() - at < 15 * 60_000) return list }
+            val list = withContext(Dispatchers.IO) { runCatching { StationShows.episodesOf(p) }.getOrNull() } ?: return null
+            // Keep an already resolved audio address (station recordings are looked up on first play).
+            val merged = list.map { e -> episodes[e.id]?.takeIf { !it.audioUrl.startsWith("lazy:") }?.let { e.copy(audioUrl = it.audioUrl) } ?: e }
+            merged.forEach { episodes[it.id] = it }
+            feedCache[p.id] = SystemClock.elapsedRealtime() to merged
+            return merged
+        }
         if (!force) feedCache[p.id]?.let { (at, list) -> if (SystemClock.elapsedRealtime() - at < 15 * 60_000) return list }
         val feed = withContext(Dispatchers.IO) {
             val text = get(p.feedUrl) ?: return@withContext null
@@ -262,7 +283,7 @@ object PodcastRepository {
         }.toList()
     }
 
-    private fun unescape(s: String) = android.text.Html.fromHtml(s, android.text.Html.FROM_HTML_MODE_LEGACY).toString()
+    internal fun unescape(s: String) = android.text.Html.fromHtml(s, android.text.Html.FROM_HTML_MODE_LEGACY).toString()
 
     /** The show's broadcast hours of the last week, newest first (only hours that have ended). */
     private suspend fun powerHitEpisodes(p: Podcast): List<Episode>? {
@@ -438,7 +459,7 @@ object PodcastRepository {
     }
 
     /** Feed descriptions are HTML: keep the words and line breaks only. */
-    private fun plain(html: String): String {
+    internal fun plain(html: String): String {
         var t = html.replace(Regex("(?i)<br\\s*/?>|</p>|</li>"), "\n")
         t = t.replace(Regex("<[^>]+>"), "")
         t = android.text.Html.fromHtml(t, android.text.Html.FROM_HTML_MODE_LEGACY).toString()
@@ -448,7 +469,7 @@ object PodcastRepository {
     private fun hash(s: String): String =
         MessageDigest.getInstance("SHA-1").digest(s.toByteArray()).take(8).joinToString("") { "%02x".format(it) }
 
-    private fun get(url: String): String? {
+    internal fun get(url: String, post: String? = null, headers: Map<String, String> = emptyMap()): String? {
         var target = url
         repeat(5) {
             try {
@@ -456,7 +477,15 @@ object PodcastRepository {
                 conn.connectTimeout = 8000
                 conn.readTimeout = 15000
                 conn.instanceFollowRedirects = false
-                conn.setRequestProperty("User-Agent", UA)
+                // Some station sites send nothing to unknown apps: introduce as a phone browser.
+                conn.setRequestProperty("User-Agent", if (headers.isEmpty() && post == null && target.contains("itunes.apple.com")) UA else BROWSER_UA)
+                headers.forEach { (k, v) -> conn.setRequestProperty(k, v) }
+                if (post != null) {
+                    conn.requestMethod = "POST"
+                    conn.doOutput = true
+                    if ("Content-Type" !in headers) conn.setRequestProperty("Content-Type", "application/json; charset=utf-8")
+                    conn.outputStream.use { it.write(post.toByteArray()) }
+                }
                 try {
                     val code = conn.responseCode
                     if (code in 300..399) {

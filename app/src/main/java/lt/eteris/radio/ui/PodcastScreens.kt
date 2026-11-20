@@ -65,6 +65,7 @@ import lt.eteris.radio.Podcast
 import lt.eteris.radio.PodcastRepository
 import lt.eteris.radio.Progress
 import lt.eteris.radio.R
+import lt.eteris.radio.StationShows
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -133,7 +134,7 @@ private fun PodcastTile(p: Podcast, onClick: () -> Unit) {
 }
 
 @Composable
-private fun PodcastRow(p: Podcast, index: Int? = null, onClick: () -> Unit) {
+internal fun PodcastRow(p: Podcast, index: Int? = null, onClick: () -> Unit) {
     Row(
         Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).clickable(onClick = onClick).padding(vertical = 7.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -237,17 +238,16 @@ fun PodcastsScreen(
     onQuery: (String) -> Unit,
     onSettings: () -> Unit,
     onOpenPodcast: (Podcast) -> Unit,
+    onOpenStation: (String) -> Unit = {},
 ) {
     val ctx = LocalContext.current
     var top by remember { mutableStateOf<List<Podcast>?>(null) }
     var lrt by remember { mutableStateOf<List<Podcast>?>(null) }
-    var phr by remember { mutableStateOf<List<Podcast>?>(null) }
     var failed by remember { mutableStateOf(false) }
     var attempt by remember { mutableIntStateOf(0) }
     LaunchedEffect(attempt) {
         val t = PodcastRepository.topLithuania()
         val l = PodcastRepository.lrt()
-        phr = PodcastRepository.powerHitShows()
         top = t; lrt = l
         failed = t == null && l == null
     }
@@ -328,12 +328,10 @@ fun PodcastsScreen(
                 }
             }
         }
-        phr?.takeIf { it.isNotEmpty() }?.let { list ->
-            item { SectionHeader(stringResource(R.string.phr_shows)) }
-            item {
-                LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    items(list, key = { "p" + it.id }) { p -> PodcastTile(p) { onOpenPodcast(p) } }
-                }
+        item { SectionHeader(stringResource(R.string.station_shows)) }
+        item {
+            LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                items(StationShows.groups, key = { "g" + it.key }) { g -> StationGroupTile(g) { onOpenStation(g.key) } }
             }
         }
         top?.takeIf { it.isNotEmpty() }?.let { list ->
@@ -342,6 +340,65 @@ fun PodcastsScreen(
         }
         if (top == null && lrt == null && !failed) {
             item { Text(stringResource(R.string.loading), style = Banga.supporting, color = Banga.textSecondary, modifier = Modifier.padding(top = 20.dp)) }
+        }
+    }
+}
+
+// ---------- Radio stations' own shows ----------
+
+@Composable
+private fun StationGroupTile(g: StationShows.Group, onClick: () -> Unit) {
+    Column(Modifier.width(110.dp).clip(RoundedCornerShape(16.dp)).clickable(onClick = onClick)) {
+        Box(Modifier.size(110.dp).clip(RoundedCornerShape(22.dp)).background(Color.White), contentAlignment = Alignment.Center) {
+            AsyncImage(model = lt.eteris.radio.Art.uri(g.logo), contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize())
+        }
+        Spacer(Modifier.height(8.dp))
+        Text(g.name, style = Banga.supporting, fontWeight = FontWeight.SemiBold, color = Banga.text, maxLines = 2, overflow = TextOverflow.Ellipsis)
+    }
+}
+
+/** One station's shows (recordings from its own site). */
+@Composable
+fun StationShowsPage(app: AppState, key: String, onBack: () -> Unit, onOpenPodcast: (Podcast) -> Unit) {
+    val g = StationShows.groups.firstOrNull { it.key == key } ?: return
+    var shows by remember(key) { mutableStateOf<List<Podcast>?>(null) }
+    var failed by remember(key) { mutableStateOf(false) }
+    var attempt by remember { mutableIntStateOf(0) }
+    LaunchedEffect(key, attempt) {
+        val l = StationShows.shows(key)
+        shows = l; failed = l == null
+    }
+    LazyColumn(
+        Modifier.fillMaxSize().blockTouchesBelow().background(Banga.bg).statusBarsPadding(),
+        contentPadding = PaddingValues(start = SIDE, end = SIDE, bottom = DOCK_SPACE),
+    ) {
+        item {
+            Row(Modifier.fillMaxWidth().padding(top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+                CircleButton(R.drawable.ic_arrow_back, stringResource(R.string.back), onBack)
+                Spacer(Modifier.weight(1f))
+                Text(stringResource(R.string.station_shows).uppercase(), style = Banga.eyebrow, color = Banga.textSecondary)
+                Spacer(Modifier.weight(1f))
+                Spacer(Modifier.size(44.dp))
+            }
+        }
+        item {
+            Row(Modifier.fillMaxWidth().padding(top = 18.dp, bottom = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+                Box(Modifier.size(72.dp).clip(RoundedCornerShape(18.dp)).background(Color.White)) {
+                    AsyncImage(model = lt.eteris.radio.Art.uri(g.logo), contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize())
+                }
+                Spacer(Modifier.width(16.dp))
+                Column {
+                    Text(g.name, style = Banga.section.copy(fontSize = 22.sp, lineHeight = 26.sp), color = Banga.text)
+                    shows?.let { Text(stringResource(R.string.shows_count, it.size), style = Banga.supporting, color = Banga.textSecondary) }
+                }
+            }
+        }
+        when {
+            shows == null && failed -> item {
+                EmptyBox(stringResource(R.string.podcasts_error), "") { Pill(stringResource(R.string.retry), { attempt++ }) }
+            }
+            shows == null -> item { Text(stringResource(R.string.loading), style = Banga.supporting, color = Banga.textSecondary, modifier = Modifier.padding(top = 12.dp)) }
+            else -> items(shows.orEmpty(), key = { "s" + it.id }) { p -> PodcastRow(p) { onOpenPodcast(p) } }
         }
     }
 }

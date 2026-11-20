@@ -108,4 +108,7 @@
     <string name="podcast_empty_subs">Užsiprenumeruok podkastą – nauji jo epizodai atsiras čia.</string>
     <string name="speed">Greitis</string>
     <string name="phr_shows">Power Hit Radio laidos</string>
+    <string name="station_shows">Radijo stočių laidos</string>
+    <string name="podcasts_and_shows">Podkastai ir laidos</string>
+    <string name="shows_count">Laidų: %1$d</string>
 </resources>

@@ -257,6 +257,7 @@ fun ExploreScreen(
     onWorld: (Boolean) -> Unit,
     worldQuery: String,
     onWorldQuery: (String) -> Unit,
+    onOpenPodcast: (lt.eteris.radio.Podcast) -> Unit = {},
 ) {
     if (world) {
         WorldExplore(app, worldQuery, onWorldQuery, onSettings, onWorld)
@@ -273,6 +274,21 @@ fun ExploreScreen(
         }
     }
     val browsing = query.isBlank() && genre == null
+
+    // A search here also looks through podcasts and station shows (people search here first).
+    var pods by remember { mutableStateOf<List<lt.eteris.radio.Podcast>>(emptyList()) }
+    var podsLoading by remember { mutableStateOf(false) }
+    LaunchedEffect(query, genre) {
+        val q = query.trim()
+        if (q.length < 2 || genre != null) { pods = emptyList(); return@LaunchedEffect }
+        kotlinx.coroutines.delay(450)
+        podsLoading = true
+        if (lt.eteris.radio.StationShows.known.isEmpty()) runCatching { lt.eteris.radio.StationShows.loadAll() }
+        val local = lt.eteris.radio.StationShows.known.filter { it.title.contains(q, ignoreCase = true) }
+        val apple = lt.eteris.radio.PodcastRepository.search(q).orEmpty()
+        pods = (local + apple).distinctBy { it.id }.take(15)
+        podsLoading = false
+    }
 
     LazyColumn(
         Modifier.fillMaxSize().statusBarsPadding(),
@@ -292,7 +308,7 @@ fun ExploreScreen(
                     items(genres) { (g, _) -> GenreChip(g, g == genre) { onGenre(if (g == genre) null else g) } }
                 }
             }
-            if (results.isEmpty()) {
+            if (results.isEmpty() && pods.isEmpty() && !podsLoading) {
                 item {
                     EmptyBox(stringResource(R.string.no_results), query) {
                         Pill(stringResource(R.string.clear_search), { onQuery(""); onGenre(null) })
@@ -305,6 +321,10 @@ fun ExploreScreen(
                     onClick = { app.play(results, i) },
                     onFavorite = { app.toggleFavorite(st.id) },
                 )
+            }
+            if (pods.isNotEmpty()) {
+                item { SectionHeader(stringResource(R.string.podcasts_and_shows)) }
+                items(pods, key = { "pod_" + it.id }) { p -> PodcastRow(p) { onOpenPodcast(p) } }
             }
         } else {
             item { SectionHeader(stringResource(R.string.genres_moods)) }
