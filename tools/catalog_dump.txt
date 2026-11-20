@@ -1,62 +1,44 @@
-== apple search
-Power Hit Radio | 1630995098 | Power Hit Radio | Radio GenZed | https://www.spreaker.com/show/5473114/episodes/feed | 2022-03-18T09:07:00Z
-Power Hit Radio | 1821842843 | Power Hit Radio svečiai | infoutn | https://feed.podbean.com/infoutn/feed.xml | 2026-11-13T12:11:00Z
-powerhitradio | 1630995098 | Power Hit Radio | Radio GenZed | https://www.spreaker.com/show/5473114/episodes/feed | 2022-03-18T09:07:00Z
-PHR | 6826677919 | HR Certification Exam & CE Audio (SHRM-CP & HRCI PHR) | VoraPrep | VoraPrep | https://voraprep.com/podcast/hr.xml | 2026-11-19T20:10:00Z
-PHR | 1624652248 | THE PHR PODCAST | PHR | https://anchor.fm/s/97d81390/podcast/rss | 2022-05-17T08:25:00Z
-PHR | 1543732537 | PHR Final | Jenna Miller | https://anchor.fm/s/42cd7318/podcast/rss | 2020-12-06T22:06:00Z
-PHR | 1540649315 | SJSU PHR - online classes tips | Zahra Mohammady | https://anchor.fm/s/401b6e2c/podcast/rss | 2020-11-14T02:31:00Z
-PHR | 1476393304 | PHR 8190: Community-Based Pharmacy Practice | PHR 8194 by Tim Ulbrich | https://feeds.soundcloud.com/users/soundcloud:users:677075453/sounds.rss | 2020-08-26T14:50:00Z
-PHR | 1507652988 | Trocando ideias com a PHR | PHR Consultoria | https://anchor.fm/s/1bee3d54/podcast/rss | 2020-05-05T17:09:00Z
-PHR | 1460628022 | PHR 3420 Final Project lol | PHR 3420 Final Project lol | https://anchor.fm/s/aa7c4fc/podcast/rss | 2019-04-21T23:36:00Z
-PHR | 1543663459 | PHR3420 Final Project - Izzy Reibold | Isabel Reibold | https://anchor.fm/s/43140e18/podcast/rss | 2020-12-06T16:09:00Z
-PHR | 1473743329 | PHR 3420 Final Project: The Media and America’s Drug-Taking Culture | Jovana Demonjic | https://anchor.fm/s/cd8f250/podcast/rss | 2019-07-21T15:27:00Z
-PHR | 1510309211 | PHR3420 Podcast | Brooke h | https://anchor.fm/s/1e3ab5c4/podcast/rss | 2020-05-01T03:36:00Z
-PHR | 1460692615 | Christie Cannon PHR Final Project | Christie Cannon | https://anchor.fm/s/aa82834/podcast/rss | 2019-04-22T01:55:00Z
-PHR | 1571643199 | Social Media, Conspiracy Theories, and Vaccine Hesitancy - PHR 5410 | Sarabeth Anderson | https://anchor.fm/s/5780f35c/podcast/rss | 2021-04-22T02:57:00Z
-PHR | 1462441276 | PHR3420 Final - Amrhein | Anna | https://anchor.fm/s/b095eec/podcast/rss | 2019-05-01T18:51:00Z
-PHR | 1503185870 | Phenom Hoops Interviews | PHR Interviews | https://anchor.fm/s/1547fb98/podcast/rss | 2020-03-11T02:24:00Z
-tv3 podcast | 6807280514 | Disc 3 Podcast | Simon Hohneke & Daniel Kastello | https://anchor.fm/s/116b52478/podcast/rss | 2026-09-15T05:10:00Z
-tv3 podcast | 1685572305 | The Dropped in 3 Podcast | Dropped In 3 | https://anchor.fm/s/df450b20/podcast/rss | 2023-04-30T21:22:00Z
-tv3 podcast | 1556016333 | Binario 3 Podcast | Binario 3 | https://anchor.fm/s/3d6adac8/podcast/rss | 2022-12-31T18:12:00Z
-tv3 podcast | 1497192019 | À Melhor de 3 - Podcast de Séries | À Melhor de 3 | https://anchor.fm/s/12cfee20/podcast/rss | 2020-04-14T22:04:00Z
-tv3 podcast | 1560757859 | The Top 3 Podcast | Romina | https://anchor.fm/s/5371345c/podcast/rss | 2021-05-17T02:07:00Z
-tv3 podcast | 1652064379 | El Estudio by Toma3 Podcast | El Estudio | https://anchor.fm/s/c61871f0/podcast/rss | 2023-06-07T10:00:00Z
-tv3 podcast | 1535025935 | Viaplay Håndboldbestyrelsen Podcast | VIAPLAY & TV3 SPORT | https://feed.khz.se/viaplay-handboldbestyrelsen-podcast | 2021-01-11T23:20:00Z
-tv3 podcast | 1237297340 | Wrapped in Podcast: Twin Peaks Season 3 | Wrapped in Podcast: Twin Peaks Season 3 | https://feeds.soundcloud.com/users/soundcloud:users:75517121/sounds.rss | 2020-12-20T23:38:00Z
-tv3 podcast | 474380660 | Transporter Room 3: The Star Trek Podcast | Transporter Room 3 | https://www.spreaker.com/show/5502908/episodes/feed | 2026-10-30T00:19:00Z
-tv3 podcast | 1001323963 | 3rd & Fairfax: The WGAW Podcast | Writers Guild of America West | https://rss.libsyn.com/shows/67522/destinations/275333.xml | 2026-11-05T17:33:00Z
-tv3 podcast | 1837057842 | Hoy En Dia TV 3.0- Bilingual Lifestyle Show | Yesse Rodriguez | https://media.rss.com/hoyendiatv/feed.xml | 2026-11-18T15:30:00Z
-tv3 podcast | 272406517 | Chuck vs. the Podcast - Standard mp3 | Gray Jones | http://www.chuckpodcast.com/mp3_rss.xml | 2012-03-16T16:00:00Z
-tv3 podcast | 95878413 | Park Hopping 3-D Video Podcast | Allen Huffman | https://feeds.feedburner.com/parkhopping3d | 2007-05-02T01:57:00Z
-tv3 podcast | 1022737612 | GeekVerse Podcast | GeekVerse Geek TV Movies Spoilers Review Trailer Marvel MCU DC DCU PlayStation PS5 Batman Avengers Doomsday Encore Leak Spider-Man Brand New Day Dune 3 Grand Theft Auto GTA 6 VI Dexter Resurrection James Gunn Hunger Games | https://www.spreaker.com/show/4201268/episodes/feed?fbclid=IwAR1E42zBldbIZiyjI51KmsLs2ilmQqDWVWC_dIq2UpvUJZH0AUYE3ckd9_8 | 2026-11-19T06:32:00Z
-== laidos page
-200 295153
-href="/apie-pwr/laidu-vedejai"
-href="/laidos"
-href="/laidos/#"
-href="/laidos/beleo-vibes"
-href="/laidos/cosmology"
-href="/laidos/decks-and-stories"
-href="/laidos/dj-cafe-radio"
-href="/laidos/driule-the-gang"
-href="/laidos/flow-music-radio"
-href="/laidos/g-spot-dj-s-on-air"
-href="/laidos/ignotaviciute-groja"
-href="/laidos/jovaniclub"
-href="/laidos/lost-and-found"
-href="/laidos/megahitai"
-href="/laidos/musical-freedom"
-href="/laidos/pagaminta-lietuvoje"
-href="/laidos/power-hitai"
-href="/laidos/power-popiete"
-href="/laidos/power-savaitgalis"
-href="/laidos/sok-i-kelnes"
-href="/laidos/sundu"
-href="/laidos/ten-walls"
-href="/laidos/tom-bones"
-href="https://apps.apple.com/lt/app/power-hit-radio-lietuva/id1363058098"
-href="https://powerhitradio.tv3.lt/laidos"
-href="https://powerhitradio.tv3.lt/laidos/tiesto-prismatic"
-href="https://www.youtube.com/user/powerhitradiolt"
-<h2 class="sc_item_title sc_title_title sc_align_left sc_item_title_style_accent">Laidų Archyvas</h2>
+== driule-the-gang 205154
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
+<audio src="https://stream.rcs.revma.com/f31w7e0fveuvv" id="pwrLiveAudio"
+== megahitai 295173
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
+<source src="'+ fLi[a] +'" title="'+ttl+'" type="audio/mpeg"
+<audio preload="auto" autoplay="true"
+<audio src="https://stream.rcs.revma.com/f31w7e0fveuvv" id="pwrLiveAudio"
+== ten-walls 204819
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
+<audio src="https://stream.rcs.revma.com/f31w7e0fveuvv" id="pwrLiveAudio"
+== power-savaitgalis 209899
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
+<audio src="/record/pwr_20261114150000.mp3"
+<audio src="/record/pwr_20261114140000.mp3"
+<audio src="/record/pwr_20261114130000.mp3"
+<audio src="/record/pwr_20261114120000.mp3"
+== jovaniclub 210115
+https://soundcloud.com/jovaniatclub
+https://soundcloud.com/jovaniatclub/sets/jovani-club-phr
+https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1467316744&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
+<audio src="/record/pwr_20261114210000.mp3"
+<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1467316744&color=%23ff5500&auto_play=true&h
+<audio src="https://stream.rcs.revma.com/f31w7e0fveuvv" id="pwrLiveAudio"
+== sok-i-kelnes 218613
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
+<audio src="/record/pwr_20261120100000.mp3"
+<audio src="/record/pwr_20261120090000.mp3"
+<audio src="/record/pwr_20261120080000.mp3"
+<audio src="/record/pwr_20261120070000.mp3"
+== podbean 'Power Hit Radio svečiai' feed
+<title>Power Hit Radio svečiai
+<pubDate>Fri, 13 Nov 2026 15:13:40 +0300
+<itunes:author>infoutn
+<title>Power Hit Radio svečiai
+<title>Šok Į Kelnes su TV laidos "Skanauk Lietuvą" vedėju Dariumi Katinu!
+<pubDate>Fri, 13 Nov 2026 15:13:40 +0300
+<itunes:author>infoutn
+<title>Šok Į Kelnes su astronome One Mikulskyte
+<pubDate>Fri, 13 Nov 2026 15:11:27 +0300
+<itunes:author>infoutn
+<title>Šok Į Kelnes su veterinarėmis Gabriele ir Egle
+<pubDate>Fri, 13 Nov 2026 15:10:55 +0300
