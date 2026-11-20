@@ -1,9 +1,17 @@
-30 https://www.marijosradijas.lt/dummy-laidos.html nextlatest ERR HTTP Error 404: Not Found
-30 naujausi-laidu-irasai.html nextlatest 13 ['Skelbimai', 'Aktualijos', 'Ateikite kurti'] ['https://marijosradijas.lt/marijosradijas.mp3']
-30 laidos-nuo-a-iki-z.html getnextpage 1 ['Skelbimai'] ['https://marijosradijas.lt/marijosradijas.mp3']
-38 https://www.marijosradijas.lt/dummy-laidos.html nextlatest ERR HTTP Error 404: Not Found
-38 naujausi-laidu-irasai.html nextlatest 13 ['Skelbimai', 'Aktualijos', 'Ateikite kurti'] ['https://marijosradijas.lt/marijosradijas.mp3']
-38 laidos-nuo-a-iki-z.html getnextpage 1 ['Skelbimai'] ['https://marijosradijas.lt/marijosradijas.mp3']
-21 https://www.marijosradijas.lt/dummy-laidos.html nextlatest ERR HTTP Error 404: Not Found
-21 naujausi-laidu-irasai.html nextlatest 13 ['Skelbimai', 'Aktualijos', 'Ateikite kurti'] ['https://marijosradijas.lt/marijosradijas.mp3']
-21 laidos-nuo-a-iki-z.html getnextpage 1 ['Skelbimai'] ['https://marijosradijas.lt/marijosradijas.mp3']
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:BANDWIDTH=194503,CODECS="mp4a.40.2"
+chunklist_w1808946384_DVR.m3u8
+chunklist lines: 2154
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:11
+#EXT-X-MEDIA-SEQUENCE:86063
+#EXTINF:10.048,
+media_w1808946384_DVR_86063.aac
+#EXTINF:10.048,
+media_w1808946384_DVR_86064.aac
+1075
+#EXTINF:10.048,
+#EXTINF:10.048,
+total hours 3.0
