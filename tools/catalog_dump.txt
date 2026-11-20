@@ -1,44 +1,9 @@
-== driule-the-gang 205154
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
-<audio src="https://stream.rcs.revma.com/f31w7e0fveuvv" id="pwrLiveAudio"
-== megahitai 295173
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
-<source src="'+ fLi[a] +'" title="'+ttl+'" type="audio/mpeg"
-<audio preload="auto" autoplay="true"
-<audio src="https://stream.rcs.revma.com/f31w7e0fveuvv" id="pwrLiveAudio"
-== ten-walls 204819
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
-<audio src="https://stream.rcs.revma.com/f31w7e0fveuvv" id="pwrLiveAudio"
-== power-savaitgalis 209899
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
-<audio src="/record/pwr_20261114150000.mp3"
-<audio src="/record/pwr_20261114140000.mp3"
-<audio src="/record/pwr_20261114130000.mp3"
-<audio src="/record/pwr_20261114120000.mp3"
-== jovaniclub 210115
-https://soundcloud.com/jovaniatclub
-https://soundcloud.com/jovaniatclub/sets/jovani-club-phr
-https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1467316744&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
-<audio src="/record/pwr_20261114210000.mp3"
-<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1467316744&color=%23ff5500&auto_play=true&h
-<audio src="https://stream.rcs.revma.com/f31w7e0fveuvv" id="pwrLiveAudio"
-== sok-i-kelnes 218613
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM2ZTMW" height="0" width="0" style="display:none;visibility:hidden"
-<audio src="/record/pwr_20261120100000.mp3"
-<audio src="/record/pwr_20261120090000.mp3"
-<audio src="/record/pwr_20261120080000.mp3"
-<audio src="/record/pwr_20261120070000.mp3"
-== podbean 'Power Hit Radio svečiai' feed
-<title>Power Hit Radio svečiai
-<pubDate>Fri, 13 Nov 2026 15:13:40 +0300
-<itunes:author>infoutn
-<title>Power Hit Radio svečiai
-<title>Šok Į Kelnes su TV laidos "Skanauk Lietuvą" vedėju Dariumi Katinu!
-<pubDate>Fri, 13 Nov 2026 15:13:40 +0300
-<itunes:author>infoutn
-<title>Šok Į Kelnes su astronome One Mikulskyte
-<pubDate>Fri, 13 Nov 2026 15:11:27 +0300
-<itunes:author>infoutn
-<title>Šok Į Kelnes su veterinarėmis Gabriele ir Egle
-<pubDate>Fri, 13 Nov 2026 15:10:55 +0300
+empty_space_inner"></span></div> </div> </div> </div> </div> <div class="vc_row-full-width vc_clearfix"></div> <div class="djLaidosFonas"> <div class="djLaidosFonasLine"> Pr <span>/</span> An <span>/</span> Tr <span>/</span> Kt <span>/</span> Pn <span>-</span> nuo 07:00 iki 11:00 </div> </div> <div class="vc_row-full-width vc_clearfix"></div> <div class="vc_empty_space" style="height: 2em"><span class="vc_empty_space_inner"></span></div> <div class="vc_empty_space hide_on_tablet hide_on_mobile" style="height: 1em"><span class="vc_empty_space_inner"></span></div> <div class="vc_row wpb_row vc_row-fluid shape_divider_top-none shape_divider_bottom-none"> <div class="wpb_column vc_column_container vc_col-sm-12 sc_layouts_column_icons_position_left"> <div class="vc_column-inner"> <div class="wpb_wrapper"> <div class="sc_title color_style_default sc_title_accent"> <div class="title-wrap al-left"> <div class="style-bg"> <h2 class="sc_item_title sc_title_title sc_align_left sc_item_title_style_accent">Laidos įrašai</h2> </div> </div> </div> </div> </div> </div> </div> <div class="vc_empty_space" style="height: 2em"><span class="vc_empty_space_inner"></span></div> <div class="vc_empty_space hide_on_tablet hide_on_mobile" style="height: 1em"><span class="vc_empty_space_inner"></span></div> <div class="vc_row-full-width vc_clearfix"></div> <div class="posts_container"> <div class="post_layout_excerpt post_format_audio format-audio post_format-post-format-audio eventTrackerPlayer"> <div class="trx_addons_audio_wrap list"> <div class="post_meta"> <span class="post_meta_item post_date"> 2026-11-20 10:00:00 </span> </div> <div class="wrap-extra"> <div class="post_featured without_thumb"><div class="post_audio"> <div class="post_audio_author">Šok į kelnes</div> <h5 class="post_audio_title">2026-11-20 10:00:00</h5> <audio src="/record/pwr_20261120100000.mp3"></audio> </div> </div> </div> <div class="vc_empty_space" style="height: 1em"><span class="vc_empty_space_inner"></span></div> <div class="post_meta"> <span class="post_meta_item post_date"> 2026-11-20 09:00:00 </span> </div> <div class="wrap-extra"> <div class="post_featured without_thumb"><div class="post_audio"> <div class="post_audio_author">Šok į kelnes</div> <h5 class="post_audio_title">2026-11-20 09:00:00</h5> <audio src="/record/pwr_20261120090000.mp3"></audio> </div> </div> </div> <div class="vc_empty_space" style="height: 1em"><span class="vc_empty_space_inner"></span></div> <div class="post_meta"> <span class="post_meta_item post_date"> 2026-11-20 08:00:00 </span> </div> <div class="wrap-extra"> <div class="post_featured without_thumb"><div class="post_audio"> <div class="post_audio_author">Šok į kelnes</div> <h5 class="post_audio_title">2026-11-20 08:00:00</h5> <audio src="/record/pwr_20261120080000.mp3"></audio> </div> </div> </div> <div class="vc_empty_space" style="height: 1em"><span class="vc_empty_space_inner"></span></div> <div class="post_meta"> <span class="post_meta_item post_date"> 2026-11-20 07:00:00 </span> </div> <div class="wrap-extra"> <div class="post_featured without_thumb"><div class="post_audio"> <div class="post_
+COUNT 20
+['20261116', '20261117', '20261118', '20261119', '20261120']
+OG https://powerhitradio.tv3.lt/static.php?v=1.0.34&t=i&f=/Uploads/NodeImages/5fd0a131a474c643827943.png
+DESC Power Hit Radio | Šokių muzikos hitai NR1
+HTTP/2 200 
+content-type: audio/mpeg
+content-length: 57665829
+accept-ranges: bytes
