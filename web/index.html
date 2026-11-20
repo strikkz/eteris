@@ -177,6 +177,48 @@ input[type=range]{accent-color:var(--accent);width:110px}
 .opt:hover{background:var(--raised)}
 .opt[aria-checked=true]::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
 .kv{display:flex;justify-content:space-between;padding:13px 14px;color:var(--text2)}
+/* podcasts */
+.ptile{flex:none;width:132px;text-align:left}
+.ptile .cov{width:132px;height:132px}
+.ptile b{display:block;margin-top:8px;font-size:12px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ptile small{display:block;color:var(--text2);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cov{flex:none;border-radius:14px;overflow:hidden;background:var(--raised) center/cover no-repeat;display:grid;place-items:center;color:var(--text2)}
+.cov img{width:100%;height:100%;object-fit:cover}
+.prow{display:flex;align-items:center;gap:14px;padding:7px 8px;margin:0 -8px;border-radius:16px;cursor:pointer;text-align:left;width:calc(100% + 16px)}
+.prow:hover{background:var(--surface)}
+.prow .n{width:22px;color:var(--text2);font-weight:700;font-size:12px}
+.prow .meta{flex:1;min-width:0}
+.prow b{display:block;font-size:15px;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prow small{display:block;color:var(--text2);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.erow{display:flex;align-items:center;gap:12px;padding:10px 8px;margin:0 -8px;border-radius:16px;cursor:pointer}
+.erow:hover{background:var(--surface)}
+.erow .meta{flex:1;min-width:0}
+.erow .pt{font-size:11px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.erow b{display:block;font-size:15px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.erow.done b{color:var(--text2)} .erow.on b{color:var(--accent)}
+.erow small{display:block;color:var(--text2);font-size:11px;margin-top:3px}
+.erow .mark{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:var(--muted);font-size:14px}
+.erow .mark:hover{background:var(--raised);color:var(--text)}
+.erow .eplay{width:40px;height:40px;border-radius:50%;border:1px solid var(--outline);display:grid;place-items:center;flex:none}
+.erow .eplay svg{width:18px;height:18px}
+.bar{height:3px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent)}
+.ccard{flex:none;width:272px;padding:12px;border-radius:20px;background:var(--surface);border:1px solid transparent;cursor:pointer;text-align:left}
+.ccard.on{border-color:var(--accent)}
+.ccard .top{display:flex;gap:12px;align-items:center}
+.ccard b{display:block;font-size:12px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ccard small{display:block;color:var(--text2);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phead{display:flex;gap:16px;align-items:center;margin-top:18px}
+.phead h1{font-size:22px;line-height:1.15;letter-spacing:-.03em;margin:0 0 4px;text-wrap:balance}
+.phead p{margin:0 0 12px;color:var(--text2);font-size:12px}
+input.seek{width:100%;margin-top:16px;accent-color:var(--accent)}
+.player.ep{background:linear-gradient(to bottom,rgba(29,42,34,.96),rgba(11,13,13,.97) 55%,var(--bg))}
+.times{display:flex;justify-content:space-between;color:var(--text2);font-size:12px}
+.skip{width:60px;height:60px}
+.skip svg{width:30px;height:30px}
+.edesc{margin-top:22px;padding:16px;border-radius:20px;background:rgba(0,0,0,.25);line-height:1.55;color:#D9DED8;white-space:pre-line;cursor:pointer}
+.edesc.short{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.pill.on{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 .toast{position:fixed;left:50%;top:calc(70px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:60;background:#DFFF8B;color:var(--on-accent);
   font-weight:700;font-size:12px;padding:12px 18px;border-radius:24px;max-width:calc(100% - 48px);text-align:center}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -435,6 +477,9 @@ const I = {
   vol:'<svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
   home:'<svg viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20h-5.5v-5h-5v5H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
   explore:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 8.5l-2 5-5 2 2-5z" fill="currentColor"/></svg>',
+  mic:'<svg viewBox="0 0 24 24"><path d="M12 2.5a3.5 3.5 0 0 0-3.5 3.5v6a3.5 3.5 0 0 0 7 0V6A3.5 3.5 0 0 0 12 2.5zM5.6 11.5a.9.9 0 0 0-1.8 0 8.2 8.2 0 0 0 7.3 8.1V21h-2a.9.9 0 0 0 0 1.8h5.8a.9.9 0 0 0 0-1.8h-2v-1.4a8.2 8.2 0 0 0 7.3-8.1.9.9 0 0 0-1.8 0 6.4 6.4 0 0 1-12.8 0z" fill="currentColor"/></svg>',
+  back15:'<svg viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 3.5v3.6h3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><text x="12" y="15.2" text-anchor="middle" font-size="7" font-weight="800" fill="currentColor" font-family="Inter,sans-serif">15</text></svg>',
+  fwd15:'<svg viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 3.5v3.6h-3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><text x="12" y="15.2" text-anchor="middle" font-size="7" font-weight="800" fill="currentColor" font-family="Inter,sans-serif">15</text></svg>',
   wave:'<svg viewBox="0 0 512 512" width="22" height="22"><path d="M60,256c42,0 42,-95 98,-95s42,190 98,190 42,-190 98,-190 42,95 98,95" fill="none" stroke="currentColor" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 };
 const playIcon = st => S.cur && st && S.cur.id === st.id ? (S.status === "playing" ? I.pause : (S.status === "connecting" || S.status === "buffering") ? I.load : I.play) : I.play;
@@ -445,7 +490,7 @@ function statusText(){
 }
 
 /* ================= rendering ================= */
-const TABS = [["home","nav_home",I.home],["explore","nav_explore",I.explore],["favorites","nav_favorites",I.heart]];
+const TABS = [["home","nav_home",I.home],["explore","nav_explore",I.explore],["podcasts","nav_podcasts",I.mic],["favorites","nav_favorites",I.heart]];
 function renderNav(){
   const btn = ([id, k, icon]) => `<button data-tab="${id}" aria-current="${S.tab === id}">${icon}<span>${esc(t(k))}</span></button>`;
   $("nav").innerHTML = TABS.map(btn).join("");
@@ -607,11 +652,12 @@ function renderFavorites(){
 function render(keepFocus){
   document.documentElement.lang = lang;
   renderNav();
-  ({home: renderHome, explore: () => renderExplore(keepFocus), favorites: renderFavorites})[S.tab]();
+  ({home: renderHome, explore: () => renderExplore(keepFocus), podcasts: () => renderPodcasts(keepFocus), favorites: renderFavorites})[S.tab]();
   renderMini(); if(S.playerOpen) renderPlayer(); if(S.settingsOpen) renderSettings();
 }
 
 function renderMini(){
+  if(S.ep){ renderEpMini(); return; }
   const st = S.cur, m = $("mini");
   if(!st){ m.hidden = true; return; }
   m.hidden = false;
@@ -626,7 +672,8 @@ function renderMini(){
 
 function sleepLeft(){ return S.sleepAt ? Math.max(1, Math.ceil((S.sleepAt - Date.now()) / 60000)) : 0; }
 function renderPlayer(){
-  const st = S.cur, p = $("player");
+  if(S.ep){ renderEpPlayer(); return; }
+  const st = S.cur, p = $("player"); p.classList.remove("ep");
   if(!st){ closePlayer(); return; }
   const fav = isFav(st.id), about = aboutOf(st);
   p.innerHTML = `<div class="player-in">
@@ -683,13 +730,15 @@ function updateSongText(){
 const audio = $("audio");
 let variantIdx = 0, hls = null, wantPlay = false, stallTimer = 0, pausedAt = 0;
 audio.volume = store.get("vol", 1);
+audio.preservesPitch = true;
 
 function setStatus(s){ if(S.status === s) return; S.status = s; render(); }
 function play(list, id){
   const st = getSt(id); if(!st) return;
   S.queue = (list && list.length ? list : [st]).map(s => s.id);
   if(!S.queue.includes(id)) S.queue.unshift(id);
-  if(S.cur && S.cur.id === id && S.status !== "idle" && S.status !== "error"){ toggle(); return; }
+  if(!S.ep && S.cur && S.cur.id === id && S.status !== "idle" && S.status !== "error"){ toggle(); return; }
+  if(S.ep){ saveEpProgress(); S.ep = null; audio.playbackRate = 1; }
   S.cur = st; S.song = ""; S.history = [id, ...S.history.filter(x => x !== id)].slice(0, 20);
   store.set("history", S.history); store.set("last", id);
   if(st.world) saveWorld();
@@ -726,11 +775,13 @@ async function start(){
 }
 function fail(){
   if(!wantPlay) return;
+  if(S.ep){ wantPlay = false; S.status = "error"; render(); toast(t("stream_unavailable")); return; }
   variantIdx++;
   if(S.cur && variantIdx < S.cur.vars.length) start();
   else { wantPlay = false; S.status = "error"; render(); toast(t("stream_unavailable")); }
 }
 function toggle(){
+  if(S.ep){ epToggle(); return; }
   if(!S.cur) return;
   if(S.status === "playing" || S.status === "connecting" || S.status === "buffering"){
     wantPlay = false; audio.pause(); pausedAt = Date.now(); npStop(); S.status = "paused"; render();
@@ -742,6 +793,7 @@ function toggle(){
   }
 }
 function step(d){
+  if(S.ep){ skip(d * 15); return; }
   const q = S.queue.length ? S.queue : popular().map(s => s.id);
   if(!q.length) return;
   let i = S.cur ? q.indexOf(S.cur.id) : -1;
@@ -751,7 +803,9 @@ function step(d){
 audio.addEventListener("playing", () => { clearTimeout(stallTimer); if(wantPlay) setStatus("playing"); });
 audio.addEventListener("waiting", () => { if(wantPlay) setStatus("buffering"); clearTimeout(stallTimer); stallTimer = setTimeout(() => { if(wantPlay && audio.readyState < 3) fail(); }, 15000); });
 audio.addEventListener("error", () => { if(wantPlay && !hls) fail(); });
-audio.addEventListener("pause", () => { if(wantPlay && !audio.ended){ /* paused by the system (headset, other tab) */ wantPlay = false; S.status = "paused"; pausedAt = Date.now(); render(); } });
+audio.addEventListener("timeupdate", () => { if(S.ep && Date.now() - lastSave > 5000) saveEpProgress(); if(S.ep && S.playerOpen) updateSeek(); });
+audio.addEventListener("ended", () => { if(S.ep){ saveEpProgress(true); wantPlay = false; S.status = "paused"; render(); } });
+audio.addEventListener("pause", () => { if(S.ep) saveEpProgress(); if(wantPlay && !audio.ended){ /* paused by the system (headset, other tab) */ wantPlay = false; S.status = "paused"; pausedAt = Date.now(); render(); } });
 
 /* ---------- now playing (song title) ---------- */
 const NP = {timer: 0, token: 0, last: null};
@@ -837,7 +891,14 @@ function id3Title(b){
 
 /* ---------- system media controls (keyboard keys, lock screen, headset) ---------- */
 function updateMediaSession(){
-  if(!("mediaSession" in navigator) || !S.cur) return;
+  if(!("mediaSession" in navigator)) return;
+  if(S.ep){
+    navigator.mediaSession.metadata = new MediaMetadata({title: S.ep.title, artist: S.ep.ptitle, album: "BANGA",
+      artwork: S.ep.img ? [{src: S.ep.img, sizes: "600x600", type: "image/jpeg"}] : []});
+    navigator.mediaSession.playbackState = S.status === "playing" ? "playing" : "paused";
+    return;
+  }
+  if(!S.cur) return;
   const st = S.cur;
   navigator.mediaSession.metadata = new MediaMetadata({title: S.song || st.name, artist: S.song ? st.name : "BANGA", album: "BANGA",
     artwork: LOGOS.has(st.id) ? [{src: new URL(`logos/${encodeURIComponent(st.id)}.png`, location.href).href, sizes: "512x512", type: "image/png"}]
@@ -851,6 +912,9 @@ if("mediaSession" in navigator){
   ms.setActionHandler("stop", () => { if(S.status === "playing") toggle(); });
   ms.setActionHandler("previoustrack", () => step(-1));
   ms.setActionHandler("nexttrack", () => step(1));
+  try{ ms.setActionHandler("seekbackward", () => { if(S.ep) skip(-15); }); }catch{}
+  try{ ms.setActionHandler("seekforward", () => { if(S.ep) skip(15); }); }catch{}
+  try{ ms.setActionHandler("seekto", d => { if(S.ep && d.seekTime != null){ audio.currentTime = d.seekTime; saveEpProgress(); } }); }catch{}
 }
 
 /* ---------- sleep timer: fades out, then pauses ---------- */
@@ -885,12 +949,242 @@ function drawWave(){
 }
 
 /* ================= overlays ================= */
-function openPlayer(){ if(!S.cur) return; S.playerOpen = true; S.aboutOpen = false; renderPlayer(); $("player").classList.remove("closed"); document.body.style.overflow = "hidden"; }
+function openPlayer(){ if(!S.cur && !S.ep) return; S.playerOpen = true; S.aboutOpen = false; renderPlayer(); $("player").classList.remove("closed"); document.body.style.overflow = "hidden"; }
 function closePlayer(){ S.playerOpen = false; $("player").classList.add("closed"); if(!S.settingsOpen) document.body.style.overflow = ""; }
 function openSettings(){ S.settingsOpen = true; renderSettings(); $("settings").classList.remove("closed"); document.body.style.overflow = "hidden"; }
 function closeSettings(){ S.settingsOpen = false; $("settings").classList.add("closed"); if(!S.playerOpen) document.body.style.overflow = ""; }
 let toastTimer = 0;
 function toast(msg){ const el = $("toast"); el.textContent = msg; el.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => el.hidden = true, 3500); }
+
+/* ================= podcasts ================= */
+/* Apple's directory (search, Lithuanian chart, episodes) answers browsers directly; podcasts' own RSS feeds usually don't. */
+const P = {top: null, lrt: null, failed: false, loading: false, q: "", res: null, searching: false, open: null, eps: null, epsFail: false,
+  subs: store.get("subs", []), prog: store.get("progress", {}), cache: {}, pods: {}, shown: 30, menu: null, fresh: null};
+const EPS = {};
+let lastSave = 0, pTimer = 0, pToken = 0, descOpen = false;
+async function apple(path){
+  try{
+    const ctl = new AbortController(); const tm = setTimeout(() => ctl.abort(), 12000);
+    const r = await fetch("https://itunes.apple.com/" + path, {signal: ctl.signal}); clearTimeout(tm);
+    return r.ok ? await r.json() : null;
+  }catch{ return null; }
+}
+function podOf(o){
+  if(!o || !o.collectionId) return null;
+  const p = {id: +o.collectionId, title: o.collectionName || o.trackName || "", author: o.artistName || "", art: o.artworkUrl600 || o.artworkUrl100 || ""};
+  P.pods[p.id] = p; return p;
+}
+async function podSearch(q, limit = 50){
+  const k = "s:" + q.toLowerCase(); if(P.cache[k]) return P.cache[k];
+  const j = await apple(`search?media=podcast&entity=podcast&country=lt&limit=${limit}&term=${encodeURIComponent(q)}`);
+  if(!j) return null;
+  return P.cache[k] = (j.results || []).filter(o => o.feedUrl).map(podOf).filter(Boolean);
+}
+async function podTop(){
+  const j = await apple("lt/rss/toppodcasts/limit=50/json"); if(!j) return null;
+  const ids = ((j.feed || {}).entry || []).map(e => e.id && e.id.attributes && e.id.attributes["im:id"]).filter(Boolean);
+  if(!ids.length) return [];
+  const l = await apple(`lookup?entity=podcast&country=lt&id=${ids.join(",")}`); if(!l) return null;
+  const by = {}; (l.results || []).forEach(o => { const p = podOf(o); if(p) by[p.id] = p; });
+  return ids.map(i => by[+i]).filter(Boolean);
+}
+function epHash(s){ let h = 2166136261; for(const c of s){ h ^= c.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; } return h.toString(16); }
+function plain(html){
+  const d = document.createElement("div"); d.innerHTML = String(html || "").replace(/<br\s*\/?>|<\/p>|<\/li>/gi, "\n");
+  return (d.textContent || "").replace(/[ \t]+/g, " ").replace(/\n\s*\n\s*\n+/g, "\n\n").trim();
+}
+async function podEpisodes(p, force){
+  const k = "e:" + p.id; if(P.cache[k] && !force) return P.cache[k];
+  const j = await apple(`lookup?id=${p.id}&entity=podcastEpisode&limit=200&country=lt`); if(!j) return null;
+  const list = (j.results || []).filter(o => o.wrapperType === "podcastEpisode" && o.episodeUrl).map(o => {
+    const ep = {id: "ep:" + p.id + ":" + epHash(o.episodeGuid || o.episodeUrl), pid: p.id, ptitle: p.title, title: (o.trackName || "").trim(),
+      desc: plain(o.description || o.shortDescription || ""), url: o.episodeUrl.replace(/^http:/, "https:"),
+      date: Date.parse(o.releaseDate) || 0, dur: +o.trackTimeMillis || 0, img: o.artworkUrl600 || o.artworkUrl160 || p.art};
+    EPS[ep.id] = ep; return ep;
+  }).sort((a, b) => b.date - a.date);
+  return P.cache[k] = list;
+}
+const isSub = id => P.subs.some(p => p.id === id);
+function toggleSub(p){ P.subs = isSub(p.id) ? P.subs.filter(x => x.id !== p.id) : [p, ...P.subs]; store.set("subs", P.subs); P.fresh = null; render(); }
+function prog(id){ return P.prog[id]; }
+function saveEpProgress(ended){
+  const ep = S.ep; if(!ep) return; lastSave = Date.now();
+  const dur = isFinite(audio.duration) && audio.duration > 0 ? audio.duration * 1000 : ep.dur;
+  const pos = audio.currentTime * 1000;
+  const done = !!ended || (dur > 0 && pos > dur - 60000 && pos > dur * .95);
+  P.prog[ep.id] = {pos: done ? dur : pos, dur, done, at: Date.now(), ep: done ? undefined : ep};
+  const keys = Object.keys(P.prog); if(keys.length > 300) keys.sort((a, b) => P.prog[a].at - P.prog[b].at).slice(0, keys.length - 300).forEach(k => delete P.prog[k]);
+  store.set("progress", P.prog);
+}
+function markPlayed(id, played){
+  const ep = EPS[id] || (P.prog[id] && P.prog[id].ep); const dur = (ep && ep.dur) || (P.prog[id] && P.prog[id].dur) || 0;
+  P.prog[id] = played ? {pos: dur, dur, done: true, at: Date.now()} : {pos: 0, dur, done: false, at: Date.now(), ep};
+  store.set("progress", P.prog); render();
+}
+function continueList(){
+  return Object.entries(P.prog).filter(([, v]) => !v.done && v.pos > 15000 && v.ep).sort((a, b) => b[1].at - a[1].at).slice(0, 10)
+    .map(([id, v]) => { EPS[id] = EPS[id] || v.ep; return [EPS[id], v]; });
+}
+function startPos(id){ const v = P.prog[id]; return !v || v.done || v.pos < 15000 ? 0 : Math.max(0, v.pos - 5000); }
+
+function playEpisode(ep){
+  EPS[ep.id] = ep;
+  if(S.ep && S.ep.id === ep.id && S.status !== "error"){ if(audio.ended) audio.currentTime = 0; epToggle(); return; }
+  if(S.ep) saveEpProgress();
+  npStop(); if(hls){ hls.destroy(); hls = null; }
+  S.ep = ep; S.status = "connecting"; wantPlay = true; render();
+  const rate = audio.playbackRate;
+  audio.src = ep.url;
+  const pos = startPos(ep.id) / 1000;
+  audio.addEventListener("loadedmetadata", function once(){ audio.removeEventListener("loadedmetadata", once); if(pos > 0) audio.currentTime = pos; audio.playbackRate = rate; }, {once: true});
+  audio.play().catch(e => { if(e && e.name === "NotAllowedError"){ wantPlay = false; S.status = "paused"; render(); } else if(!e || e.name !== "AbortError") fail(); });
+}
+function epToggle(){
+  if(S.status === "playing" || S.status === "connecting" || S.status === "buffering"){ wantPlay = false; audio.pause(); saveEpProgress(); S.status = "paused"; render(); }
+  else { wantPlay = true; if(S.status === "error"){ playEpisode(Object.assign({}, S.ep, {}), true); return; } audio.play().catch(() => fail()); }
+}
+function skip(sec){
+  if(!S.ep || !isFinite(audio.currentTime)) return;
+  const d = isFinite(audio.duration) ? audio.duration : Infinity;
+  audio.currentTime = Math.max(0, Math.min(d - 1, audio.currentTime + sec)); saveEpProgress(); updateSeek();
+}
+function setSpeed(v){ audio.playbackRate = v; store.set("speed", v); renderEpPlayer(); }
+function clock(ms){ const s = Math.max(0, Math.floor(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
+  return h ? `${h}:${String(m).padStart(2, "0")}:${String(x).padStart(2, "0")}` : `${m}:${String(x).padStart(2, "0")}`; }
+function dateText(ms){ if(!ms) return ""; const d = new Date(ms), now = new Date();
+  return d.toLocaleDateString({uk:"uk-UA",ru:"ru-RU",en:"en-GB",lt:"lt-LT"}[lang], d.getFullYear() === now.getFullYear() ? {day:"numeric", month:"short"} : {day:"numeric", month:"short", year:"numeric"}); }
+function epMeta(ep, pr){
+  const parts = [dateText(ep.date)].filter(Boolean), dur = (pr && pr.dur) || ep.dur;
+  if(pr && pr.done) parts.push(t("episode_done"));
+  else if(pr && pr.pos > 15000 && dur > 0) parts.push(t("min_left", Math.max(1, Math.floor((dur - pr.pos) / 60000))));
+  else if(dur > 0) parts.push(t("minutes_short", Math.max(1, Math.round(dur / 60000))));
+  return parts.join(" · ");
+}
+const cov = (url, size, r = 14) => `<div class="cov" style="width:${size}px;height:${size}px;border-radius:${r}px">${url ? `<img src="${esc(url)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}${url ? "" : I.mic}</div>`;
+const bar = (f, w) => `<div class="bar" style="width:${w}"><i style="width:${Math.round(Math.min(1, Math.max(0, f)) * 100)}%"></i></div>`;
+const ptile = p => `<button class="ptile" data-pod="${p.id}">${cov(p.art, 132, 18)}<b>${esc(p.title)}</b><small>${esc(p.author)}</small></button>`;
+const prow = (p, i) => `<button class="prow" data-pod="${p.id}">${i != null ? `<span class="n">${i + 1}</span>` : ""}${cov(p.art, 56)}<span class="meta"><b>${esc(p.title)}</b><small>${esc(p.author)}</small></span></button>`;
+function erow(ep, showPod){
+  const pr = prog(ep.id), on = S.ep && S.ep.id === ep.id, playing = on && S.status === "playing";
+  return `<div class="erow${pr && pr.done && !on ? " done" : ""}${on ? " on" : ""}" data-ep="${esc(ep.id)}" role="button" tabindex="0">
+    ${showPod ? cov(ep.img, 52) : ""}<div class="meta">${showPod ? `<div class="pt">${esc(ep.ptitle)}</div>` : ""}<b>${esc(ep.title)}</b><small>${esc(epMeta(ep, pr))}</small>
+    ${pr && !pr.done && pr.pos > 15000 && pr.dur ? `<div style="margin-top:6px">${bar(pr.pos / pr.dur, "120px")}</div>` : ""}</div>
+    <button class="mark" data-mark="${esc(ep.id)}" title="${esc(t(pr && pr.done ? "mark_unplayed" : "mark_played"))}" aria-label="${esc(t(pr && pr.done ? "mark_unplayed" : "mark_played"))}">${pr && pr.done ? "↺" : "✓"}</button>
+    <span class="eplay">${playing ? I.pause : I.play}</span></div>`;
+}
+function loadPodHome(){
+  if(P.loading || (P.top && P.lrt)) return; P.loading = true;
+  Promise.all([podTop(), podSearch("LRT", 100)]).then(([top, lrt]) => {
+    P.top = top; P.lrt = lrt ? lrt.filter(p => p.author.toLowerCase() === "lrt") : null; P.failed = !top && !lrt; P.loading = false;
+    if(S.tab === "podcasts") render();
+  });
+}
+function loadFresh(){
+  if(P.fresh || !P.subs.length) return; P.fresh = [];
+  Promise.all(P.subs.map(p => podEpisodes(p).then(l => (l || []).slice(0, 10)))).then(ls => {
+    P.fresh = ls.flat().sort((a, b) => b.date - a.date).slice(0, 6); if(S.tab === "podcasts" && !P.open) render();
+  });
+}
+async function openPod(p){
+  P.open = p; P.eps = null; P.epsFail = false; P.shown = 30; render(); window.scrollTo({top: 0});
+  const l = await podEpisodes(p); if(P.open !== p) return;
+  P.eps = l; P.epsFail = !l; render();
+}
+function renderPodcasts(keepFocus){
+  if(P.open){ renderPodPage(); return; }
+  loadPodHome(); loadFresh();
+  let h = `<h1 class="display" style="margin-top:28px">${esc(t("podcasts_title_1"))}<span>${esc(t("podcasts_title_2"))}</span></h1>
+    <label class="search">${I.search}<span class="sr">${esc(t("podcast_search_hint"))}</span><input id="pq" type="search" autocomplete="off" placeholder="${esc(t("podcast_search_hint"))}" value="${esc(P.q)}">
+    ${P.q ? `<button class="icon-btn" id="clearP" style="width:32px;height:32px" aria-label="${esc(t("clear_search"))}">${I.close}</button>` : ""}</label>`;
+  if(P.q.trim()){
+    h += `<div class="section-h"><h2>${esc(P.searching && !P.res ? t("world_searching") : t("podcast_results"))}</h2></div>`;
+    if(P.res && !P.res.length && !P.searching) h += `<div class="empty"><h3>${esc(t("no_results"))}</h3><p>${esc(P.q)}</p><button class="pill" id="clearP">${esc(t("clear_search"))}</button></div>`;
+    else h += `<div class="rows-2">${(P.res || []).map(p => prow(p)).join("")}</div>`;
+  } else {
+    const cont = continueList();
+    if(cont.length) h += `<div class="section-h"><h2>${esc(t("continue_listening"))}</h2></div><div class="hscroll">${cont.map(([ep, pr]) =>
+      `<button class="ccard${S.ep && S.ep.id === ep.id && S.status === "playing" ? " on" : ""}" data-ep="${esc(ep.id)}"><div class="top">${cov(ep.img, 56)}<div style="min-width:0"><b>${esc(ep.title)}</b><small>${esc(ep.ptitle)}</small></div></div>
+        <div style="margin-top:10px">${bar(pr.dur ? pr.pos / pr.dur : 0, "100%")}</div><small style="margin-top:6px">${esc(epMeta(ep, pr))}</small></button>`).join("")}</div>`;
+    h += `<div class="section-h"><h2>${esc(t("my_podcasts"))}</h2></div>`;
+    h += P.subs.length ? `<div class="hscroll">${P.subs.map(ptile).join("")}</div>` : `<p class="hint">${esc(t("podcast_empty_subs"))}</p>`;
+    if(P.subs.length && P.fresh && P.fresh.length) h += `<div class="section-h"><h2>${esc(t("new_episodes"))}</h2></div><div class="rows-2">${P.fresh.map(e => erow(e, true)).join("")}</div>`;
+    if(P.failed) h += `<div class="empty"><h3>${esc(t("podcasts_error"))}</h3><p></p><button class="pill" id="retryP">${esc(t("retry"))}</button></div>`;
+    if(P.lrt && P.lrt.length) h += `<div class="section-h"><h2>${esc(t("lrt_podcasts"))}</h2></div><div class="hscroll">${P.lrt.map(ptile).join("")}</div>`;
+    if(P.top && P.top.length) h += `<div class="section-h"><h2>${esc(t("top_lt"))}</h2></div><div class="rows-2">${P.top.map((p, i) => prow(p, i)).join("")}</div>`;
+    if(P.loading) h += `<div class="loading" style="margin-top:20px;height:120px">${esc(t("loading"))}</div>`;
+  }
+  $("view").innerHTML = h;
+  if(keepFocus){ const q = $("pq"); if(q){ q.focus(); q.setSelectionRange(q.value.length, q.value.length); } }
+}
+function renderPodPage(){
+  const p = P.open, sub = isSub(p.id), l = P.eps;
+  let h = `<div class="player-head" style="margin-top:10px"><button class="icon-btn" id="podBack" aria-label="${esc(t("back"))}">${I.back}</button>
+      <span class="eyebrow" style="color:var(--text2)">${esc(t("podcast_eyebrow"))}</span><span style="width:42px"></span></div>
+    <div class="phead">${cov(p.art, 128, 22)}<div style="min-width:0"><h1>${esc(p.title)}</h1><p>${esc(p.author)}</p>
+      <button class="pill${sub ? "" : " accent"}" id="subBtn">${esc(t(sub ? "subscribed" : "subscribe"))}</button></div></div>
+    <div class="section-h"><h2>${esc(t("episodes"))}${l ? " · " + l.length : ""}</h2></div>`;
+  if(!l && P.epsFail) h += `<div class="empty"><h3>${esc(t("podcasts_error"))}</h3><p></p><button class="pill" id="retryEps">${esc(t("retry"))}</button></div>`;
+  else if(!l) h += `<div class="loading" style="height:120px">${esc(t("loading"))}</div>`;
+  else {
+    h += `<div class="rows-2">${l.slice(0, P.shown).map(e => erow(e)).join("")}</div>`;
+    if(l.length > P.shown) h += `<div style="text-align:center;margin-top:12px"><button class="pill" id="moreEps">${esc(t("show_more"))}</button></div>`;
+  }
+  $("view").innerHTML = h;
+}
+function epStatus(){
+  return ({connecting: t("connecting"), buffering: t("buffering"), error: t("stream_unavailable")})[S.status] || S.ep.ptitle;
+}
+function renderEpMini(){
+  const ep = S.ep, m = $("mini"); m.hidden = false;
+  const dur = isFinite(audio.duration) && audio.duration > 0 ? audio.duration : ep.dur / 1000;
+  m.innerHTML = `${cov(ep.img, 48, 12)}<div class="meta"><b>${esc(ep.title)}</b><small>${esc(epStatus())}</small>${bar(dur ? audio.currentTime / dur : 0, "100%").replace('class="bar"', 'class="bar" id="miniBar" style="margin-top:6px;width:100%"')}</div>
+    <div class="ctl">
+      <label class="vol">${I.vol}<span class="sr">Volume</span><input type="range" id="vol" min="0" max="1" step="0.01" value="${store.get("vol", 1)}"></label>
+      ${S.status === "error" ? `<button class="pill" id="retry" style="padding:8px 14px">${esc(t("retry"))}</button>` : ""}
+      <button class="icon-btn skip" id="miniBack" style="width:42px;height:42px" aria-label="${esc(t("skip_back"))}">${I.back15}</button>
+      <button class="play" id="miniPlay" style="width:46px;height:46px" aria-label="${esc(t(S.status === "playing" ? "pause" : "play"))}">${S.status === "playing" ? I.pause : (S.status === "connecting" || S.status === "buffering") ? I.load : I.play}</button>
+      <button class="icon-btn skip" id="miniFwd" style="width:42px;height:42px" aria-label="${esc(t("skip_forward"))}">${I.fwd15}</button></div>`;
+}
+function speedLabel(v){ return (Number.isInteger(v) ? v.toFixed(0) : (v * 10) % 1 === 0 ? v.toFixed(1) : v.toFixed(2)) + "×"; }
+function renderEpPlayer(){
+  const ep = S.ep, p = $("player"), sp = audio.playbackRate || 1;
+  p.innerHTML = `<div class="player-in">
+    <div class="player-head"><button class="icon-btn" id="pClose" aria-label="${esc(t("collapse_player"))}">${I.down}</button>
+      <span class="eyebrow">${esc(t("podcast_eyebrow"))}</span><span style="width:42px"></span></div>
+    <div class="cover" style="--r:28px">${cov(ep.img, 340, 28).replace("width:340px;height:340px", "width:100%;height:100%")}</div>
+    <h2 class="p-name" style="font-size:24px;letter-spacing:-.03em">${esc(ep.title)}</h2>
+    <button class="p-song" id="toPod" style="color:var(--accent);text-align:left">${esc(ep.ptitle)}</button>
+    <input class="seek" type="range" id="seek" min="0" max="1000" step="1" value="0" aria-label="Seek">
+    <div class="times"><span id="tPos">0:00</span><span id="tLeft"></span></div>
+    <div class="p-ctl"><button class="icon-btn skip" id="pBack15" aria-label="${esc(t("skip_back"))}">${I.back15}</button>
+      <button class="play" id="pPlay" style="width:78px;height:78px" aria-label="${esc(t(S.status === "playing" ? "pause" : "play"))}">${S.status === "playing" ? I.pause : (S.status === "connecting" || S.status === "buffering") ? I.load : I.play}</button>
+      <button class="icon-btn skip" id="pFwd15" aria-label="${esc(t("skip_forward"))}">${I.fwd15}</button></div>
+    <div class="p-bottom" style="margin-top:22px;padding-top:0">
+      <div class="menu"><button class="pill${Math.abs(sp - 1) > .01 ? " on" : ""}" id="speedBtn">${esc(t("speed"))} ${speedLabel(sp)}</button>
+        <div class="menu-list" id="speedMenu" hidden>${[0.8, 1, 1.25, 1.5, 1.75, 2].map(v => `<button data-speed="${v}"${Math.abs(v - sp) < .01 ? ' style="color:var(--accent)"' : ""}>${speedLabel(v)}</button>`).join("")}</div></div>
+      <div class="menu"><button class="pill${S.sleepAt ? " on" : ""}" id="sleepBtn">${I.timer}${S.sleepAt ? esc(t("sleep_minutes", sleepLeft())) : esc(t("sleep_short"))}</button>
+        <div class="menu-list" id="sleepMenu" hidden style="left:auto;right:0">${[10, 15, 30, 45, 60, 90].map(m => `<button data-sleep="${m}">${esc(t("sleep_minutes", m))}</button>`).join("")}
+          ${S.sleepAt ? `<button data-sleep="0">${esc(t("sleep_off"))}</button>` : ""}</div></div></div>
+    ${ep.desc ? `<div class="edesc${descOpen ? "" : " short"}" id="edesc">${esc(ep.desc)}</div>` : ""}</div>`;
+  p.classList.add("ep");
+  updateSeek();
+}
+let seeking = false;
+function updateSeek(){
+  const ep = S.ep; if(!ep) return;
+  const dur = isFinite(audio.duration) && audio.duration > 0 ? audio.duration * 1000 : ep.dur, pos = audio.currentTime * 1000;
+  const s = $("seek"); if(s && !seeking && dur) s.value = Math.round(pos / dur * 1000);
+  const a = $("tPos"), b = $("tLeft"); if(a) a.textContent = clock(seeking && s ? s.value / 1000 * dur : pos); if(b) b.textContent = dur ? "−" + clock(dur - (seeking && s ? s.value / 1000 * dur : pos)) : "";
+  const mb = $("miniBar"); if(mb && dur) mb.firstElementChild.style.width = Math.round(pos / dur * 100) + "%";
+}
+setInterval(() => { if(S.ep && S.status === "playing") updateSeek(); }, 1000);
+function podSearchInput(v){
+  P.q = v; clearTimeout(pTimer);
+  if(!v.trim()){ P.res = null; P.searching = false; renderPodcasts(true); return; }
+  const tok = ++pToken;
+  pTimer = setTimeout(async () => { P.searching = true; renderPodcasts(true); const r = await podSearch(v.trim()); if(tok !== pToken) return;
+    P.res = r || []; P.searching = false; if(S.tab === "podcasts") renderPodcasts(document.activeElement && document.activeElement.id === "pq"); }, 450);
+}
 
 /* ================= events ================= */
 function listFor(name){
@@ -903,12 +1197,17 @@ function toggleFav(id, btn){
   const again = document.querySelector(`[data-fav="${CSS.escape(id)}"]`); if(again && isFav(id)) again.classList.add("pulse");
 }
 document.addEventListener("click", e => {
-  const el = e.target.closest("button,[data-play],[data-open]"); if(!el) {
-    if(!e.target.closest(".menu")) { const m = $("sleepMenu"); if(m) m.hidden = true; }
+  if(e.target.closest("#edesc")){ descOpen = !descOpen; renderEpPlayer(); return; }
+  const el = e.target.closest("button,[data-play],[data-open],[data-ep]"); if(!el) {
+    if(!e.target.closest(".menu")) { ["sleepMenu", "speedMenu"].forEach(i => { const m = $(i); if(m) m.hidden = true; }); }
     return;
   }
   if(el.dataset.fav != null){ e.stopPropagation(); toggleFav(el.dataset.fav, el); return; }
-  if(el.dataset.tab){ S.tab = el.dataset.tab; render(); window.scrollTo({top: 0}); closeSettings(); return; }
+  if(el.dataset.mark){ e.stopPropagation(); const pr = prog(el.dataset.mark); markPlayed(el.dataset.mark, !(pr && pr.done)); return; }
+  if(el.dataset.pod){ const p = P.pods[+el.dataset.pod] || P.subs.find(x => x.id === +el.dataset.pod); if(p){ S.tab = "podcasts"; openPod(p); } return; }
+  if(el.dataset.ep){ const ep = EPS[el.dataset.ep] || (P.prog[el.dataset.ep] || {}).ep; if(ep) playEpisode(ep); return; }
+  if(el.dataset.speed){ setSpeed(+el.dataset.speed); return; }
+  if(el.dataset.tab){ if(el.dataset.tab === "podcasts" && S.tab === "podcasts") P.open = null; S.tab = el.dataset.tab; render(); window.scrollTo({top: 0}); closeSettings(); return; }
   if(el.dataset.scope){ S.scope = el.dataset.scope; render(); return; }
   if(el.dataset.genre){
     const g = el.dataset.genre;
@@ -936,12 +1235,23 @@ document.addEventListener("click", e => {
     case "clearQ": case "clearQ2": S.query = ""; S.genre = null; render(); break;
     case "clearW": S.wq = ""; S.wres = null; render(); break;
     case "retryW": S.wfail = false; S.wres = null; render(); break;
+    case "clearP": P.q = ""; P.res = null; render(); break;
+    case "retryP": P.failed = false; P.top = null; P.lrt = null; render(); break;
+    case "podBack": P.open = null; render(); break;
+    case "subBtn": toggleSub(P.open); break;
+    case "retryEps": openPod(P.open); break;
+    case "moreEps": P.shown += 30; render(); break;
+    case "pBack15": case "miniBack": e.stopPropagation(); skip(-15); break;
+    case "pFwd15": case "miniFwd": e.stopPropagation(); skip(15); break;
+    case "speedBtn": { const m = $("speedMenu"); m.hidden = !m.hidden; break; }
+    case "toPod": { const p = P.pods[S.ep.pid] || P.subs.find(x => x.id === S.ep.pid) || {id: S.ep.pid, title: S.ep.ptitle, author: "", art: S.ep.img}; P.pods[p.id] = p; closePlayer(); S.tab = "podcasts"; openPod(p); break; }
+    case "edesc": descOpen = !descOpen; renderEpPlayer(); break;
   }
 });
 $("mini").addEventListener("click", e => { if(!e.target.closest("button,input,label")) openPlayer(); });
 document.addEventListener("keydown", e => {
   if(e.target.matches("input")) return;
-  const el = e.target.closest("[data-play],[data-open]");
+  const el = e.target.closest("[data-play],[data-open],[data-ep]");
   if(el && (e.key === "Enter" || e.key === " ")){ e.preventDefault(); el.click(); return; }
   if(e.key === " "){ e.preventDefault(); toggle(); }
   else if(e.key === "ArrowRight" && S.playerOpen) step(1);
@@ -951,7 +1261,16 @@ document.addEventListener("keydown", e => {
 document.addEventListener("input", e => {
   if(e.target.id === "q"){ S.query = e.target.value; renderExplore(true); }
   if(e.target.id === "wq"){ S.wq = e.target.value; clearTimeout(wTimer); wTimer = setTimeout(() => searchWorld(S.wq), 450); }
+  if(e.target.id === "pq") podSearchInput(e.target.value);
+  if(e.target.id === "seek" && S.ep){ seeking = true; updateSeek(); }
   if(e.target.id === "vol"){ audio.volume = +e.target.value; store.set("vol", audio.volume); }
+});
+document.addEventListener("change", e => {
+  if(e.target.id === "seek" && S.ep){
+    const dur = isFinite(audio.duration) && audio.duration > 0 ? audio.duration : S.ep.dur / 1000;
+    if(dur) audio.currentTime = e.target.value / 1000 * dur;
+    seeking = false; saveEpProgress(); updateSeek();
+  }
 });
 /* swipe down closes the player */
 (() => {
@@ -959,6 +1278,7 @@ document.addEventListener("input", e => {
   p.addEventListener("touchstart", e => { y0 = p.scrollTop <= 0 ? e.touches[0].clientY : null; }, {passive: true});
   p.addEventListener("touchend", e => { if(y0 != null && e.changedTouches[0].clientY - y0 > 110) closePlayer(); y0 = null; });
 })();
+addEventListener("pagehide", () => saveEpProgress());
 addEventListener("online", () => { S.online = true; render(); if(!S.stations.length) load(); });
 addEventListener("offline", () => { S.online = false; render(); });
 
