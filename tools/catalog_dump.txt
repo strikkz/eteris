@@ -1,51 +1,171 @@
-SKIP  class="scheduleItemBlock wkd-1" style="display:none;" data-programid="52" data-timeon="00:00:00" data-timeoff="07:00:00
-SKIP  class="scheduleItemBlock wkd-2" style="display:none;" data-programid="28" data-timeon="01:00:00" data-timeoff="07:00:00
-SKIP  class="scheduleItemBlock wkd-2" style="display:none;" data-programid="53" data-timeon="21:00:00" data-timeoff="22:00:00
-SKIP  class="scheduleItemBlock wkd-2" style="display:none;" data-programid="54" data-timeon="22:00:00" data-timeoff="00:00:00
-SKIP  class="scheduleItemBlock wkd-3" style="display:none;" data-programid="26" data-timeon="19:00:00" data-timeoff="20:00:00
-SKIP  class="scheduleItemBlock wkd-3" style="display:none;" data-programid="56" data-timeon="22:00:00" data-timeoff="00:00:00
-SKIP  class="scheduleItemBlock wkd-3" style="display:none;" data-programid="56" data-timeon="22:00:00" data-timeoff="00:00:00
-SKIP  class="scheduleItemBlock wkd-4" style="display:none;" data-programid="57" data-timeon="00:00:00" data-timeoff="07:00:00
-SKIP  class="scheduleItemBlock wkd-4" style="display:none;" data-programid="26" data-timeon="19:00:00" data-timeoff="20:00:00
-SKIP  class="scheduleItemBlock wkd-4" style="display:none;" data-programid="61" data-timeon="22:00:00" data-timeoff="23:00:00
-SKIP  class="scheduleItemBlock wkd-5" data-programid="60" data-timeon="00:00:00" data-timeoff="07:00:00"> <p class="scheduleI
-SKIP  class="scheduleItemBlock wkd-5" data-programid="24" data-timeon="17:00:00" data-timeoff="19:00:00"> <p class="scheduleI
-SKIP  class="scheduleItemBlock wkd-5" data-programid="64" data-timeon="22:00:00" data-timeoff="23:00:00"> <p class="scheduleI
-SKIP  class="scheduleItemBlock wkd-5" data-programid="63" data-timeon="23:00:00" data-timeoff="23:59:59"> <p class="scheduleI
-SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="62" data-timeon="01:00:00" data-timeoff="02:00:00
-SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="29" data-timeon="02:00:00" data-timeoff="06:59:59
-SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="31" data-timeon="07:00:00" data-timeoff="11:00:00
-SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="18" data-timeon="11:00:00" data-timeoff="12:00:00
-SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="32" data-timeon="17:00:00" data-timeoff="18:00:00
-SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="33" data-timeon="18:00:00" data-timeoff="20:00:00
-SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="56" data-timeon="22:00:00" data-timeoff="00:00:00
-SKIP  class="scheduleItemBlock wkd-6" style="display:none;" data-programid="56" data-timeon="22:00:00" data-timeoff="00:00:00
-SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="40" data-timeon="01:00:00" data-timeoff="02:00:00
-SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="36" data-timeon="02:00:00" data-timeoff="07:00:00
-SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="31" data-timeon="07:00:00" data-timeoff="11:00:00
-SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="18" data-timeon="11:00:00" data-timeoff="12:00:00
-SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="32" data-timeon="17:00:00" data-timeoff="18:00:00
-SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="34" data-timeon="18:00:00" data-timeoff="19:59:59
-SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="50" data-timeon="21:00:00" data-timeoff="22:00:00
-SKIP  class="scheduleItemBlock wkd-7" style="display:none;" data-programid="51" data-timeon="22:00:00" data-timeoff="23:59:59
-sok-i-kelnes | Šok į kelnes | /Uploads/image/SiJ500v2.PNG | [(1, 7, 11), (2, 7, 11), (3, 7, 11), (4, 7, 11), (5, 7, 11)]
-power-hitai | Power hitai | /Uploads/image/LiR500.JPG | [(1, 11, 15), (2, 11, 15), (3, 11, 15), (4, 11, 15), (5, 11, 15)]
-power-popiete | Power popietė | /Uploads/image/LiJ500.JPG | [(1, 15, 19), (2, 15, 19), (3, 15, 19), (4, 15, 19), (5, 15, 19)]
-flow-music-radio | Flow Music Radio | /Uploads/image/DJ%20ALKO.png | [(1, 19, 21)]
-tom-bones | Tom Bones | /Uploads/image/Tom%20Bones.png | [(1, 21, 22)]
-decks-and-stories | Decks & Stories | https://www.tv3.lt/Uploads/image/DAndS.JPG | [(1, 22, 23)]
-driule-the-gang | Driule & The Gang | /Uploads/file/dj/c_driule.png | [(1, 23, 24), (5, 21, 22)]
-g-spot-dj-s-on-air | G-Spot DJ’s ON AIR | /Uploads/file/dj/c_gspot.png | [(2, 0, 2), (5, 20, 21)]
-ignotaviciute-groja | Groja Ignatovičiūtė | /Uploads/image/Laura500.JPG | [(2, 19, 21)]
-sundu | Sundu Radio Show | /Uploads/image/Sundu2.png | [(3, 20, 22)]
-lost-and-found | Lost and Found | /Uploads/image/lostfound.jpg | [(4, 20, 21), (7, 0, 1)]
-dj-cafe-radio | DJ Cafe Radio show | /Uploads/image/dj_cafe_radio.jpg | [(4, 23, 24)]
-beleo-vibes | BeLeo Vibes | /Uploads/file/dj/c_beleo.png | [(5, 19, 20)]
-musical-freedom | Musical Freedom | /Uploads/image/MucisFreedom.png | [(6, 0, 1)]
-power-savaitgalis | Power savaitgalis | /Uploads/image/Joris%20PWR%20siena.png | [(6, 12, 16), (7, 12, 16)]
-pagaminta-lietuvoje | Pagaminta Lietuvoje | /pimg/player/dj/dj_none.jpg | [(6, 16, 17), (7, 16, 17)]
-megahitai | Auksinė valanda | /pimg/player/dj/dj_none.jpg | [(6, 20, 21), (7, 9, 10)]
-jovaniclub | Jovani@Club | /Uploads/jovani-1.png | [(6, 21, 22)]
-cosmology | Cosmology | /Uploads/cosmology-356x356.png | [(7, 19, 20)]
-ten-walls | Ten Walls Runemark Sessions | /Uploads/image/Ten_Wallssmall.png | [(7, 20, 21)]
-20
+== Žinių radijas: 0
+
+== Ziniu radijas: 0
+
+== M-1: 0
+
+== M-1 Plius: 0
+
+== Radiocentras: 1
+   1496339130 | VAKAROP SU VYTENIU | Radiocentras | 2022-05-26 | 167
+== ZIP FM: 25
+   1682453513 | SAKURA ROLL -CHIT CHAT ABOUT REAL JAPANESE CULTURE- | ZIP-FM Podcast | 2024-03-30 | 50
+   1681531266 | Limelight | ZIP-FM Podcast | 2026-11-14 | 184
+   1636839365 | History Mystery | ZIP-FM Podcast | 2026-11-01 | 256
+   1710048393 | 高校生の焼物語 〜焼き物で解決する環境問題〜 | ZIP-FM Podcast | 2024-03-13 | 16
+   1874198248 | フィナンシャルクリエイト 「MONEY NAVI」 | ZIP-FM Podcast | 2026-11-17 | 42
+   1657986864 | ビッグファイブ 〜わたしって何者？ 心理学雑談〜 | ZIP-FM Podcast | 2025-06-08 | 147
+   1661598033 | ミニマリストあぽん 〜捨てて気楽に暮らす！〜 | ZIP-FM Podcast | 2023-05-26 | 23
+   1661254391 | ZIP-FM SPECIAL | ZIP-FM Podcast | 2025-07-26 | 54
+   1636992231 | GORILLA RADIO! | ZIP-FM Podcast | 2026-11-02 | 48
+   1786293082 | SOUND MIND | ZIP-FM Podcast | 2026-09-28 | 23
+   1655275744 | JR東海 FUN DAY TRIP α | ZIP-FM Podcast | 2026-09-18 | 101
+   1688333660 | ライムクライミング 〜韻の頂〜 | ZIP-FM Podcast | 2025-09-30 | 149
+== Lietus: 0
+
+== Relax FM: 19
+   1710030339 | El Club de la Calma con Beatriz Comes | Relax Fm | 2026-10-12 | 63
+   1498190468 | La Ruta del Placer con Taty Méndez | Relax Fm | 2021-06-30 | 258
+   1711203575 | Modo Vida con Sara Manzaneque | Relax Fm | 2026-10-20 | 98
+   1775430504 | A Través del Cosmos con Belén Gisbert | Relax Fm | 2026-01-30 | 26
+   1485245147 | Relajaciones Profundas Guiadas | Relax Fm | Relax Fm | 2020-02-05 | 23
+   1502697072 | Relajaciones para adultos | Relax Fm | Relax Fm | 2026-08-11 | 32
+   1770522401 | Super Sensible con Patricia Fernandez | Relax Fm | 2025-07-16 | 32
+   1571028321 | География | Relax FM | 2022-07-22 | 100
+   1563194820 | Маршруты | Relax FM | 2023-02-28 | 98
+   1770521941 | Alma a Tierra! con Carmen Solivera | Relax Fm | 2025-02-06 | 27
+   1502696769 | Relajaciones para niños | Relax Fm | Relax Fm | 2026-07-31 | 21
+   1687355530 | La Ruta del Placer | Relax FM | 2023-05-10 | 1
+== Gold FM: 8
+   1487359203 | Lisa & Russell | GOLD96FM and iHeart Australia | 2026-11-19 | 2058
+   1880779311 | Golden Hours with Gold Eris - WPKN 89.5 FM Bridgeport, CT | Thomas Oliverio, WPKN | 2026-08-14 | 12
+   1830499430 | Lenny Goldberg's Tanach Classes | JewishPodcasts.fm | 2025-11-06 | 201
+   1719600949 | Camping-Gold | Der CARAVAN.fm Podcast | CARAVAN.fm | 2025-10-23 | 42
+   251090122 | The New Capital Show hosted by Leo Gold on KPFT 90.1 FM in Houston | Leo Gold | 2012-10-11 | 14
+   1570280693 | Manoj Pachauri, Founder-Socio Story at FM Gold | Manoj Pachauri | 2021-05-30 | 1
+   1548215814 | Silver Linings: Movie Gold in Clouds of Grey | TruStory FM | 2021-04-30 | 6
+   1772957936 | Behind the Black and Gold w/ Ellie Apfel | BDP Communications, LLC 93.7 The Ticket FM | 2024-12-01 | 4
+== Rock FM: 25
+   1317507626 | Morning Glory, cu Răzvan Exarhu | Rock FM | 2026-11-20 | 1591
+   1151381939 | El Francotirarock | RockFM | 2026-11-19 | 604
+   565071132 | El Pirata y su banda | RockFM | 2026-11-19 | 600
+   1776178156 | Punctul pe Știri cu Magda Grădinaru | Rock FM | 2026-11-19 | 193
+   1354403708 | El decálogo de Mariskal | RockFM | 2026-10-22 | 586
+   1486797336 | Alternia | RockFM | 2023-01-11 | 3
+   1496837321 | Rock FM | Rock FM | 2023-12-13 | 140
+   1173608108 | Radio Rock FM 106.6 | Radio Rock FM 106.6 | 2026-11-20 | 37
+   1562048664 | La cotorral | Nacional Rock FM93.7 | 2023-12-25 | 111
+   1580479478 | El mañana | Nacional Rock FM 93.7 | 2023-11-24 | 300
+   1613615283 | Rosca N' Roll | Nacional Rock FM 93.7 | 2023-12-14 | 299
+   1502236760 | Mestiza Rock FM | Mestiza Rock | 2022-09-12 | 66
+== European Hit Radio: 0
+
+== Laisvoji banga: 0
+
+== Pūkas: 1
+   1895276210 | Let's Go There with Ben Pukas | Ben Pukas | 2026-11-14 | 30
+== Marijos radijas: 0
+
+== Radio R: 25
+   1562202832 | RADIO R | Radio Réveil | 2026-11-20 | 2000
+   1450373930 | Radio REcyclerie | La REcyclerie | 2026-09-14 | 141
+   1453042702 | The REID Brand Radio - R. Kelly Chronicles | Benjamin Reid | 2018-01-03 | 1
+   1497463301 | Radio R | Radio R | 2024-05-03 | 15
+   1801035984 | Za oponou moci: Podcast Radia R a divadla FESTE | Radio R | 2025-05-13 | 2
+   1567441671 | Hříšná hodinka | Radio R | 2021-07-07 | 4
+   1714067320 | Pod zemí a pod vodou | Radio R - Petr Šimon Janíček | 2024-04-16 | 6
+   1486371308 | Make Everything Great Again | Radio R | 2021-11-12 | 48
+   1486866637 | O dokumentech a nejen o nich | Radio R | 2019-12-12 | 5
+   1809545504 | FRITÉZA | Radio R | 2026-08-15 | 21
+   1604641108 | UKAŽPÁRKA | Radio R | 2023-11-09 | 25
+   1713392917 | 7 dní na Slovensku | Radio R - Tobias Valúch | 2024-04-17 | 10
+== Kelyje: 1
+   1536539260 | Du draugai kelyje po europa | Sigitas Bajorunas | 2020-10-19 | 2
+== TOP FM: 25
+   1543979235 | Top FM - Erros & Acertos | Top FM | 2020-12-08 | 1
+   1543978242 | Top FM | Rádio Top FM - 104,1 Mhz | 2023-09-27 | 3
+   1510281810 | TOP FM Bauru | TOP FM Bauru | 2021-08-05 | 233
+   1018858976 | MyTopFM | MyTopFM | 2016-04-07 | 37
+   1040461501 | Xano na MyTopFM | Xano - Top FM | 2015-12-09 | 14
+   1481859491 | Good Morning RadioFm | Nigeria Radio Top Fm | 2019-11-19 | 5
+   1803110926 | SwaDarshana with Manish Khernar TOP FM Gujarati Radio chat show collection | Manish Khernar | 2022-05-17 | 17
+   1257018797 | TOPFM MAURITIUS | TOPFM MAURITIUS | 2026-11-20 | 531
+   1553030800 | Radio TOPFM Bumiayu | Radio TOPFM Bumiayu | 2021-02-10 | 1
+   1450280078 | Joy FM Top Story | Multimedia Ghana | 2026-11-19 | 72
+   1896908520 | The Top 40 on 5 | 5FM | 2026-11-16 | 258
+   1648704300 | FM1122音乐电台｜TOP音乐 | 听友43433750 | 2022-10-06 | 15
+== Easy FM: 11
+   1537946223 | EASY FM | 24/7 jouw favoriete muziekmix | 2024-06-28 | 230
+   1656974357 | Easy Jazz Spotlight | Easy Jazz FM | 2026-09-30 | 58
+   1013488895 | Roll Over Easy from BFF.fm | Sequoia, The Early Bird | 2026-11-12 | 20
+   1622343656 | Easy Rider Tenerife - Ride Time Radio 90.4 FM | Easy Rider Tenerife | 2026-08-10 | 100
+   1727954647 | Sunday's Cheesy Easy - Freedom FM | Sean Power | 2024-09-01 | 20
+   1673179452 | Make It Easy For People To Give You Money | KX FM | 2026-11-19 | 186
+   1553920625 | Asia's Radio FM 93.7 Easy Touch | Anthony Marcuz | 2021-02-16 | 1
+   1681399329 | LIVE FROM Easy St. - 111.7 LFE.FM | love's angel | 2023-11-24 | 4
+   1384836848 | Living is easy – Der Design-Podcast | detektor.fm – Das Podcast-Radio | 2019-10-11 | 11
+   1845359369 | SpeakEasy.fm | Beau Bourbon | 2025-10-10 | 2
+   1280256872 | SpeakEasy | CJSW 90.9 FM | 2020-08-31 | 6
+== Extra FM: 8
+   1538596872 | RedFM News Extra | Red FM | 2023-02-03 | 479
+   1571515203 | Extra Spicy FM | Extra Spicy | 2021-06-08 | 1
+   1803443826 | Sports Extra: Uncut | WZIS FM | 2026-05-01 | 21
+   1333665569 | Bala Extra | Pedro M. Sánchez | 2026-11-20 | 1296
+   1619937428 | ボイメンエリア研究生 MEETS MY AICHI EXTRA | FM AICHI | 2023-06-01 | 237
+   1694465793 | カラフルダイヤモンド MEETS MY AICHI EXTRA | FM AICHI | 2026-09-03 | 494
+   1577019846 | Extra Voice Podcasts | Voice FM Radio | 2021-06-21 | 5
+   1778952378 | FRED Film Radio - Extra Channel | Fred.FM | 2025-09-10 | 58
+== Saulės radijas: 0
+
+== Russkoje Radio Baltija: 0
+
+== Laluna: 7
+   1773092631 | LALUNA Traumreisen für Kinder | Lina Ronneberger | 2026-11-15 | 91
+   1561647029 | Laluna | Laluna de Amor | 2021-04-02 | 1
+   1558055336 | Laluna | Elhamnaa | 2021-03-08 | 1
+   1533263511 | HappyRichmoment | Laluna | 2020-10-15 | 3
+   1869558064 | LaLuna Fertility Podcast | Sina Abara | 2026-09-11 | 15
+   1831533092 | UnPodcastALaluna | Rubia Piña | 2026-03-31 | 21
+   1871671880 | Laluna’s Astral Tales | Lalunapiubelle | 2026-03-26 | 20
+== Power Hit Radio: 2
+   1630995098 | Power Hit Radio | Radio GenZed | 2022-03-18 | 2
+   1821842843 | Power Hit Radio svečiai | infoutn | 2026-11-13 | 62
+== Vilniaus FM: 0
+
+== Radijo stotis: 4
+   1727197222 | Radijo stotis „SOL FM“ | Radijo stotis „SOL FM“ | 2026-08-26 | 488
+   1526678097 | Papasakok man... | Radijo stotis FM99 | 2021-12-31 | 64
+   1555214126 | Наши люди | Radijo Stotis Raduga | 2023-08-07 | 25
+   1857626006 | Muzika Ir Atlikėjai | Radijo Stotis Pulsas | 2025-12-01 | 1
+== radijas podkastas: 1
+   1615241031 | Buckast Podkast | Buckast Podkast | 2026-07-26 | 60
+== tv3 podkastas: 25
+   1706056866 | Pats krējumiņš | tv3.lv | 2026-01-04 | 41
+   1758908204 | Piķis un ģēvelis! | tv3.lv | 2026-11-06 | 105
+   1045277918 | Kasterborous Classic TV: Exploring Doctor Who & Classic Sci-Fi | Christian Cawley (host, producer) | James McLean (host) | Brian Terranova (host) | 2026-11-09 | 500
+   1455090303 | 11LV TV | 11LV | 2026-11-13 | 586
+   1371397418 | Frilanslivet | Frilanslivet | 2026-11-12 | 228
+   1725104621 | Heftye møter flinke folk | Nordiske Mediedager | 2026-06-16 | 76
+   1567016082 | Foreldrerådet | Simpl & Acast | 2026-11-19 | 822
+   1724608164 | OsloNewYork | Astrid Dyson | 2026-11-12 | 144
+   1681987103 | Søndagsquiz med Hasse & Tophe | Nerdelandslaget | 2025-08-17 | 163
+   1510570623 | Tut & Mediekjør | Lyder Produksjoner & Acast | 2026-11-20 | 233
+   1541994887 | Det ho sa! | Fædrelandsvennen | 2025-06-19 | 107
+   1537577367 | Kundeservicepodden | Bjarte Lyssand | 2026-10-28 | 80
+== LNK podkastas: 0
+
+== Delfi podkastas: 0
+
+== 15min podkastas: 24
+   1686093191 | DIH Podkast − vodene meditacije | Klemen Selakovic | 2023-05-09 | 4
+   1642691933 | Friis Larsen-showet | Simon Friis Larsen | 2026-11-10 | 426
+   1440973254 | OKS | OKS | 2026-11-15 | 329
+   1692133714 | Bok og bibliotek – to av dei beste tinga i heile verda | Arne Olav Hageberg (red.) | 2026-10-02 | 56
+   1349790082 | Motiverende Intervju | Herman Egenberg | 2025-03-23 | 148
+   1452465730 | Randesund misjonskirke | Randesund misjonskirke | 2026-11-08 | 522
+   1092985217 | Treningspodden | Acast | 2026-11-16 | 624
+   1719721130 | GIRLS HOTLINE | Amalie Hoelseth | 2026-01-20 | 116
+   1054433665 | Opplysningen 99,3 | Radio Nova | 2026-11-20 | 1269
+   1542962217 | Begeistringspodden | Vibeke Olss | 2026-11-07 | 827
+   1715343744 | The Retirement Success Pod(k)ast | The Retirement Success Pod(K)ast | 2026-10-29 | 81
+   1471195019 | Komets PodKast | Shane Albahrani | 2026-11-18 | 141
