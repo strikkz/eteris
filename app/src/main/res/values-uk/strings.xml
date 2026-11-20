@@ -103,7 +103,7 @@
     <string name="mark_played">Позначити прослуханим</string>
     <string name="mark_unplayed">Позначити непрослуханим</string>
     <string name="skip_back">Назад 15 с</string>
-    <string name="skip_forward">Вперед 30 с</string>
+    <string name="skip_forward">Вперед 15 с</string>
     <string name="podcast_empty_subs">Підпишіться на подкаст – його нові епізоди з’являться тут.</string>
     <string name="speed">Швидкість</string>
 </resources>

@@ -59,6 +59,7 @@ fun BangaApp(app: AppState) {
             primary = Banga.accent, onPrimary = Banga.onAccent, background = Banga.bg,
             surface = Banga.surfaceRaised, onSurface = Banga.text,
         ),
+        typography = Banga.typography,
     ) {
     Box(Modifier.fillMaxSize().background(Banga.bg)) {
       Box(Modifier.fillMaxSize()) {

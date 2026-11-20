@@ -103,7 +103,7 @@
     <string name="mark_played">Mark as played</string>
     <string name="mark_unplayed">Mark as unplayed</string>
     <string name="skip_back">Back 15 s</string>
-    <string name="skip_forward">Forward 30 s</string>
+    <string name="skip_forward">Forward 15 s</string>
     <string name="podcast_empty_subs">Subscribe to a podcast – its new episodes will appear here.</string>
     <string name="speed">Speed</string>
 </resources>

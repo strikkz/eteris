@@ -13,7 +13,9 @@ import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import lt.eteris.radio.R
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
@@ -35,7 +37,18 @@ object Banga {
     val outline = Color(0xFF343B37)
     val error = Color(0xFFFF8F89)
 
-    private val family = FontFamily.SansSerif
+    /**
+     * Inter, the typeface of the BANGA design, shipped inside the app: the same letters in every language
+     * and on every phone (the phone's own font could change the design, e.g. serif Cyrillic).
+     */
+    val family = FontFamily(
+        Font(R.font.inter_regular, FontWeight.Normal),
+        Font(R.font.inter_medium, FontWeight.Medium),
+        Font(R.font.inter_semibold, FontWeight.SemiBold),
+        Font(R.font.inter_bold, FontWeight.Bold),
+        Font(R.font.inter_extrabold, FontWeight.ExtraBold),
+        Font(R.font.inter_black, FontWeight.Black),
+    )
     val hero = TextStyle(fontFamily = family, fontSize = 43.sp, lineHeight = 44.sp, fontWeight = FontWeight.ExtraBold, letterSpacing = (-0.06).em)
     val featured = TextStyle(fontFamily = family, fontSize = 36.sp, lineHeight = 36.sp, fontWeight = FontWeight.ExtraBold, letterSpacing = (-0.06).em)
     val screenTitle = TextStyle(fontFamily = family, fontSize = 34.sp, lineHeight = 36.sp, fontWeight = FontWeight.ExtraBold, letterSpacing = (-0.05).em)
@@ -43,6 +56,20 @@ object Banga {
     val rowTitle = TextStyle(fontFamily = family, fontSize = 15.sp, lineHeight = 20.sp, fontWeight = FontWeight.SemiBold, letterSpacing = (-0.01).em)
     val body = TextStyle(fontFamily = family, fontSize = 14.sp, lineHeight = 20.sp, fontWeight = FontWeight.Normal)
     val supporting = TextStyle(fontFamily = family, fontSize = 12.sp, lineHeight = 17.sp, fontWeight = FontWeight.Medium)
+    /** Material's text styles with Inter, for every Text that has no BANGA style of its own. */
+    val typography: androidx.compose.material3.Typography
+        get() = androidx.compose.material3.Typography().let { t ->
+            androidx.compose.material3.Typography(
+                displayLarge = t.displayLarge.copy(fontFamily = family), displayMedium = t.displayMedium.copy(fontFamily = family),
+                displaySmall = t.displaySmall.copy(fontFamily = family), headlineLarge = t.headlineLarge.copy(fontFamily = family),
+                headlineMedium = t.headlineMedium.copy(fontFamily = family), headlineSmall = t.headlineSmall.copy(fontFamily = family),
+                titleLarge = t.titleLarge.copy(fontFamily = family), titleMedium = t.titleMedium.copy(fontFamily = family),
+                titleSmall = t.titleSmall.copy(fontFamily = family), bodyLarge = t.bodyLarge.copy(fontFamily = family),
+                bodyMedium = t.bodyMedium.copy(fontFamily = family), bodySmall = t.bodySmall.copy(fontFamily = family),
+                labelLarge = t.labelLarge.copy(fontFamily = family), labelMedium = t.labelMedium.copy(fontFamily = family),
+                labelSmall = t.labelSmall.copy(fontFamily = family),
+            )
+        }
     val eyebrow = TextStyle(fontFamily = family, fontSize = 10.sp, lineHeight = 14.sp, fontWeight = FontWeight.ExtraBold, letterSpacing = 0.18.em)
 }
 

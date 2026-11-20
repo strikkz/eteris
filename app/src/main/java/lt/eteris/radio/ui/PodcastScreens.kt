@@ -407,6 +407,43 @@ fun PodcastPage(app: AppState, podcast: Podcast, onBack: () -> Unit) {
 
 // ---------- Mini player and full player for an episode ----------
 
+private fun speedLabel(sp: Float): String =
+    (if (sp % 1f == 0f) "%.0f" else if ((sp * 10) % 1f == 0f) "%.1f" else "%.2f").format(Locale.US, sp) + "×"
+
+/** Playback speed: a list to pick from, like the sleep timer. Lime when not 1×. */
+@Composable
+private fun SpeedButton(app: AppState) {
+    var open by remember { mutableStateOf(false) }
+    val sp = app.speed
+    val changed = kotlin.math.abs(sp - 1f) > 0.01f
+    Box {
+        Box(
+            Modifier
+                .height(36.dp)
+                .clip(RoundedCornerShape(50.dp))
+                .background(if (changed) Banga.accent else Color.White.copy(alpha = 0.09f))
+                .clickable { open = true }
+                .padding(horizontal = 14.dp),
+            contentAlignment = Alignment.Center,
+        ) {
+            Text(
+                stringResource(R.string.speed) + "  " + speedLabel(sp),
+                style = Banga.supporting, fontWeight = FontWeight.SemiBold,
+                color = if (changed) Banga.onAccent else Banga.text,
+            )
+        }
+        DropdownMenu(expanded = open, onDismissRequest = { open = false }, modifier = Modifier.background(Banga.surfaceRaised)) {
+            listOf(0.8f, 1f, 1.25f, 1.5f, 1.75f, 2f).forEach { v ->
+                val on = kotlin.math.abs(v - sp) < 0.01f
+                DropdownMenuItem(
+                    text = { Text(speedLabel(v), style = Banga.rowTitle, color = if (on) Banga.accent else Banga.text) },
+                    onClick = { app.setSpeed(v); open = false },
+                )
+            }
+        }
+    }
+}
+
 @Composable
 fun EpisodeMiniPlayer(app: AppState, ep: Episode, onOpen: () -> Unit) {
     var fraction by remember { mutableFloatStateOf(0f) }
@@ -543,13 +580,11 @@ fun EpisodePlayerScreen(app: AppState, ep: Episode, onClose: () -> Unit, onOpenP
                 IconButton48(R.drawable.ic_replay15, stringResource(R.string.skip_back), app::skipBack, big = true)
                 if (app.status == PlayStatus.ERROR) Pill(stringResource(R.string.retry), app::retry, accent = true)
                 else PlayButton(app.status, 80.dp, app::toggle)
-                IconButton48(R.drawable.ic_forward30, stringResource(R.string.skip_forward), app::skipForward, big = true)
+                IconButton48(R.drawable.ic_forward15, stringResource(R.string.skip_forward), app::skipForward, big = true)
             }
 
             Row(Modifier.fillMaxWidth().padding(top = 18.dp), verticalAlignment = Alignment.CenterVertically) {
-                val sp = app.speed
-                val label = (if (sp % 1f == 0f) "%.0f" else if ((sp * 10) % 1f == 0f) "%.1f" else "%.2f").format(sp) + "×"
-                Pill(label, app::nextSpeed, small = true, modifier = Modifier)
+                SpeedButton(app)
                 Spacer(Modifier.weight(1f))
                 SleepTimerButton()
             }

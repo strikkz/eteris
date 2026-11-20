@@ -104,7 +104,7 @@
     <string name="mark_played">Pažymėti išklausytu</string>
     <string name="mark_unplayed">Pažymėti neišklausytu</string>
     <string name="skip_back">Atgal 15 s</string>
-    <string name="skip_forward">Pirmyn 30 s</string>
+    <string name="skip_forward">Pirmyn 15 s</string>
     <string name="podcast_empty_subs">Užsiprenumeruok podkastą – nauji jo epizodai atsiras čia.</string>
     <string name="speed">Greitis</string>
 </resources>

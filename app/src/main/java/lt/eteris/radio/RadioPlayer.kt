@@ -11,7 +11,7 @@ import androidx.media3.common.util.UnstableApi
  * Radio-specific behaviour on top of the real player:
  * - "Next" / "Previous" (car buttons, steering wheel, notification) always switch the station, in a circle.
  * - After a long pause, playback resumes from the live broadcast, not from the old buffer.
- * Podcast episodes are ordinary recordings: time bar, rewinding; "next/previous" jump +30 / -15 seconds.
+ * Podcast episodes are ordinary recordings: time bar, rewinding; "next/previous" jump 15 seconds forward / back.
  */
 @OptIn(UnstableApi::class)
 class RadioPlayer(player: Player) : ForwardingPlayer(player) {
@@ -73,7 +73,7 @@ class RadioPlayer(player: Player) : ForwardingPlayer(player) {
     companion object {
         private const val POSITION_UNKNOWN = -1L
         const val SKIP_BACK_MS = 15_000L
-        const val SKIP_FORWARD_MS = 30_000L
+        const val SKIP_FORWARD_MS = 15_000L
     }
 
     override fun isCommandAvailable(command: Int): Boolean = availableCommands.contains(command)

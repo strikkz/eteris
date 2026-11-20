@@ -120,12 +120,8 @@ class AppState(private val ctx: Context) {
     fun skipBack() = controller?.seekBack() ?: Unit
     fun skipForward() = controller?.seekForward() ?: Unit
 
-    /** 1x -> 1.25x -> 1.5x -> 1.75x -> 2x -> 0.8x -> 1x */
-    fun nextSpeed() {
+    fun setSpeed(v: Float) {
         val c = controller ?: return
-        val steps = listOf(1f, 1.25f, 1.5f, 1.75f, 2f, 0.8f)
-        val i = steps.indexOfFirst { kotlin.math.abs(it - c.playbackParameters.speed) < 0.01f }
-        val v = steps[(i + 1) % steps.size]
         c.setPlaybackSpeed(v)
         speed = v
     }
