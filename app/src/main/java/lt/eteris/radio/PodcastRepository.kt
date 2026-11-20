@@ -60,6 +60,8 @@ data class Episode(
     fun toMediaItem(): MediaItem = MediaItem.Builder()
         .setMediaId(id)
         .setUri(audioUrl)
+        // lrt.lt recordings come as HLS playlists
+        .setMimeType(if (audioUrl.contains(".m3u8", ignoreCase = true)) androidx.media3.common.MimeTypes.APPLICATION_M3U8 else null)
         .setRequestMetadata(MediaItem.RequestMetadata.Builder().setMediaUri(Uri.parse(audioUrl)).build())
         .setMediaMetadata(
             MediaMetadata.Builder()
@@ -201,13 +203,78 @@ object PodcastRepository {
     suspend fun episodes(p: Podcast, force: Boolean = false): List<Episode>? {
         podcasts[p.id] = p
         if (!force) feedCache[p.id]?.let { (at, list) -> if (SystemClock.elapsedRealtime() - at < 15 * 60_000) return list }
-        val list = withContext(Dispatchers.IO) {
+        val feed = withContext(Dispatchers.IO) {
             val text = get(p.feedUrl) ?: return@withContext null
             runCatching { parseFeed(p, text) }.getOrNull()
-        } ?: return null
+        }
+        // LRT sometimes stops updating a show's podcast feed while new episodes keep appearing on lrt.lt:
+        // the newer ones are taken from LRT's own site.
+        val fromSite = if (p.author.equals("LRT", ignoreCase = true)) {
+            withContext(Dispatchers.IO) { runCatching { lrtNewer(p, feed.orEmpty()) }.getOrDefault(emptyList()) }
+        } else emptyList()
+        if (feed == null && fromSite.isEmpty()) return null
+        val list = (fromSite + feed.orEmpty()).sortedByDescending { it.date }
         list.forEach { episodes[it.id] = it }
         feedCache[p.id] = SystemClock.elapsedRealtime() to list
         return list
+    }
+
+    // ---------- LRT's own site (lrt.lt radioteka) ----------
+
+    private val lrtCategories = ConcurrentHashMap<Long, Long>()
+
+    /** LRT's show (category) for a podcast, found by its name. */
+    private fun lrtCategory(p: Podcast): Long? {
+        lrtCategories[p.id]?.let { return it.takeIf { id -> id > 0 } }
+        val text = get("https://www.lrt.lt/api/search?count=1&q=" + URLEncoder.encode(p.title, "UTF-8")) ?: return null
+        val cats = JSONObject(text).optJSONArray("similar_categories") ?: JSONArray()
+        val want = p.title.trim().lowercase()
+        var found = 0L
+        for (i in 0 until cats.length()) {
+            val c = cats.getJSONObject(i)
+            if (c.optInt("is_audio") != 1) continue
+            val t = c.optString("category_title").trim().lowercase()
+            if (t == want) { found = c.optLong("category_id"); break }
+        }
+        lrtCategories[p.id] = found
+        return found.takeIf { it > 0 }
+    }
+
+    private val lrtDate = SimpleDateFormat("yyyy.MM.dd HH:mm", Locale.US).apply {
+        timeZone = java.util.TimeZone.getTimeZone("Europe/Vilnius")
+    }
+
+    /** Episodes on lrt.lt that are newer than the podcast feed's newest one. */
+    private suspend fun lrtNewer(p: Podcast, feed: List<Episode>): List<Episode> = coroutineScope {
+        val cat = lrtCategory(p) ?: return@coroutineScope emptyList()
+        val text = get("https://www.lrt.lt/api/search?count=20&order=desc&category_id=$cat") ?: return@coroutineScope emptyList()
+        val items = JSONObject(text).optJSONArray("items") ?: return@coroutineScope emptyList()
+        val newest = feed.maxOfOrNull { it.date } ?: 0L
+        val titles = feed.map { it.title.trim().lowercase() }.toSet()
+        val fresh = (0 until items.length()).map { items.getJSONObject(it) }.filter { o ->
+            val d = runCatching { lrtDate.parse(o.optString("item_date"))!!.time }.getOrDefault(0L)
+            o.optInt("is_audio") == 1 && d > newest + 30 * 60_000 && o.optString("title").trim().lowercase() !in titles
+        }.take(12)
+        fresh.map { o -> async { lrtEpisode(p, o.optString("url")) } }.awaitAll().filterNotNull()
+    }
+
+    /** One lrt.lt recording: its audio address, date and text. */
+    private fun lrtEpisode(p: Podcast, path: String): Episode? {
+        if (path.isEmpty()) return null
+        val text = get("https://www.lrt.lt/servisai/stream_url/vod/media_info/?url=" + URLEncoder.encode(path, "UTF-8")) ?: return null
+        val o = JSONObject(text)
+        val item = o.optJSONObject("playlist_item") ?: return null
+        val file = item.optString("file").ifEmpty { return null }
+        val date = runCatching { lrtDate.parse(o.optString("date"))!!.time }.getOrDefault(0L)
+        val img = item.optString("image").takeIf { it.isNotEmpty() }?.let { if (it.startsWith("http")) it else "https://www.lrt.lt$it" }
+        return Episode(
+            id = EPISODE_PREFIX + p.id + ":lrt" + (item.optString("mediaid").ifEmpty { o.optString("id") }),
+            podcastId = p.id, podcastTitle = p.title,
+            title = o.optString("title").ifEmpty { item.optString("title") }.trim(),
+            description = plain(o.optString("content")),
+            audioUrl = file, date = date, durationMs = 0L,
+            image = p.artwork.ifEmpty { img.orEmpty() },
+        )
     }
 
     /** Newest episodes from all subscribed podcasts together. */
