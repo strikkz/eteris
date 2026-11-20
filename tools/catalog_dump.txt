@@ -1,111 +1,67 @@
-28 | RELAX FM Lietuva | lithuanian | lithuania,pop | https://relaxfm.lt/ | 
-23 | Power Gold LT | lithuanian | dance,pop | https://powerhitradio.tv3.lt/ | 
-18 | Radio Lietus |  |  | https://lietus.15min.lt/ | 
-17 | Радио Лента | russian | news,talk | https://worldreport.today/ | Kaunas
-17 | M-1 Radio |  |  | https://m-1.15min.lt/ | 
-16 | Radiocentras |  | pop rock | https://rc.lt/ | 
-15 | m-1 |  |  | http://m-1.lt/ | 
-12 | ZipFM |  |  | https://zipfm.lt/ | 
-12 | LRT Radijas |  |  | https://www.lrt.lt/mediateka/tiesiogiai/lrt-radija | 
-12 | Easy FM | english,lithuanian | classic rock,jazz,lounge,smooth jazz | https://www.ziniuradijas.lt/easy-fm/ | 
-11 | Truckers Rave | english | gabber,hard house,hard techno,hard trance,hardcore,hardstyle | https://radio.eugenijus.lt/ | Vilnius
-11 | PowerHitRadio Lithuania |  |  | https://powerhitradio.tv3.lt/ | 
-11 | M-1 Dance |  |  | https://radio.m-1.fm/m-1dance/aac | Vilniaus m.
-10 | Žinių radijas [64 kbps MP3] | lithuanian |  | http://www.ziniuradijas.lt/ | 
-9 | M-1 Plius | lithuanian | uab m-1 | http://www.pliusas.fm/ | Vilniaus m.
-8 | Radiocentras |  |  | https://rc.lt/ | 
-8 | Draugystės radijas | lithuanian | oldies |  | Šiauliai
-8 | Neringa FM – The soundtrack of endless holidays |  | balearic,chillout,deep house,downtempo,dub techno,electronic | https://neringafm.lt/listen-neringa-fm-online/ | Nida
-7 | LRT Opus |  |  | https://www.lrt.lt/mediateka/tiesiogiai/lrt-opus | 
-7 | Tavo Balsas LT |  |  | https://tavobalsas.fm/ | 
-6 | Žinių Radijas | lithuanian | lietuvos zinios,lithuanian news radio,zinios,zinios is lietu | http://www.ziniuradijas.lt/ | Vilniaus m.
-6 | Power Hit Radio LT | lithuanian | dance | https://powerhitradio.tv3.lt/ | 
-6 | European Hit Radio |  |  | https://europeanhitradio.lt/ | Vilniaus m.
-5 | Upso Radijas |  |  | https://upsas.lt/ | 
-5 | Radijo stotis M-1 |  | pop,talk,top 40 | https://m-1.15min.lt/ | Vilnius
-5 | LRT Klasika |  |  | https://www.lrt.lt/mediateka/tiesiogiai/lrt-klasik | 
-5 | ZIP FM | lithuanian | pop music | http://www.zipfm.lt/ | 
-5 | Radio 3 | lithuanian | 2000s,80s,90s,classic rock,dance,pop | https://radio3.tv3.lt/ | Vilnius
-5 | Super FM |  | pop music | http://www.superfmradio.lt/ | 
-5 | Power Hit Radio LT |  |  | https://powerhitradio.tv3.lt/ | Vilnius 
-4 | COOL RADIO | lithuanian | hits,pop | https://stations.radioboss.fm/r/coolradio | Kaunas
-4 | Christmas Radio | english | christmas | https://zeno.fm/radio/christmas-radio-MV/ | Vilnius
-4 | Fred Film Radio-24 lietuvių kalba | lithuanian | film | https://www.fred.fm/ | 
-4 | Laluna [MP3] | lithuanian | uab radijo stotis laluna | http://laluna.lt/ | Klaipėdos m.
-4 | Power Gold | lithuanian |  | https://powerhitradio.lt/ | 
-4 | Taktas FM | lithuanian | dance,electronic,international hits,lithuanian music,pop | https://taktasfm.lt/ | 
-4 | Kelyje Klaipėda |  |  | https://www.radijaskelyje.lt/ | Klaipėda 
-4 | Pulsas |  |  | https://pulsas.lt/ | 
-4 | Mantinho Dance Pulse FM |  |  | https://mantinhodancepulsefm.com/ | 
-3 | Audiomastering.lt |  |  | https://radio.audiomastering.lt/ | 
-3 | Palanga Street Radio | english | eclectic | https://palanga.live/ | Vilnius
-3 | pmr.lt - world music radio |  | world music | https://pmr.lt/ | 
-3 | Mantra Radio | hindi | meditation,religious | https://mantraradio.eu/ | Vilnius
-3 | Vilnius fm |  |  | https://vilniusfm.lt/ | Vilnius
-3 | M-1 Plius |  |  | https://www.pliusas.fm/ | 
-3 | Радио Свободынх Народов | komi,sakha,tatar,tyvan | world music | https://freenations.online/ | 
-3 | -=PoWeR=- | english,lithuanian,russian |  | https://powerradio.webstarts.com/ | 
-3 | Радио RDTK | russian | society,talk | https://rdtk.me/ | Vilnius
-3 | Radio R | lithuanian,russian | pop music | https://radior.lt/ | 
-2 | Relax FM 100 Hitu |  |  | https://100hitu.lt/ | Vilnius
-2 | Relax FM Senti |  |  | https://relaxfm.lt/ | Vilnius
-2 | TOP FM LT |  |  | https://topfm.lt/ | Vilnius
-2 | Start FM 94.2 MHz Vilnius [MP3] | lithuanian | underground | http://www.startfm.lt/ | 
-2 | Zip FM is Kasetes |  |  | https://zipfm.lt/ | Vilnius
-2 | Radijo Musikii |  |  | https://www.radijo-musikii.net/ | 
-2 | Relax FM | lithuanian | pop | https://relaxfm.lt/ | Vilnius
-2 | RADIOR ENERGY | russian | club,dance,hits,pop | https://radior.lt/ | Vilnius
-2 | BEVEIK RADIJAS | lithuanian | active rock,alternative rock,indie rock,rock | https://beveikradijas.com/ | Vilnius
-2 | Haze Pub Radio | lithuanian | alternative,drum bass,electronic,hip hop,metal,punk,rap,rock | https://kalaver.in/rocks/ | Vilnius
-2 | Monsters FM | english | comedy | https://zeno.fm/radio/monsters-fm/ | Vilnius
-2 | estakada99 | english,lithuanian | 24/7,alternative,community radio,experimental,non-profit,wei | https://e99.live/ | 
-2 | Fréquence Protestante |  |  | https://frequenceprotestante.com/ | 
-2 | Vaikų radijas | lithuanian | uab proarsa | http://www.vaikuradijas.lt/ | 
-2 | GoldFM |  |  | https://goldfm.lt/ | 
-2 | Neringa FM |  | university radio |  | 
-2 | MANO FM LT | lithuanian |  | http://manofm.lt/new/ | 
-2 | Mazeikiai FM |  | pop music | https://www.facebook.com/Mazeikiai.FM/ | 
-2 | Gold FM |  |  | http://goldfm.lt/ | 
-2 | Puko Radijas |  |  | https://pukas.lt/ | Kaunas 
-1 | Mano FM |  |  | http://klausyk.manofm.lt:8000/Icecast2 | 
-1 | Truckers Rave | english | gabber,happy hardcore,hard house,hard techno,hard trance,har | https://radio.eugenijus.lt/ | Vilnius
-1 | Pūkas-2 |  |  | http://pukas.lt/ | Kaunas 
-1 | RADIO MOON | english | smooth jazz | http://193.70.34.27:20330/kdime | 
-1 | Leproradio |  |  | https://leproradio.com/ | 
-1 | Radijo stotis Radio3 | lithuanian | adult contemporary,disco,pop,rock,top 40 | https://radio3.tv3.lt/ | Vilnius
-1 | Radijo Stotis Kelyje | lithuanian | pop | https://radijaskelyje.lt/ | Vilnius
-1 | Jazz FM | lithuanian | blues,funk,jazz,soul | https://jazzfm.lt/ | Vilnius
-1 | Radijo stotis FM99 | lithuanian | news,pop,rock,talk,top 40 | https://fm99.lt/ | Alytus
-1 | Radio Vilnius | english | electronic | https://radiovilnius.live/ | Vilnius
-1 | Life Chill Music | lithuanian | chill out,downtempo,lounge | https://www.lifechillmusic.com/ | Šiauliai
-1 | Radijo Klubas | lithuanian | pop | https://www.didzdvaris.lt/radijo-klubas/ | Šiauliai
-1 | Criminal Tribe | lithuanian | hits |  | Vilnius
-1 | X-RADIO | язык: русский |  | http://185.8.60.5:8000/; | 
-1 | Radio LaLuna | lithuanian,russian | classic hits,hits,pop,russian hits | https://laluna.lt/ | 
-1 | Neringa fm * |  |  | https://neringafm.lt/listen-neringa-fm-online/ | Vilnius
-1 | Geras FM | lithuanian |  | https://www.gerasfm.lt/ | 
-1 | PMR |  | world music | https://pmr.lt/ | 
-1 | Rock Radio |  | metal,rock | https://rockradio.lt/ | 
-1 | Play Radio |  |  | https://n08.radiojar.com/d9cm273ystzuv | Vilniaus m.
-1 | radio.audiomastering.lt |  |  | https://radio.audiomastering.lt/ | 
-1 | Tau | lithuanian | uab artvydas | http://www.tau.lt/ | 
-1 | Mažeikių Aidas | lithuanian |  |  | 
-1 | Radio Fiesta |  |  | https://radiofiesta.lt/ | 
-1 | Laluna [AAC] | lithuanian | uab radijo stotis laluna | http://laluna.lt/ | Klaipėdos m.
-1 | Kapsai |  | pop music | https://www.facebook.com/radijaskapsai/ | 
-1 | Kelyje Kaunas |  |  | https://www.radijaskelyje.lt/ | Kaunas 
-1 | Utenos Radijas |  |  | https://utenosradijas.lt/ | Utena 
-1 | Power LT |  |  | https://powerradio.yourwebsitespace.com/ | Vilnius
-0 | Marijos radijas | lithuanian | catholic,christian | http://www.marijosradijas.lt/ | 
-0 | Radijo Stotis Kelyje | lithuanian | news,pop,talk | https://radijaskelyje.lt/ | Kaunas
-0 | XFM Radijas | lithuanian | christian,klaipėda,uab aukštaitijos radijas,uab centro medij | http://xfm.lt/ | 
-0 | zzz-rock-zzz | english | classic rock,hard rock,rock | http://www.zzz-rock-zzz.com/ | Vilnius
-0 | Patejago Radijas | lithuanian | dance,hits,pop | https://www.patejago.lt/ | Vilnius
-0 | MRPL |  |  | https://mrpl.babrai.com/ | 
-0 | MRPL | lithuanian | various | https://mrpl.babrai.com/ | 
-0 | PMR.lt | english | ethnic,folk | https://pmr.lt/en | Vilnius
-0 | Pukas 2 | lietuviškai | blues rock,folklore,smooth jazz | https://pukas.lt/ | 
-0 | Marso Radijas |  | variuos topics | https://marsas.me/ | 
-0 | Radio stotis Laluna |  |  | https://www.laluna.lt/ | 
-0 | Revo Banga Rock |  | clear |  | 
-0 | Geras2 FM |  |  | http://www.gerasfm.lt/ | Vilnius 
+== Apple top LT
+ERR Expecting value: line 1 column 1 (char 0)
+== itunes top charts LT (older rss)
+25
+1550172371 | Proto Pemza
+300172145 | Эхо Москвы
+1471974950 | Vakaro pasaka
+1488941996 | Negyvas Eteris
+1583956271 | Du Bitai
+1712508674 | Tapk Geresniu
+1291423644 | The Diary Of A CEO with Steven Bartlett
+135067274 | Global News Podcast
+1486598237 | O, Dangau!
+1766347403 | Diagnozė: gyvenimas
+360084272 | The Joe Rogan Experience
+1616175210 | Живой Гвоздь
+1751952287 | Kas ten dedasi?
+1537788786 | The Rest Is History
+1200361736 | The Daily
+151230264 | Economist Podcasts
+1434243584 | Lex Fridman Podcast
+1438449989 | FT News Briefing
+1612424182 | Ukraine: The Latest
+1517954480 | Rotten Mango
+1364954186 | Pralaužk vieną šaltą
+1479576917 | Čia ir dabar
+1523005356 | ФЕЙГИН LIVE
+1545953110 | Huberman Lab
+1744631325 | Prof G Markets
+== search LRT country=lt
+15
+1434811262 | Lietuvos diena | LRT | https://www.spreaker.com/show/3085666/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
+1434813213 | Ryto garsai | LRT | https://www.spreaker.com/show/3085705/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
+1471997316 | LRT Aktualijų studija | LRT | https://www.spreaker.com/show/3131625/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
+622366888 | Vakaras su knyga | LRT | https://www.spreaker.com/show/3085751/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
+1837333971 | Buvo nebėra | LRT | https://www.spreaker.com/show/6715753/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
+584918597 | Radijo dokumentika | LRT | https://www.spreaker.com/show/3085699/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
+1479576917 | Čia ir dabar | LRT | https://www.spreaker.com/show/4042772/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
+1402050944 | 10–12 | LRT | https://www.spreaker.com/show/3075170/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
+1434811539 | Mažoji studija. Dievo žodis. | LRT | https://www.spreaker.com/show/3085672/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
+1471974950 | Vakaro pasaka | LRT | https://www.spreaker.com/show/3085752/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
+1502958800 | Homo cultus. Žmogus ir miestas | LRT | https://www.spreaker.com/show/4252847/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
+1435061717 | Tuzinas | LRT | https://www.spreaker.com/show/3131810/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
+1679711627 | LRT Radijo ringas | LRT | https://www.spreaker.com/show/4956879/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts1
+1766347403 | Diagnozė: gyvenimas | LRT | https://www.spreaker.com/show/6270290/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
+1706806909 | Homo cultus. Paribio pokalbiai | LRT | https://www.spreaker.com/show/5952669/episodes/feed | https://is1-ssl.mzstatic.com/image/thumb/Podcasts2
+== search 'podkastas'
+15
+1443453815 | BasketNews.lt podkastas | BasketNews.lt | https://feed.podbean.com/basketnews/feed.xml
+1751227702 | Pirmyn Podkastas | Laurynas Bilotas | https://anchor.fm/s/fb1b6efc/podcast/rss
+1540368943 | IT srautas | IT naujienų podkastas | https://feeds.redcircle.com/9a3d0e49-d9e3-4572-ae49-904a5c17b282
+1495396420 | Eurodiena.lt podkastas apie „Euroviziją“ | Eurodiena.lt | https://anchor.fm/s/12789bd4/podcast/rss
+1515662786 | Lauryno Podkastas | Laurynas Jonika | https://anchor.fm/s/22345324/podcast/rss
+1605645383 | Dūzė Pua Eurovizijos podkastas | Dūzė Pua | https://anchor.fm/s/9d17d2c8/podcast/rss
+1509982745 | Bogdano Podkastas | Bogdan Javgurean | https://anchor.fm/s/1e4941fc/podcast/rss
+1491327044 | LRT tyrimų podkastas | LRT | https://www.spreaker.com/show/4169014/episodes/feed
+1496618187 | 5AM Podkastas | 5AM | https://rss.buzzsprout.com/810641.rss
+1200699228 | Rinkodaros podkastas | Komunikacijos amatininkai | https://feeds.soundcloud.com/users/soundcloud:users:285869280/sounds.rss
+1287601911 | Kaip Nepasenti Podkastas | Kaip Nepasenti | https://feeds.soundcloud.com/users/soundcloud:users:333429861/sounds.rss
+1545231598 | kaRtu | kaRtu Podkastas | https://anchor.fm/s/4491bd6c/podcast/rss
+1553692509 | PodKasta | Podkasta | https://anchor.fm/s/207ebb50/podcast/rss
+1503739549 | PODKASTA | Cerita.kasta | https://anchor.fm/s/1398b170/podcast/rss
+1509196540 | 2qika300podkasta | Binkabinka | https://anchor.fm/s/1d563b24/podcast/rss
+== a feed
+https://www.spreaker.com/show/3085666/episodes/feed
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Lietuvos diena</title><link>https://www.spreaker.com/podcast/lietuvos-diena--3085666</link><description><![CDATA[Naujausi Lietuvos ir pasaulio įvykiai bei jų komentarai. Kasdien 12.15 val. per LRT RADIJĄ.]]></description><atom:link href="https://www.spreaker.com/show/3085666/episodes/feed" rel="self" type="application/rss+xml"/><language>lt</language><category>News</category><copyright>Copyright LRT</copyright><image><url>https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/8e4465b269aa2cb4b864c48f1c26ca78.jpg</url><title>Lietuvos diena</title><link>https://www.spreaker.com/podcast/lietuvos-diena--3085666</link></image><lastBuildDate>Mon, 02 Nov 2026 19:14:17 +0000</lastBuildDate><itunes:author>LRT</itunes:author><itunes:owner><itunes:name>LRT</itunes:name><itunes:email>podcasts@lrt.lt</itunes:email></itunes:owner><itunes:image href="https://d3wo5wojvuv7l.cloudfront.net/t_rss_itunes_square_1400/images.spreaker.com/original/8e4465b269aa2cb4b864c48f1c26ca78.jpg"/><itunes:subtitle>Naujausi Lietuvos ir pasaulio įvykiai bei jų komentarai. Kasdien 12.15 val. per LRT RADIJĄ.</itunes:subtitle><itunes:summary><![CDATA[Naujausi Lietuvos ir pasaulio įvykiai bei jų komentarai. Kasdien 12.15 val. per LRT RADIJĄ.]]></itunes:summary><itunes:category text="News"/><itunes:explicit>false</itunes:explicit><podcast:guid>1e2a1d1a-65e0-5143-bb20-a3a2906629fa</podcast:guid><itunes:type>episodic</itunes:type><item><title>Per Vėlines ant kapų degančios žvakės primena, kad meilė ir pagarba neturi laiko ribų</title><link>https://www.spreaker.com/episode/per-velines-ant-kapu-degancios-zvakes-primena-kad-meile-ir-pagarba-neturi-laiko-ribu--76133753</link><description><![CDATA[Ukrainos Chersono srityje per savaitę trukusias paliaubas iš Oleškų miesto evakuota apie aštuoni šimtai gyventojų.<br /><br />Mirusiųjų pagerbimo dieną kapinėse dega tūkstančiai žvakių, primenančių, kad meilė ir ryšys neturi laiko ribų.<br /><br />Kaip savo artimuosius prisimena kitų Europos šalių gyventojai?<br /><br />Kodėl daugiabučių kiemuose nemažėja apleistų automobilių?<br /><br /><br />Ved. Madona Lučkaitė]]></description><guid isPermaLink="false">https:
