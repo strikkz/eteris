@@ -1,13 +1,17 @@
 #!/bin/bash
-# Power Hit Radio show pages: where are recordings (run 13)
+# PHR show page structure around recordings (run 14)
 set -u
 out=tools/catalog_dump.txt; : > $out
 UA="Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/124 Mobile Safari/537.36"
-for s in driule-the-gang megahitai ten-walls power-savaitgalis jovaniclub sok-i-kelnes; do
-  curl -s -m 30 -L -A "$UA" "https://powerhitradio.tv3.lt/laidos/$s" -o /tmp/p.html
-  echo "== $s $(wc -c </tmp/p.html)" >> $out
-  grep -oiE '(https?:)?//[^"'"'"' )]*(mixcloud|soundcloud|spotify|\.mp3|\.m4a|\.aac|podbean|spreaker|anchor|youtube\.com/(embed|watch)|youtu\.be|wp-content/uploads[^"'"'"' ]*\.(mp3|m4a))[^"'"'"' )<]*' /tmp/p.html | sort -u | head -12 >> $out
-  grep -oiE '<(audio|iframe|source)[^>]{0,200}' /tmp/p.html | head -5 >> $out
-done
-echo "== podbean 'Power Hit Radio svečiai' feed" >> $out
-curl -s -m 20 https://feed.podbean.com/infoutn/feed.xml | grep -oE "<(title|pubDate|itunes:author)>[^<]{0,90}" | head -12 >> $out
+curl -s -m 30 -L -A "$UA" "https://powerhitradio.tv3.lt/laidos/sok-i-kelnes" -o /tmp/p.html
+python3 - >> $out <<'PY'
+import re
+h=open('/tmp/p.html',encoding='utf-8',errors='ignore').read()
+i=h.find('/record/pwr_')
+print(re.sub(r'\s+',' ',h[i-2500:i+1500]))
+print('COUNT', len(re.findall(r'/record/pwr_\d+\.mp3',h)))
+print(sorted(set(re.findall(r'/record/pwr_(\d{8})',h)))[-20:])
+m=re.search(r'<meta property="og:image" content="([^"]+)"',h); print('OG', m and m.group(1))
+m=re.search(r'<meta property="og:description" content="([^"]+)"',h); print('DESC', m and m.group(1))
+PY
+curl -s -m 20 -I -A "$UA" "https://powerhitradio.tv3.lt$(grep -oE '/record/pwr_[0-9]+\.mp3' /tmp/p.html | head -1)" | tr -d '\r' | grep -iE "^(HTTP|content-type|content-length|accept-ranges|access-control)" >> $out
