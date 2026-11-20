@@ -1,8 +1,15 @@
-HTTP/2 200 
-lass="plajeriui"></div> </div> <div data-test="schedule-show-slot" class="scheduleItemBlock wkd-1" style="display:none;" data-programid="75" data-timeon="22:00:00" data-timeoff="23:00:00"> <p class="scheduleItemTime" data-test="schedule-show-start-time">22:00</p> <div data-test="schedule-show-image" class="scheduleItem"> <a href="/laidos/decks-and-stories"> <div> <div class="scheduleImgBlock"> <picture><img src="https://www.tv3.lt/Uploads/image/DAndS.JPG" alt="Decks &amp; Stories" class="scheduleImg" loading="lazy"></picture> </div> </div> </a></div> <div class=" scheduleProgramBlock"> <a href="/laidos/decks-and-stories"> <p style="font-weight:500" font-size="14" data-test="schedule-show-title" class="scheduleProgramTxt">Decks & Stories</p> </a> <p font-size="12" class="mobile-hidden scheduleProgramLine" data-test="schedule-show-description">Eteryje Pirmadieniais nuo 22:00 iki 23:00</p> </div> <div class="scheduleProgramReplay" data-timeon="22"> <span class="playHistory" data-title="Decks &amp; Stories" data-list='[22]'><span class="fa fa-play-circle" title="Klausyti įrašo"></span><span class="mobile-hidden"> Klausyti įrašo</span></span> </div> <div class="plajeriui"></div> </div> <div data-test="schedule-show-slot" class="scheduleItemBlock wkd-1" style="display:none;" data-programid="9" data-timeon="23:00:00" data-timeoff="23:59:59"> <p class="scheduleItemTime" data-test="schedule-show-start-time">23:00</p> <div data-test="schedule-show-image" class="scheduleItem"> <a href="/laidos/driule-the-gang"> <div> <div class="scheduleImgBlock"> <picture><img src="/Uploads/file/dj/c_driule.png" alt="Driule" class="scheduleImg" loading="lazy"></picture> </div> </div> </a></div> <div class=" scheduleProgramBlock"> <a href="/laidos/driule-the-gang"> <p style="font-weight:500" font-size="14" data-test="schedule-show-title" class="scheduleProgramTxt">Driule & The Gang</p> </a> <p font-size="12" class="mobile-hidden scheduleProgramLine" data-test="schedule-show-description">Eteryje pirmadieniais nuo 23:00 iki 00:00</p> </div> <div class="scheduleProgramReplay" data-timeon="23"> <span class="playHistory" data-title="Driule &amp; The Gang" data-list='[23]'><span class="fa fa-play-circle" title="Klausyti įrašo"></span><span class="mobile-hidden"> Klausyti įrašo</span></span> </div> <div class="plajeriui"></div> </div> <div data-test="schedule-show-slot" class="scheduleItemBlock wkd-2" style="display:none;" data-programid="17" data-timeon="00:00:00" data-timeoff="02:00:00"> <p class="scheduleItemTime" data-test="schedule-show-start-time">00:00</p> <div data-test="schedule-show-image" class="scheduleItem"> <a href="/laidos/g-spot-dj-s-on-air"> <div> <div class="scheduleIm
-megahitai records 0 []
-has section False
-ten-walls records 0 []
-has section False
-driule-the-gang records 0 ['\n                                                                                    Pr\n                                                                                        <span>-</span> nuo 23:00 iki 23:59\n                                            ']
-has section False
+0 days ago 20261120 08h: 200
+1 days ago 20261119 08h: 200
+3 days ago 20261117 08h: 200
+6 days ago 20261114 08h: 200
+7 days ago 20261113 08h: 200
+8 days ago 20261112 08h: 404
+10 days ago 20261110 08h: 404
+14 days ago 20261106 08h: 404
+      8 scheduleItemBlock wkd-1
+      8 scheduleItemBlock wkd-2
+      7 scheduleItemBlock wkd-3
+      8 scheduleItemBlock wkd-4
+     10 scheduleItemBlock wkd-5
+     13 scheduleItemBlock wkd-6
+     14 scheduleItemBlock wkd-7
