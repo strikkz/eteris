@@ -120,7 +120,7 @@ class AppState(private val ctx: Context) {
     fun skipBack() = controller?.seekBack() ?: Unit
     fun skipForward() = controller?.seekForward() ?: Unit
 
-    fun setSpeed(v: Float) {
+    fun changeSpeed(v: Float) {
         val c = controller ?: return
         c.setPlaybackSpeed(v)
         speed = v

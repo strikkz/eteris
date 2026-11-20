@@ -437,7 +437,7 @@ private fun SpeedButton(app: AppState) {
                 val on = kotlin.math.abs(v - sp) < 0.01f
                 DropdownMenuItem(
                     text = { Text(speedLabel(v), style = Banga.rowTitle, color = if (on) Banga.accent else Banga.text) },
-                    onClick = { app.setSpeed(v); open = false },
+                    onClick = { app.changeSpeed(v); open = false },
                 )
             }
         }
