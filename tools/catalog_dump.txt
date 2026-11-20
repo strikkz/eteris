@@ -1,7 +1,21 @@
-keys ['total_found', 'page', 'facets', 'items', 'similar_tags', 'suggest_tags_total', 'q', 'meta']
-{"id": 3118437, "title": "Rapsodija. Namiškiai. Erkė", "url": "/radioteka/irasas/2000929126/rapsodija-namiskiai-erke", "date": null, "item_date": "2026.11.18 19:00", "duration": null, "media_duration": null, "photo": null, "img_path_prefix": "/img/2026/11/18/2543153-809796-", "img_path_postfix": ".jpg", "is_audio": 1, "category_title": "Rapsodija", "content": null, "summary": null}
-{"id": 3111481, "title": "Rapsodija. Kas naujesnio", "url": "/radioteka/irasas/2000922140/rapsodija-kas-naujesnio", "date": null, "item_date": "2026.11.11 19:00", "duration": null, "media_duration": null, "photo": null, "img_path_prefix": "/img/2026/11/11/2537634-310458-", "img_path_postfix": ".jpg", "is_audio": 1, "category_title": "Rapsodija", "content": null, "summary": null}
-{"id": 3104782, "title": "Rapsodija. „DOOMSDAY“", "url": "/radioteka/irasas/2000915477/rapsodija-doomsday", "date": null, "item_date": "2026.11.04 19:00", "duration": null, "media_duration": null, "photo": null, "img_path_prefix": "/img/2026/11/04/2530695-258454-", "img_path_postfix": ".jpg", "is_audio": 1, "category_title": "Rapsodija", "content": null, "summary": null}
-{"id": 3096438, "title": "Rapsodija. Repo deivės", "url": "/radioteka/irasas/2000907149/rapsodija-repo-deives", "date": null, "item_date": "2026.10.28 19:00", "duration": null, "media_duration": null, "photo": null, "img_path_prefix": "/img/2026/10/28/2523318-567126-", "img_path_postfix": ".jpg", "is_audio": 1, "category_title": "Rapsodija", "content": null, "summary": null}
-url /radioteka/irasas/2000929126/rapsodija-namiskiai-erke
-{"id":"2000929126","title":"Rapsodija. Nami\u0161kiai. Erk\u0117","type":2,"content":"<p>LRT Opus \u201eSavait\u0117s Albumo\u201c kaltininkas Erk\u0117 - Rapsodijos studijoje<\/p><p>Ved. Aleksandras Kovganko-Sania Banginis ir DJ Mamania <\/p>","category_id":6559,"heritage":null,"date":"2026.11.18 19:00","offset":null,"tags":[{"name":"Erk\u0117","slug":"erke"},{"slug":"hip-hopas","name":"Hip Hopas"},{"slug":"repas","name":"Repas"},{"name":"Muzyka","slug":"muzyka"},{"name":"Rapsodija","slug":"rapsodija"}],"url":"\/radioteka\/irasas\/2000929126\/rapsodija-namiskiai-erke","full_url":"https:\/\/www.lrt.lt\/radioteka\/irasas\/2000929126\/rapsodija-namiskiai-erke","playlist_item":{"file":"https:\/\/stream-vod3.lrt.lt\/AUDIO\/2026\/11\/2026_11_18_3475_1_748c5b33-9382-4f22-907b-b4fd45a441e9.m4a\/playlist.m3u8","title":"Rapsodija. Nami\u0161kiai. Erk\u0117","category":"Rapsodija","category_term":"\/mediateka\/audio\/rapsodija","image":"\/img\/2026\/11\/18\/2543153-809796-1287x836.jpg","mediaid":"2000929126","main_id":3118437}}    
+== https://www.lrt.lt/api/search?count=1&q=Rapsodija
+HTTP/2 200 
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-allow-headers: DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+access-control-expose-headers: Age, Cache-Control, Content-Language, Content-Type, Expires, Last-Modified, Pragma
+== https://www.lrt.lt/api/search?count=2&order=desc&category_id=6559
+HTTP/2 200 
+access-control-allow-origin: *
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-allow-headers: DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range
+access-control-expose-headers: Age, Cache-Control, Content-Language, Content-Type, Expires, Last-Modified, Pragma
+== https://www.lrt.lt/servisai/stream_url/vod/media_info/?url=%2Fradioteka%2Firasas%2F2000929126%2Frapsodija-namiskiai-erke
+HTTP/2 200 
+access-control-allow-origin: *
+access-control-allow-credentials: true
+access-control-allow-methods: GET, POST, OPTIONS
+access-control-allow-headers: DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type
+== https://stream-vod3.lrt.lt/AUDIO/2026/11/2026_11_18_3475_1_748c5b33-9382-4f22-907b-b4fd45a441e9.m4a/playlist.m3u8
+HTTP/2 200 
+access-control-allow-origin: *
