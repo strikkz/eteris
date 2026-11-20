@@ -1,26 +1,7 @@
-1549691110 | Rapsodija | LRT | https://www.spreaker.com/show/4752141/episodes/feed | 2026-10-21T16:00:00Z
-feed: https://www.spreaker.com/show/4752141/episodes/feed
-HTTP/2 200 
-last-modified: Wed, 21 Oct 2026 20:49:37 GMT
-etag: "19731e7c31add9ae4dfa465c3cbb56ca"
-cache-control: max-age=300, s-maxage=60, stale-while-revalidate=75
-<pubDate>Wed, 21 Oct 2026 16:00:00 +0000</pubDate>
-<pubDate>Wed, 14 Oct 2026 16:00:00 +0000</pubDate>
-<pubDate>Wed, 07 Oct 2026 16:00:00 +0000</pubDate>
-<pubDate>Wed, 30 Sep 2026 16:00:00 +0000</pubDate>
-<pubDate>Wed, 23 Sep 2026 16:58:00 +0000</pubDate>
-<lastBuildDate>Wed, 21 Oct 2026 20:43:31 +0000
-== feed with cache-buster
-<pubDate>Wed, 21 Oct 2026 16:00:00 +0000</pubDate>
-<pubDate>Wed, 14 Oct 2026 16:00:00 +0000</pubDate>
-<pubDate>Wed, 07 Oct 2026 16:00:00 +0000</pubDate>
-== apple episodes
-2026-10-21T16:00:00Z | Rapsodija. The Alchemist | https://api.spreaker.com/download/episode/75905432/2026_10_21_3475_1_20261021200
-2026-10-14T16:00:00Z | Rapsodija. „Bangers & Mash“ | https://api.spreaker.com/download/episode/75802074/2026_10_14_3475_1_20261014200
-2026-10-07T16:00:00Z | Rapsodija. Kas naujesnio? | https://api.spreaker.com/download/episode/75633718/2026_10_07_3475_1_20261007200
-2026-09-30T16:00:00Z | Rapsodija. Namiškiai. Keturios Ryto | https://api.spreaker.com/download/episode/75463655/2026_09_30_3475_1_20260930200
-== LRT mediateka search
-{"total_found":452,"similar_categories":[{"url":"/radioteka/laida/rapsodija","tree_branch":"Muzika |  Laidos apie muziką","category_id":6559,"category_title":"Rapsodija","time_seg":4,"article_date":202611181900,"is_audio":1,"is_video":0},{"article_date":202102160915,"is_audio":0,"is_video":1,"tree_branch":"Muzika |  Koncertai |  Kita muzika","url":"/mediateka/video/valstybinio-choro-vilnius-50-mecio-koncertas-nakties-rapsodija","category_id":6849,"category_title":"Valstybinio choro „Vilnius\" 50-mečio koncertas „Nakties rapsodija\"","time_seg":1}],"facets":{"heritage":1,"features":[{"count":0,"key":"exact","value":1,"title":"Ieškoti tikslios frazės"}],"themes":[{"id":"12","count":81,"key":"category_id","value":"12","title":"Kultūra"},{"count":21,"id":"13","value":"13","key":"category_id","title":"Laisvalaikis"},{"count":3,"id":"3","title":"Nuomonės","value":"3","key":"category_id"},{"value":"15","key":"category_id","title":"Tavo LRT","count":17,"id":"15"},{"title":"Muzika","value":"680","key":"category_id","count":7,"id":"680"},{"title":"Lietuvoje","value":"2","key":"category_id","count":1,"id":"2"},{"key":"category_id","value":"11","title":"Mokslas ir IT","id":"11","count":1},{"count":1,"id":"9999","title":"Lituanica","value":"/lituanica","key":"category_term_1"},{"count":0,"id":"9998","title":"Žmonės","value":"/zmones","key":"category_term_1"},{"value":"/aktualijos","key":"term","title":"Mediateka / Aktualijos","count":6,"term":"/aktualijos"},{"title":"Mediateka
-404 https://www.lrt.lt/mediateka/irasai/rapsodija
-api/search?count=3&term=/vaikams
-api/search?page=1&count=3&exact=1&&term=/muzika&order=desc
+keys ['total_found', 'page', 'facets', 'items', 'similar_tags', 'suggest_tags_total', 'q', 'meta']
+{"id": 3118437, "title": "Rapsodija. Namiškiai. Erkė", "url": "/radioteka/irasas/2000929126/rapsodija-namiskiai-erke", "date": null, "item_date": "2026.11.18 19:00", "duration": null, "media_duration": null, "photo": null, "img_path_prefix": "/img/2026/11/18/2543153-809796-", "img_path_postfix": ".jpg", "is_audio": 1, "category_title": "Rapsodija", "content": null, "summary": null}
+{"id": 3111481, "title": "Rapsodija. Kas naujesnio", "url": "/radioteka/irasas/2000922140/rapsodija-kas-naujesnio", "date": null, "item_date": "2026.11.11 19:00", "duration": null, "media_duration": null, "photo": null, "img_path_prefix": "/img/2026/11/11/2537634-310458-", "img_path_postfix": ".jpg", "is_audio": 1, "category_title": "Rapsodija", "content": null, "summary": null}
+{"id": 3104782, "title": "Rapsodija. „DOOMSDAY“", "url": "/radioteka/irasas/2000915477/rapsodija-doomsday", "date": null, "item_date": "2026.11.04 19:00", "duration": null, "media_duration": null, "photo": null, "img_path_prefix": "/img/2026/11/04/2530695-258454-", "img_path_postfix": ".jpg", "is_audio": 1, "category_title": "Rapsodija", "content": null, "summary": null}
+{"id": 3096438, "title": "Rapsodija. Repo deivės", "url": "/radioteka/irasas/2000907149/rapsodija-repo-deives", "date": null, "item_date": "2026.10.28 19:00", "duration": null, "media_duration": null, "photo": null, "img_path_prefix": "/img/2026/10/28/2523318-567126-", "img_path_postfix": ".jpg", "is_audio": 1, "category_title": "Rapsodija", "content": null, "summary": null}
+url /radioteka/irasas/2000929126/rapsodija-namiskiai-erke
+{"id":"2000929126","title":"Rapsodija. Nami\u0161kiai. Erk\u0117","type":2,"content":"<p>LRT Opus \u201eSavait\u0117s Albumo\u201c kaltininkas Erk\u0117 - Rapsodijos studijoje<\/p><p>Ved. Aleksandras Kovganko-Sania Banginis ir DJ Mamania <\/p>","category_id":6559,"heritage":null,"date":"2026.11.18 19:00","offset":null,"tags":[{"name":"Erk\u0117","slug":"erke"},{"slug":"hip-hopas","name":"Hip Hopas"},{"slug":"repas","name":"Repas"},{"name":"Muzyka","slug":"muzyka"},{"name":"Rapsodija","slug":"rapsodija"}],"url":"\/radioteka\/irasas\/2000929126\/rapsodija-namiskiai-erke","full_url":"https:\/\/www.lrt.lt\/radioteka\/irasas\/2000929126\/rapsodija-namiskiai-erke","playlist_item":{"file":"https:\/\/stream-vod3.lrt.lt\/AUDIO\/2026\/11\/2026_11_18_3475_1_748c5b33-9382-4f22-907b-b4fd45a441e9.m4a\/playlist.m3u8","title":"Rapsodija. Nami\u0161kiai. Erk\u0117","category":"Rapsodija","category_term":"\/mediateka\/audio\/rapsodija","image":"\/img\/2026\/11\/18\/2543153-809796-1287x836.jpg","mediaid":"2000929126","main_id":3118437}}    
