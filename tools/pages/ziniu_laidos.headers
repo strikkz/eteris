@@ -1,0 +1,15 @@
+HTTP/2 200 
+date: Fri, 20 Nov 2026 14:32:31 GMT
+content-type: text/html; charset=utf-8
+server: cloudflare
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+set-cookie: PHPSESSID=s9jsejae63ump3vhu9uri0mf21; path=/; HttpOnly
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: max-age=0, must-revalidate, no-transform, no-cache, no-store
+pragma: no-cache
+vary: Accept-Encoding
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=pTLlbrg3g5kVtc2yH2uda16pRduvCBuWmY1%2FRnaxVDEdyMIQ%2BDwl2VzMvOftBLRIw%2Fc4KD5DYkY4Uo8MPBk6zY3PHB%2F285dEar9UoRpkdxAtsM1OcETjAjbPhy7rrEaGvR0G6rM%3D"}]}
+x-ua-compatible: IE=edge
+cf-cache-status: DYNAMIC
+cf-ray: a5d82a17febb1f53-SEA
+

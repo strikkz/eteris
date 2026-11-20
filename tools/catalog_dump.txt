@@ -1,65 +1,12 @@
-== https://www.ziniuradijas.lt 200 https://www.ziniuradijas.lt/
-href="/archyvas/"
-href="/archyvas/?category=Plus"
-href="/archyvas/?category=Recommended"
-href="/archyvas/?category=isShort"
-href="/laidos/"
-href="/laidos/?broadcast=1"
-href="/laidos/aktualusis-interviu"
-href="/laidos/aktualusis-interviu/ar-socdemai-pasinaudotu-proga-atsikratyti-budriu-jei-opozicija-imtusi-interpeliacijos?video=1"
-== https://www.ziniuradijas.lt/laidos 200 https://www.ziniuradijas.lt/laidos
-href="/archyvas/"
-href="/archyvas/?category=Plus"
-href="/archyvas/?category=Recommended"
-href="/archyvas/?category=isShort"
-href="/laidos#"
-href="/laidos#analitika"
-href="/laidos#ka-gali-europa"
-href="/laidos#naujoji-karta"
-== https://www.m-1.fm 200 https://m1play.15min.lt/m1
-href="/m1/laidos"
-src="https://m1-media.b-cdn.net/content/uploads/2026/09/Laidos-CiaManoRadijas-742x438@2x.png?v=1790084311&amp;width=3840&amp;quality=75"
-== https://www.radiocentras.lt 200 https://rc.lt/
-href="https://www.radijas.lt/podcasts/saugok-save/56137"
-href="https://www.radijas.lt/podcasts/ziniasklaida-ir-mes/56233"
-href="https://www.youtube.com/user/RadiocentrasRC"
-== https://www.zipfm.lt 200 https://zipfm.lt/
-== https://www.lietus.fm 200 https://m1play.15min.lt/lietus
-href="/lietus/laidos"
-src="https://m1-media.b-cdn.net/content/uploads/2026/09/Laidos-SuDaina-742x438@2x.png?v=1790343214&amp;width=3840&amp;quality=75"
-== https://www.relaxfm.lt 200 https://relaxfm.lt/
-href="https://relaxfm.lt/irasai/"
-href="https://relaxfm.lt/irasai/?laida=dienos-asorti"
-href="https://relaxfm.lt/irasai/?laida=gera-proga"
-href="https://relaxfm.lt/irasai/?laida=geriausia-diena"
-href="https://relaxfm.lt/irasai/?laida=geriausia-diena-savaitgalis"
-href="https://relaxfm.lt/irasai/?laida=kad-ir-kur-bebutum"
-href="https://relaxfm.lt/irasai/?laida=relax-fm-top-15"
-href="https://relaxfm.lt/irasai/?laida=sokiu-vakaras"
-== https://www.goldfm.lt 200 https://goldfm.lt/
-href="https://goldfm.lt/podcasts/"
-href="https://stream.goldfm.lt/goldfm.mp3.xspf"
-== https://www.rockfm.lt 200 https://www.radijas.lt/rockfm
-== https://ehr.lt 200 https://europeanhitradio.lt/
-href="https://music.youtube.com/search?q=Ella%20Langley%20Choosin'%20Texas"
-href="https://music.youtube.com/search?q=HUGEL%2C%20Imael%20Angel%20%26%20Ultra%20Nate%20Movin'%20To%20The%20Sun"
-href="https://music.youtube.com/search?q=Rosa%20Linn%20Music%20I%20Love"
-href="https://music.youtube.com/search?q=SIENNA%20SPIRO%20Great%20Expectation"
-href="https://music.youtube.com/search?q=STELLA%20LEFTY%20Boston"
-href="https://music.youtube.com/search?q=Shakira%20%26%20Burna%20Boy%20Dai%20Dai"
-href="https://music.youtube.com/search?q=Take%20That%20Higher"
-href="https://music.youtube.com/search?q=Tate%20McRae%20Housewife"
-== https://www.marijosradijas.lt 200 https://www.marijosradijas.lt/
-href="/irasai.html"
-href="/irasai/archyvas.html"
-href="/irasai/audio-knygos.html"
-href="/irasai/laidos-nuo-a-iki-z.html"
-href="/irasai/naujausi-laidu-irasai.html"
-href="/irasai/pokalbiai-ir-susitikimai.html"
-href="/irasai/sv-misios-ir-maldos.html"
-href="/irasai/tikejimo-pazinimas.html"
-== https://www.radior.lt 200 https://radior.lt/
-href="https://www.youtube.com/results?search_query=%D0%90%D1%81%D0%B8%D1%8F+%D0%A7%D1%83%D0%B4%D0%BE"
-href="https://www.youtube.com/results?search_query=%D0%96%D0%B5%D0%BD%D1%8F+%D0%A2%D1%80%D0%BE%D1%84%D0%B8%D0%BC%D0%BE%D0%B2+%26+%D0%9A%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D0%B0+%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D1%8B+%D0%9D%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D1%81%D1%8F"
-href="https://www.youtube.com/results?search_query=Chai+Vdvoem+%D0%A1%D0%BE%D0%BB%D0%BD%D1%86%D0%B5+%D0%B8+%D1%81%D0%B5%D1%80%D0%B4%D1%86%D0%B5"
-src="https://stream1.relaxfm.lt/rrb128.mp3"
+radijas_irasai 200 5832 https://www.radijas.lt/irasai CORS:[]
+radijas_podcast1 200 5832 https://www.radijas.lt/podcasts/saugok-save/56137 CORS:[]
+ziniu_laidos 200 173820 https://www.ziniuradijas.lt/laidos CORS:[]
+ziniu_archyvas 200 302168 https://www.ziniuradijas.lt/archyvas/ CORS:[]
+ziniu_show 200 177918 https://www.ziniuradijas.lt/laidos/aktualusis-interviu CORS:[]
+m1_laidos 200 272656 https://m1play.15min.lt/m1/laidos CORS:[]
+lietus_laidos 200 278492 https://m1play.15min.lt/lietus/laidos CORS:[]
+relax_irasai 200 96348 https://relaxfm.lt/irasai/ CORS:[]
+relax_show 200 96293 https://relaxfm.lt/irasai/?laida=gera-proga CORS:[]
+gold_podcasts 200 24934 https://goldfm.lt/podcasts/ CORS:[]
+marijos_naujausi 200 138499 https://www.marijosradijas.lt/irasai/naujausi-laidu-irasai.html CORS:[]
+marijos_az 200 125275 https://www.marijosradijas.lt/irasai/laidos-nuo-a-iki-z.html CORS:[]

@@ -1,0 +1,17 @@
+HTTP/2 200 
+x-powered-by: PHP/8.3.37
+content-type: text/html; charset=UTF-8
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+pragma: no-cache
+link: <https://relaxfm.lt/wp-json/>; rel="https://api.w.org/"
+link: <https://relaxfm.lt/wp-json/wp/v2/pages/26699>; rel="alternate"; title="JSON"; type="application/json"
+link: <https://relaxfm.lt/?p=26699>; rel=shortlink
+x-litespeed-cache-control: no-cache
+date: Fri, 20 Nov 2026 14:32:45 GMT
+server: LiteSpeed
+platform: hostinger
+panel: hpanel
+content-security-policy: upgrade-insecure-requests
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+

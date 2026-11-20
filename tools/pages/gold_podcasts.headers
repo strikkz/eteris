@@ -1,0 +1,9 @@
+HTTP/2 200 
+link: <https://goldfm.lt/wp-json/>; rel="https://api.w.org/"
+link: <https://goldfm.lt/wp-json/wp/v2/pages/12895>; rel="alternate"; type="application/json"
+link: <https://goldfm.lt/?p=12895>; rel=shortlink
+vary: Accept-Encoding
+content-type: text/html; charset=UTF-8
+date: Fri, 20 Nov 2026 14:32:48 GMT
+server: Apache
+

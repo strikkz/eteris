@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Server: nginx/1.26.3
+Date: Fri, 20 Nov 2026 14:32:55 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Upgrade: h2
+Set-Cookie: PHPSESSID=5c3e02320aa51d2c74d8d586c02a8054; path=/; secure; HttpOnly; SameSite=Strict
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-Rkm67cfjv3WgtnSzpy4ugA==' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://rsms.me; font-src 'self' https://rsms.me; frame-src 'self' https://www.google.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.google.com https://*.g.doubleclick.net https://www.facebook.com; media-src 'self' https://marijosradijas.lt https://www.marijosradijas.lt https://*.marijosradijas.lt; object-src 'none'; base-uri 'self';
+Vary: Accept-Encoding
+

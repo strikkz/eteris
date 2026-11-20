@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="lt-LT" class="rfm-prepaint">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script id="rfm-prepaint-js" data-no-optimize="1">
+(function(){
+  var d=document.documentElement;
+  function show(){
+    if(!d){return;}
+    d.classList.remove('rfm-prepaint');
+    d.classList.add('rfm-ready');
+  }
+  d.classList.add('rfm-prepaint');
+  window.setTimeout(show,900);
+  if(document.readyState==='interactive'||document.readyState==='complete'){
+    window.requestAnimationFrame ? requestAnimationFrame(show) : window.setTimeout(show,0);
+  }else{
+    document.addEventListener('DOMContentLoaded',function(){
+      window.requestAnimationFrame ? requestAnimationFrame(show) : window.setTimeout(show,0);
+    },{once:true});
+    window.addEventListener('load',show,{once:true});
+  }
+})();
+</script>
+<noscript><style id="rfm-prepaint-noscript">html.rfm-prepaint body{opacity:1!important;visibility:visible!important}</style></noscript>
+    <link rel="preload" href="https://relaxfm.lt/wp-content/themes/astra-child/assets/css/rfm-main.css?ver=1795091687" as="style">
+<style id="rfm-critical-css">
+html.rfm-prepaint body{opacity:1!important;visibility:visible!important}html.rfm-ready body{opacity:1;visibility:visible}
+:root{--rfm-player-height:75px;--rfm-player-safe-offset:calc(env(safe-area-inset-bottom,0px) + 96px)}
+html,body{max-width:100%;overflow-x:hidden;margin:0;padding:0;background:#FAF6F5;color:#171217;font-family:'Poppins',sans-serif}body{padding-bottom:var(--rfm-player-height)}.site-header,.ast-main-header-bar,.main-navigation,header#masthead,.site-footer,footer#colophon,.ast-small-footer,.entry-title,.page-title,.ast-page-title,h1.entry-title,.page-header{display:none!important;height:0!important;padding:0!important;margin:0!important}.ast-container,.site-content .ast-container{max-width:100%!important;padding-left:0!important;padding-right:0!important}.rfm-nav-wrapper *,.rfm-mobile-drawer *,#rfp-sticky-bar *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}.rfm-nav-wrapper{position:fixed;top:12px;left:0;right:0;max-width:1600px;margin:0 auto;padding:0 32px;z-index:999999;font-family:'Poppins',sans-serif}.rfm-nav-container-glass{background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.55);box-shadow:0 8px 32px rgba(38,28,29,.04);border-radius:20px;padding:8px 24px 12px;backdrop-filter:blur(18px) saturate(170%);-webkit-backdrop-filter:blur(18px) saturate(170%)}.rfm-network-bar{display:flex;align-items:center;justify-content:flex-end;padding:0 4px 6px 0}.rfm-network-links,.rfm-nav-links{display:flex;align-items:center;list-style:none;margin:0;padding:0}.rfm-network-links{gap:20px}.rfm-network-links a{font-size:9px;font-weight: 700;color:rgba(38,28,29,.45);text-decoration:none;text-transform:uppercase;letter-spacing:.8px}.rfm-nav{display:flex;align-items:center;justify-content:space-between;gap:18px}.rfm-logo{display:inline-flex;align-items:center;border-radius:14px;text-decoration:none;flex:0 0 auto}.rfm-logo img{height:64px;width:auto;display:block}.rfm-logo-crop{display:inline-flex;align-items:center;justify-content:center;overflow:hidden}.rfm-nav-links{gap:12px}.rfm-nav-links a{font-size:14px;font-weight: 800;line-height:1;text-decoration:none;text-transform:uppercase;letter-spacing:.04em;color:#261C1D}.rfm-menu-msg-badge{display:inline-flex;align-items:center;gap:7px;background:#E52D27;color:#fff!important;border-radius:999px;padding:12px 17px;box-shadow:0 4px 12px rgba(229,45,39,.22)}.rfm-mobile-menu-trigger{display:none}#rfm-ajax-content{min-height:55vh}#rfp-sticky-bar{position:fixed;left:0;right:0;bottom:0;height:var(--rfm-player-height);z-index:9999999;display:flex;align-items:center;padding:0 48px;background:rgba(255,255,255,.72);border-top:1px solid rgba(255,255,255,.62);box-shadow:0 -10px 40px rgba(38,28,29,.06);backdrop-filter:blur(26px) saturate(170%);-webkit-backdrop-filter:blur(26px) saturate(170%);font-family:'Poppins',sans-serif}#rfp-sticky-inner{max-width:1600px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;min-width:0}.rfm-sticky-meta-block{display:flex;align-items:center;gap:14px;min-width:0;flex:1}#rfp-sticky-btn{width:44px;height:44px;border-radius:50%;background:#E52D27;border:0;flex:0 0 auto;position:relative}.rfm-sticky-brand-logo-frame{width:48px;height:48px;border-radius:14px;overflow:hidden;background:#fff;flex:0 0 auto}.rfm-sticky-brand-logo-frame img{width:100%;height:100%;object-fit:cover;display:block}.rfm-sticky-text-block{min-width:0}.rfm-site-legal{padding:34px 0 28px;background:transparent}.rfm-footer-info{max-width:1600px;margin:0 auto 18px;padding:0 48px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.92fr) minmax(300px,.62fr);gap:18px}.rfm-footer-info__col{min-width:0;padding:22px 24px;border-radius:28px;background:rgba(255,255,255,.52);border:1px solid rgba(255,255,255,.68);box-shadow:0 14px 36px rgba(38,28,29,.045)}.rfm-footer-info__title{margin:0 0 14px;color:#D20435;font-size:11px;line-height:1;font-weight: 800;letter-spacing:.15em;text-transform:uppercase}.rfm-footer-info__body{display:grid;gap:5px;color:rgba(38,28,29,.72);font-size:11px;line-height:1.42;font-weight: 700;letter-spacing:.018em}.rfm-footer-info__body p{margin:0}.rfm-footer-info__body strong{color:#261C1D;font-weight: 800}.rfm-footer-info a{color:#D20435;text-decoration:none;font-weight: 800}.rfm-footer-info__col--social{display:flex;flex-direction:column;justify-content:flex-start}.rfm-footer-social-block{min-width:0}.rfm-site-legal--social-only .rfm-footer-info--social-only{grid-template-columns:minmax(0,1fr);margin-bottom:16px}.rfm-site-legal--social-only .rfm-footer-info__col--social{display:grid;grid-template-columns:minmax(0,auto) minmax(260px,auto);gap:28px;align-items:start;justify-content:center;padding:22px 28px}.rfm-site-legal--social-only .rfm-footer-apps{margin-top:0}.rfm-site-legal--social-only .rfm-footer-apps__links{max-width:260px}.rfm-footer-social{display:grid;grid-template-columns:repeat(4,58px);gap:12px}.rfm-footer-social__link{width:58px;height:58px;display:inline-flex;align-items:center;justify-content:center;border-radius:20px;background:#fff;color:#D20435!important;box-shadow:0 12px 26px rgba(210,4,53,.09);text-decoration:none!important}.rfm-footer-social__link svg{width:30px;height:30px;display:block;fill:currentColor}.rfm-footer-apps{margin-top:22px}.rfm-footer-apps__title{margin:0 0 12px;color:#D20435;font-size:10px;line-height:1;font-weight: 800;letter-spacing:.16em;text-transform:uppercase}.rfm-footer-apps__links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:236px}.rfm-footer-apps__link{min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 12px;border-radius:18px;background:rgba(255,255,255,.72);border:1px solid rgba(210,4,53,.10);color:#D20435!important;box-shadow:0 10px 22px rgba(38,28,29,.045);text-decoration:none!important;font-size:9px;line-height:1;font-weight: 800;letter-spacing:.04em;white-space:nowrap}.rfm-footer-apps__link svg{width:21px;height:21px;display:block;flex:0 0 auto;fill:currentColor}.rfm-site-legal__inner{max-width:1600px;margin:0 auto;padding:0 48px;box-sizing:border-box;display:grid;grid-template-columns:1fr;justify-items:center;align-items:center;gap:2px;text-align:center;color:rgba(23,18,23,.56);font-size:10px;line-height:1.36;font-weight: 800;letter-spacing:.055em}.rfm-site-legal__line{display:block!important;width:100%;max-width:100%;margin:0;padding:0;text-align:center;white-space:normal}.rfm-site-legal a{color:#d2042b;text-decoration:none;font-weight: 800;letter-spacing:.055em}.rfm-site-legal__line--mobile{display:none!important}@media(max-width:980px){.rfm-nav-wrapper{top:1px;padding:0 12px;max-width:100%}.rfm-nav-container-glass{padding:7px 12px;border-radius:14px}.rfm-network-bar,.rfm-nav-links{display:none}.rfm-nav{min-height:44px;gap:10px}.rfm-logo{width:104px;height:44px;min-height:44px;margin-right:0}.rfm-logo-crop{width:104px;height:44px;border-radius:12px}.rfm-logo-crop img,.rfm-logo img{height:54px;transform:translate(-50%,-47%)}.rfm-mobile-nav-actions{display:flex;align-items:center;gap:10px}.rfm-mobile-app-link{display:inline-flex;width:36px;height:36px;border-radius:13px;transform:translateY(0)}.rfm-mobile-app-link img{width:30px;height:30px;border-radius:10px}.rfm-mobile-menu-trigger{display:flex!important;flex-direction:column;justify-content:space-between;align-items:stretch;width:23px;height:12px;background:transparent!important;border:0!important;padding:0!important;transform:translateY(0)}.rfm-mobile-menu-trigger span{display:block;width:100%;max-width:100%;height:1.6px;min-height:1.6px;margin-left:0;margin-right:0;border-radius:999px;background:#261C1D}.rfm-mobile-menu-trigger.open span:nth-child(1){transform:translateY(5.2px) rotate(45deg)!important}.rfm-mobile-menu-trigger.open span:nth-child(3){transform:translateY(-5.2px) rotate(-45deg)!important}#rfp-sticky-bar{height:var(--rfm-player-height);padding:10px 16px!important;display:block;overflow:hidden}.rfm-sticky-meta-block{width:100%;height:55px}.rfm-site-legal{padding:16px 18px 28px}.rfm-footer-info{display:none}.rfm-site-legal__inner{font-size:10px;line-height:1.34;letter-spacing:.04em;padding:0;gap:0;color:rgba(23,18,23,.54)}.rfm-site-legal__line--copyright,.rfm-site-legal__line--desktop{display:none!important}.rfm-site-legal__line--mobile{display:block!important}.rfm-site-legal a{font-size:inherit;letter-spacing:.045em}}
+</style>
+        <script id="rfm-consent-mode-bootstrap">
+    (function(w,d,c){
+        'use strict';
+        var defaults=c.defaultState||{necessary:true,analytics:false,marketing:false,embeds:false};
+        var choices={};
+        Object.keys(defaults).forEach(function(key){choices[key]=!!defaults[key];});
+
+        function parse(raw){
+            if(!raw){return null;}
+            try{
+                var parsed=JSON.parse(raw);
+                if(!parsed||!parsed.choices){return null;}
+                if(parsed.version&&String(parsed.version)!==String(c.version||'')){return null;}
+                var expiresAt=parseInt(parsed.expiresAt||0,10);
+                if(expiresAt&&expiresAt<=Date.now()){return null;}
+                return parsed;
+            }catch(e){return null;}
+        }
+
+        function readCookie(name){
+            var prefix=name+'=';
+            var parts=String(d.cookie||'').split(';');
+            for(var i=0;i<parts.length;i+=1){
+                var part=parts[i].trim();
+                if(part.indexOf(prefix)===0){
+                    try{return decodeURIComponent(part.substring(prefix.length));}catch(e){return '';}
+                }
+            }
+            return '';
+        }
+
+        var stored=null;
+        try{stored=parse(w.localStorage?w.localStorage.getItem(c.cookieName):'');}catch(e){}
+        if(!stored){stored=parse(readCookie(c.cookieName));}
+        if(stored&&stored.choices){
+            Object.keys(choices).forEach(function(key){
+                if(Object.prototype.hasOwnProperty.call(stored.choices,key)){
+                    choices[key]=!!stored.choices[key];
+                }
+            });
+        }
+        choices.necessary=true;
+        w.rfmConsent=choices;
+
+        var host=String(w.location.hostname||'').toLowerCase();
+        var allowed=(c.allowedHosts||[]).some(function(item){
+            return host===String(item||'').toLowerCase();
+        });
+        if(!allowed){return;}
+
+        w.dataLayer=w.dataLayer||[];
+        w.gtag=w.gtag||function(){w.dataLayer.push(arguments);};
+        w.gtag('consent','default',{
+            analytics_storage:choices.analytics?'granted':'denied',
+            ad_storage:'denied',
+            ad_user_data:'denied',
+            ad_personalization:'denied'
+        });
+        w.gtag('set','ads_data_redaction',true);
+        w.rfmConsentModeBootstrapped=true;
+    })(window,document,{"allowedHosts":["relaxfm.lt","www.relaxfm.lt"],"cookieName":"rfm_privacy_consent","version":"2.0","defaultState":{"necessary":true,"analytics":false,"marketing":false,"embeds":false}});
+    </script>
+    <title>Relax FM laidų įrašai</title>
+<meta name='robots' content='noindex, follow' />
+<meta name="google-site-verification" content="YcNv4vv1bvRnIJQCK4bA95vuRyo_ZRAt15YThfY4iqw">
+
+<meta name="description" content="Klausykite Relax FM laidų įrašų internetu. Lengvai raskite mėgstamas laidas ir atsukite transliaciją kada panorėję.">
+<link rel="canonical" href="https://relaxfm.lt/irasai/">
+<meta property="og:locale" content="lt_LT">
+<meta property="og:site_name" content="RELAX FM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Relax FM laidų įrašai">
+<meta property="og:description" content="Klausykite Relax FM laidų įrašų internetu. Lengvai raskite mėgstamas laidas ir atsukite transliaciją kada panorėję.">
+<meta property="og:url" content="https://relaxfm.lt/irasai/">
+<meta property="og:image" content="https://relaxfm.lt/wp-content/uploads/2026/07/RELAX-FM-OGIMAGE-2026.png">
+<meta property="og:image:alt" content="RELAX FM OGIMAGE 2026">
+<meta property="article:published_time" content="2021-04-20T13:41:21+03:00">
+<meta property="article:modified_time" content="2026-07-13T20:20:12+03:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Relax FM laidų įrašai">
+<meta name="twitter:description" content="Klausykite Relax FM laidų įrašų internetu. Lengvai raskite mėgstamas laidas ir atsukite transliaciją kada panorėję.">
+<meta name="twitter:image" content="https://relaxfm.lt/wp-content/uploads/2026/07/RELAX-FM-OGIMAGE-2026.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","RadioStation"],"@id":"https://relaxfm.lt/#organization","name":"Relax FM","url":"https://relaxfm.lt/","description":"RELAX FM – radijas internetu su gera muzika, laidomis, lietuviškos muzikos naujienomis, TOP 15 ir laidų įrašais.","areaServed":"LT","legalName":"VšĮ KVARTOLĖ","slogan":"Lietuviškos muzikos namai","logo":{"@type":"ImageObject","url":"https://relaxfm.lt/wp-content/uploads/2026/06/RelaxFM_logo_1200x728-aaac6ed0f956452d9b1a42108fbaa8b1.webp"},"image":"https://relaxfm.lt/wp-content/uploads/2026/06/RelaxFM_logo_1200x728-aaac6ed0f956452d9b1a42108fbaa8b1.webp","telephone":"+370 5 212 8706","email":"info@relaxfm.lt","address":{"@type":"PostalAddress","streetAddress":"Laisvės pr. 60","postalCode":"LT-05120","addressLocality":"Vilnius","addressCountry":"LT"},"contactPoint":{"@type":"ContactPoint","contactType":"general inquiries","areaServed":"LT","availableLanguage":"Lithuanian","telephone":"+370 5 212 8706","email":"info@relaxfm.lt"},"sameAs":["https://www.facebook.com/fmrelax/","https://www.instagram.com/relaxfmlietuva/","https://www.youtube.com/@relaxfmlietuva","https://open.spotify.com/user/h8cj5lrsttn8aypnprgr5bpsf"]},{"@type":"WebSite","@id":"https://relaxfm.lt/#website","url":"https://relaxfm.lt/","name":"RELAX FM","description":"RELAX FM – radijas internetu su gera muzika, laidomis, lietuviškos muzikos naujienomis, TOP 15 ir laidų įrašais.","publisher":{"@id":"https://relaxfm.lt/#organization"},"inLanguage":"lt-LT","potentialAction":{"@type":"SearchAction","target":"https://relaxfm.lt/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"CollectionPage","@id":"https://relaxfm.lt/irasai/#webpage","url":"https://relaxfm.lt/irasai/","name":"Relax FM laidų įrašai","description":"Klausykite Relax FM laidų įrašų internetu. Lengvai raskite mėgstamas laidas ir atsukite transliaciją kada panorėję.","isPartOf":{"@id":"https://relaxfm.lt/#website"},"publisher":{"@id":"https://relaxfm.lt/#organization"},"inLanguage":"lt-LT","isAccessibleForFree":true,"primaryImageOfPage":{"@type":"ImageObject","url":"https://relaxfm.lt/wp-content/uploads/2026/07/RELAX-FM-OGIMAGE-2026.png"}},{"@type":"BreadcrumbList","@id":"https://relaxfm.lt/irasai/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"RELAX FM","item":"https://relaxfm.lt/"},{"@type":"ListItem","position":2,"name":"ATSUK TRANSLIACIJĄ","item":"https://relaxfm.lt/irasai/"}]}]}</script>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//stream4.rc.lt' />
+<link rel='dns-prefetch' href='//stream4.radijas.lt' />
+<link rel='dns-prefetch' href='//klausyk.radijas.lt' />
+<link rel='dns-prefetch' href='//rss.autopod.xyz' />
+<link href='https://fonts.googleapis.com' rel='preconnect' />
+<link href='https://fonts.gstatic.com' crossorigin='anonymous' rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="https://relaxfm.lt &raquo; Įrašų RSS srautas" href="https://relaxfm.lt/feed/" />
+    <style id="rfm-mobile-nav-app-shortcut-critical-css">
+    .rfm-mobile-nav-actions{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex:0 0 auto}.rfm-mobile-app-link{display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:15px;background:rgba(255,255,255,.78);border:1px solid rgba(210,4,53,.10);box-shadow:0 10px 24px rgba(210,4,53,.11),inset 0 1px 0 rgba(255,255,255,.78);text-decoration:none;overflow:hidden;transform:translateY(2px)}.rfm-mobile-app-link img{display:block;width:34px;height:34px;border-radius:11px;object-fit:cover}@media(max-width:768px){.rfm-mobile-app-link{display:inline-flex}.rfm-mobile-nav-actions{display:flex;align-items:center;gap:14px}}.rfm-mobile-drawer-links>.rfm-menu-msg-item{margin:0 0 18px}.rfm-mobile-drawer-links>.rfm-menu-msg-item>a.rfm-menu-msg-badge{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;padding:14px 18px;border-radius:16px;background:#E52D27;border:1px solid rgba(229,45,39,.35);color:#fff!important;text-decoration:none!important;box-shadow:0 12px 28px rgba(229,45,39,.22),inset 0 1px 0 rgba(255,255,255,.22);cursor:default}.rfm-mobile-drawer-links>.rfm-menu-msg-item>.sub-menu{margin:10px 0 0;padding-left:0;border-left:0;display:grid;gap:8px}
+    </style>
+    <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://relaxfm.lt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frelaxfm.lt%2Firasai%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://relaxfm.lt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frelaxfm.lt%2Firasai%2F&#038;format=xml" />
+<style id="rfm-mobile-drawer-scroll-lock-critical">:root{--rfm-player-height:75px;--rfm-player-safe-offset:calc(env(safe-area-inset-bottom,0px) + 96px)}@media(max-width:980px){html.rfm-mobile-menu-open,body.rfm-mobile-menu-open{overflow:hidden!important;overscroll-behavior:none}.rfm-mobile-drawer{top:0;bottom:0;height:auto;max-height:100vh;max-height:100dvh;overflow-y:auto!important;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y;box-sizing:border-box;padding-bottom:var(--rfm-player-safe-offset)!important}body.rfm-mobile-menu-open .rfm-mobile-drawer,body.rfm-mobile-menu-open .rfm-mobile-drawer *{touch-action:pan-y}}</style>
+ 
+<link data-no-optimize="1" rel='stylesheet' id='astra-child-style-css' href='https://relaxfm.lt/wp-content/themes/astra-child/style.css?ver=1795091686' media='all' />
+<link data-no-optimize="1" rel='stylesheet' id='rfm-google-fonts-css' href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&#038;display=swap' media='all' />
+<link data-no-optimize="1" rel='stylesheet' id='rfm-main-css' href='https://relaxfm.lt/wp-content/themes/astra-child/assets/css/rfm-main.css?ver=1795091687' media='all' />
+<link data-no-optimize="1" rel='stylesheet' id='rfm-recording-global-player-css' href='https://relaxfm.lt/wp-content/themes/astra-child/assets/css/rfm-recording-global-player.css?ver=1795091687' media='all' />
+<link data-no-optimize="1" rel='stylesheet' id='rfm-recordings-page-css' href='https://relaxfm.lt/wp-content/themes/astra-child/assets/css/rfm-recordings-page.css?ver=1795091687' media='all' />
+<link data-no-optimize="1" rel='stylesheet' id='rfm-poppins-typography-css' href='https://relaxfm.lt/wp-content/themes/astra-child/assets/css/rfm-poppins-typography.css?ver=1795091687' media='all' />
+<link data-no-optimize="1" rel='stylesheet' id='rfm-global-spacing-css' href='https://relaxfm.lt/wp-content/themes/astra-child/assets/css/rfm-global-spacing.css?ver=1795091687' media='all' />
+<link data-no-optimize="1" rel='stylesheet' id='rfm-sticky-player-final-css' href='https://relaxfm.lt/wp-content/themes/astra-child/assets/css/rfm-sticky-player-final.css?ver=1795091687' media='all' />
+<link data-no-optimize="1" rel='stylesheet' id='rfm-edge-legacy-css' href='https://relaxfm.lt/wp-content/themes/astra-child/assets/css/rfm-edge-legacy.css?ver=1795091687' media='all' />
+<link rel='stylesheet' id='rfm-messages-frontend-css' href='https://relaxfm.lt/wp-content/plugins/relax-fm-messages/assets/css/frontend.css?ver=0.4.39' media='all' />
+<link rel='stylesheet' id='rfm-privacy-consent-css' href='https://relaxfm.lt/wp-content/themes/astra-child/assets/css/rfm-privacy-consent.css?ver=1795091687' media='all' />
+<link rel="https://api.w.org/" href="https://relaxfm.lt/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://relaxfm.lt/wp-json/wp/v2/pages/26699" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://relaxfm.lt/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.5" />
+<link rel='shortlink' href='https://relaxfm.lt/?p=26699' />
+<!-- RFM Global Header moved to astra-child/header.php. Disabled here to avoid duplicate header. --><link rel="icon" href="https://relaxfm.lt/wp-content/uploads/2026/06/cropped-favicon-relax-fm-32x32.webp" sizes="32x32" />
+<link rel="icon" href="https://relaxfm.lt/wp-content/uploads/2026/06/cropped-favicon-relax-fm-192x192.webp" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://relaxfm.lt/wp-content/uploads/2026/06/cropped-favicon-relax-fm-180x180.webp" />
+<meta name="msapplication-TileImage" content="https://relaxfm.lt/wp-content/uploads/2026/06/cropped-favicon-relax-fm-270x270.webp" />
+
+
+</head>
+<body class="wp-singular page-template-default page page-id-26699 wp-embed-responsive wp-theme-astra wp-child-theme-astra-child ast-header-break-point ast-plain-container ast-no-sidebar astra-4.14.0 group-blog ast-single-post ast-inherit-site-logo-transparent ast-hfb-header ast-normal-title-enabled">
+			<script data-cfasync="false">
+			(function(){var mq=window.matchMedia('(max-width:921.99px)');function apply(isMobile){var b=document.body.classList;if(isMobile){b.add('ast-header-break-point');b.remove('ast-desktop');}else{b.remove('ast-header-break-point');b.add('ast-desktop');}}apply(mq.matches);if(mq.addEventListener){mq.addEventListener('change',function(e){apply(e.matches);});}else if(mq.addListener){mq.addListener(function(e){apply(e.matches);});}})();
+			</script>
+			
+<div class="rfm-mobile-drawer-overlay" id="rfmMobileOverlay" aria-hidden="true"></div>
+
+<header class="rfm-nav-wrapper" role="banner">
+    <div class="rfm-nav-container-glass">
+        <div class="rfm-network-bar" aria-label="Radijo tinklas">
+            <ul id="menu-virsutinis-radijo-stotys-desktop" class="rfm-network-links"><li id="menu-item-58152" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58152"><a target="_blank" rel="noopener noreferrer" href="https://rc.lt" class="menu-link">RADIOCENTRAS</a></li>
+<li id="menu-item-58153" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58153"><a target="_blank" rel="noopener noreferrer" href="https://zipfm.lt" class="menu-link">ZIP FM</a></li>
+<li id="menu-item-58154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58154"><a target="_blank" rel="noopener noreferrer" href="https://rockfm.lt" class="menu-link">ROCK FM</a></li>
+<li id="menu-item-58155" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58155"><a target="_blank" rel="noopener noreferrer" href="https://radior.lt" class="menu-link">RADIO R</a></li>
+<li id="menu-item-58156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58156"><a target="_blank" rel="noopener noreferrer" href="https://radiofiesta.lt" class="menu-link">RADIO FIESTA</a></li>
+<li id="menu-item-58157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58157"><a target="_blank" rel="noopener noreferrer" href="https://onelink.to/radijaslt" class="menu-link">RADIJAS.LT</a></li>
+</ul>        </div>
+
+        <nav class="rfm-nav" aria-label="Pagrindinis meniu">
+            <a class="rfm-logo" href="https://relaxfm.lt/" aria-label="Relax FM pradinis puslapis">
+                <span class="rfm-logo-crop" aria-hidden="true">
+                    <img src="https://relaxfm.lt/wp-content/uploads/2018/11/relax-web2.png" alt="Relax FM">
+                </span>
+            </a>
+
+            <ul id="menu-desktop-pagrindinis" class="rfm-nav-links"><li id="menu-item-58158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58158 rfm-menu-msg-item"><a href="#zinute-i-studija" class="rfm-menu-msg-badge menu-link" role="button" aria-haspopup="dialog" data-rfm-messages-trigger="1"><span class="rfm-msg-dot" aria-hidden="true"></span><span class="rfm-msg-text">ŽINUTĖ Į STUDIJĄ</span></a></li>
+<li id="menu-item-58213" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58213 rfm-menu-parent-item"><a aria-expanded="false" href="#" role="button" aria-haspopup="true" class="rfm-menu-parent-toggle menu-link" data-rfm-parent-toggle="1">MUZIKA<span role="button" class="dropdown-menu-toggle ast-header-navigation-arrow" tabindex="0" aria-expanded="false" aria-label="Meniu jungiklis" aria-haspopup="true"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-58214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58214"><a href="https://relaxfm.lt/relax-fm-top-15/" class="menu-link">RELAX FM TOP 15</a></li>
+	<li id="menu-item-58215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58215"><a href="https://relaxfm.lt/dainu-paieska/" class="menu-link">DAINŲ ISTORIJA</a></li>
+	<li id="menu-item-58160" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58160"><a href="https://relaxfm.lt/category/premjera/" class="menu-link">PREMJERA</a></li>
+	<li id="menu-item-58280" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58280"><a href="https://relaxfm.lt/ivertink-daina/" class="menu-link">ĮVERTINK DAINĄ</a></li>
+	<li id="menu-item-58353" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58353"><a href="https://relaxfm.lt/100-hitu/" class="menu-link">100 HITŲ</a></li>
+	<li id="menu-item-58365" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58365"><a href="https://relaxfm.lt/sentimentai/" class="menu-link">SENTIMENTAI</a></li>
+	<li id="menu-item-58221" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58221"><a href="https://relaxfm.lt/relax-fm-top-15-auksines-dainos/" class="menu-link">AUKSINĖS DAINOS</a></li>
+	<li id="menu-item-58399" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58399"><a href="https://relaxfm.lt/lietuviskos-muzikos-radaras/" class="menu-link">MUZIKOS RADARAS</a></li>
+	<li id="menu-item-58289" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58289"><a href="https://relaxfm.lt/category/vienos-temos-dainos/" class="menu-link">VIENOS TEMOS DAINOS</a></li>
+	<li id="menu-item-58282" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58282"><a href="https://relaxfm.lt/atlikejai/" class="menu-link">ATLIKĖJAI</a></li>
+</ul>
+</li>
+<li id="menu-item-58202" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-58202 rfm-menu-parent-item"><a aria-expanded="false" href="#" role="button" aria-haspopup="true" class="rfm-menu-parent-toggle menu-link" data-rfm-parent-toggle="1">LAIDOS<span role="button" class="dropdown-menu-toggle ast-header-navigation-arrow" tabindex="0" aria-expanded="false" aria-label="Meniu jungiklis" aria-haspopup="true"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-58283" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-26699 current_page_item menu-item-58283"><a href="https://relaxfm.lt/irasai/" aria-current="page" class="menu-link">ATSUK TRANSLIACIJĄ</a></li>
+	<li id="menu-item-58284" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58284"><a href="https://relaxfm.lt/laidu-tinklelis/" class="menu-link">RELAX FM PROGRAMA</a></li>
+	<li id="menu-item-58626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58626"><a href="https://relaxfm.lt/geriausia-diena-ryto-skambutis/" class="menu-link">GERIAUSIA DIENA</a></li>
+	<li id="menu-item-58603" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58603"><a href="https://relaxfm.lt/gera-proga/" class="menu-link">SVEIKINIMŲ LAIDA &#8222;GERA PROGA&#8221;﻿</a></li>
+</ul>
+</li>
+<li id="menu-item-58285" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58285 rfm-menu-parent-item"><a aria-expanded="false" href="#" role="button" aria-haspopup="true" class="rfm-menu-parent-toggle menu-link" data-rfm-parent-toggle="1">APIE MUS<span role="button" class="dropdown-menu-toggle ast-header-navigation-arrow" tabindex="0" aria-expanded="false" aria-label="Meniu jungiklis" aria-haspopup="true"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-58288" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58288"><a href="https://relaxfm.lt/komanda/" class="menu-link">KOMANDA</a></li>
+	<li id="menu-item-58305" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58305"><a href="https://relaxfm.lt/dazniai/" class="menu-link">DAŽNIAI</a></li>
+	<li id="menu-item-58286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58286"><a href="https://relaxfm.lt/kontaktai/" class="menu-link">KONTAKTAI</a></li>
+	<li id="menu-item-58287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58287"><a href="https://relaxfm.lt/reklama/" class="menu-link">REKLAMA</a></li>
+</ul>
+</li>
+</ul>
+            <div class="rfm-mobile-nav-actions" aria-label="Mobilūs veiksmai">
+                <a class="rfm-mobile-app-link" href="https://onelink.to/v559wg" target="_blank" rel="noopener noreferrer" aria-label="Parsisiųsti RADIJAS.LT programėlę">
+                    <img src="https://relaxfm.lt/wp-content/uploads/2026/06/200x200bb-75.webp" alt="RADIJAS.LT programėlė">
+                </a>
+                <button class="rfm-mobile-menu-trigger" type="button" aria-label="Atidaryti meniu" aria-controls="rfmMobileDrawer" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <div id="rfmMessagesInlineRoot" class="rfm-messages-inline-root" aria-hidden="true">
+                <div class="rfm-msg-launcher" data-rfm-messages data-rfm-msg-id="rfm-msg-887a504a-f9ff-4cd4-8b18-f443397733dd">
+            <button class="rfm-msg-open" type="button" data-rfm-msg-open>
+                <span class="rfm-msg-open-dot"></span>
+                <span>Žinutė į studiją</span>
+            </button>
+            <div class="rfm-msg-modal" data-rfm-msg-modal hidden>
+                <div class="rfm-msg-backdrop" data-rfm-msg-close></div>
+                <div class="rfm-msg-dialog" role="dialog" aria-modal="true" aria-label="Žinutė į Relax FM">
+                    <button class="rfm-msg-close" type="button" data-rfm-msg-close aria-label="Uždaryti">×</button>
+                    <div class="rfm-msg-scene rfm-msg-scene-choice is-active" data-rfm-scene="choice">
+                        <div class="rfm-msg-modal-head">
+                            <span class="rfm-msg-kicker">Relax FM - lietuviškos muzikos namai</span>
+                            <h3>Pasirinkite, kam skirta žinutė.</h3>
+                            <p></p>
+                        </div>
+                        <div class="rfm-msg-bubbles">
+                                                            <button class="rfm-msg-bubble" type="button" data-rfm-scenario="zinute-i-studija">
+                                    <span class="rfm-msg-bubble-icon">✉</span>
+                                    <strong>Žinutė į studiją</strong>
+                                    <small>Parašykite laidų vedėjams</small>
+                                </button>
+                                                            <button class="rfm-msg-bubble" type="button" data-rfm-scenario="gera-proga">
+                                    <span class="rfm-msg-bubble-icon">🎉</span>
+                                    <strong>Sveikinimų laida „Gera proga“</strong>
+                                    <small>Kasdien 18-20 val.</small>
+                                </button>
+                                                            <button class="rfm-msg-bubble" type="button" data-rfm-scenario="ryto-skambutis">
+                                    <span class="rfm-msg-bubble-icon">☎</span>
+                                    <strong>Ryto skambutis</strong>
+                                    <small>&quot;GERIAUSIA DIENA&quot; laukia Jūsų laiškų</small>
+                                </button>
+                                                    </div>
+                    </div>
+
+                                            <div class="rfm-msg-scene rfm-msg-scene-form" data-rfm-form-scene="zinute-i-studija" hidden>
+                            <button class="rfm-msg-back" type="button" data-rfm-msg-back>← Pasirinkti kitą</button>
+                            <div class="rfm-msg-modal-head">
+                                <span class="rfm-msg-kicker">Studija</span>
+                                <h3>Žinutė į studiją</h3>
+                                <p>Dalyvaukite Relax FM žaidimuose.</p>
+                            </div>
+                                                                                            <form class="rfm-msg-form " data-rfm-message-form data-form-id="4" data-scenario="zinute-i-studija">
+            <input type="hidden" name="action" value="rfm_messages_submit">
+            <input type="hidden" name="form_id" value="4">
+            <input type="hidden" name="scenario_key" value="zinute-i-studija">
+            <input type="hidden" name="target_date" value="">
+            <input type="hidden" name="target_date_label" value="">
+            <input type="text" name="rfm_website" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="text" name="rfm_email_confirm" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="rfm_started_at" value="">
+            <div class="rfm-msg-selected-date" data-rfm-selected-date hidden></div>
+            <div class="rfm-msg-fields" data-rfm-fields>
+                                                <div class="rfm-msg-field">
+                <label>Vardas *</label>
+                <input type="text" name="fields[vardas]" placeholder="Jūsų vardas" required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Telefonas *</label>
+                <input type="tel" name="fields[telefonas]" placeholder="+370..." required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Žinutė *</label>
+                <textarea name="fields[zinute]" rows="5" placeholder="Parašykite žinutę" required></textarea>
+            </div>
+                                                            <label class="rfm-msg-check" data-rfm-check-field="privacy">
+                <input type="checkbox" name="fields[privatumas]" value="1" required data-rfm-privacy-required="1">
+                <span>Sutinku su <a href="https://relaxfm.lt/privatumopolitika/" target="_blank" rel="noopener">privatumo politika</a> *</span>
+            </label>
+                            <span class="rfm-msg-field-error" data-rfm-field-error hidden>Privalomas laukas</span>
+                                                        <button class="rfm-msg-submit" type="submit">Siųsti žinutę</button>
+                <div class="rfm-msg-response" role="status" aria-live="polite"></div>
+            </div>
+        </form>
+                                </div>
+                                            <div class="rfm-msg-scene rfm-msg-scene-form" data-rfm-form-scene="gera-proga" hidden>
+                            <button class="rfm-msg-back" type="button" data-rfm-msg-back>← Pasirinkti kitą</button>
+                            <div class="rfm-msg-modal-head">
+                                <span class="rfm-msg-kicker">Gera proga</span>
+                                <h3>Sveikinimų laida „Gera proga“</h3>
+                                <p>Pasirinkite dieną, kada sveikinimas turi būti transliuojamas, ir parašykite žinutę. Nepamirškite nurodyti visos reikalingos informacijos! Sveikinimus galite rašyti likus 3-4 paroms iki gimtadienio dienos. Šios dienos sveikinimus priimame iki 18:30.</p>
+                            </div>
+                                                                                        <div class="rfm-msg-date-step" data-rfm-date-step>
+                                    <label>Pasirinkite transliavimo dieną</label>
+                                    <div class="rfm-msg-date-options">
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-20" data-rfm-date-label="2026-11-20">
+                                                <strong>Šiandien</strong>
+                                                <span>2026-11-20</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-21" data-rfm-date-label="2026-11-21">
+                                                <strong>Rytoj</strong>
+                                                <span>2026-11-21</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-22" data-rfm-date-label="2026-11-22">
+                                                <strong>Poryt</strong>
+                                                <span>2026-11-22</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-23" data-rfm-date-label="2026-11-23">
+                                                <strong>Užporyt</strong>
+                                                <span>2026-11-23</span>
+                                            </button>
+                                                                            </div>
+                                                                    </div>
+                                                                <form class="rfm-msg-form is-date-locked" data-rfm-message-form data-form-id="5" data-scenario="gera-proga">
+            <input type="hidden" name="action" value="rfm_messages_submit">
+            <input type="hidden" name="form_id" value="5">
+            <input type="hidden" name="scenario_key" value="gera-proga">
+            <input type="hidden" name="target_date" value="">
+            <input type="hidden" name="target_date_label" value="">
+            <input type="text" name="rfm_website" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="text" name="rfm_email_confirm" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="rfm_started_at" value="">
+            <div class="rfm-msg-selected-date" data-rfm-selected-date hidden></div>
+            <div class="rfm-msg-fields" data-rfm-fields>
+                                                <div class="rfm-msg-field">
+                <label>Vardas *</label>
+                <input type="text" name="fields[vardas]" placeholder="Jūsų vardas" required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Telefonas *</label>
+                <input type="tel" name="fields[telefonas]" placeholder="+370..." required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Žinutė *</label>
+                <textarea name="fields[zinute]" rows="5" placeholder="Įrašykite visą reikalingą informaciją." required></textarea>
+            </div>
+                                                            <label class="rfm-msg-check" data-rfm-check-field="privacy">
+                <input type="checkbox" name="fields[privatumas]" value="1" required data-rfm-privacy-required="1">
+                <span>Sutinku su <a href="https://relaxfm.lt/privatumopolitika/" target="_blank" rel="noopener">privatumo politika</a> *</span>
+            </label>
+                            <span class="rfm-msg-field-error" data-rfm-field-error hidden>Privalomas laukas</span>
+                                                        <button class="rfm-msg-submit" type="submit">Siųsti žinutę</button>
+                <div class="rfm-msg-response" role="status" aria-live="polite"></div>
+            </div>
+        </form>
+                                </div>
+                                            <div class="rfm-msg-scene rfm-msg-scene-form" data-rfm-form-scene="ryto-skambutis" hidden>
+                            <button class="rfm-msg-back" type="button" data-rfm-msg-back>← Pasirinkti kitą</button>
+                            <div class="rfm-msg-modal-head">
+                                <span class="rfm-msg-kicker">Ryto skambutis</span>
+                                <h3>Ryto skambutis</h3>
+                                <p>Kiekvienos darbo dienos rytą &quot;GERIAUSIA DIENA&quot; netikėtu originaliu skambučiu žadina ir sveikina dienos jubiliatus. 
+Žinutes &quot;Ryto skambučio&quot; rubrikai galite rašyti prieš 3-4 dienas. Šios dienos žinutes priimame iki 9 val. ryto. Rašydami žinutę nepamirškite nurodyti visos reikalingos informacijos!</p>
+                            </div>
+                                                                                        <div class="rfm-msg-date-step" data-rfm-date-step>
+                                    <label>Pasirinkite transliavimo dieną</label>
+                                    <div class="rfm-msg-date-options">
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-23" data-rfm-date-label="2026 m. lapkričio 23 d.">
+                                                <strong>2026-11-23</strong>
+                                                <span>2026 m. lapkričio 23 d.</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-24" data-rfm-date-label="2026 m. lapkričio 24 d.">
+                                                <strong>2026-11-24</strong>
+                                                <span>2026 m. lapkričio 24 d.</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-25" data-rfm-date-label="2026 m. lapkričio 25 d.">
+                                                <strong>2026-11-25</strong>
+                                                <span>2026 m. lapkričio 25 d.</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-26" data-rfm-date-label="2026 m. lapkričio 26 d.">
+                                                <strong>2026-11-26</strong>
+                                                <span>2026 m. lapkričio 26 d.</span>
+                                            </button>
+                                                                            </div>
+                                                                    </div>
+                                                                <form class="rfm-msg-form is-date-locked" data-rfm-message-form data-form-id="6" data-scenario="ryto-skambutis">
+            <input type="hidden" name="action" value="rfm_messages_submit">
+            <input type="hidden" name="form_id" value="6">
+            <input type="hidden" name="scenario_key" value="ryto-skambutis">
+            <input type="hidden" name="target_date" value="">
+            <input type="hidden" name="target_date_label" value="">
+            <input type="text" name="rfm_website" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="text" name="rfm_email_confirm" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="rfm_started_at" value="">
+            <div class="rfm-msg-selected-date" data-rfm-selected-date hidden></div>
+            <div class="rfm-msg-fields" data-rfm-fields>
+                                                <div class="rfm-msg-field">
+                <label>Vardas *</label>
+                <input type="text" name="fields[vardas]" placeholder="Jūsų vardas" required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Telefonas *</label>
+                <input type="tel" name="fields[telefonas]" placeholder="+370..." required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Žinutė *</label>
+                <textarea name="fields[zinute]" rows="5" placeholder="Įrašykite visą reikalingą informaciją." required></textarea>
+            </div>
+                                                            <label class="rfm-msg-check" data-rfm-check-field="privacy">
+                <input type="checkbox" name="fields[privatumas]" value="1" required data-rfm-privacy-required="1">
+                <span>Sutinku su <a href="https://relaxfm.lt/privatumopolitika/" target="_blank" rel="noopener">privatumo politika</a> *</span>
+            </label>
+                            <span class="rfm-msg-field-error" data-rfm-field-error hidden>Privalomas laukas</span>
+                                                        <button class="rfm-msg-submit" type="submit">Siųsti žinutę</button>
+                <div class="rfm-msg-response" role="status" aria-live="polite"></div>
+            </div>
+        </form>
+                                </div>
+                                    </div>
+            </div>
+        </div>
+            </div>
+    
+<div class="rfm-mobile-drawer" id="rfmMobileDrawer" aria-hidden="true">
+    <button class="rfm-drawer-close-btn" type="button" aria-label="Uždaryti meniu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+
+    <ul id="menu-desktop-pagrindinis-1" class="rfm-mobile-drawer-links"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58158 rfm-menu-msg-item"><a href="#zinute-i-studija" class="rfm-menu-msg-badge menu-link" role="button" aria-haspopup="dialog" data-rfm-messages-trigger="1"><span class="rfm-msg-dot" aria-hidden="true"></span><span class="rfm-msg-text">ŽINUTĖ Į STUDIJĄ</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58213 rfm-menu-parent-item"><a aria-expanded="false" href="#" role="button" aria-haspopup="true" class="rfm-menu-parent-toggle menu-link" data-rfm-parent-toggle="1">MUZIKA<span role="button" class="dropdown-menu-toggle ast-header-navigation-arrow" tabindex="0" aria-expanded="false" aria-label="Meniu jungiklis" aria-haspopup="true"></span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58214"><a href="https://relaxfm.lt/relax-fm-top-15/" class="menu-link">RELAX FM TOP 15</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58215"><a href="https://relaxfm.lt/dainu-paieska/" class="menu-link">DAINŲ ISTORIJA</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58160"><a href="https://relaxfm.lt/category/premjera/" class="menu-link">PREMJERA</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58280"><a href="https://relaxfm.lt/ivertink-daina/" class="menu-link">ĮVERTINK DAINĄ</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58353"><a href="https://relaxfm.lt/100-hitu/" class="menu-link">100 HITŲ</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58365"><a href="https://relaxfm.lt/sentimentai/" class="menu-link">SENTIMENTAI</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58221"><a href="https://relaxfm.lt/relax-fm-top-15-auksines-dainos/" class="menu-link">AUKSINĖS DAINOS</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58399"><a href="https://relaxfm.lt/lietuviskos-muzikos-radaras/" class="menu-link">MUZIKOS RADARAS</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58289"><a href="https://relaxfm.lt/category/vienos-temos-dainos/" class="menu-link">VIENOS TEMOS DAINOS</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58282"><a href="https://relaxfm.lt/atlikejai/" class="menu-link">ATLIKĖJAI</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-58202 rfm-menu-parent-item"><a aria-expanded="false" href="#" role="button" aria-haspopup="true" class="rfm-menu-parent-toggle menu-link" data-rfm-parent-toggle="1">LAIDOS<span role="button" class="dropdown-menu-toggle ast-header-navigation-arrow" tabindex="0" aria-expanded="false" aria-label="Meniu jungiklis" aria-haspopup="true"></span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-26699 current_page_item menu-item-58283"><a href="https://relaxfm.lt/irasai/" aria-current="page" class="menu-link">ATSUK TRANSLIACIJĄ</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58284"><a href="https://relaxfm.lt/laidu-tinklelis/" class="menu-link">RELAX FM PROGRAMA</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58626"><a href="https://relaxfm.lt/geriausia-diena-ryto-skambutis/" class="menu-link">GERIAUSIA DIENA</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58603"><a href="https://relaxfm.lt/gera-proga/" class="menu-link">SVEIKINIMŲ LAIDA &#8222;GERA PROGA&#8221;﻿</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-58285 rfm-menu-parent-item"><a aria-expanded="false" href="#" role="button" aria-haspopup="true" class="rfm-menu-parent-toggle menu-link" data-rfm-parent-toggle="1">APIE MUS<span role="button" class="dropdown-menu-toggle ast-header-navigation-arrow" tabindex="0" aria-expanded="false" aria-label="Meniu jungiklis" aria-haspopup="true"></span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58288"><a href="https://relaxfm.lt/komanda/" class="menu-link">KOMANDA</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58305"><a href="https://relaxfm.lt/dazniai/" class="menu-link">DAŽNIAI</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58286"><a href="https://relaxfm.lt/kontaktai/" class="menu-link">KONTAKTAI</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58287"><a href="https://relaxfm.lt/reklama/" class="menu-link">REKLAMA</a></li>
+</ul>
+</li>
+</ul></div>
+
+<main id="rfm-ajax-content" class="rfm-ajax-content">
+
+<section
+    class="rfm-recordings-page"
+    data-rfm-recordings-page
+    data-rfm-rss-cache-url="/wp-content/uploads/rfm_cache/archive_rss.xml?ver=1795185004"
+    data-rfm-rss-proxy-url="/wp-admin/admin-ajax.php?action=rfm_rss_proxy"
+    data-rfm-recordings-cache-url="/wp-content/uploads/rfm_cache/irasai_7d.json?ver=1795185004"
+    data-rfm-recordings-json-url="/wp-admin/admin-ajax.php?action=rfm_recordings_archive_json"
+    aria-label="Relax FM atsuk transliaciją"
+>
+    <div class="rfm-recordings-inner">
+        <header class="rfm-recordings-topbar">
+            <div class="rfm-recordings-title-wrap">
+                <span class="rfm-recordings-title-dot" aria-hidden="true"></span>
+                <h1 class="rfm-recordings-title">ATSUK TRANSLIACIJĄ</h1>
+            </div>
+            <div class="rfm-recordings-mode-label" id="rfmRecordingsModeLabel">7 dienų archyvas</div>
+        </header>
+
+        <div class="rfm-recordings-lead-row">
+            <p class="rfm-recordings-lead">Pasirinkite laidą arba peržiūrėkite visus Relax FM 7 dienų archyvo įrašus.</p>
+        </div>
+
+        <div id="rfmRecordingsApp" class="rfm-recordings-app">
+            <div class="rfm-recordings-loading">Įrašai kraunami...</div>
+        </div>
+    </div>
+</section>
+
+
+</main><!-- #rfm-ajax-content -->
+
+<footer class="rfm-site-legal" aria-label="Svetainės informacija">
+    <div class="rfm-footer-info" aria-label="Relax FM kontaktai ir socialiniai tinklai">
+        <section class="rfm-footer-info__col rfm-footer-info__col--contacts" aria-labelledby="rfm-footer-contacts-title">
+            <h2 id="rfm-footer-contacts-title" class="rfm-footer-info__title">Kontaktai</h2>
+            <div class="rfm-footer-info__body">
+                <p><strong>VšĮ KVARTOLĖ</strong></p>
+                <p>Laisvės pr. 60, LT-05120 Vilnius</p>
+                <p>Įm. kodas: 125014845<br>PVM kodas: LT250148417</p>
+                <p>Telefonas: <a href="tel:+37052128706">0 5 2128706</a></p>
+                <p>Visais klausimais: <a href="mailto:info@relaxfm.lt">info@relaxfm.lt</a></p>
+                <p>Muzikos redaktorius: <a href="mailto:muzika@relaxfm.lt">muzika@relaxfm.lt</a></p>
+                <p class="rfm-footer-info__note">Duomenys kaupiami ir saugomi LR juridinių asmenų registre</p>
+            </div>
+        </section>
+
+        <section class="rfm-footer-info__col rfm-footer-info__col--ads" aria-labelledby="rfm-footer-ads-title">
+            <h2 id="rfm-footer-ads-title" class="rfm-footer-info__title">Reklama</h2>
+            <div class="rfm-footer-info__body">
+                <p><strong>UAB TANGO REKLAMA</strong></p>
+                <p>Laisvės pr. 60, LT-05120 Vilnius</p>
+                <p>Telefonas: <a href="tel:+37061836363">+370 618 36363</a></p>
+                <p>El. paštas: <a href="mailto:info@tango.lt">info@tango.lt</a></p>
+                <p>Internete: <a href="http://www.tango.lt/" target="_blank" rel="noopener noreferrer">www.tango.lt</a></p>
+            </div>
+        </section>
+
+        <section class="rfm-footer-info__col rfm-footer-info__col--social" aria-labelledby="rfm-footer-social-title">
+            <div class="rfm-footer-social-block">
+                <h2 id="rfm-footer-social-title" class="rfm-footer-info__title">Sekite mus</h2>
+                <nav class="rfm-footer-social" aria-label="Relax FM socialiniai tinklai">
+                <a class="rfm-footer-social__link" href="https://www.facebook.com/fmrelax/" target="_blank" rel="noopener noreferrer" aria-label="Relax FM Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.14 8.25V6.9c0-.65.43-.8.74-.8h1.9V3.18L14.16 3.17c-2.92 0-3.58 2.18-3.58 3.58v1.5H8.73v3.01h1.85V20h3.56v-8.74h2.4l.32-3.01h-2.72Z"/></svg>
+                </a>
+                <a class="rfm-footer-social__link" href="https://www.instagram.com/relaxfmlietuva/" target="_blank" rel="noopener noreferrer" aria-label="Relax FM Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.76 3h8.48A4.77 4.77 0 0 1 21 7.76v8.48A4.77 4.77 0 0 1 16.24 21H7.76A4.77 4.77 0 0 1 3 16.24V7.76A4.77 4.77 0 0 1 7.76 3Zm0 2.05A2.71 2.71 0 0 0 5.05 7.76v8.48a2.71 2.71 0 0 0 2.71 2.71h8.48a2.71 2.71 0 0 0 2.71-2.71V7.76a2.71 2.71 0 0 0-2.71-2.71H7.76Zm4.24 3.8A3.15 3.15 0 1 1 8.85 12 3.15 3.15 0 0 1 12 8.85Zm0 1.95A1.2 1.2 0 1 0 13.2 12 1.2 1.2 0 0 0 12 10.8Zm4.45-3.12a.78.78 0 1 1-.78.78.78.78 0 0 1 .78-.78Z"/></svg>
+                </a>
+                <a class="rfm-footer-social__link" href="https://www.youtube.com/@relaxfmlietuva" target="_blank" rel="noopener noreferrer" aria-label="Relax FM YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.58 7.19a2.56 2.56 0 0 0-1.8-1.82C18.18 4.94 12 4.94 12 4.94s-6.18 0-7.78.43a2.56 2.56 0 0 0-1.8 1.82A26.84 26.84 0 0 0 2 12a26.84 26.84 0 0 0 .42 4.81 2.56 2.56 0 0 0 1.8 1.82c1.6.43 7.78.43 7.78.43s6.18 0 7.78-.43a2.56 2.56 0 0 0 1.8-1.82A26.84 26.84 0 0 0 22 12a26.84 26.84 0 0 0-.42-4.81ZM10.06 15.04V8.96L15.32 12l-5.26 3.04Z"/></svg>
+                </a>
+                <a class="rfm-footer-social__link" href="https://open.spotify.com/user/h8cj5lrsttn8aypnprgr5bpsf" target="_blank" rel="noopener noreferrer" aria-label="Relax FM Spotify">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm4.13 13.04a.69.69 0 0 1-.95.23c-2.6-1.59-5.88-1.95-9.74-1.07a.69.69 0 0 1-.3-1.35c4.22-.96 7.85-.54 10.76 1.24a.69.69 0 0 1 .23.95Zm1.1-2.47a.85.85 0 0 1-1.18.28c-2.98-1.83-7.52-2.36-11.04-1.29a.85.85 0 1 1-.5-1.63c4.02-1.22 9.01-.63 12.44 1.47.4.25.53.77.28 1.17Zm.1-2.57C13.76 8.88 7.86 8.68 4.45 9.72a1 1 0 0 1-.58-1.92c3.92-1.19 10.42-.96 14.48 1.45A1 1 0 1 1 17.33 11Z"/></svg>
+                </a>
+                </nav>
+            </div>
+            <div class="rfm-footer-apps" aria-label="Radijas.lt programėlė">
+                <h3 class="rfm-footer-apps__title">Radijas.lt programėlė</h3>
+                <div class="rfm-footer-apps__links">
+                    <a class="rfm-footer-apps__link" href="https://onelink.to/v559wg" target="_blank" rel="noopener noreferrer" aria-label="Atsisiųsti Radijas.lt programėlę iš Google Play">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.75 3.55c-.45.24-.75.75-.75 1.46v13.98c0 .71.3 1.22.75 1.46l8.26-8.44L4.75 3.55Zm9.2 7.49 2.05-2.1L6.2 3.31l7.75 7.73Zm2.05 4.02-2.05-2.1-7.75 7.73 9.8-5.63Zm.95-.55 2.42-1.39c1.04-.6 1.04-1.64 0-2.24l-2.42-1.39L14.45 12l2.5 2.51Z"/></svg>
+                        <span>Google Play</span>
+                    </a>
+                    <a class="rfm-footer-apps__link" href="https://onelink.to/v559wg" target="_blank" rel="noopener noreferrer" aria-label="Atsisiųsti Radijas.lt programėlę iš App Store">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.47 13.08c-.02-2.05 1.67-3.05 1.75-3.09-.96-1.4-2.44-1.59-2.96-1.61-1.25-.13-2.46.75-3.09.75-.65 0-1.63-.73-2.69-.71-1.38.02-2.66.82-3.37 2.08-1.45 2.51-.37 6.19 1.02 8.22.7.99 1.51 2.1 2.58 2.06 1.04-.04 1.43-.66 2.69-.66 1.25 0 1.62.66 2.72.64 1.13-.02 1.84-.99 2.51-1.99.8-1.14 1.12-2.27 1.13-2.33-.03-.01-2.27-.87-2.29-3.36ZM14.44 7.05c.56-.7.95-1.64.84-2.6-.81.04-1.82.56-2.4 1.25-.52.61-.99 1.59-.86 2.52.91.07 1.84-.46 2.42-1.17Z"/></svg>
+                        <span>App Store</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="rfm-site-legal__inner">
+        <p class="rfm-site-legal__line rfm-site-legal__line--copyright">© RELAX FM 2026 visos teisės saugomos.</p>
+        <p class="rfm-site-legal__line rfm-site-legal__line--desktop">Naudodami svetainę sutinkate su <a href="https://relaxfm.lt/privatumopolitika/">PRIVATUMO POLITIKA</a>.</p>
+        <p class="rfm-site-legal__line rfm-site-legal__line--mobile"><a href="https://relaxfm.lt/privatumopolitika/">PRIVATUMO POLITIKA</a></p>
+    </div>
+</footer>
+
+<div id="rfp-sticky-bar">
+    <div id="rfp-sticky-inner">
+        <div class="rfm-sticky-meta-block">
+            <button id="rfp-sticky-btn" type="button" aria-label="Groti arba stabdyti transliaciją">
+                <svg id="sticky-play-ico" width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><polygon points="5,3 17,10 5,17"/></svg>
+                <svg id="sticky-stop-ico" width="12" height="12" viewBox="0 0 20 20" style="display:none;" aria-hidden="true"><rect x="4" y="4" width="12" height="12"/></svg>
+            </button>
+            <div class="rfm-sticky-brand-logo-frame">
+                <img id="rfm-sticky-player-logo" src="https://relaxfm.lt/wp-content/uploads/2019/02/relax-kvadratas.jpg" alt="Relax FM">
+            </div>
+            <div class="rfm-sticky-text-block">
+                <div id="sticky-song-title">Lietuviškos muzikos namai</div>
+                <div id="sticky-artist-title">RELAX FM</div>
+            </div>
+            <button class="rfm-sticky-mobile-trigger" type="button" aria-label="Rodyti stočių pasirinkimą" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+            </button>
+        </div>
+        <div class="rfm-sticky-right-controls-group">
+            <div class="rfm-sticky-stations-switcher rfm-stations-rail rfm-stations-count-3" aria-label="Pasirinkti radijo stotį">
+                <button type="button" class="rfm-station-tab stab-relaxfm active" data-rfm-station="relaxfm" aria-label="Relax FM"><img src="/wp-content/uploads/2019/02/relax-kvadratas.jpg" alt="Relax FM"></button><button type="button" class="rfm-station-tab stab-100hitu" data-rfm-station="100hitu" aria-label="100 hitų"><img src="/wp-content/uploads/2023/04/100Hitu_500x500px_2-1.jpg" alt="100 hitų"></button><button type="button" class="rfm-station-tab stab-sentimentai" data-rfm-station="sentimentai" aria-label="Sentimentai"><img src="/wp-content/uploads/2023/04/Sentimentai_500x500px.png" alt="Sentimentai"></button>            </div>
+        </div>
+    </div>
+</div>
+
+<div class="rfm-hidden-audio-wrap" aria-hidden="true">
+    <audio id="master-stream-audio" preload="none"></audio>
+</div>
+
+    <div id="rfmGlobalMessagesModal" class="rfm-global-messages-modal" aria-hidden="true">
+                <div class="rfm-msg-launcher" data-rfm-messages data-rfm-msg-id="rfm-msg-010862bd-6b4e-41ab-b504-1efe73f9548a">
+            <button class="rfm-msg-open" type="button" data-rfm-msg-open>
+                <span class="rfm-msg-open-dot"></span>
+                <span>Žinutė į studiją</span>
+            </button>
+            <div class="rfm-msg-modal" data-rfm-msg-modal hidden>
+                <div class="rfm-msg-backdrop" data-rfm-msg-close></div>
+                <div class="rfm-msg-dialog" role="dialog" aria-modal="true" aria-label="Žinutė į Relax FM">
+                    <button class="rfm-msg-close" type="button" data-rfm-msg-close aria-label="Uždaryti">×</button>
+                    <div class="rfm-msg-scene rfm-msg-scene-choice is-active" data-rfm-scene="choice">
+                        <div class="rfm-msg-modal-head">
+                            <span class="rfm-msg-kicker">Relax FM - lietuviškos muzikos namai</span>
+                            <h3>Pasirinkite, kam skirta žinutė.</h3>
+                            <p></p>
+                        </div>
+                        <div class="rfm-msg-bubbles">
+                                                            <button class="rfm-msg-bubble" type="button" data-rfm-scenario="zinute-i-studija">
+                                    <span class="rfm-msg-bubble-icon">✉</span>
+                                    <strong>Žinutė į studiją</strong>
+                                    <small>Parašykite laidų vedėjams</small>
+                                </button>
+                                                            <button class="rfm-msg-bubble" type="button" data-rfm-scenario="gera-proga">
+                                    <span class="rfm-msg-bubble-icon">🎉</span>
+                                    <strong>Sveikinimų laida „Gera proga“</strong>
+                                    <small>Kasdien 18-20 val.</small>
+                                </button>
+                                                            <button class="rfm-msg-bubble" type="button" data-rfm-scenario="ryto-skambutis">
+                                    <span class="rfm-msg-bubble-icon">☎</span>
+                                    <strong>Ryto skambutis</strong>
+                                    <small>&quot;GERIAUSIA DIENA&quot; laukia Jūsų laiškų</small>
+                                </button>
+                                                    </div>
+                    </div>
+
+                                            <div class="rfm-msg-scene rfm-msg-scene-form" data-rfm-form-scene="zinute-i-studija" hidden>
+                            <button class="rfm-msg-back" type="button" data-rfm-msg-back>← Pasirinkti kitą</button>
+                            <div class="rfm-msg-modal-head">
+                                <span class="rfm-msg-kicker">Studija</span>
+                                <h3>Žinutė į studiją</h3>
+                                <p>Dalyvaukite Relax FM žaidimuose.</p>
+                            </div>
+                                                                                            <form class="rfm-msg-form " data-rfm-message-form data-form-id="4" data-scenario="zinute-i-studija">
+            <input type="hidden" name="action" value="rfm_messages_submit">
+            <input type="hidden" name="form_id" value="4">
+            <input type="hidden" name="scenario_key" value="zinute-i-studija">
+            <input type="hidden" name="target_date" value="">
+            <input type="hidden" name="target_date_label" value="">
+            <input type="text" name="rfm_website" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="text" name="rfm_email_confirm" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="rfm_started_at" value="">
+            <div class="rfm-msg-selected-date" data-rfm-selected-date hidden></div>
+            <div class="rfm-msg-fields" data-rfm-fields>
+                                                <div class="rfm-msg-field">
+                <label>Vardas *</label>
+                <input type="text" name="fields[vardas]" placeholder="Jūsų vardas" required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Telefonas *</label>
+                <input type="tel" name="fields[telefonas]" placeholder="+370..." required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Žinutė *</label>
+                <textarea name="fields[zinute]" rows="5" placeholder="Parašykite žinutę" required></textarea>
+            </div>
+                                                            <label class="rfm-msg-check" data-rfm-check-field="privacy">
+                <input type="checkbox" name="fields[privatumas]" value="1" required data-rfm-privacy-required="1">
+                <span>Sutinku su <a href="https://relaxfm.lt/privatumopolitika/" target="_blank" rel="noopener">privatumo politika</a> *</span>
+            </label>
+                            <span class="rfm-msg-field-error" data-rfm-field-error hidden>Privalomas laukas</span>
+                                                        <button class="rfm-msg-submit" type="submit">Siųsti žinutę</button>
+                <div class="rfm-msg-response" role="status" aria-live="polite"></div>
+            </div>
+        </form>
+                                </div>
+                                            <div class="rfm-msg-scene rfm-msg-scene-form" data-rfm-form-scene="gera-proga" hidden>
+                            <button class="rfm-msg-back" type="button" data-rfm-msg-back>← Pasirinkti kitą</button>
+                            <div class="rfm-msg-modal-head">
+                                <span class="rfm-msg-kicker">Gera proga</span>
+                                <h3>Sveikinimų laida „Gera proga“</h3>
+                                <p>Pasirinkite dieną, kada sveikinimas turi būti transliuojamas, ir parašykite žinutę. Nepamirškite nurodyti visos reikalingos informacijos! Sveikinimus galite rašyti likus 3-4 paroms iki gimtadienio dienos. Šios dienos sveikinimus priimame iki 18:30.</p>
+                            </div>
+                                                                                        <div class="rfm-msg-date-step" data-rfm-date-step>
+                                    <label>Pasirinkite transliavimo dieną</label>
+                                    <div class="rfm-msg-date-options">
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-20" data-rfm-date-label="2026-11-20">
+                                                <strong>Šiandien</strong>
+                                                <span>2026-11-20</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-21" data-rfm-date-label="2026-11-21">
+                                                <strong>Rytoj</strong>
+                                                <span>2026-11-21</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-22" data-rfm-date-label="2026-11-22">
+                                                <strong>Poryt</strong>
+                                                <span>2026-11-22</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-23" data-rfm-date-label="2026-11-23">
+                                                <strong>Užporyt</strong>
+                                                <span>2026-11-23</span>
+                                            </button>
+                                                                            </div>
+                                                                    </div>
+                                                                <form class="rfm-msg-form is-date-locked" data-rfm-message-form data-form-id="5" data-scenario="gera-proga">
+            <input type="hidden" name="action" value="rfm_messages_submit">
+            <input type="hidden" name="form_id" value="5">
+            <input type="hidden" name="scenario_key" value="gera-proga">
+            <input type="hidden" name="target_date" value="">
+            <input type="hidden" name="target_date_label" value="">
+            <input type="text" name="rfm_website" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="text" name="rfm_email_confirm" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="rfm_started_at" value="">
+            <div class="rfm-msg-selected-date" data-rfm-selected-date hidden></div>
+            <div class="rfm-msg-fields" data-rfm-fields>
+                                                <div class="rfm-msg-field">
+                <label>Vardas *</label>
+                <input type="text" name="fields[vardas]" placeholder="Jūsų vardas" required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Telefonas *</label>
+                <input type="tel" name="fields[telefonas]" placeholder="+370..." required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Žinutė *</label>
+                <textarea name="fields[zinute]" rows="5" placeholder="Įrašykite visą reikalingą informaciją." required></textarea>
+            </div>
+                                                            <label class="rfm-msg-check" data-rfm-check-field="privacy">
+                <input type="checkbox" name="fields[privatumas]" value="1" required data-rfm-privacy-required="1">
+                <span>Sutinku su <a href="https://relaxfm.lt/privatumopolitika/" target="_blank" rel="noopener">privatumo politika</a> *</span>
+            </label>
+                            <span class="rfm-msg-field-error" data-rfm-field-error hidden>Privalomas laukas</span>
+                                                        <button class="rfm-msg-submit" type="submit">Siųsti žinutę</button>
+                <div class="rfm-msg-response" role="status" aria-live="polite"></div>
+            </div>
+        </form>
+                                </div>
+                                            <div class="rfm-msg-scene rfm-msg-scene-form" data-rfm-form-scene="ryto-skambutis" hidden>
+                            <button class="rfm-msg-back" type="button" data-rfm-msg-back>← Pasirinkti kitą</button>
+                            <div class="rfm-msg-modal-head">
+                                <span class="rfm-msg-kicker">Ryto skambutis</span>
+                                <h3>Ryto skambutis</h3>
+                                <p>Kiekvienos darbo dienos rytą &quot;GERIAUSIA DIENA&quot; netikėtu originaliu skambučiu žadina ir sveikina dienos jubiliatus. 
+Žinutes &quot;Ryto skambučio&quot; rubrikai galite rašyti prieš 3-4 dienas. Šios dienos žinutes priimame iki 9 val. ryto. Rašydami žinutę nepamirškite nurodyti visos reikalingos informacijos!</p>
+                            </div>
+                                                                                        <div class="rfm-msg-date-step" data-rfm-date-step>
+                                    <label>Pasirinkite transliavimo dieną</label>
+                                    <div class="rfm-msg-date-options">
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-23" data-rfm-date-label="2026 m. lapkričio 23 d.">
+                                                <strong>2026-11-23</strong>
+                                                <span>2026 m. lapkričio 23 d.</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-24" data-rfm-date-label="2026 m. lapkričio 24 d.">
+                                                <strong>2026-11-24</strong>
+                                                <span>2026 m. lapkričio 24 d.</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-25" data-rfm-date-label="2026 m. lapkričio 25 d.">
+                                                <strong>2026-11-25</strong>
+                                                <span>2026 m. lapkričio 25 d.</span>
+                                            </button>
+                                                                                    <button type="button" class="rfm-msg-date-option" data-rfm-date="2026-11-26" data-rfm-date-label="2026 m. lapkričio 26 d.">
+                                                <strong>2026-11-26</strong>
+                                                <span>2026 m. lapkričio 26 d.</span>
+                                            </button>
+                                                                            </div>
+                                                                    </div>
+                                                                <form class="rfm-msg-form is-date-locked" data-rfm-message-form data-form-id="6" data-scenario="ryto-skambutis">
+            <input type="hidden" name="action" value="rfm_messages_submit">
+            <input type="hidden" name="form_id" value="6">
+            <input type="hidden" name="scenario_key" value="ryto-skambutis">
+            <input type="hidden" name="target_date" value="">
+            <input type="hidden" name="target_date_label" value="">
+            <input type="text" name="rfm_website" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="text" name="rfm_email_confirm" value="" class="rfm-msg-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="rfm_started_at" value="">
+            <div class="rfm-msg-selected-date" data-rfm-selected-date hidden></div>
+            <div class="rfm-msg-fields" data-rfm-fields>
+                                                <div class="rfm-msg-field">
+                <label>Vardas *</label>
+                <input type="text" name="fields[vardas]" placeholder="Jūsų vardas" required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Telefonas *</label>
+                <input type="tel" name="fields[telefonas]" placeholder="+370..." required>
+            </div>
+                                                            <div class="rfm-msg-field">
+                <label>Žinutė *</label>
+                <textarea name="fields[zinute]" rows="5" placeholder="Įrašykite visą reikalingą informaciją." required></textarea>
+            </div>
+                                                            <label class="rfm-msg-check" data-rfm-check-field="privacy">
+                <input type="checkbox" name="fields[privatumas]" value="1" required data-rfm-privacy-required="1">
+                <span>Sutinku su <a href="https://relaxfm.lt/privatumopolitika/" target="_blank" rel="noopener">privatumo politika</a> *</span>
+            </label>
+                            <span class="rfm-msg-field-error" data-rfm-field-error hidden>Privalomas laukas</span>
+                                                        <button class="rfm-msg-submit" type="submit">Siųsti žinutę</button>
+                <div class="rfm-msg-response" role="status" aria-live="polite"></div>
+            </div>
+        </form>
+                                </div>
+                                    </div>
+            </div>
+        </div>
+            </div>
+    <script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/astra-child/*","/wp-content/themes/astra/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- RFM Global Footer / Player moved to astra-child/footer.php and assets/js/rfm-main.js. Disabled here to avoid duplicate player/RDS logic. -->
+<script>
+			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+			</script>
+			<script id="rfm-main-js-extra">
+var rfmConfig = {"ajaxUrl":"/wp-admin/admin-ajax.php","rdsProxyUrl":"/wp-admin/admin-ajax.php?action=rfm_rds_proxy","rdsWakeUrl":"","rdsCacheBaseUrl":"https://relaxfm.lt/wp-content/uploads/rfm_cache/","rdsWakeMinSeconds":"8","rdsStaleSeconds":"12","rdsWakeChance":"0","rssProxyUrl":"/wp-admin/admin-ajax.php?action=rfm_rss_proxy","rssCacheUrl":"/wp-content/uploads/rfm_cache/archive_rss.xml?ver=1795185004","recordingsCacheUrl":"/wp-content/uploads/rfm_cache/irasai_7d.json?ver=1795185004","recordingsJsonUrl":"/wp-admin/admin-ajax.php?action=rfm_recordings_archive_json","atsukArtworkBaseUrl":"https://relaxfm.lt/wp-content/themes/astra-child/assets/img/atsuk/","historyBaseUrl":"https://relaxfm.lt/wp-content/uploads/rfm_history/","enableAjaxNavigation":"1","ajaxExcludePaths":["/wp-admin/","/wp-login.php","/wp-json/","/wp-content/","/wp-includes/"],"stations":{"relaxfm":{"name":"Relax FM","stream":"https://stream4.radijas.lt/relaxfm","logo":"/wp-content/uploads/2019/02/relax-kvadratas.jpg","fallbackArtwork":"/wp-content/uploads/2026/07/1280x720_Radija-3.webp","artworkMatchEnabled":true,"frontendRefreshSeconds":8},"100hitu":{"name":"100 hit\u0173","stream":"https://klausyk.radijas.lt/listen/100hitu/live","logo":"/wp-content/uploads/2023/04/100Hitu_500x500px_2-1.jpg","fallbackArtwork":"","artworkMatchEnabled":true,"frontendRefreshSeconds":20},"sentimentai":{"name":"Sentimentai","stream":"https://klausyk.radijas.lt/listen/sentimentai/live","logo":"/wp-content/uploads/2023/04/Sentimentai_500x500px.png","fallbackArtwork":"","artworkMatchEnabled":true,"frontendRefreshSeconds":20}},"relaxfmFallbackArtwork":"/wp-content/uploads/2026/07/1280x720_Radija-3.webp","defaultStation":"relaxfm","stationsJsonUrl":"https://relaxfm.lt/wp-content/uploads/rfm_cache/stations.json","radarCacheUrl":"https://relaxfm.lt/wp-content/uploads/rfm_cache/lietuviskos_muzikos_radaras.json","homeHistoryBanners":[{"slot":1,"label":"","title":"","cta_text":"","url":"","open_new_tab":0,"message_scenario":"gera-proga","image":"/wp-content/uploads/2026/07/1280x720_Gera_proga-1024x576.jpg"},{"slot":2,"label":"","title":"","cta_text":"","url":"/relax-fm-top-15/","open_new_tab":0,"message_scenario":"","image":"/wp-content/uploads/2026/07/1280x720_Balsuok_TOP15-1024x576.jpg"},{"slot":3,"label":"","title":"","cta_text":"","url":"https://onelink.to/relaxfm","open_new_tab":1,"message_scenario":"","image":"/wp-content/uploads/2026/07/Giedrius-radijas.lt_-1024x579.jpg"},{"slot":4,"label":"","title":"","cta_text":"","url":"","open_new_tab":0,"message_scenario":"ryto-skambutis","image":"/wp-content/uploads/2026/07/1280x720_Ryto_Skambutis-1024x576.jpg"},{"slot":5,"label":"NAUJAS DUETAS RELAX FM ETERYJE","title":"","cta_text":"","url":"/lietuviskos-muzikos-gerbejams-naujas-duetas/","open_new_tab":0,"message_scenario":"","image":"/wp-content/uploads/2026/07/Giedrius-ir-Emilis-01-foto-Elvis-Zaldaris-1024x683.webp"}],"heroMessages":[{"id":"hm_8771a48c19","title":"RELAX FM 2027 M. KALENDORIUS","subtitle":"Daugiau geros nuotaikos kiekvienai dienai. \u012esigyk jau dabar!","url":"https://parduotuve.radijas.lt/","target":"_blank","weight":2,"duration":20,"startAt":"","endAt":"","startTs":0,"endTs":0,"weekdays":[],"timeFrom":"","timeTo":""},{"id":"hm_972e2aa45c","title":"RYTO LAIDOS \u012eRA\u0160AS","subtitle":"\u012esijunk \"GERIAUSIA DIENA\" \u012fra\u0161\u0105","url":"/irasai/?laida=geriausia-diena","target":"_self","weight":5,"duration":7,"startAt":"","endAt":"","startTs":0,"endTs":0,"weekdays":[1,2,3,4,5],"timeFrom":"11:30","timeTo":"12:30"},{"id":"hm_4277793f3f","title":"RYTO SKAMBUTIS","subtitle":"\u0160iokiadieni\u0173 rytais GIEDRIUS ir EMILIS netik\u0117tu skambu\u010diu \u017eadina ir sveikina dienos jubiliatus.","url":"#rfm-messages-ryto-skambutis","target":"_self","weight":5,"duration":20,"startAt":"","endAt":"","startTs":0,"endTs":0,"weekdays":[1,2,3,4,5],"timeFrom":"00:10","timeTo":"09:00"},{"id":"hm_a9d59c161a","title":"RYTO SKAMBUTIS","subtitle":"\"GERIAUSIA DIENA\" netik\u0117tu originaliu skambu\u010diu sveikina dienos sukatuvininkus","url":"#rfm-messages-ryto-skambutis","target":"_self","weight":5,"duration":10,"startAt":"","endAt":"","startTs":0,"endTs":0,"weekdays":[1,2,3,4,0],"timeFrom":"20:01","timeTo":"23:59"},{"id":"hm_f046ce46be","title":"SVEIKINIM\u0172 LAIDA \"GERA PROGA\"","subtitle":"\u0160iandien nuo 18 val. J\u016bs\u0173 \u017einu\u010di\u0173 laukiame jau dabar!","url":"#rfm-messages-gera-proga","target":"_self","weight":5,"duration":20,"startAt":"","endAt":"","startTs":0,"endTs":0,"weekdays":[1,2,3,4,5,6,0],"timeFrom":"10:40","timeTo":"18:20"},{"id":"hm_3ff9da4c22","title":"LIETUVI\u0160KOS MUZIKOS RADARAS","subtitle":"Kas da\u017eniausiai skamba RELAX FM eteryje ir k\u0105 m\u016bs\u0173 klausytojai geriausiai vertina?","url":"https://relaxfm.lt/lietuviskos-muzikos-radaras/","target":"_self","weight":5,"duration":10,"startAt":"","endAt":"","startTs":0,"endTs":0,"weekdays":[1,2,3,4,5,6,0],"timeFrom":"00:30","timeTo":"06:00"},{"id":"hm_a863e5adc3","title":"ATSUK TRANSLIACIJ\u0104","subtitle":"Laidos \"GERA PROGA\" \u012fra\u0161as","url":"/irasai/?laida=gera-proga","target":"_self","weight":5,"duration":7,"startAt":"","endAt":"","startTs":0,"endTs":0,"weekdays":[],"timeFrom":"","timeTo":""},{"id":"hm_78c7b32bff","title":"Balsuok RELAX FM TOP 15","subtitle":"J\u016bs\u0173 i\u0161rinkt\u0105 populiariausi\u0173 Lietuvos atlik\u0117j\u0173 top\u0105 transliuojame \u0161e\u0161tadien\u012f po vidurdienio.","url":"/relax-fm-top-15/","target":"_self","weight":5,"duration":7,"startAt":"","endAt":"","startTs":0,"endTs":0,"weekdays":[],"timeFrom":"","timeTo":""}],"heroMessagesTimezone":"Europe/Vilnius"};
+//# sourceURL=rfm-main-js-extra
+</script>
+<script defer id="rfm-main-js" src="https://relaxfm.lt/wp-content/themes/astra-child/assets/js/rfm-main.js?ver=1795091687"></script>
+<script defer id="rfm-recordings-page-js" src="https://relaxfm.lt/wp-content/themes/astra-child/assets/js/rfm-recordings-page.js?ver=1795091687"></script>
+<script id="rfm-messages-frontend-js-extra">
+var rfmMessages = {"ajaxUrl":"https://relaxfm.lt/wp-admin/admin-ajax.php","nonce":"314c14d879","privacyUrl":"https://relaxfm.lt/privatumopolitika/","i18n":{"sending":"Siun\u010diama...","error":"Nepavyko i\u0161si\u0173sti. Bandykite dar kart\u0105."}};
+//# sourceURL=rfm-messages-frontend-js-extra
+</script>
+<script id="rfm-messages-frontend-js" src="https://relaxfm.lt/wp-content/plugins/relax-fm-messages/assets/js/frontend.js?ver=0.4.39"></script>
+<script id="rfm-privacy-consent-js-extra">
+var rfmPrivacyConsentConfig = {"version":"2.0","cookieName":"rfm_privacy_consent","lifetimeDays":"365","policyUrl":"https://relaxfm.lt/privatumopolitika/","defaultState":{"necessary":true,"analytics":false,"marketing":false,"embeds":false},"categories":{"necessary":{"label":"B\u016btini","description":"Reikalingi, kad veikt\u0173 svetain\u0117, radijo grotuvas, saugumo ir pasirinkim\u0173 i\u0161saugojimo funkcijos.","required":true},"analytics":{"label":"Statistika","description":"Padeda suprasti, kurie puslapiai ir laidos \u012fdomiausi. Be sutikimo naudojami tik riboti matavimo signalai be \u201eAnalytics\u201c slapuk\u0173; pilna statistika \u012fjungiama tik gavus sutikim\u0105.","required":false},"marketing":{"label":"Marketingas","description":"Skirta reklamos, kampanij\u0173 ar tre\u010di\u0173j\u0173 \u0161ali\u0173 matavimo sprendimams. \u012ejungiama tik gavus sutikim\u0105.","required":false},"embeds":{"label":"\u012eterptas turinys","description":"YouTube, Vimeo, socialini\u0173 tinkl\u0173 ir kitas \u012fterptas turinys, kuris gali perduoti duomenis tre\u010diosioms \u0161alims.","required":false}}};
+//# sourceURL=rfm-privacy-consent-js-extra
+</script>
+<script id="rfm-privacy-consent-js" src="https://relaxfm.lt/wp-content/themes/astra-child/assets/js/rfm-privacy-consent.js?ver=1795091687"></script>
+<script id="rfm-google-analytics-js-extra">
+var rfmGoogleAnalyticsConfig = {"measurementId":"G-ZX02D6QX7F","allowedHosts":["relaxfm.lt","www.relaxfm.lt"]};
+//# sourceURL=rfm-google-analytics-js-extra
+</script>
+<script id="rfm-google-analytics-js" src="https://relaxfm.lt/wp-content/themes/astra-child/assets/js/rfm-google-analytics.js?ver=1795091687"></script>
+    <div class="rfm-privacy-consent" data-rfm-privacy-consent data-nosnippet hidden aria-live="polite">
+        <div class="rfm-privacy-consent__panel" role="dialog" aria-modal="false" aria-labelledby="rfm-privacy-consent-title" aria-describedby="rfm-privacy-consent-desc">
+            <button class="rfm-privacy-consent__close" type="button" data-rfm-consent-close aria-label="Atmesti nebūtinus slapukus ir uždaryti">×</button>
+            <div class="rfm-privacy-consent__intro">
+                <span class="rfm-privacy-consent__eyebrow">RELAX FM</span>
+                <div class="rfm-privacy-consent__title" id="rfm-privacy-consent-title">Slapukų pasirinkimai</div>
+                <p id="rfm-privacy-consent-desc">Mes ir mūsų partneriai naudojame slapukus, kad užtikrintume sklandų svetainės veikimą, analizuotume naršymo statistiką. Jūs galite pasirinkti, kokius duomenis leidžiate mums rinkti. Išsamesnę informaciją rasite mūsų <a href="https://relaxfm.lt/privatumopolitika/">PRIVATUMO POLITIKOJE</a>.</p>
+            </div>
+            <div class="rfm-privacy-consent__compact-actions" data-rfm-consent-compact-actions>
+                <button type="button" class="rfm-privacy-consent__btn rfm-privacy-consent__btn--primary" data-rfm-consent-accept-all>Priimti viską</button>
+                <button type="button" class="rfm-privacy-consent__btn rfm-privacy-consent__btn--ghost" data-rfm-consent-reject-all>Atmesti nebūtinus</button>
+                <button type="button" class="rfm-privacy-consent__linkbtn" data-rfm-consent-show-settings>Nustatymai</button>
+            </div>
+            <div class="rfm-privacy-consent__settings" data-rfm-consent-settings hidden>
+                <div class="rfm-privacy-consent__options">
+                                                <label class="rfm-privacy-consent__option is-required" for="rfm-privacy-consent-necessary">
+        <span class="rfm-privacy-consent__option-copy">
+            <strong>Būtini</strong>
+            <span>Reikalingi, kad veiktų svetainė, radijo grotuvas, saugumo ir pasirinkimų išsaugojimo funkcijos.</span>
+        </span>
+        <span class="rfm-privacy-consent__switch" aria-hidden="true">
+            <input
+                id="rfm-privacy-consent-necessary"
+                type="checkbox"
+                data-rfm-consent-category="necessary"
+                 checked='checked'                 disabled='disabled'            >
+            <span></span>
+        </span>
+    </label>
+                                                    <label class="rfm-privacy-consent__option" for="rfm-privacy-consent-analytics">
+        <span class="rfm-privacy-consent__option-copy">
+            <strong>Statistika</strong>
+            <span>Padeda suprasti, kurie puslapiai ir laidos įdomiausi. Be sutikimo naudojami tik riboti matavimo signalai be „Analytics“ slapukų; pilna statistika įjungiama tik gavus sutikimą.</span>
+        </span>
+        <span class="rfm-privacy-consent__switch" aria-hidden="true">
+            <input
+                id="rfm-privacy-consent-analytics"
+                type="checkbox"
+                data-rfm-consent-category="analytics"
+                                            >
+            <span></span>
+        </span>
+    </label>
+                                                    <label class="rfm-privacy-consent__option" for="rfm-privacy-consent-marketing">
+        <span class="rfm-privacy-consent__option-copy">
+            <strong>Marketingas</strong>
+            <span>Skirta reklamos, kampanijų ar trečiųjų šalių matavimo sprendimams. Įjungiama tik gavus sutikimą.</span>
+        </span>
+        <span class="rfm-privacy-consent__switch" aria-hidden="true">
+            <input
+                id="rfm-privacy-consent-marketing"
+                type="checkbox"
+                data-rfm-consent-category="marketing"
+                                            >
+            <span></span>
+        </span>
+    </label>
+                                                    <label class="rfm-privacy-consent__option" for="rfm-privacy-consent-embeds">
+        <span class="rfm-privacy-consent__option-copy">
+            <strong>Įterptas turinys</strong>
+            <span>YouTube, Vimeo, socialinių tinklų ir kitas įterptas turinys, kuris gali perduoti duomenis trečiosioms šalims.</span>
+        </span>
+        <span class="rfm-privacy-consent__switch" aria-hidden="true">
+            <input
+                id="rfm-privacy-consent-embeds"
+                type="checkbox"
+                data-rfm-consent-category="embeds"
+                                            >
+            <span></span>
+        </span>
+    </label>
+                                        </div>
+                <div class="rfm-privacy-consent__settings-actions">
+                    <button type="button" class="rfm-privacy-consent__btn rfm-privacy-consent__btn--primary" data-rfm-consent-save>Įrašyti pasirinkimus</button>
+                    <button type="button" class="rfm-privacy-consent__btn rfm-privacy-consent__btn--ghost" data-rfm-consent-reject-all>Atmesti nebūtinus</button>
+                    <button type="button" class="rfm-privacy-consent__btn rfm-privacy-consent__btn--soft" data-rfm-consent-accept-all>Priimti viską</button>
+                </div>
+            </div>
+            <p class="rfm-privacy-consent__fineprint">
+                Pasirinkimą bet kada pakeisite puslapio apačioje: „Privatumo nustatymai“.
+            </p>
+        </div>
+    </div>
+        <script>
+    (function(){
+        function addLink(){
+            var footer = document.querySelector('.rfm-site-legal__inner');
+            if (!footer || footer.querySelector('[data-rfm-consent-open]')) { return; }
+            var p = document.createElement('p');
+            p.className = 'rfm-site-legal__line rfm-site-legal__line--privacy-settings';
+            p.innerHTML = '<button type="button" class="rfm-site-legal__privacy-settings" data-rfm-consent-open>Privatumo nustatymai</button>';
+            footer.appendChild(p);
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', addLink);
+        } else {
+            addLink();
+        }
+    })();
+    </script>
+    </body>
+</html>
+
+
+<!-- Page uncached by LiteSpeed Cache 7.9.2 on 2026-11-20 16:32:45 -->
