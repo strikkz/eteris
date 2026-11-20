@@ -67,6 +67,19 @@ object Art {
         val copied = runCatching {
             ctx.assets.open("logos/$id.png").use { input -> FileOutputStream(tmp).use { input.copyTo(it) } }
         }.isSuccess
+        if (!copied && id.startsWith(PodcastRepository.COVER_PREFIX)) {
+            // Podcast cover: downloaded once and kept (initials only if it cannot be had).
+            val bmp = PodcastRepository.coverUrl(id)?.let { download(it) ?: download(viaProxy(it)) }
+            if (bmp == null) {
+                val tile = File(f.path + ".tile")
+                if (!tile.exists()) FileOutputStream(tmp).use { generate(PodcastRepository.coverName(id) ?: "?").compress(Bitmap.CompressFormat.PNG, 100, it) }
+                    .also { if (!tmp.renameTo(tile)) tmp.delete() }
+                return tile
+            }
+            FileOutputStream(tmp).use { bmp.compress(Bitmap.CompressFormat.PNG, 95, it) }
+            if (!tmp.renameTo(f)) tmp.delete()
+            return f
+        }
         if (!copied) {
             val st = StationRepository.byId(id)
             // World stations: their own logo (catalog pictures, then the website's icon), if one can be downloaded.

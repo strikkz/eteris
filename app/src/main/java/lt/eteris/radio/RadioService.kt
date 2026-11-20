@@ -59,6 +59,9 @@ class RadioService : MediaLibraryService() {
         const val SUGGESTED = "suggested"
         /** What Android shows to resume playback. */
         const val RECENT = "recent"
+        /** Third tab in the car: started episodes and the podcasts one follows. */
+        const val PODCASTS = "podcasts"
+        private const val POD_PREFIX = "pod:"
 
         private const val AUTO_PACKAGE = "com.google.android.projection.gearhead"
         private const val ACTION_FAVORITE = "lt.eteris.radio.FAVORITE"
@@ -435,17 +438,85 @@ class RadioService : MediaLibraryService() {
     private fun favoritesOrPopular(all: List<Station>): List<Station> =
         StationRepository.favoritesByRecent(this).ifEmpty { all.filter { it.prio < 999 }.ifEmpty { all.take(20) } }
 
-    private fun children(parentId: String, all: List<Station>): List<MediaItem> = when (parentId) {
-        // Two tabs at the top of the Android Auto screen.
+    private suspend fun children(parentId: String, all: List<Station>): List<MediaItem> = when {
+        parentId == PODCASTS -> podcastHome()
+        parentId.startsWith(POD_PREFIX) -> podcastEpisodes(parentId.removePrefix(POD_PREFIX).toLongOrNull())
+        else -> stationChildren(parentId, all)
+    }
+
+    private fun stationChildren(parentId: String, all: List<Station>): List<MediaItem> = when (parentId) {
+        // Tabs at the top of the Android Auto screen.
         ROOT -> listOf(
             folder(FAV, getString(R.string.tab_favorites), grid = true),
             folder(ALL, getString(R.string.tab_all), grid = false),
+            folder(PODCASTS, getString(R.string.nav_podcasts), grid = false),
         )
         FAV -> favoritesOrPopular(all).map { it.toMediaItem() }
         ALL -> all.map { it.toMediaItem() }
         SUGGESTED -> favoritesOrPopular(all).take(6).map { it.toMediaItem() }
         RECENT -> listOfNotNull(StationRepository.byId(StationRepository.lastId(this))?.toMediaItem())
         else -> emptyList()
+    }
+
+    // ---------- Podcasts in the car ----------
+
+    /** Started episodes first (to continue), then the followed podcasts; LRT's podcasts if none is followed yet. */
+    private suspend fun podcastHome(): List<MediaItem> {
+        val started = PodcastRepository.continueListening(this, 5).map { (ep, _) -> episodeItem(ep) }
+        val subs = PodcastRepository.subscriptions(this).ifEmpty { PodcastRepository.lrt().orEmpty().take(20) }
+        return started + subs.map(::podcastFolder)
+    }
+
+    private suspend fun podcastEpisodes(id: Long?): List<MediaItem> {
+        val p = id?.let { PodcastRepository.podcast(it) } ?: return emptyList()
+        return PodcastRepository.episodes(p).orEmpty().take(40).map(::episodeItem)
+    }
+
+    private fun podcastFolder(p: Podcast): MediaItem {
+        val style = Bundle().apply {
+            putInt(MediaConstants.EXTRAS_KEY_CONTENT_STYLE_PLAYABLE, MediaConstants.EXTRAS_VALUE_CONTENT_STYLE_LIST_ITEM)
+        }
+        return MediaItem.Builder()
+            .setMediaId(POD_PREFIX + p.id)
+            .setMediaMetadata(
+                MediaMetadata.Builder()
+                    .setTitle(p.title)
+                    .setSubtitle(p.author)
+                    .setArtworkUri(Art.uri(PodcastRepository.COVER_PREFIX + p.id))
+                    .setIsBrowsable(true)
+                    .setIsPlayable(false)
+                    .setMediaType(MediaMetadata.MEDIA_TYPE_PODCAST)
+                    .setExtras(style)
+                    .build(),
+            )
+            .build()
+    }
+
+    /** An episode with its date / length and how much was heard (the car draws a progress mark). */
+    private fun episodeItem(ep: Episode): MediaItem {
+        val item = ep.toMediaItem()
+        val pr = PodcastRepository.progress(this, ep.id)
+        val extras = Bundle().apply {
+            // Standard Android keys for "not played / partly / fully played".
+            putInt(
+                "android.media.extra.PLAYBACK_STATUS",
+                when {
+                    pr?.done == true -> 2
+                    pr != null && pr.positionMs > 15_000 -> 1
+                    else -> 0
+                },
+            )
+            if (pr != null && !pr.done && pr.durationMs > 0) {
+                putDouble("androidx.media.MediaItem.Extras.COMPLETION_PERCENTAGE", pr.fraction.toDouble())
+            }
+        }
+        val sub = listOfNotNull(
+            ep.date.takeIf { it > 0 }?.let { java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM).format(java.util.Date(it)) },
+            ep.durationMs.takeIf { it > 0 }?.let { getString(R.string.minutes_short, ((it + 30_000) / 60_000).toInt()) },
+        ).joinToString(" · ")
+        return item.buildUpon()
+            .setMediaMetadata(item.mediaMetadata.buildUpon().setSubtitle(sub).setArtist(ep.podcastTitle).setExtras(extras).build())
+            .build()
     }
 
     private fun notifyLists() {
@@ -575,6 +646,7 @@ class RadioService : MediaLibraryService() {
             mediaId: String,
         ): ListenableFuture<LibraryResult<MediaItem>> = scope.future {
             StationRepository.ensureLoaded(this@RadioService)
+            PodcastRepository.episode(mediaId)?.let { return@future LibraryResult.ofItem(episodeItem(it), null) }
             val st = StationRepository.byId(mediaId)
             if (st != null) LibraryResult.ofItem(st.toMediaItem(), null)
             else LibraryResult.ofError<MediaItem>(LibraryResult.RESULT_ERROR_BAD_VALUE)

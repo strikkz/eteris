@@ -66,7 +66,8 @@ data class Episode(
                 .setTitle(title)
                 .setArtist(podcastTitle)
                 .setAlbumTitle(podcastTitle)
-                .setArtworkUri(image.takeIf { it.isNotEmpty() }?.let(Uri::parse))
+                // Through the app's picture provider: Android Auto cannot load web addresses itself.
+                .setArtworkUri(Art.uri(PodcastRepository.COVER_PREFIX + podcastId))
                 .setIsPlayable(true)
                 .setIsBrowsable(false)
                 .setMediaType(MediaMetadata.MEDIA_TYPE_PODCAST_EPISODE)
@@ -99,6 +100,20 @@ data class Progress(val positionMs: Long, val durationMs: Long, val done: Boolea
 object PodcastRepository {
 
     const val EPISODE_PREFIX = "ep:"
+    /** Picture id of a podcast cover in [Art] ("pc-<podcast id>"). */
+    const val COVER_PREFIX = "pc-"
+
+    /** The cover picture address of a podcast (from the directory, or from one of its episodes). */
+    fun coverUrl(pictureId: String): String? {
+        val pid = pictureId.removePrefix(COVER_PREFIX).toLongOrNull() ?: return null
+        return podcasts[pid]?.artwork?.takeIf { it.isNotEmpty() }
+            ?: episodes.values.firstOrNull { it.podcastId == pid && it.image.isNotEmpty() }?.image
+    }
+
+    fun coverName(pictureId: String): String? {
+        val pid = pictureId.removePrefix(COVER_PREFIX).toLongOrNull() ?: return null
+        return podcasts[pid]?.title ?: episodes.values.firstOrNull { it.podcastId == pid }?.podcastTitle
+    }
     fun isEpisode(id: String?) = id?.startsWith(EPISODE_PREFIX) == true
 
     private const val COUNTRY = "lt"
