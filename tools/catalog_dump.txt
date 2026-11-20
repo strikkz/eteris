@@ -1,26 +1,9 @@
-ZINIU shows 80 [('/laidos/abejingumo-kaina', 'Abejingumo kaina'), ('/laidos/aciu-uz-pamokas', 'Ačiū už pamokas'), ('/laidos/aciu-uz-skrydi', 'Ačiū už skrydį'), ('/laidos/aciu-kad-atejote', 'Ačiū, kad atėjote'), ('/laidos/aciu-kad-pakvietete', 'Ačiū, kad pakvietėte'), ('/laidos/afisa', 'Afiša')]
-   Abejingumo kaina eps 4 [('/laidos/abejingumo-kaina/kaciu-seryklos-kaimynu-kovos-arena-ar-civilizuotas-budas-globoti-likimo-valiai-paliktus-naminius-gyvunus', 'Kačių šėryklos – kaimynų kovos arena ar civilizuot', '2012 m. rugpjūčio 23 d.')]
-   audio /assets/Uploads/Episodes/Audio/kaina_0823_kaciu_seryklos.mp3
-   Ačiū už pamokas eps 4 [('/laidos/aciu-uz-pamokas/kaip-padeti-verslo-organizacijoms-augti', 'Kaip padėti verslo organizacijoms augti?', '2019 m. gruodžio 21 d.')]
-   Ačiū už skrydį eps 3 [('/laidos/aciu-uz-skrydi/ar-viska-zinote-apie-lietuviskus-palydovus-ir-ar-jau-matete-meteoritu-kolekcija', 'Ar viską žinote apie lietuviškus palydovus ir ar j', '2019 m. gruodžio 20 d.')]
-   Ačiū, kad atėjote eps 2 [('/laidos/aciu-kad-atejote/sveciuose-a-maldeikiene-mylimiausia-tautos-ekonomiste', 'Svečiuose – A. Maldeikienė, mylimiausia tautos eko', '2016 m. gruodžio 12 d.')]
-   Ačiū, kad pakvietėte eps 3 [('/laidos/aciu-kad-pakvietete/ar-motinyste-suderinama-su-aktoryste', 'Ar motinystė suderinama su aktoryste?', '2017 m. gruodžio 25 d.')]
-   Afiša eps 3 [('/laidos/afisa/ka-veikti-si-savaitgali-14', 'Ką veikti šį savaitgalį?', '2016 m. birželio 24 d.')]
-   Aistra veikti eps 4 [('/laidos/aistra-veikti/apie-visuomenine-lyderyste', 'Apie visuomeninę lyderystę', '2012 m. rugpjūčio 22 d.')]
-   Akademinė druska eps 4 [('/laidos/akademine-druska/koks-turetu-buti-geras-destytojas', 'Koks turėtų būti geras dėstytojas?', '2013 m. birželio 19 d.')]
-   Akiratyje – energetika eps 4 [('/laidos/akiratyje-energetika/akiratyje-energetika-56', 'Akiratyje – energetika', '2014 m. rugpjūčio 20 d.')]
-   Aklas pasimatymas eps 4 [('/laidos/aklas-pasimatymas/prisiimti-atsakomybe-uz-savo-gyvenima', 'Prisiimti atsakomybę už savo gyvenimą', '2025 m. gruodžio 21 d.')]
-   Dakaro ralio dienoraštis eps 4 [('/laidos/dakaro-ralio-dienorastis/sis-dakaro-ralis-lietuviams-gali-tapti-istoriniu', 'Šis Dakaro ralis lietuviams gali tapti istoriniu', '2026 m. sausio 15 d.')]
-   Darbo klubas eps 3 [('/laidos/darbo-klubas/metiniai-pokalbiai-darbe-buti-ar-nebuti', 'Metiniai pokalbiai darbe: būti ar nebūti?', '2022 m. gruodžio 27 d.')]
-MARIJOS cats 42 [('30', 'Aktualijos'), ('295701', 'Ateikite kurti'), ('38', 'Atokvėpio valandėlė'), ('7', 'Bažnytinės teisės klausimai'), ('344916', 'Biblija mažiesiems')]
-   Aktualijos cards 12 https://www.marijosradijas.lt/images/audio-archive/2026/11/20/2026-11-20-11-00-sv-misios.mp3 2026-11-20 11:00:00
-   Ateikite kurti cards 12 https://www.marijosradijas.lt/images/audio-archive/2026/11/20/2026-11-20-11-00-sv-misios.mp3 2026-11-20 11:00:00
-   Atokvėpio valandėlė cards 12 https://www.marijosradijas.lt/images/audio-archive/2026/11/20/2026-11-20-11-00-sv-misios.mp3 2026-11-20 11:00:00
-GOLD shows [('aklas-pasimatymas', 'Aklas pasimatymas'), ('kitos-laidos', 'Kitos laidos'), ('laikas-knygai', 'Laikas Knygai'), ('valanda-su-maisto-kritiku', 'Valanda su maisto kritiku')]
-   Aklas pasimatymas eps 15 [('https://goldfm.lt/podcast/metu-pamokos/', 'Metų pamokos', '2024.12.25  ')]
-   audio https://goldfm.lt/wp-content/uploads/2024/12/AP-12-25-Youtube.mp3
-   Kitos laidos eps 15 [('https://goldfm.lt/podcast/jurgita-smilte-jasiulione-vaiku-linija/', 'Jurgita Smiltė Jasiulionė &#8211; Vaikų Linija', '2026.08.31  ')]
-   audio https://goldfm.lt/wp-content/uploads/2026/09/VaikuLinija08.31.bendras.internetui.mp3
-BAL 55814 Radiocentro pokalbiai eps 35 RADIOCENRO POKALBIAI: Prieš koncertą Lie 2025-06-25T13:08:02+02:00 -> https://api.spreaker.com/download/episode/66738406/ragnboneman.mp3
-BAL 55813 Geriausia diena (įrašas) eps 30 10:00 - 11:00 GERIAUSIA DIENA 2026-11-20T11:00:00+01:00 -> https://s3.eu-central-2.wasabisys.com/autopod-2-public/episodes/174/c499f7f509324aa78b1dc8
-BAL 55846 RADIO R interviu eps 430 «Мне эта песня приснилась во сне»: Иштва 2026-11-20T15:24:06+01:00 -> https://dts.podtrac.com/redirect.mp3/api.spreaker.com/download/episode/76478649/sareroma.m
+30 https://www.marijosradijas.lt/dummy-laidos.html nextlatest ERR HTTP Error 404: Not Found
+30 naujausi-laidu-irasai.html nextlatest 13 ['Skelbimai', 'Aktualijos', 'Ateikite kurti'] ['https://marijosradijas.lt/marijosradijas.mp3']
+30 laidos-nuo-a-iki-z.html getnextpage 1 ['Skelbimai'] ['https://marijosradijas.lt/marijosradijas.mp3']
+38 https://www.marijosradijas.lt/dummy-laidos.html nextlatest ERR HTTP Error 404: Not Found
+38 naujausi-laidu-irasai.html nextlatest 13 ['Skelbimai', 'Aktualijos', 'Ateikite kurti'] ['https://marijosradijas.lt/marijosradijas.mp3']
+38 laidos-nuo-a-iki-z.html getnextpage 1 ['Skelbimai'] ['https://marijosradijas.lt/marijosradijas.mp3']
+21 https://www.marijosradijas.lt/dummy-laidos.html nextlatest ERR HTTP Error 404: Not Found
+21 naujausi-laidu-irasai.html nextlatest 13 ['Skelbimai', 'Aktualijos', 'Ateikite kurti'] ['https://marijosradijas.lt/marijosradijas.mp3']
+21 laidos-nuo-a-iki-z.html getnextpage 1 ['Skelbimai'] ['https://marijosradijas.lt/marijosradijas.mp3']
