@@ -238,7 +238,7 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
             IconButton48(R.drawable.ic_next, stringResource(R.string.next), app::next, big = true)
         }
         Row(Modifier.fillMaxWidth().padding(top = 2.dp, bottom = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-            Pill(stringResource(R.string.other_stations), onOtherStations)
+            Pill(stringResource(R.string.other_stations), onOtherStations, small = true)
             Spacer(Modifier.weight(1f))
             SleepTimerButton()
         }
@@ -315,20 +315,20 @@ private fun SleepTimerButton() {
         val on = SleepTimer.isOn && left > 0
         Row(
             Modifier
-                .height(44.dp)
+                .height(36.dp)
                 .clip(RoundedCornerShape(50.dp))
                 .background(if (on) Banga.accent else Color.White.copy(alpha = 0.09f))
                 .clickable { open = true }
                 .semantics { contentDescription = label }
-                .padding(start = 14.dp, end = 18.dp),
+                .padding(start = 12.dp, end = 14.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Icon(
                 painterResource(R.drawable.ic_timer), null,
                 tint = if (on) Banga.onAccent else Banga.text,
-                modifier = Modifier.size(20.dp),
+                modifier = Modifier.size(18.dp),
             )
-            Spacer(Modifier.size(8.dp))
+            Spacer(Modifier.size(6.dp))
             Text(
                 if (on) stringResource(R.string.sleep_minutes, left) else stringResource(R.string.sleep_short),
                 style = Banga.supporting,
@@ -346,7 +346,7 @@ private fun SleepTimerButton() {
                 style = Banga.eyebrow, color = Banga.textSecondary,
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp),
             )
-            listOf(15, 30, 45, 60, 90).forEach { m ->
+            listOf(10, 15, 30, 45, 60, 90).forEach { m ->
                 DropdownMenuItem(
                     text = { Text(stringResource(R.string.sleep_minutes, m), style = Banga.rowTitle, color = Banga.text) },
                     onClick = {

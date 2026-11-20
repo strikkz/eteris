@@ -645,7 +645,7 @@ function renderPlayer(){
       <button class="play" id="pPlay" style="width:78px;height:78px" aria-label="${esc(t(S.status === "playing" ? "pause" : "play"))}">${playIcon(st)}</button>
       <button class="icon-btn" id="pNext" aria-label="${esc(t("next"))}">${I.next}</button></div>
     <div class="p-bottom"><div class="menu"><button class="pill" id="sleepBtn">${I.timer}${S.sleepAt ? esc(t("sleep_minutes", sleepLeft())) : esc(t("sleep_timer"))}</button>
-      <div class="menu-list" id="sleepMenu" hidden>${[15, 30, 45, 60, 90].map(m => `<button data-sleep="${m}">${esc(t("sleep_minutes", m))}</button>`).join("")}
+      <div class="menu-list" id="sleepMenu" hidden>${[10, 15, 30, 45, 60, 90].map(m => `<button data-sleep="${m}">${esc(t("sleep_minutes", m))}</button>`).join("")}
         ${S.sleepAt ? `<button data-sleep="0">${esc(t("sleep_off"))}</button>` : ""}</div></div>
       <button class="pill" id="pOther">${esc(t("other_stations"))}</button></div></div>`;
   paint(p, st);

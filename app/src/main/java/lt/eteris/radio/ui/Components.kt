@@ -355,14 +355,14 @@ fun PlayButton(status: PlayStatus, size: Dp, onClick: () -> Unit, modifier: Modi
 }
 
 @Composable
-fun Pill(text: String, onClick: () -> Unit, modifier: Modifier = Modifier, accent: Boolean = false) {
+fun Pill(text: String, onClick: () -> Unit, modifier: Modifier = Modifier, accent: Boolean = false, small: Boolean = false) {
     Box(
         modifier
-            .height(44.dp)
+            .height(if (small) 36.dp else 44.dp)
             .clip(RoundedCornerShape(50.dp))
             .background(if (accent) Banga.accent else Color.White.copy(alpha = 0.09f))
             .clickable(onClick = onClick)
-            .padding(horizontal = 18.dp),
+            .padding(horizontal = if (small) 14.dp else 18.dp),
         contentAlignment = Alignment.Center,
     ) {
         Text(text, style = Banga.supporting, fontWeight = FontWeight.SemiBold, color = if (accent) Banga.onAccent else Banga.text)
