@@ -80,4 +80,5 @@
     <string name="world_searching">Пошук…</string>
     <string name="world_error">Не вдалося дістатися до каталогу станцій світу</string>
     <string name="world_note">Станції світу показуються лише тут. Улюблені збережуться в «Улюблених».</string>
+    <string name="sleep_short">Таймер</string>
 </resources>

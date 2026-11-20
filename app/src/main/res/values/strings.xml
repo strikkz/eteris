@@ -81,4 +81,5 @@
     <string name="world_searching">Ieškoma…</string>
     <string name="world_error">Nepavyko pasiekti pasaulio stočių katalogo</string>
     <string name="world_note">Pasaulio stotys rodomos tik čia. Pamėgtas rasi skiltyje „Mėgstami“.</string>
+    <string name="sleep_short">Laikmatis</string>
 </resources>

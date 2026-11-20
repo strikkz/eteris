@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.IntOffset
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 import androidx.compose.foundation.background
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -134,7 +135,7 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
                 modifier = Modifier.weight(1f),
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center,
             )
-            SleepTimerButton()
+            Spacer(Modifier.size(48.dp))   // balances the collapse button, keeps the title centred
         }
 
         // Top part: the cover, or the station description after a swipe up. Everything below stays in place.
@@ -236,8 +237,10 @@ fun PlayerScreen(app: AppState, onClose: () -> Unit, onOtherStations: () -> Unit
             }
             IconButton48(R.drawable.ic_next, stringResource(R.string.next), app::next, big = true)
         }
-        Row(Modifier.fillMaxWidth().padding(top = 2.dp, bottom = 8.dp)) {
+        Row(Modifier.fillMaxWidth().padding(top = 2.dp, bottom = 8.dp), verticalAlignment = Alignment.CenterVertically) {
             Pill(stringResource(R.string.other_stations), onOtherStations)
+            Spacer(Modifier.weight(1f))
+            SleepTimerButton()
         }
     }
 }
@@ -294,7 +297,7 @@ private fun AboutPanel(name: String, about: StationAbout, modifier: Modifier) {
     }
 }
 
-/** Moon button in the player header: choose when the radio stops. Shows minutes left while on. */
+/** "Timer" pill next to "Other stations": choose when the radio stops. Turns lime and shows minutes left while on. */
 @Composable
 private fun SleepTimerButton() {
     var open by remember { mutableStateOf(false) }
@@ -309,23 +312,29 @@ private fun SleepTimerButton() {
     }
     val label = stringResource(R.string.sleep_timer)
     Box {
+        val on = SleepTimer.isOn && left > 0
         Row(
             Modifier
-                .height(48.dp)
-                .clip(RoundedCornerShape(24.dp))
+                .height(44.dp)
+                .clip(RoundedCornerShape(50.dp))
+                .background(if (on) Banga.accent else Color.White.copy(alpha = 0.09f))
                 .clickable { open = true }
                 .semantics { contentDescription = label }
-                .padding(horizontal = 12.dp),
+                .padding(start = 14.dp, end = 18.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Icon(
                 painterResource(R.drawable.ic_timer), null,
-                tint = if (SleepTimer.isOn) Banga.accent else Banga.text,
-                modifier = Modifier.size(22.dp),
+                tint = if (on) Banga.onAccent else Banga.text,
+                modifier = Modifier.size(20.dp),
             )
-            if (SleepTimer.isOn && left > 0) {
-                Text(" " + stringResource(R.string.sleep_minutes, left), style = Banga.supporting, color = Banga.accent)
-            }
+            Spacer(Modifier.size(8.dp))
+            Text(
+                if (on) stringResource(R.string.sleep_minutes, left) else stringResource(R.string.sleep_short),
+                style = Banga.supporting,
+                fontWeight = FontWeight.SemiBold,
+                color = if (on) Banga.onAccent else Banga.text,
+            )
         }
         DropdownMenu(
             expanded = open,

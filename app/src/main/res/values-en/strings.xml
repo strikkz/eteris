@@ -80,4 +80,5 @@
     <string name="world_searching">Searching…</string>
     <string name="world_error">Could not reach the world station catalog</string>
     <string name="world_note">World stations appear only here. Ones you like are saved in Favorites.</string>
+    <string name="sleep_short">Timer</string>
 </resources>

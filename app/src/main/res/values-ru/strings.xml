@@ -80,4 +80,5 @@
     <string name="world_searching">Поиск…</string>
     <string name="world_error">Не удалось связаться с каталогом станций мира</string>
     <string name="world_note">Станции мира показываются только здесь. Понравившиеся сохранятся в «Избранном».</string>
+    <string name="sleep_short">Таймер</string>
 </resources>
