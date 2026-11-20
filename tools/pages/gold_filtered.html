@@ -1,0 +1,559 @@
+<!--
+/*
+Template name: Filtered Podcasts
+*/
+-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GOLD FM</title>
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta property="og:locale" content="lt_LT" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="GOLD FM" />
+	<meta name="twitter:card" content="summary" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://goldfm.lt/#website","url":"https://goldfm.lt/","name":"GOLD FM","description":"Žinantiems vertę!","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://goldfm.lt/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"lt-LT"},{"@type":"WebPage","@id":"#webpage","url":"","name":"","isPartOf":{"@id":"https://goldfm.lt/#website"},"breadcrumb":{"@id":"#breadcrumb"},"inLanguage":"lt-LT","potentialAction":[{"@type":"ReadAction","target":[""]}]},{"@type":"BreadcrumbList","@id":"#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldfm.lt/"},{"@type":"ListItem","position":2,"name":""}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//stackpath.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/goldfm.lt\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.19"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-pagenavi-css'  href='https://goldfm.lt/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel='stylesheet' id='search-filter-plugin-styles-css'  href='https://goldfm.lt/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css?ver=2.5.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/bootstrap.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/font-awesome.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='camera-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/camera.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='fa-cdn-css-css'  href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=6.0.19' type='text/css' media='all' />
+<link rel='stylesheet' id='mediaelementplayer-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/mediaelementplayer.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/slick.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-theme-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/slick-theme.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/animate.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/style.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='menu-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/menu.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='my-custom-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/css/mycustom.css?ver=' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css-css'  href='https://goldfm.lt/wp-content/themes/radio-gold-fm/style.css?ver=' type='text/css' media='all' />
+<script type='text/javascript' src='https://goldfm.lt/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/plugins/search-filter-pro/public/assets/js/chosen.jquery.min.js?ver=2.5.2' id='search-filter-plugin-chosen-js'></script>
+<link rel="https://api.w.org/" href="https://goldfm.lt/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://goldfm.lt/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://goldfm.lt/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 6.0.19" />
+<link rel="icon" href="https://goldfm.lt/wp-content/uploads/2020/12/cropped-1-1-01-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://goldfm.lt/wp-content/uploads/2020/12/cropped-1-1-01-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://goldfm.lt/wp-content/uploads/2020/12/cropped-1-1-01-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://goldfm.lt/wp-content/uploads/2020/12/cropped-1-1-01-1-270x270.png" />
+
+</head>
+
+<body class="blog">
+
+<div id="main">
+
+
+
+<div id="top1">
+
+        <div class="top2_wrapper" id="top2">
+
+            <div class="container">
+
+                <div class="top2 clearfix">
+
+                    <header>
+
+                        <div class="logo_wrapper">
+
+                            <a href="https://goldfm.lt/" class="logo scroll-to">
+
+                            <img class=" img-logo img-responsive" src="https://goldfm.lt/wp-content/uploads/2020/12/Gold_pilnas-300x136.png" alt="">
+                            </a>
+
+                        </div>
+
+                    </header>
+
+                    <div class="menu_wrapper">
+
+                        <!-- <div class="add1 clearfix">
+
+                            <div class="icon-search"><a href="#"></a></div>
+
+                            <div class="dropdown dropdown1">
+
+                                <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+
+                                        aria-haspopup="true" aria-expanded="true">EN
+
+                                </button>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                                    <li><a href="javascript:void(0);">FR</a></li>
+
+                                    <li><a href="javascript:void(0);">DE</a></li>
+
+                                    <li><a href="javascript:void(0);">ES</a></li>
+
+                                </ul>
+
+                            </div>
+
+                        </div> -->
+
+                        <div class="navbar navbar_ navbar-default">
+
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+
+                                    data-target=".navbar-collapse">
+
+                                <span class="sr-only">Toggle navigation</span>
+
+                                <span class="icon-bar"></span>
+
+                                <span class="icon-bar"></span>
+
+                                <span class="icon-bar"></span>
+
+                            </button>
+
+                            <div class="navbar-collapse navbar-collapse_ collapse">
+
+                                <!-- Links -->
+
+                            <ul id="menu-pagrindinis-menu" class="nav navbar-nav sf-menu clearfix"><li id="menu-item-12904" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-12904 sub-menu sub-menu-1"><a href="https://goldfm.lt/">Pagrindinis</a></li>
+<li id="menu-item-12905" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12905 sub-menu sub-menu-1"><a href="https://goldfm.lt/apie-mus/">Apie mus</a></li>
+<li id="menu-item-12906" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12906 sub-menu sub-menu-1"><a href="https://goldfm.lt/dazniai-2/">Dažniai</a></li>
+<li id="menu-item-12907" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12907 sub-menu sub-menu-1"><a href="https://goldfm.lt/podcasts/">Laidos</a></li>
+<li id="menu-item-12908" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12908 sub-menu sub-menu-1"><a href="https://medialt.lt/">Reklama</a></li>
+<li id="menu-item-12909" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12909 sub-menu sub-menu-1"><a href="https://goldfm.lt/kontaktai/">Kontaktai</a></li>
+</ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="song1_wrapper">
+
+            <div class="container ml-xl-0 float-container-custom">
+
+                <div class="song1_inner clearfix">
+
+                    <div class="song1 clearfix d-flex align-items-center">
+
+                        <div class="right clearfix">
+
+                            <div class="audio1">
+
+                                <div class="mejs-controls">
+
+                                    <div class="mejs-button mejs-play"><a class="play-button" target="_blank" href="http://goldfm.lt//live/" onclick="window.open('http://goldfm.lt/live/','google','scrollbars=no,width=400px,height=470px'); return false;">
+
+                                    <button type="button" aria-controls="mep_0" title="Groti" aria-label="Groti" class="plyr__tab-focus"></button></a>
+                                    
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                       
+                        <div class="left clearfix radioinfo">
+
+                            <div class="caption">
+
+                                <div class="txt1"><h4>Dabar eteryje :</h4>
+                                    <div class="marquee">
+                                        <div>
+                                            <div id="scroll"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="left clearfix radio-download">
+
+                            <div class="caption">
+
+                                <ul class="social clearfix">
+
+                                    <li class="nav4"><a href="https://stream.goldfm.lt/goldfm.mp3.xspf" title="Atsisiųsti"><i class="fa fa-music"></i>MP3</a></li>
+
+                                    <li class="nav4"><a href="https://stream.goldfm.lt/goldfm.aac.xspf" title="Atsisiųsti"><i class="fa fa-music"></i>AAC</a></li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    
+<div id="main">
+    <div id="content podcasts-content">
+        <div class="container filtered-podcasts">
+            <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="100">
+    
+            </div>
+            <br>
+            <div class="radios animated">
+                <div class="radio1 head clearfix">
+                    <div class="sec2">Pavadinimas</div>
+                    <div class="sec6">Data</div>
+                    <!-- <div class="sec7">&nbsp;</div> -->
+                </div>
+                                <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/lina-matiukaite-knygu-serija-kake-make-mokausi-skaityti-palepes-paslaptis-pirmas-zingsnis-salcio-pokstas-ledu-ant-pagaliuko-isradimo-istorija-antras-zingsnis/">Lina Matiukaitė &#8211; Knygų serija &#8211; Kakė Makė. Mokausi skaityti. Palėpės paslaptis. Pirmas žingsnis / Šalčio pokštas. Ledų ant pagaliuko išradimo istorija. Antras žingsnis</a></div>
+                        <div class="sec6">2026.04.30  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/deborah-diesen-zuviukas-niurzga-nick-bruel-laimingo-gimtadienio-isdykusi-katyte-hartigan-browne-detektyviniai-galvosukiai-auksinio-granato-byla/">Deborah Diesen &#8211; Žuviukas Niurzga / Nick Bruel &#8211; Laimingo gimtadienio, išdykusi katyte / Hartigan Browne &#8211; Detektyviniai galvosūkiai. Auksinio granato byla</a></div>
+                        <div class="sec6">2026.04.23  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/alex-light-isimyleje-ne-savo-noru-victoria-schwab-nepaprastieji/">Alex Light &#8211; Įsimylėję ne savo noru / Victoria Schwab &#8211; Nepaprastieji</a></div>
+                        <div class="sec6">2026.04.16  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/lietuvos-kunigaiksciai-simonas-jazavita-didieji-lietuvos-istorijos-mitai-algis-bitautas-atminties-karai-ingrida-jakubaviciene-namai/">Lietuvos kunigaikščiai / Simonas Jazavita &#8211; Didieji Lietuvos istorijos mitai / Algis Bitautas &#8211; Atminties karai / Ingrida Jakubavičienė &#8211; Namai</a></div>
+                        <div class="sec6">2026.04.9  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/henrik-fexeus-auka-riley-sager-vidury-nakties-joy-ellis-penkios-kruvinos-sirdys-detektyvo-mato-balardo-serija/">Henrik Fexeus &#8211; Auka / Riley Sager &#8211; Vidury nakties / Joy Ellis &#8211; Penkios kruvinos širdys. Detektyvo Mato Balardo serija</a></div>
+                        <div class="sec6">2026.04.2  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/kali-hart-gyvsidabris-sarah-j-maas-dangaus-ir-oro-gimine/">Kali Hart – Gyvsidabris / Sarah J. Maas – Dangaus ir oro giminė</a></div>
+                        <div class="sec6">2026.03.26  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/eloi-moreno-ir-david-sierra-naujoji-mazojo-princo-kelione-pooky-knightsmith-kaip-priimti-save/">Eloi Moreno ir David Sierra – Naujoji Mažojo princo kelionė / Pooky Knightsmith – Kaip priimti save</a></div>
+                        <div class="sec6">2026.03.19  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/jurga-baltrukonyte-mano-nekaltas-melagis-daina-klepone-septyni-majos-ziedai-ilona-skujaite-nemeile-irena-buivydaite-ir-jolita-herlyn-tango-sokamas-dviese/">Jurga Baltrukonytė – Mano nekaltas melagis / Daina Kleponė – Septyni Majos žiedai / Ilona Skujaitė – Nemeilė / Irena Buivydaitė ir Jolita Herlyn – Tango šokamas dviese</a></div>
+                        <div class="sec6">2026.03.12  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/brandon-sanderson-sruoge-is-smaragdines-juros-ir-jume-ir-kosmaru-tapytojas-kaliane-bradley-laiko-ministerija-carissa-broadbent-gyvate-ir-nakties-sparnai/">Brandon Sanderson – Sruogė iš Smaragdinės jūros ir Jumė ir košmarų tapytojas / Kaliane Bradley – Laiko ministerija / Carissa Broadbent – Gyvatė ir nakties sparnai</a></div>
+                        <div class="sec6">2026.03.5  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/j-k-rowling-pocket-potters-smurfai-smagios-istorijos-ir-nuotykiai/">J. K. Rowling &#8211; Pocket Potters / Smurfai. Smagios istorijos ir nuotykiai!</a></div>
+                        <div class="sec6">2026.02.26  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/alice-winn-in-memoriam-liz-nugent-keistoji-sele-daimond/">Alice Winn &#8211; In memoriam / Liz Nugent &#8211; Keistoji Selė Daimond</a></div>
+                        <div class="sec6">2026.02.19  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/roxie-nafousi-pasitikejimas-savimi/">Roxie Nafousi &#8211; Pasitikėjimas savimi</a></div>
+                        <div class="sec6">2026.02.12  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/tahereh-mafi-shatter-me-sunaikink-mane-serijos-shatter-me-pirma-knyga-rachel-gillig-dvi-persipynusios-karunos-serijos-vienas-tamsus-langas-antra-knyga/">Tahereh Mafi &#8211; Shatter Me. Sunaikink mane. Serijos „Shatter Me“ pirma knyga / Rachel Gillig &#8211; Dvi persipynusios karūnos. Serijos „Vienas tamsus langas“ antra knyga</a></div>
+                        <div class="sec6">2026.02.5  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/michael-bond-pedingtonas-siekia-aukso-medalio/">Michael Bond &#8211; Pedingtonas siekia aukso medalio</a></div>
+                        <div class="sec6">2026.01.29  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                    <div class="radio1 clearfix">
+                        <div class="sec2"><a href="https://goldfm.lt/podcast/scott-galloway-turto-algebra-morgan-housel-apie-tai-kas-nesikeicia/">Scott Galloway &#8211; Turto algebra  / Morgan Housel &#8211; Apie tai, kas nesikeičia</a></div>
+                        <div class="sec6">2026.01.22  </div>
+                        <!-- <div class="sec7">
+                            <div class="audio2">
+                                <audio class="audio" preload="none" style="width: 100%; visibility: hidden;"
+                                       controls="controls">
+                                    <source type="audio/mpeg" src="audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <a href="audio/song2.mp3">audio/719569_once_by_tsapa_preview.mp3</a>
+                                </audio>
+                            </div>
+                        </div> -->
+                    </div>
+                                        <div class='wp-pagenavi' role='navigation'>
+<span aria-current='page' class='current'>1</span><a class="page larger" title="Puslapis 2" href="https://goldfm.lt/filtered-podcasts/?_sft_podcastfilter=laikas-knygai&#038;sf_paged=2">2</a><a class="page larger" title="Puslapis 3" href="https://goldfm.lt/filtered-podcasts/?_sft_podcastfilter=laikas-knygai&#038;sf_paged=3">3</a><a class="page larger" title="Puslapis 4" href="https://goldfm.lt/filtered-podcasts/?_sft_podcastfilter=laikas-knygai&#038;sf_paged=4">4</a><a class="page larger" title="Puslapis 5" href="https://goldfm.lt/filtered-podcasts/?_sft_podcastfilter=laikas-knygai&#038;sf_paged=5">5</a><span class='extend'>...</span><a class="nextpostslink" rel="next" aria-label="Next Page" href="https://goldfm.lt/filtered-podcasts/?_sft_podcastfilter=laikas-knygai&#038;sf_paged=2">-&gt;</a><a class="last" aria-label="Last Page" href="https://goldfm.lt/filtered-podcasts/?_sft_podcastfilter=laikas-knygai&#038;sf_paged=10">Paskutinis</a>
+</div>                            </div>
+    </div>
+</div>
+
+    
+ <div class="bot1_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+
+                <div class="logo2_wrapper footer">
+                    <a href="" class="logo2">
+                        <img class=" img-responsive" src="https://goldfm.lt/wp-content/uploads/2020/12/Gold_pilnas-300x136.png" alt="">                    </a>
+                </div>
+
+                <div class="location1">UAB „Laisvoji banga”, Gariūnų g. 43A, 02300 Vilnius</div>
+
+                <div class="phone1">0 5 210 14 11</div>
+
+                <div class="mail1">
+                
+                
+
+                                <a href="mailto:%20info@goldfm.lt">info@goldfm.lt</a>
+                </div>
+
+                <div class="social-icons">
+
+                    <div class="row">
+                        <a href="https://www.instagram.com/radijas.goldfm/"><img src="/wp-content/themes/radio-gold-fm/images/instagram.png" alt="Instagram - GoldFM" title="Instagram - GoldFM"></a>
+                        <a href="https://www.facebook.com/goldfmlietuva/"><img src="/wp-content/themes/radio-gold-fm/images/facebook.png" alt="facebook - GoldFM" title="facebook - GoldFM"></a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-sm-3">
+
+            </div>
+            <div class="col-sm-4 col-sm-offset-1 footer-right-coll">
+
+                <div class="bot1_title">
+                                <a href="https://goldfm.lt/kontaktai/">Kontaktai</a>
+                </div>
+
+                <div class="bot1_title">
+                                <a href="#">Privatumo politika</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bot2_wrapper">
+    <div class="container">
+        Copyright &copy; 2026 <b>GOLD FM</b> Visos teisės saugomos.
+    </div>
+</div>
+<script type='text/javascript' src='https://goldfm.lt/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.13.1' id='jquery-ui-datepicker-js'></script>
+<script type='text/javascript' id='jquery-ui-datepicker-js-after'>
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"U\u017edaryti","currentText":"\u0160iandien","monthNames":["sausio","vasario","kovo","baland\u017eio","gegu\u017e\u0117s","bir\u017eelio","liepos","rugpj\u016b\u010dio","rugs\u0117jo","spalio","lapkri\u010dio","gruod\u017eio"],"monthNamesShort":["Sau","Vas","Kov","Bal","Geg","Bir","Lie","Rgp","Rgs","Spa","Lap","Gru"],"nextText":"Toliau","prevText":"Ankstesnis","dayNames":["Sekmadienis","Pirmadienis","Antradienis","Tre\u010diadienis","Ketvirtadienis","Penktadienis","\u0160e\u0161tadienis"],"dayNamesShort":["Sk","Pr","An","Tr","Kt","Pn","\u0160t"],"dayNamesMin":["S","Pr","A","T","K","Pn","\u0160"],"dateFormat":"yy-mm-dd","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/menu.js?ver=1' id='menu-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.js?ver=1' id='jquery-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/bootstrap.min.js?ver=1' id='bootstrap.min-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery-migrate-1.2.1.min.js?ver=1' id='jquery-migrate-1.2.1.min-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.easing.1.3.js?ver=1' id='jquery.easing.1.3-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/superfish.js?ver=1' id='superfish-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/camera.js?ver=1' id='camera-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/mediaelement-and-player.js?ver=1' id='mediaelement-and-player-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/slick.min.js?ver=1' id='slick.minjs-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.jrumble.1.3.min.js?ver=1' id='jquery.jrumble.1.3.min-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.sticky.js?ver=1' id='jquery.sticky-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/mep-feature-playlist.js?ver=1' id='mep-feature-playlist-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.queryloader2.js?ver=1' id='jquery.queryloader2-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.appear.js?ver=1' id='jquery.appear-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.ui.totop.js?ver=1' id='jquery.ui.totop-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.equalheights.js?ver=1' id='jquery.equalheights-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.caroufredsel.js?ver=1' id='jquery.caroufredsel-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/jquery.touchSwipe.min.js?ver=1' id='jquery.touchSwipe.min-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/SmoothScroll.js?ver=1' id='SmoothScroll-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/cform.js?ver=1' id='cform-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/mycustom.js?ver=1' id='mycustom-js-js'></script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/themes/radio-gold-fm/js/scripts.js?ver=1' id='scripts-js-js'></script>
+<script type='text/javascript' id='search-filter-plugin-build-js-extra'>
+/* <![CDATA[ */
+var SF_LDATA = {"ajax_url":"https:\/\/goldfm.lt\/wp-admin\/admin-ajax.php","home_url":"https:\/\/goldfm.lt\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://goldfm.lt/wp-content/plugins/search-filter-pro/public/assets/js/search-filter-build.min.js?ver=2.5.2' id='search-filter-plugin-build-js'></script>
+
+<!-- shows what currently plays on air -->
+       <script type="text/javascript">
+(function getdata() {
+    $.ajax({
+                   type: "GET",
+             url: 'https://goldfm.lt/wp-content/themes/radio-gold-fm/radio/php/radio-get.php',
+             success: function(data){
+               document.getElementById("scroll").innerHTML = data;
+             }                      // pass existing options
+    }).then(function() {           // on completion, restart
+       setTimeout(getdata, 30000);  // function refers to itself
+    });
+})();        
+       </script>
+</body>
+</html>

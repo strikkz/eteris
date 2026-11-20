@@ -1,0 +1,16 @@
+HTTP/2 200 
+content-type: application/rss+xml
+last-modified: Fri, 20 Nov 2026 14:30:04 GMT
+etag: "3682e-6b00596c-a3e627357dc8ae5d;;;"
+accept-ranges: bytes
+content-length: 223278
+date: Fri, 20 Nov 2026 14:33:48 GMT
+server: LiteSpeed
+platform: hostinger
+panel: hpanel
+content-security-policy: upgrade-insecure-requests
+cache-control: public, max-age=300, stale-while-revalidate=900
+x-rfm-cache: archive-rss
+x-robots-tag: noindex, nofollow
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+

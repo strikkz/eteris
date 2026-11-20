@@ -1,0 +1,16 @@
+HTTP/2 200 
+content-type: application/json
+last-modified: Fri, 20 Nov 2026 14:30:04 GMT
+etag: "1dace-6b00596c-eca9c14ee8e611b2;;;"
+accept-ranges: bytes
+content-length: 121550
+date: Fri, 20 Nov 2026 14:33:46 GMT
+server: LiteSpeed
+platform: hostinger
+panel: hpanel
+content-security-policy: upgrade-insecure-requests
+cache-control: public, max-age=60, stale-while-revalidate=180
+x-rfm-cache: recordings-archive
+x-robots-tag: noindex, nofollow
+alt-svc: h3=":443"; ma=2592000, h3-29=":443"; ma=2592000
+
