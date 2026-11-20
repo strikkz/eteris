@@ -1,15 +1,13 @@
 #!/bin/bash
-# Power Hit Radio shows (run 12)
+# Power Hit Radio show pages: where are recordings (run 13)
 set -u
 out=tools/catalog_dump.txt; : > $out
 UA="Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/124 Mobile Safari/537.36"
-echo "== apple search" >> $out
-for q in "Power Hit Radio" "powerhitradio" "PHR" "tv3 podcast"; do
-curl -s -m 20 "https://itunes.apple.com/search?media=podcast&entity=podcast&country=lt&limit=15&term=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")" | python3 -c "
-import json,sys
-for x in json.load(sys.stdin)['results']: print('$q','|',x['collectionId'],'|',x['collectionName'],'|',x.get('artistName'),'|',x.get('feedUrl'),'|',x.get('releaseDate'))" >> $out
+for s in driule-the-gang megahitai ten-walls power-savaitgalis jovaniclub sok-i-kelnes; do
+  curl -s -m 30 -L -A "$UA" "https://powerhitradio.tv3.lt/laidos/$s" -o /tmp/p.html
+  echo "== $s $(wc -c </tmp/p.html)" >> $out
+  grep -oiE '(https?:)?//[^"'"'"' )]*(mixcloud|soundcloud|spotify|\.mp3|\.m4a|\.aac|podbean|spreaker|anchor|youtube\.com/(embed|watch)|youtu\.be|wp-content/uploads[^"'"'"' ]*\.(mp3|m4a))[^"'"'"' )<]*' /tmp/p.html | sort -u | head -12 >> $out
+  grep -oiE '<(audio|iframe|source)[^>]{0,200}' /tmp/p.html | head -5 >> $out
 done
-echo "== laidos page" >> $out
-curl -s -m 30 -L -A "$UA" "https://powerhitradio.tv3.lt/laidos" -o /tmp/l.html -w "%{http_code} %{size_download}\n" >> $out
-grep -oE 'href="[^"]*(laid|podcast|spotify|apple|youtube|mp3|audio|irasai)[^"]*"' /tmp/l.html | sort -u | head -60 >> $out
-grep -oE '<h[1-4][^>]*>[^<]{2,80}</h[1-4]>' /tmp/l.html | head -40 >> $out
+echo "== podbean 'Power Hit Radio svečiai' feed" >> $out
+curl -s -m 20 https://feed.podbean.com/infoutn/feed.xml | grep -oE "<(title|pubDate|itunes:author)>[^<]{0,90}" | head -12 >> $out
