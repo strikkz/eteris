@@ -1,5 +1,5 @@
 #!/bin/bash
-# Save station archive pages for study (run 20)
+# Save station archive pages for study (run 21)
 set -u
 out=tools/catalog_dump.txt; : > $out
 mkdir -p tools/pages
