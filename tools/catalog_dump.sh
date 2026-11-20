@@ -1,8 +1,15 @@
 #!/bin/bash
-# CORS of lrt.lt APIs (run 11)
+# Power Hit Radio shows (run 12)
 set -u
 out=tools/catalog_dump.txt; : > $out
-for u in "https://www.lrt.lt/api/search?count=1&q=Rapsodija" "https://www.lrt.lt/api/search?count=2&order=desc&category_id=6559" "https://www.lrt.lt/servisai/stream_url/vod/media_info/?url=%2Fradioteka%2Firasas%2F2000929126%2Frapsodija-namiskiai-erke" "https://stream-vod3.lrt.lt/AUDIO/2026/11/2026_11_18_3475_1_748c5b33-9382-4f22-907b-b4fd45a441e9.m4a/playlist.m3u8"; do
-  echo "== $u" >> $out
-  curl -s -m 20 -D - -o /dev/null -H "Origin: https://strikkz.github.io" "$u" | tr -d '\r' | grep -iE "^(HTTP|access-control)" >> $out
+UA="Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/124 Mobile Safari/537.36"
+echo "== apple search" >> $out
+for q in "Power Hit Radio" "powerhitradio" "PHR" "tv3 podcast"; do
+curl -s -m 20 "https://itunes.apple.com/search?media=podcast&entity=podcast&country=lt&limit=15&term=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")" | python3 -c "
+import json,sys
+for x in json.load(sys.stdin)['results']: print('$q','|',x['collectionId'],'|',x['collectionName'],'|',x.get('artistName'),'|',x.get('feedUrl'),'|',x.get('releaseDate'))" >> $out
 done
+echo "== laidos page" >> $out
+curl -s -m 30 -L -A "$UA" "https://powerhitradio.tv3.lt/laidos" -o /tmp/l.html -w "%{http_code} %{size_download}\n" >> $out
+grep -oE 'href="[^"]*(laid|podcast|spotify|apple|youtube|mp3|audio|irasai)[^"]*"' /tmp/l.html | sort -u | head -60 >> $out
+grep -oE '<h[1-4][^>]*>[^<]{2,80}</h[1-4]>' /tmp/l.html | head -40 >> $out
