@@ -1,0 +1,12 @@
+HTTP/2 200 
+accept-ranges: bytes
+cache-control: public, max-age=300
+content-type: application/rss+xml
+date: Fri, 20 Nov 2026 14:35:05 GMT
+etag: "3addec25bb5b328bd5cef358cdeaa321"
+last-modified: Fri, 20 Nov 2026 14:04:19 GMT
+server: nginx/1.27.5
+x-served-by: autopod-rss-proxy
+x-wasabi-cm-reference-id: 1795185304 R304-U47.prod10.fr2 1809487895:17432662:19
+content-length: 223278
+

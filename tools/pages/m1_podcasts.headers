@@ -1,0 +1,19 @@
+HTTP/2 404 
+date: Fri, 20 Nov 2026 14:35:03 GMT
+content-type: text/html; charset=utf-8
+server: cloudflare
+cross-origin-opener-policy: same-origin-allow-popups
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy: frame-ancestors 'self'; object-src 'none'; base-uri 'self'
+cache-control: private, no-cache, no-store, max-age=0, must-revalidate
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding
+link: </_next/static/chunks/0rrg8t6y2kzmt.css?dpl=7653542739649adf34e5f7343835c05f3ce2d17f>; rel=preload; as="style", </_next/static/chunks/1jpos__2sgztl.css?dpl=7653542739649adf34e5f7343835c05f3ce2d17f>; rel=preload; as="style", </_next/static/chunks/14h5o_ft9myhv.css?dpl=7653542739649adf34e5f7343835c05f3ce2d17f>; rel=preload; as="style"
+cf-cache-status: DYNAMIC
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=d9L8OBLeH2abBtTVfKAQr88Q%2F22pXoP6aUovNLRPWQPEshaFlfC3RNCrQEO%2BjLAZZgzdzNzFytqRfNTVcyuJtVusEnS8Ui7oIBK21RILeAYMZ9x2mZuDwjUms%2FAWiU7SNw%3D%3D"}]}
+cf-ray: a5d82dd07ade05ea-IAD
+
