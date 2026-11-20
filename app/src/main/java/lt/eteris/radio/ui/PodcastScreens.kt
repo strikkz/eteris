@@ -241,11 +241,13 @@ fun PodcastsScreen(
     val ctx = LocalContext.current
     var top by remember { mutableStateOf<List<Podcast>?>(null) }
     var lrt by remember { mutableStateOf<List<Podcast>?>(null) }
+    var phr by remember { mutableStateOf<List<Podcast>?>(null) }
     var failed by remember { mutableStateOf(false) }
     var attempt by remember { mutableIntStateOf(0) }
     LaunchedEffect(attempt) {
         val t = PodcastRepository.topLithuania()
         val l = PodcastRepository.lrt()
+        phr = PodcastRepository.powerHitShows()
         top = t; lrt = l
         failed = t == null && l == null
     }
@@ -323,6 +325,14 @@ fun PodcastsScreen(
             item {
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                     items(list, key = { "l" + it.id }) { p -> PodcastTile(p) { onOpenPodcast(p) } }
+                }
+            }
+        }
+        phr?.takeIf { it.isNotEmpty() }?.let { list ->
+            item { SectionHeader(stringResource(R.string.phr_shows)) }
+            item {
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    items(list, key = { "p" + it.id }) { p -> PodcastTile(p) { onOpenPodcast(p) } }
                 }
             }
         }

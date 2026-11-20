@@ -106,4 +106,5 @@
     <string name="skip_forward">Вперёд 15 с</string>
     <string name="podcast_empty_subs">Подпишитесь на подкаст – его новые выпуски появятся здесь.</string>
     <string name="speed">Скорость</string>
+    <string name="phr_shows">Передачи Power Hit Radio</string>
 </resources>

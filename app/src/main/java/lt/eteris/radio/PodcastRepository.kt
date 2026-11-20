@@ -19,6 +19,8 @@ import java.net.URL
 import java.net.URLEncoder
 import java.security.MessageDigest
 import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Date
 import java.util.Locale
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CopyOnWriteArrayList
@@ -202,6 +204,7 @@ object PodcastRepository {
     /** Episodes of a podcast, newest first. Null if the feed could not be loaded. */
     suspend fun episodes(p: Podcast, force: Boolean = false): List<Episode>? {
         podcasts[p.id] = p
+        if (p.feedUrl.startsWith(PHR_FEED)) return powerHitEpisodes(p)
         if (!force) feedCache[p.id]?.let { (at, list) -> if (SystemClock.elapsedRealtime() - at < 15 * 60_000) return list }
         val feed = withContext(Dispatchers.IO) {
             val text = get(p.feedUrl) ?: return@withContext null
@@ -217,6 +220,82 @@ object PodcastRepository {
         list.forEach { episodes[it.id] = it }
         feedCache[p.id] = SystemClock.elapsedRealtime() to list
         return list
+    }
+
+    // ---------- Power Hit Radio shows (powerhitradio.tv3.lt) ----------
+    // Power Hit has no podcasts; its site keeps every broadcast hour as an MP3 for about a week
+    // (/record/pwr_YYYYMMDDHH0000.mp3, Vilnius time). The weekly schedule tells which hours belong to which show.
+
+    private const val PHR_SITE = "https://powerhitradio.tv3.lt"
+    private const val PHR_FEED = "phr:"
+    private const val PHR_DAYS = 7
+
+    /** Weekly slots of a show: ISO weekday (1 = Monday) and the hours it is on air. */
+    private data class Slot(val weekday: Int, val fromHour: Int, val toHour: Int)
+    private val phrSlots = ConcurrentHashMap<Long, List<Slot>>()
+    private val phrAbout = ConcurrentHashMap<Long, String>()
+
+    /** All Power Hit Radio shows from the station's schedule. */
+    suspend fun powerHitShows(): List<Podcast>? = cached("phr") {
+        val html = get("$PHR_SITE/laidos") ?: return@cached null
+        val blocks = html.split("data-test=\"schedule-show-slot\"").drop(1)
+        val shows = LinkedHashMap<String, Podcast>()
+        val slots = HashMap<String, MutableList<Slot>>()
+        for (b in blocks) {
+            val wd = Regex("wkd-(\\d)").find(b)?.groupValues?.get(1)?.toIntOrNull() ?: continue
+            val on = Regex("data-timeon=\"(\\d\\d):").find(b)?.groupValues?.get(1)?.toIntOrNull() ?: continue
+            val offM = Regex("data-timeoff=\"(\\d\\d):(\\d\\d)").find(b)
+            var off = offM?.groupValues?.get(1)?.toIntOrNull() ?: continue
+            if (offM.groupValues[2] == "59" || off <= on) off = if (off <= on) 24 else off + 1
+            val slug = Regex("href=\"/laidos/([a-z0-9-]+)\"").find(b)?.groupValues?.get(1) ?: continue
+            val title = Regex("scheduleProgramTxt\">([^<]+)<").find(b)?.groupValues?.get(1)?.let(::unescape)?.trim() ?: continue
+            var img = Regex("<img src=\"([^\"]+)\"").find(b)?.groupValues?.get(1).orEmpty()
+            if (img.startsWith("/")) img = PHR_SITE + img
+            val about = Regex("scheduleProgramLine\"[^>]*>([^<]+)<").find(b)?.groupValues?.get(1)?.let(::unescape)?.trim().orEmpty()
+            val id = -(1_000_000L + (slug.hashCode().toLong() and 0x7fffffff))
+            shows.getOrPut(slug) { Podcast(id, title, "Power Hit Radio", img, PHR_FEED + slug).also { phrAbout[id] = about } }
+            slots.getOrPut(slug) { mutableListOf() } += Slot(wd, on, off)
+        }
+        shows.values.onEach { p ->
+            podcasts[p.id] = p
+            phrSlots[p.id] = slots[p.feedUrl.removePrefix(PHR_FEED)].orEmpty()
+        }.toList()
+    }
+
+    private fun unescape(s: String) = android.text.Html.fromHtml(s, android.text.Html.FROM_HTML_MODE_LEGACY).toString()
+
+    /** The show's broadcast hours of the last week, newest first (only hours that have ended). */
+    private suspend fun powerHitEpisodes(p: Podcast): List<Episode>? {
+        if (phrSlots[p.id] == null) powerHitShows()
+        val slots = phrSlots[p.id] ?: return null
+        val zone = java.util.TimeZone.getTimeZone("Europe/Vilnius")
+        val now = System.currentTimeMillis()
+        val day = Calendar.getInstance(zone).apply {
+            set(Calendar.HOUR_OF_DAY, 0); set(Calendar.MINUTE, 0); set(Calendar.SECOND, 0); set(Calendar.MILLISECOND, 0)
+        }
+        val fileName = SimpleDateFormat("yyyyMMddHH", Locale.US).apply { timeZone = zone }
+        val label = SimpleDateFormat("EEE, d MMM · HH:mm", Locale.getDefault()).apply { timeZone = zone }
+        val out = ArrayList<Episode>()
+        repeat(PHR_DAYS) {
+            val iso = (day.get(Calendar.DAY_OF_WEEK) + 5) % 7 + 1      // Calendar: Sunday = 1 -> ISO: Monday = 1
+            for (slot in slots.filter { it.weekday == iso }) {
+                for (h in slot.fromHour until slot.toHour) {
+                    val start = (day.clone() as Calendar).apply { set(Calendar.HOUR_OF_DAY, h) }.timeInMillis
+                    if (start + 65 * 60_000 > now) continue          // still on air / file not ready
+                    val stamp = fileName.format(Date(start))
+                    out += Episode(
+                        id = EPISODE_PREFIX + p.id + ":" + stamp,
+                        podcastId = p.id, podcastTitle = p.title,
+                        title = label.format(Date(start)).replaceFirstChar { it.uppercase() },
+                        description = phrAbout[p.id].orEmpty(),
+                        audioUrl = "$PHR_SITE/record/pwr_${stamp}0000.mp3",
+                        date = start, durationMs = 60 * 60_000L, image = p.artwork,
+                    )
+                }
+            }
+            day.add(Calendar.DAY_OF_MONTH, -1)
+        }
+        return out.sortedByDescending { it.date }.onEach { episodes[it.id] = it }
     }
 
     // ---------- LRT's own site (lrt.lt radioteka) ----------
