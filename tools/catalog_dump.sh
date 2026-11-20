@@ -1,9 +1,12 @@
 #!/bin/bash
-# Station sites: show archives? (run 19)
+# Save station archive pages for study (run 20)
 set -u
 out=tools/catalog_dump.txt; : > $out
+mkdir -p tools/pages
 UA="Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/124 Mobile Safari/537.36"
-for u in https://www.ziniuradijas.lt https://www.ziniuradijas.lt/laidos https://www.m-1.fm https://www.radiocentras.lt https://www.zipfm.lt https://www.lietus.fm https://www.relaxfm.lt https://www.goldfm.lt https://www.rockfm.lt https://ehr.lt https://www.marijosradijas.lt https://www.radior.lt; do
-  curl -s -m 25 -L -A "$UA" "$u" -o /tmp/p.html -w "== $u %{http_code} %{url_effective}\n" >> $out
-  grep -oiE '(href|src)="[^"]*(podcast|podkast|irasai|įrašai|archyvas|laidos|\.mp3|spotify\.com/show|podcasts\.apple|soundcloud|mixcloud|youtube\.com/@?[a-z]+)[^"]*"' /tmp/p.html | sort -u | head -8 >> $out
-done
+while read name url; do
+  [ -z "$name" ] && continue
+  code=$(curl -s -m 30 -L -A "$UA" -D tools/pages/$name.headers -o tools/pages/$name.html -w "%{http_code} %{size_download} %{url_effective}" "$url")
+  cors=$(curl -s -m 20 -D - -o /dev/null -H "Origin: https://strikkz.github.io" -A "$UA" "$url" | tr -d '\r' | grep -i "^access-control-allow-origin" )
+  echo "$name $code CORS:[$cors]" >> $out
+done < tools/fetch_list.txt

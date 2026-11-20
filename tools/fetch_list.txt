@@ -1,0 +1,12 @@
+radijas_irasai https://www.radijas.lt/irasai
+radijas_podcast1 https://www.radijas.lt/podcasts/saugok-save/56137
+ziniu_laidos https://www.ziniuradijas.lt/laidos
+ziniu_archyvas https://www.ziniuradijas.lt/archyvas/
+ziniu_show https://www.ziniuradijas.lt/laidos/aktualusis-interviu
+m1_laidos https://m1play.15min.lt/m1/laidos
+lietus_laidos https://m1play.15min.lt/lietus/laidos
+relax_irasai https://relaxfm.lt/irasai/
+relax_show https://relaxfm.lt/irasai/?laida=gera-proga
+gold_podcasts https://goldfm.lt/podcasts/
+marijos_naujausi https://www.marijosradijas.lt/irasai/naujausi-laidu-irasai.html
+marijos_az https://www.marijosradijas.lt/irasai/laidos-nuo-a-iki-z.html
