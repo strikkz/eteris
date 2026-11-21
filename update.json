@@ -1,0 +1,28 @@
+{
+ "latest": {
+  "code": 81,
+  "name": "2.0.81",
+  "apk": "https://strikkz.github.io/eteris/banga.apk?v=81"
+ },
+ "history": [
+  {
+   "id": "2026-11-21-updates",
+   "code": 81,
+   "name": "2.0.81",
+   "notes": {
+    "lt": [
+     "Programėlę dabar galima atnaujinti tiesiai iš nustatymų: čia matysite, kas naujo kiekvienoje versijoje."
+    ],
+    "en": [
+     "The app can now be updated right from Settings, where you can also see what is new in each version."
+    ],
+    "uk": [
+     "Тепер застосунок можна оновити прямо в налаштуваннях і там же побачити, що нового в кожній версії."
+    ],
+    "ru": [
+     "Теперь приложение можно обновить прямо в настройках и там же увидеть, что нового в каждой версии."
+    ]
+   }
+  }
+ ]
+}
