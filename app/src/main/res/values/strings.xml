@@ -111,4 +111,16 @@
     <string name="station_shows">Radijo stočių laidos</string>
     <string name="podcasts_and_shows">Podkastai ir laidos</string>
     <string name="shows_count">Laidų: %1$d</string>
+    <string name="updates">Atnaujinimai</string>
+    <string name="installed_version">Įdiegta versija %1$s</string>
+    <string name="check_updates">Tikrinti</string>
+    <string name="checking_updates">Tikrinama…</string>
+    <string name="up_to_date">Naudojate naujausią versiją</string>
+    <string name="update_check_failed">Nepavyko patikrinti atnaujinimų</string>
+    <string name="update_available">Yra nauja versija %1$s</string>
+    <string name="whats_new">Kas naujo</string>
+    <string name="update_now">Atnaujinti</string>
+    <string name="downloading_update">Atsisiunčiama… %1$d%%</string>
+    <string name="update_failed">Nepavyko atsisiųsti. Bandykite dar kartą.</string>
+    <string name="allow_install">Leiskite BANGA diegti programėles ir paspauskite „Atnaujinti“ dar kartą.</string>
 </resources>

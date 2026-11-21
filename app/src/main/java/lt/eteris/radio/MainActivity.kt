@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         app = AppState(applicationContext)
         setContent { BangaApp(app) }
+        Updater.check(this, force = false)   // a new version shows up in Settings (and as a dot on its icon)
 
         askNotificationPermission()
         lifecycleScope.launch {

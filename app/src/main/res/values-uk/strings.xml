@@ -110,4 +110,16 @@
     <string name="station_shows">Передачі радіостанцій</string>
     <string name="podcasts_and_shows">Подкасти та передачі</string>
     <string name="shows_count">Передач: %1$d</string>
+    <string name="updates">Оновлення</string>
+    <string name="installed_version">Встановлена версія %1$s</string>
+    <string name="check_updates">Перевірити</string>
+    <string name="checking_updates">Перевірка…</string>
+    <string name="up_to_date">У вас найновіша версія</string>
+    <string name="update_check_failed">Не вдалося перевірити оновлення</string>
+    <string name="update_available">Доступна нова версія %1$s</string>
+    <string name="whats_new">Що нового</string>
+    <string name="update_now">Оновити</string>
+    <string name="downloading_update">Завантаження… %1$d%%</string>
+    <string name="update_failed">Не вдалося завантажити. Спробуйте ще раз.</string>
+    <string name="allow_install">Дозвольте BANGA встановлювати застосунки і натисніть «Оновити» ще раз.</string>
 </resources>

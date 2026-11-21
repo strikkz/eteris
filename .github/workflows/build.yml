@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   build:
@@ -43,3 +44,24 @@ jobs:
           name: BANGA 2.0.${{ github.run_number }}
           files: BANGA-*.apk
           make_latest: true
+
+      # The BANGA site gets the newest APK (fixed download link) and update.json, which the app
+      # reads in Settings to offer the update with what changed. The site branch keeps no history.
+      - name: Publish on the BANGA site
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch origin gh-pages --depth=1
+          git worktree add pages FETCH_HEAD
+          cp -r web/. pages/
+          cp "BANGA-2.0.${{ github.run_number }}.apk" pages/banga.apk
+          python3 tools/update_json.py pages/update.json changelog.json ${{ github.run_number }}
+          cd pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -q --orphan site
+          git add -A
+          git commit -qm "BANGA site, version 2.0.${{ github.run_number }}"
+          git push -q -f origin site:gh-pages
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

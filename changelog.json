@@ -1,0 +1,20 @@
+[
+  {
+    "id": "2026-11-21-updates",
+    "notes": {
+      "lt": ["Programėlę dabar galima atnaujinti tiesiai iš nustatymų: čia matysite, kas naujo kiekvienoje versijoje."],
+      "en": ["The app can now be updated right from Settings, where you can also see what is new in each version."],
+      "uk": ["Тепер застосунок можна оновити прямо в налаштуваннях і там же побачити, що нового в кожній версії."],
+      "ru": ["Теперь приложение можно обновить прямо в настройках и там же увидеть, что нового в каждой версии."]
+    }
+  },
+  {
+    "id": "2026-11-20-station-shows",
+    "notes": {
+      "lt": ["Radijo stočių laidos: Power Hit Radio, Radiocentras, Relax FM, Radio R, Žinių radijas, Marijos radijas, Gold FM ir LRT.", "Naujausi LRT laidų epizodai imami tiesiai iš lrt.lt.", "Paieška „Atrasti“ skiltyje randa ir podkastus bei laidas."],
+      "en": ["Radio station shows: Power Hit Radio, Radiocentras, Relax FM, Radio R, Žinių radijas, Marijos radijas, Gold FM and LRT.", "The newest LRT episodes come straight from lrt.lt.", "Search in Explore also finds podcasts and shows."],
+      "uk": ["Передачі радіостанцій: Power Hit Radio, Radiocentras, Relax FM, Radio R, Žinių radijas, Marijos radijas, Gold FM і LRT.", "Найновіші епізоди LRT беруться прямо з lrt.lt.", "Пошук в «Огляді» знаходить і подкасти та передачі."],
+      "ru": ["Передачи радиостанций: Power Hit Radio, Radiocentras, Relax FM, Radio R, Žinių radijas, Marijos radijas, Gold FM и LRT.", "Самые свежие выпуски LRT берутся прямо с lrt.lt.", "Поиск в «Обзоре» находит и подкасты, и передачи."]
+    }
+  }
+]

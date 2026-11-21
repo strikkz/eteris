@@ -82,6 +82,10 @@ internal fun TopLine(title: String, onSettings: () -> Unit) {
             contentAlignment = Alignment.Center,
         ) {
             Icon(painterResource(R.drawable.ic_tune), null, tint = Color.Unspecified, modifier = Modifier.size(24.dp))
+            // A new version is waiting: small lime dot on the settings icon.
+            if (lt.eteris.radio.Updater.available != null) {
+                Box(Modifier.align(Alignment.TopEnd).padding(top = 9.dp, end = 8.dp).size(9.dp).clip(androidx.compose.foundation.shape.CircleShape).background(Banga.accent))
+            }
         }
     }
 }

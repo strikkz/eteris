@@ -59,6 +59,8 @@ fun SettingsScreen(app: AppState, onBack: () -> Unit) {
             Text(stringResource(R.string.settings), style = Banga.screenTitle, color = Banga.text, modifier = Modifier.padding(top = 18.dp, bottom = 8.dp))
         }
 
+        item { UpdatesSection() }
+
         item { Label(stringResource(R.string.language)) }
         LANGUAGES.forEach { (tag, _) ->
             item {
@@ -102,6 +104,74 @@ fun SettingsScreen(app: AppState, onBack: () -> Unit) {
             Text(stringResource(R.string.tagline), style = Banga.supporting, color = Banga.textSecondary)
             Spacer(Modifier.height(4.dp))
             Text("AF", style = Banga.supporting, color = Banga.textSecondary)
+        }
+    }
+}
+
+/** New version: what changed (in the app's language) and one button to update. */
+@Composable
+private fun UpdatesSection() {
+    val ctx = LocalContext.current
+    androidx.compose.runtime.LaunchedEffect(Unit) { lt.eteris.radio.Updater.check(ctx) }
+    val u = lt.eteris.radio.Updater
+    val update = u.available
+    Label(stringResource(R.string.updates))
+    if (update == null) {
+        Row(Modifier.fillMaxWidth().padding(vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+            Column(Modifier.weight(1f)) {
+                Text(stringResource(R.string.installed_version, u.installedName(ctx)), style = Banga.rowTitle, color = Banga.text)
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    when {
+                        u.checking -> stringResource(R.string.checking_updates)
+                        u.failed -> stringResource(R.string.update_check_failed)
+                        u.checked -> stringResource(R.string.up_to_date)
+                        else -> ""
+                    },
+                    style = Banga.supporting, color = Banga.textSecondary,
+                )
+            }
+            Pill(stringResource(R.string.check_updates), { u.check(ctx) }, small = true)
+        }
+        return
+    }
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp)
+            .background(Banga.surface, androidx.compose.foundation.shape.RoundedCornerShape(22.dp))
+            .padding(18.dp),
+    ) {
+        Text(stringResource(R.string.update_available, update.name), style = Banga.section, color = Banga.accent)
+        Spacer(Modifier.height(4.dp))
+        Text(stringResource(R.string.installed_version, u.installedName(ctx)), style = Banga.supporting, color = Banga.textSecondary)
+        if (update.changes.isNotEmpty()) {
+            Spacer(Modifier.height(14.dp))
+            Text(stringResource(R.string.whats_new), style = Banga.rowTitle, color = Banga.text)
+            update.changes.forEach { ch ->
+                Spacer(Modifier.height(10.dp))
+                Text(ch.name, style = Banga.supporting, color = Banga.textSecondary)
+                ch.notes.forEach { n ->
+                    Row(Modifier.padding(top = 4.dp)) {
+                        Text("•  ", style = Banga.body, color = Banga.accent)
+                        Text(n, style = Banga.body, color = Banga.text)
+                    }
+                }
+            }
+        }
+        Spacer(Modifier.height(16.dp))
+        val p = u.progress
+        when {
+            p != null -> Text(stringResource(R.string.downloading_update, (p * 100).toInt()), style = Banga.rowTitle, color = Banga.accent)
+            else -> Pill(stringResource(R.string.update_now), { u.downloadAndInstall(ctx) }, accent = true)
+        }
+        if (u.needsPermission) {
+            Spacer(Modifier.height(10.dp))
+            Text(stringResource(R.string.allow_install), style = Banga.supporting, color = Banga.textSecondary)
+        }
+        if (u.failed && p == null) {
+            Spacer(Modifier.height(10.dp))
+            Text(stringResource(R.string.update_failed), style = Banga.supporting, color = Banga.error)
         }
     }
 }

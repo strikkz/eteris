@@ -110,4 +110,16 @@
     <string name="station_shows">Radio station shows</string>
     <string name="podcasts_and_shows">Podcasts and shows</string>
     <string name="shows_count">%1$d shows</string>
+    <string name="updates">Updates</string>
+    <string name="installed_version">Installed version %1$s</string>
+    <string name="check_updates">Check</string>
+    <string name="checking_updates">Checking…</string>
+    <string name="up_to_date">You have the latest version</string>
+    <string name="update_check_failed">Could not check for updates</string>
+    <string name="update_available">New version %1$s is available</string>
+    <string name="whats_new">What\'s new</string>
+    <string name="update_now">Update</string>
+    <string name="downloading_update">Downloading… %1$d%%</string>
+    <string name="update_failed">Download failed. Please try again.</string>
+    <string name="allow_install">Allow BANGA to install apps, then tap “Update” again.</string>
 </resources>
